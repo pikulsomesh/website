@@ -362,19 +362,46 @@
   ],
   "code": [
     {
-      "title": "GLAMOUR",
-      "text": "Graph learning over macromolecule representations: chemistry-informed graphs for similarity search, unsupervised and supervised learning.",
-      "url": "https://github.com/learningmatter-mit/GLAMOUR"
+      "title": "Baby Senses Lab",
+      "tag": "World models · 2026",
+      "text": "Developmental world models with one network per sense, each fed age-filtered input, plus a public site that shows a photo, video or sound the way a baby of a chosen age might sense it.",
+      "url": "https://pikulsomesh.github.io/developmental-world-models/",
+      "repo": "https://github.com/pikulsomesh/developmental-world-models"
     },
     {
-      "title": "Peptimizer",
-      "text": "Optimizing the functionality and synthetic accessibility of peptides with machine learning.",
-      "url": "https://github.com/learningmatter-mit/peptimizer"
+      "title": "Digital Twin History",
+      "tag": "Physical AI · 2026",
+      "text": "An open, cited history of digital twins and physical AI, from andon lights and Apollo's simulators to live factory twins and AI world models. Dataset and interactive site.",
+      "url": "https://pikulsomesh.github.io/digital-twin-history/",
+      "repo": "https://github.com/pikulsomesh/digital-twin-history"
     },
     {
-      "title": "Descriptor-conditional RNNs",
-      "text": "Designing organic photoelectronic molecules with descriptor-conditional recurrent neural networks.",
-      "url": "https://github.com/learningmatter-mit"
+      "title": "Michelin Kitchen Twin",
+      "tag": "Digital twin · 2026",
+      "text": "A browser-based 3D twin of a three-star kitchen running a full dinner service, modeled like a manufacturing plant: covers are the build plan, every plate a bill of materials.",
+      "url": "https://pikulsomesh.github.io/michelin-kitchen-twin/",
+      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin"
+    },
+    {
+      "title": "Auto-Twin",
+      "tag": "Spatial AI · 2026",
+      "text": "From a walkthrough video to a live digital twin: a world-model splat converted to OpenUSD, bound to cloud telemetry and rendered in the browser, Blender or Omniverse.",
+      "url": "https://pikulsomesh.github.io/foodbank-spatial-twin/",
+      "repo": "https://github.com/pikulsomesh/foodbank-spatial-twin"
+    },
+    {
+      "title": "LabTrends",
+      "tag": "On-device AI · 2026",
+      "text": "An offline, privacy-first Android app that turns scattered lab reports into per-person health trends, with on-device OCR and a small local model. No cloud, no accounts.",
+      "url": "https://github.com/pikulsomesh/LabTrends",
+      "repo": "https://github.com/pikulsomesh/LabTrends"
+    },
+    {
+      "title": "India Iceberg Index",
+      "tag": "AI & labor · 2026",
+      "text": "Maps how exposed India's workforce is to generative AI, district by district, by combining occupational AI-exposure scores with national labor survey data.",
+      "url": "https://github.com/pikulsomesh/india-iceberg-index",
+      "repo": "https://github.com/pikulsomesh/india-iceberg-index"
     }
   ],
   "writing": [

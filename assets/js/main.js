@@ -252,6 +252,18 @@ function renderPlaybook(pb) {
   }
 }
 
+/* ---------- Builds (home + research) ---------- */
+function buildCard(b) {
+  const live = b.url !== b.repo;
+  return `<article class="card build reveal"><span class="kicker mono">${esc(b.tag)}</span>
+    <h3><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p>${esc(b.text)}</p>
+    <div class="build-links">${live ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a></div></article>`;
+}
+function renderBuilds(p) {
+  const el = $('#builds-grid');
+  if (el && p.builds) el.innerHTML = p.builds.map(buildCard).join('');
+}
+
 /* ---------- Research page ---------- */
 function pubRow(p, label) {
   const title = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
@@ -279,7 +291,7 @@ function renderResearch(pubs) {
   });
   draw();
   $('#patents').innerHTML = pubs.patents.map((p) => `<li class="pub"><span class="yr">Patent</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.number)}</span></div><span class="venue">USPTO</span></li>`).join('');
-  $('#code').innerHTML = pubs.code.map((c) => `<article class="card"><span class="kicker mono">Open source</span><h3><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a></h3><p>${esc(c.text)}</p></article>`).join('');
+  $('#code').innerHTML = pubs.code.map(buildCard).join('');
   $('#talk-list').innerHTML = pubs.talks.map((t) => `<li class="pub"><span class="yr">${t.year}</span><div><b>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title)}</b><span>Invited</span></div><span class="venue">${esc(t.venue)}</span></li>`).join('');
   $('#conf-list').innerHTML = pubs.conference.map((c) => `<li class="pub"><span class="yr">${c.year}</span><div><b>${esc(c.title)}</b><span>${esc(c.kind)}</span></div><span class="venue">${esc(c.venue)}</span></li>`).join('');
   $('#service').innerHTML = pubs.service.map((x) => `<li>${esc(x)}</li>`).join('');
@@ -320,7 +332,7 @@ async function boot() {
     if (['home', 'resume'].includes(PAGE) || $('[data-email]')) {
       const profile = await getJSON('profile.json');
       renderProof(profile); renderTimeline(profile); renderPillars(profile);
-      renderWork(profile); renderRecognition(profile); renderResume(profile); wireEmail(profile);
+      renderWork(profile); renderBuilds(profile); renderRecognition(profile); renderResume(profile); wireEmail(profile);
     }
     if (PAGE === 'home' || PAGE === 'writing') {
       const posts = await getJSON('writing.json');
