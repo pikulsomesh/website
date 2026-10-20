@@ -1,0 +1,8 @@
+# Google Scholar items deliberately left off the research page. One title per line.
+# The weekly update stops flagging anything listed here.
+ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results
+Reusability report: Designing organic photoelectronic molecules with descriptor conditional recurrent neural networks
+Passenger demand forecasting of Indian aviation industry
+Designing Macromolecules using Machine Learning and Simulations
+Book Review: Biochemistry for Materials Science: Catalysts, Complexes and Proteins
+Cartilage Regeneration for treatment of Osteoarthritis using

@@ -33,6 +33,7 @@ Edit the JSON in `assets/data/` and commit. No build is needed.
 | `publications.json` | Papers, preprints, chapters, conference and invited talks, patent, code, service, citation stats |
 | `writing.json` | Essay index (title, date, LinkedIn URL, excerpt, tags) |
 | `knowledge.json` | Extra hand-written answers for the assistant |
+| `site.json` | Dates behind "Last updated" and "as of"; written by `sync_sources.mjs` |
 | `embeddings.json` | Generated; do not edit by hand |
 
 After changing any of them, refresh the assistant's index so it knows about the change:
@@ -65,6 +66,13 @@ DNS for `someshmohapatra.in` (at whichever provider runs its nameservers):
 | CNAME | www | pikulsomesh.github.io |
 
 ## Automation
+
+A weekly scheduled Claude task keeps the site current:
+
+- **Google Scholar**: `node tools/sync_sources.mjs scholar` reads the public profile and updates total citations, h-index, i10 and each paper's count. If Scholar blocks the request, counts are left alone and Semantic Scholar is used only to flag papers the site is missing. New Scholar items are added by hand-off review, not blindly; titles in `tools/inbox/scholar-ignore.txt` are never flagged.
+- **LinkedIn**: posts can't be listed without signing in, so paste post links into `tools/inbox/linkedin.txt` (GitHub's web editor works from a phone). `node tools/sync_sources.mjs linkedin` reads each public post and adds Digital Iron, The Human Loop and Lab Series posts to `writing.json`.
+- Every run writes `assets/data/site.json`; the footer shows "Last updated", the research page shows the Scholar "as of" date, and the writing page shows the latest post date.
+- When data changes, the task rebuilds `embeddings.json`, opens a PR and merges it once the site check passes.
 
 - `.github/workflows/check.yml` runs `tools/check_site.mjs` on every PR and push.
 - `.github/workflows/claude.yml` lets you mention `@claude` in an issue or PR to request edits. It needs the Claude GitHub App and a `CLAUDE_CODE_OAUTH_TOKEN` (or `ANTHROPIC_API_KEY`) repository secret.
