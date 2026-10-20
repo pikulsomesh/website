@@ -267,7 +267,7 @@ function renderBuilds(p) {
 /* ---------- Research page ---------- */
 function pubRow(p, label) {
   const title = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
-  const meta = [label, p.coFirst ? 'co-first author' : '', p.cites ? `${p.cites} citations` : ''].filter(Boolean).join(' · ');
+  const meta = [label || p.kind, p.coFirst ? 'co-first author' : '', p.cites ? `${p.cites} citations` : ''].filter(Boolean).join(' · ');
   return `<li class="pub"><span class="yr">${esc(p.year)}</span><div><b>${title}</b><span>${esc(meta)}</span></div><span class="venue">${esc(p.venue)}</span></li>`;
 }
 
@@ -279,6 +279,8 @@ function renderResearch(pubs) {
     ['Peer-reviewed', pubs.papers, 'Journal'],
     ['Preprints', pubs.preprints, 'Preprint'],
     ['Book chapters', pubs.chapters, 'Chapter'],
+    ['Theses', pubs.theses || [], 'Thesis'],
+    ['Other', pubs.other || [], ''],
   ];
   let group = 0;
   const draw = () => { const [, items, label] = groups[group]; list.innerHTML = items.map((p) => pubRow(p, label)).join(''); };

@@ -57,7 +57,7 @@ function collectEntries() {
       else entries.push({ id: `chapter-${c.id}-${entries.length}`, kind: 'Playbook', title: c.title, url: `playbook/#${c.id}`, text: t });
     });
   });
-  pubs.papers.concat(pubs.preprints, pubs.chapters).forEach((p, i) => entries.push({
+  pubs.papers.concat(pubs.preprints, pubs.chapters, pubs.theses || [], pubs.other || []).forEach((p, i) => entries.push({
     id: `pub-${i}`, kind: 'Paper', title: p.title, url: p.url, text: `${p.venue}, ${p.year}.${p.cites ? ` ${p.cites} citations.` : ''}`,
   }));
   pubs.talks.forEach((t, i) => entries.push({
