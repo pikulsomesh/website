@@ -41,12 +41,30 @@ function collectEntries() {
   profile.recognition.forEach((r, i) => entries.push({
     id: `recog-${i}`, kind: 'Recognition', title: r.title, url: '#recognition', text: `${r.year}. ${r.text}`,
   }));
-  playbook.beliefs.forEach((b, i) => entries.push({
-    id: `belief-${i + 1}`, kind: 'Playbook', title: b.title, url: `playbook/#belief-${i + 1}`,
-    text: `${b.why} ${Object.values(b.apply).join(' ')}`,
+  playbook.principles.forEach((b, i) => entries.push({
+    id: `principle-${i + 1}`, kind: 'Playbook', title: b.title, url: 'playbook/', text: b.text,
   }));
-  pubs.items.forEach((p, i) => entries.push({
-    id: `pub-${i}`, kind: 'Paper', title: p.title, url: p.url, text: `${p.venue}, ${p.year}. ${p.theme}.`,
+  const blockText = (b) => [b.text, b.items && b.items.map((x) => (typeof x === 'string' ? x : [x.title, x.text, x.may, x.control].filter(Boolean).join(': '))).join(' '),
+    b.rows && b.rows.map((r) => r.join(': ')).join(' ')].filter(Boolean).join(' ');
+  playbook.chapters.forEach((c) => {
+    entries.push({ id: `chapter-${c.id}`, kind: 'Playbook', title: c.title, url: `playbook/#${c.id}`, text: c.lead });
+    // One entry per sub-heading section, so specific questions land on the right part of a chapter.
+    let current = null;
+    c.blocks.forEach((b) => {
+      if (b.type === 'h') { current = { id: `chapter-${c.id}-${entries.length}`, kind: 'Playbook', title: `${c.title}: ${b.text}`, url: `playbook/#${c.id}`, text: '' }; entries.push(current); return; }
+      const t = blockText(b);
+      if (current) current.text = `${current.text} ${t}`.trim();
+      else entries.push({ id: `chapter-${c.id}-${entries.length}`, kind: 'Playbook', title: c.title, url: `playbook/#${c.id}`, text: t });
+    });
+  });
+  pubs.papers.concat(pubs.preprints, pubs.chapters).forEach((p, i) => entries.push({
+    id: `pub-${i}`, kind: 'Paper', title: p.title, url: p.url, text: `${p.venue}, ${p.year}.${p.cites ? ` ${p.cites} citations.` : ''}`,
+  }));
+  pubs.talks.forEach((t, i) => entries.push({
+    id: `talk-${i}`, kind: 'Talk', title: t.title, url: t.url || 'research/#talks', text: `Invited talk at ${t.venue}, ${t.year}.`,
+  }));
+  pubs.conference.forEach((t, i) => entries.push({
+    id: `conf-${i}`, kind: 'Talk', title: t.title, url: 'research/', text: `${t.kind} at ${t.venue}, ${t.year}.`,
   }));
   pubs.code.forEach((c) => entries.push({
     id: `code-${c.title.toLowerCase()}`, kind: 'Code', title: c.title, url: c.url, text: c.text,

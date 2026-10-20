@@ -1,72 +1,52 @@
 {
-  "_comment": "Selected works. Source: Google Scholar export (Oct 2026). Add new entries at the top; 'theme' drives the filter chips; 'cites' is the Google Scholar count.",
+  "_comment": "Full record from the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list.",
   "stats": {
     "citations": "710",
     "hIndex": 12,
     "i10": 12,
     "asOf": "Oct 2026"
   },
-  "items": [
+  "papers": [
     {
       "year": 2024,
       "venue": "ACS Central Science",
-      "theme": "Therapeutics",
       "title": "Design of Cytotoxic T Cell Epitopes by Machine Learning of Human Degrons",
       "url": "https://doi.org/10.1021/acscentsci.3c01544",
-      "cites": 3
+      "cites": 3,
+      "coFirst": true
     },
     {
       "year": 2023,
       "venue": "ACS Central Science",
-      "theme": "Materials",
-      "title": "A Model Ensemble Approach Enables Data-Driven Property Prediction for Chemically Deconstructable Thermosets",
+      "title": "A Model Ensemble Approach Enables Data-Driven Property Prediction for Chemically Deconstructable Thermosets in the Low-Data Regime",
       "url": "https://doi.org/10.1021/acscentsci.3c00502",
-      "cites": 40
-    },
-    {
-      "year": 2023,
-      "venue": "ChemRxiv",
-      "theme": "Therapeutics",
-      "title": "Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand",
-      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
-      "cites": 3
+      "cites": 40,
+      "coFirst": true
     },
     {
       "year": 2022,
-      "venue": "Mach. Learn.: Sci. Technol.",
-      "theme": "Methods",
+      "venue": "Machine Learning: Science and Technology",
       "title": "Chemistry-Informed Macromolecule Graph Representation for Similarity Computation, Unsupervised and Supervised Learning (GLAMOUR)",
       "url": "https://doi.org/10.1088/2632-2153/ac545e",
       "cites": 82
     },
     {
       "year": 2022,
-      "venue": "Acc. Mater. Res.",
-      "theme": "Methods",
-      "title": "Learning Matter: Materials Design with Machine Learning and Atomistic Simulations",
-      "url": "https://doi.org/10.1021/accountsmr.1c00238",
-      "cites": 133
-    },
-    {
-      "year": 2022,
       "venue": "Advanced Science",
-      "theme": "Manufacturing",
       "title": "Machine Learning Guides Peptide Nucleic Acid Flow Synthesis and Sequence Design",
       "url": "https://doi.org/10.1002/advs.202201988",
       "cites": 22
     },
     {
       "year": 2022,
-      "venue": "NeurIPS Workshop · Amgen",
-      "theme": "Manufacturing",
-      "title": "AI-Assisted Chemical Reaction Impurity Prediction and Propagation",
-      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
-      "cites": 2
+      "venue": "Accounts of Materials Research",
+      "title": "Learning Matter: Materials Design with Machine Learning and Atomistic Simulations",
+      "url": "https://doi.org/10.1021/accountsmr.1c00238",
+      "cites": 133
     },
     {
       "year": 2022,
       "venue": "Nature Chemistry",
-      "theme": "Materials",
       "title": "Bottlebrush Polymers with Flexible Enantiomeric Side Chains Display Differential Biological Properties",
       "url": "https://doi.org/10.1038/s41557-021-00826-8",
       "cites": 98
@@ -74,15 +54,14 @@
     {
       "year": 2021,
       "venue": "Nature Chemistry",
-      "theme": "Therapeutics",
       "title": "Deep Learning to Design Nuclear-Targeting Abiotic Miniproteins",
       "url": "https://doi.org/10.1038/s41557-021-00766-3",
-      "cites": 89
+      "cites": 89,
+      "coFirst": true
     },
     {
       "year": 2021,
       "venue": "JACS Au",
-      "theme": "Therapeutics",
       "title": "Deep Learning Enables Discovery of a Short Nuclear Targeting Peptide for Efficient Delivery of Antisense Oligomers",
       "url": "https://doi.org/10.1021/jacsau.1c00327",
       "cites": 27
@@ -90,7 +69,6 @@
     {
       "year": 2021,
       "venue": "JACS Au",
-      "theme": "Materials",
       "title": "Synthetic Glycomacromolecules of Defined Valency, Absolute Configuration, and Topology Distinguish between Human Lectins",
       "url": "https://doi.org/10.1021/jacsau.1c00255",
       "cites": 51
@@ -98,76 +76,322 @@
     {
       "year": 2020,
       "venue": "ACS Central Science",
-      "theme": "Manufacturing",
       "title": "Deep Learning for Prediction and Optimization of Fast-Flow Peptide Synthesis",
       "url": "https://doi.org/10.1021/acscentsci.0c00979",
-      "cites": 69
-    },
-    {
-      "year": 2020,
-      "venue": "ACS Central Science",
-      "theme": "Materials",
-      "title": "Quantitative Mapping of Molecular Substituents to Macroscopic Properties Enables Predictive Design of Oligoethylene Glycol-Based Lithium Electrolytes",
-      "url": "https://doi.org/10.1021/acscentsci.0c00475",
-      "cites": 22
+      "cites": 69,
+      "coFirst": true
     },
     {
       "year": 2020,
       "venue": "Nature Machine Intelligence",
-      "theme": "Methods",
-      "title": "Reusability Report: Designing Organic Photoelectronic Molecules with Descriptor Conditional Recurrent Neural Networks",
+      "title": "Designing Organic Photoelectronic Molecules with Descriptor Conditional Recurrent Neural Networks",
       "url": "https://doi.org/10.1038/s42256-020-00268-w",
       "cites": 9
     },
     {
+      "year": 2020,
+      "venue": "ACS Central Science",
+      "title": "Quantitative Mapping of Molecular Substituents to Macroscopic Properties Enables Predictive Design of Oligoethylene Glycol-Based Lithium Electrolytes",
+      "url": "https://doi.org/10.1021/acscentsci.0c00475",
+      "cites": 22,
+      "coFirst": true
+    },
+    {
       "year": 2017,
-      "venue": "J. Materials Science",
-      "theme": "Materials",
+      "venue": "Journal of Materials Science",
       "title": "Systematic Investigation and In Vitro Biocompatibility Studies on Implantable Magnetic Nanocomposites for Hyperthermia Treatment of Osteoarthritic Knee Joints",
       "url": "https://doi.org/10.1007/s10853-017-1136-0",
       "cites": 27
+    },
+    {
+      "year": 2017,
+      "venue": "Int. J. Pharmaceutical Sciences and Nanotechnology",
+      "title": "Functionalized Nano-Graphene Oxide as Multi-Modal Clinic for Effective Drug Delivery",
+      "url": "https://doi.org/10.37285/ijpsn.2017.10.4.3"
+    },
+    {
+      "year": 2016,
+      "venue": "J. Biotechnology and Biomaterials",
+      "title": "Implantable Magnetic-Dielectric Composites for Prolonged Hyperthermia Treatment of Hepatic Lesions",
+      "url": "https://doi.org/10.4172/2155-952X.1000230",
+      "cites": 1
+    }
+  ],
+  "preprints": [
+    {
+      "year": 2023,
+      "venue": "ChemRxiv",
+      "title": "Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "cites": 3
+    },
+    {
+      "year": 2022,
+      "venue": "ChemRxiv",
+      "title": "AI-Assisted Reaction Impurity Prediction and Inverse Structure Elucidation",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "cites": 2
+    },
+    {
+      "year": 2022,
+      "venue": "ChemRxiv",
+      "title": "AI-Assisted Chemical Reaction Impurity Prediction and Propagation",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "cites": 2
+    },
+    {
+      "year": 2022,
+      "venue": "ChemRxiv",
+      "title": "Translating L-Peptides into Non-Canonical Linear and Macrocyclic Peptides",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en"
+    },
+    {
+      "year": 2022,
+      "venue": "arXiv",
+      "title": "The (In)Effectiveness of Intermediate Task Training for Domain Adaptation and Cross-Lingual Transfer Learning",
+      "url": "https://arxiv.org/abs/2210.01091"
+    },
+    {
+      "year": 2022,
+      "venue": "arXiv · IJCNLP NLP4DH",
+      "title": "Sentiment Is All You Need to Win US Presidential Elections",
+      "url": "https://arxiv.org/abs/2209.13487",
+      "cites": 6
+    }
+  ],
+  "chapters": [
+    {
+      "year": 2018,
+      "venue": "Sustainable Agriculture Reviews, Springer",
+      "title": "Impact of Cyclodextrin in Drug Delivery System: Current Status and Future Perspective",
+      "url": "https://doi.org/10.1007/978-3-319-75190-0_10",
+      "cites": 4
+    },
+    {
+      "year": 2017,
+      "venue": "Encyclopedia of Polymer Applications, Taylor & Francis",
+      "title": "Cancer Chemotherapy: Polycaprolactone (PCL)-Based Drug Delivery",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en"
+    }
+  ],
+  "conference": [
+    {
+      "year": 2024,
+      "venue": "American Association for Cancer Research",
+      "title": "Integrated in vitro and machine learning approaches for targeted drug screening in gliomas with concurrent NF1 and ATRX loss",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2023,
+      "venue": "ACS Spring Meeting",
+      "title": "Translating L-peptides into non-canonical linear and macrocyclic peptides for multiple protein targets",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2022,
+      "venue": "NeurIPS, AI for Accelerated Materials Design",
+      "title": "AI-assisted reaction impurity prediction and inverse structure elucidation",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2022,
+      "venue": "IJCNLP, NLP for Digital Humanities",
+      "title": "Sentiment is all you need to win US Presidential elections",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2022,
+      "venue": "NeurIPS, Learning Meaningful Representations of Life",
+      "title": "Translating L-peptides into non-canonical linear and macrocyclic peptides",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2021,
+      "venue": "NeurIPS, Learning Meaningful Representations of Life",
+      "title": "Vaccine design using machine learning of degrons",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2021,
+      "venue": "NeurIPS, Learning Meaningful Representations of Life",
+      "title": "Interpretable graph representation learning predicts lectin–glycan binding",
+      "kind": "Contributed talk"
+    },
+    {
+      "year": 2021,
+      "venue": "ACS Fall Meeting",
+      "title": "GLAMOUR: Graph learning over macromolecule representations",
+      "kind": "Oral"
+    },
+    {
+      "year": 2021,
+      "venue": "ICML",
+      "title": "Graph attribution methods applied to understanding immunogenicity in glycans",
+      "kind": "Paper & poster"
+    },
+    {
+      "year": 2021,
+      "venue": "ICLR",
+      "title": "Chemistry-informed macromolecule graph representation for similarity computation and supervised learning",
+      "kind": "Poster"
+    },
+    {
+      "year": 2021,
+      "venue": "MIT Polymer Day",
+      "title": "GLAMOUR: Graph learning over macromolecule representations",
+      "kind": "Poster"
+    },
+    {
+      "year": 2020,
+      "venue": "NeurIPS, Learning Meaningful Representations of Life",
+      "title": "Machine learning for advanced affinity selection of peptidomimetic binders",
+      "kind": "Poster"
+    },
+    {
+      "year": 2020,
+      "venue": "MIT AE A+B Symposium",
+      "title": "Quantitative mapping of molecular substituents to macroscopic properties in lithium battery electrolytes",
+      "kind": "Video"
+    },
+    {
+      "year": 2020,
+      "venue": "Gordon Research Conference, Chemistry & Biology of Peptides",
+      "title": "Inferring cell-penetrating peptide design principles using deep learning",
+      "kind": "Poster"
+    },
+    {
+      "year": 2019,
+      "venue": "NeurIPS, Learning Meaningful Representations of Life",
+      "title": "Inferring cell-penetrating peptide design principles",
+      "kind": "Poster"
+    },
+    {
+      "year": 2019,
+      "venue": "MRS Fall Meeting",
+      "title": "Ab initio non-covalent interaction energies to quantify structure–property relationships in lithium-conducting oligomers",
+      "kind": "Poster"
+    },
+    {
+      "year": 2019,
+      "venue": "MIT Materials Day",
+      "title": "Deep learning for functionality optimization and synthetic accessibility of peptides",
+      "kind": "Oral & poster"
+    },
+    {
+      "year": 2015,
+      "venue": "MRS Fall Meeting",
+      "title": "Functionalized nano graphene oxide as multi-modal clinic for effective drug delivery",
+      "kind": "Poster"
+    },
+    {
+      "year": 2015,
+      "venue": "MRS Fall Meeting",
+      "title": "Implantable magnetic nanocomposite for hyperthermia treatment of osteoarthritic knee joint",
+      "kind": "Contributed talk"
+    }
+  ],
+  "talks": [
+    {
+      "year": 2026,
+      "venue": "CES 2026, NVIDIA booth",
+      "title": "Manufacturing & supply digital platform on NVIDIA Omniverse"
+    },
+    {
+      "year": 2024,
+      "venue": "Indian Institute of Management Mumbai",
+      "title": "Multi-objective optimization in industry"
+    },
+    {
+      "year": 2024,
+      "venue": "IIT Roorkee",
+      "title": "AI and humanities for rare diseases"
+    },
+    {
+      "year": 2024,
+      "venue": "Massachusetts Institute of Technology",
+      "title": "AI, autonomy and sustainability in heavy industry"
+    },
+    {
+      "year": 2023,
+      "venue": "Northeastern University",
+      "title": "Innovation capabilities of generative AI for materials scientists"
+    },
+    {
+      "year": 2023,
+      "venue": "TEDxBoston",
+      "title": "AI to make rare diseases rarer",
+      "url": "https://www.youtube.com/watch?v=kCuIpB-AuWo"
+    },
+    {
+      "year": 2022,
+      "venue": "AI at UC Irvine speaker series",
+      "title": "AI, drug discovery and the future of work"
+    },
+    {
+      "year": 2022,
+      "venue": "The Sci-AI Podcast",
+      "title": "How does AI help in drug discovery?"
+    },
+    {
+      "year": 2021,
+      "venue": "American Peptide Symposium e-Seminar",
+      "title": "Machine learning for (non)linear (non)canonical peptides"
+    },
+    {
+      "year": 2020,
+      "venue": "Google Accelerated Sciences seminar",
+      "title": "Peptimizer: optimizing peptides using machine learning"
+    },
+    {
+      "year": 2020,
+      "venue": "University of Rhode Island",
+      "title": "Future of biological sequence design"
+    },
+    {
+      "year": 2015,
+      "venue": "Indian Physics Association",
+      "title": "Multiferroics: a crack in the event horizon"
     }
   ],
   "patents": [
     {
       "title": "Designing Antisense Oligonucleotide Delivery Peptides by Interpretable Machine Learning",
-      "number": "US 2025/0228954 A1 (App. 17/759,355)",
+      "number": "US 2025/0228954 A1 · provisional filed Jan 24, 2020",
       "url": "https://patents.google.com/patent/US20250228954A1"
     }
   ],
   "code": [
     {
       "title": "GLAMOUR",
-      "text": "Graph learning over macromolecule representations.",
+      "text": "Graph learning over macromolecule representations: chemistry-informed graphs for similarity search, unsupervised and supervised learning.",
       "url": "https://github.com/learningmatter-mit/GLAMOUR"
     },
     {
       "title": "Peptimizer",
-      "text": "Machine learning for peptide design and synthesis optimization.",
+      "text": "Optimizing the functionality and synthetic accessibility of peptides with machine learning.",
       "url": "https://github.com/learningmatter-mit/peptimizer"
+    },
+    {
+      "title": "Descriptor-conditional RNNs",
+      "text": "Designing organic photoelectronic molecules with descriptor-conditional recurrent neural networks.",
+      "url": "https://github.com/learningmatter-mit"
     }
   ],
-  "talks": [
+  "writing": [
     {
-      "year": 2026,
-      "title": "Manufacturing & Supply Digital Platform, NVIDIA booth",
-      "venue": "CES 2026"
-    },
-    {
-      "year": 2023,
-      "title": "AI for (not so) rare genetic diseases",
-      "venue": "TEDxBoston",
-      "url": "https://www.youtube.com/watch?v=kCuIpB-AuWo"
-    },
-    {
-      "year": 2022,
-      "title": "AI-assisted impurity prediction",
-      "venue": "NeurIPS 2022, AI4Mat workshop"
-    },
-    {
-      "year": 2021,
-      "title": "Graph learning over macromolecules",
-      "venue": "ICML / ICLR 2021 workshops"
+      "title": "Optimizing peptides in TensorFlow 2",
+      "venue": "TensorFlow Community Blog",
+      "year": 2020
     }
+  ],
+  "service": [
+    "Reviewer: ICML Workshop on Computational Biology (2023, 2024)",
+    "Reviewer: NeurIPS AI for Drug Discovery, AI for Science and Generative Biology workshops (2023)",
+    "Reviewer: NeurIPS AI4Molecules and ML for Health workshops (2022)",
+    "Reviewer: NeurIPS Learning Meaningful Representations of Life (2020–2022)",
+    "Reviewer: NeurIPS Machine Learning for Molecules (2020)",
+    "Reviewer: Representation Learning in Biology Conference (2021)",
+    "Reviewer: MIT Machine Intelligence and Manufacturing Operations Symposium (2023)",
+    "Mentor to nine MIT students and interns, now at Google, Meta and top PhD programs"
   ]
 }
