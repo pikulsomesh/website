@@ -47,7 +47,7 @@
       "id": "hands-on",
       "kind": "Philosophy",
       "title": "A hands-on builder",
-      "url": "#work",
+      "url": "#builds",
       "text": "Still writes code and builds prototypes: digital twin assistants on NVIDIA Omniverse, agentic RAG systems, on-device ML side projects, and this website's in-browser language model."
     },
     {
@@ -104,7 +104,7 @@
       "kind": "Link",
       "title": "GitHub",
       "url": "https://github.com/pikulsomesh",
-      "text": "Code on GitHub, including this website and open-source research software."
+      "text": "Somesh's own GitHub: hands-on builds including Baby Senses Lab, Digital Twin History, a Michelin kitchen digital twin, Auto-Twin video-to-twin pipeline, LabTrends on-device health app, India Iceberg Index, and this website."
     },
     {
       "id": "resume",

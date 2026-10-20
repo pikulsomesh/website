@@ -66,8 +66,8 @@ function collectEntries() {
   pubs.conference.forEach((t, i) => entries.push({
     id: `conf-${i}`, kind: 'Talk', title: t.title, url: 'research/', text: `${t.kind} at ${t.venue}, ${t.year}.`,
   }));
-  pubs.code.forEach((c) => entries.push({
-    id: `code-${c.title.toLowerCase()}`, kind: 'Code', title: c.title, url: c.url, text: c.text,
+  (profile.builds || []).forEach((b, i) => entries.push({
+    id: `build-${i}`, kind: 'Build', title: b.title, url: b.url, text: `${b.tag}. ${b.text}`,
   }));
   posts.forEach((p, i) => entries.push({
     id: `post-${i}`, kind: p.series, title: p.title, url: p.url, text: p.excerpt,
