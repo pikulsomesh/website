@@ -1,5 +1,5 @@
 {
-  "_comment": "Full record from the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list.",
+  "_comment": "Complete record reconciled against the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list.",
   "stats": {
     "citations": "710",
     "hIndex": 12,
@@ -124,6 +124,13 @@
       "title": "Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand",
       "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
       "cites": 3
+    },
+    {
+      "year": 2021,
+      "venue": "arXiv",
+      "title": "ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results",
+      "url": "https://arxiv.org/abs/2108.09810",
+      "cites": 18
     },
     {
       "year": 2022,
@@ -362,26 +369,46 @@
   ],
   "code": [
     {
-      "title": "GLAMOUR",
-      "text": "Graph learning over macromolecule representations: chemistry-informed graphs for similarity search, unsupervised and supervised learning.",
-      "url": "https://github.com/learningmatter-mit/GLAMOUR"
+      "title": "Baby Senses Lab",
+      "tag": "World models · 2026",
+      "text": "Developmental world models with one network per sense, each fed age-filtered input, plus a public site that shows a photo, video or sound the way a baby of a chosen age might sense it.",
+      "url": "https://pikulsomesh.github.io/developmental-world-models/",
+      "repo": "https://github.com/pikulsomesh/developmental-world-models"
     },
     {
-      "title": "Peptimizer",
-      "text": "Optimizing the functionality and synthetic accessibility of peptides with machine learning.",
-      "url": "https://github.com/learningmatter-mit/peptimizer"
+      "title": "Digital Twin History",
+      "tag": "Physical AI · 2026",
+      "text": "An open, cited history of digital twins and physical AI, from andon lights and Apollo's simulators to live factory twins and AI world models. Dataset and interactive site.",
+      "url": "https://pikulsomesh.github.io/digital-twin-history/",
+      "repo": "https://github.com/pikulsomesh/digital-twin-history"
     },
     {
-      "title": "Descriptor-conditional RNNs",
-      "text": "Designing organic photoelectronic molecules with descriptor-conditional recurrent neural networks.",
-      "url": "https://github.com/learningmatter-mit"
-    }
-  ],
-  "writing": [
+      "title": "Michelin Kitchen Twin",
+      "tag": "Digital twin · 2026",
+      "text": "A browser-based 3D twin of a three-star kitchen running a full dinner service, modeled like a manufacturing plant: covers are the build plan, every plate a bill of materials.",
+      "url": "https://pikulsomesh.github.io/michelin-kitchen-twin/",
+      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin"
+    },
     {
-      "title": "Optimizing peptides in TensorFlow 2",
-      "venue": "TensorFlow Community Blog",
-      "year": 2020
+      "title": "Auto-Twin",
+      "tag": "Spatial AI · 2026",
+      "text": "From a walkthrough video to a live digital twin: a world-model splat converted to OpenUSD, bound to cloud telemetry and rendered in the browser, Blender or Omniverse.",
+      "url": "https://pikulsomesh.github.io/foodbank-spatial-twin/",
+      "repo": "https://github.com/pikulsomesh/foodbank-spatial-twin"
+    },
+    {
+      "title": "LabTrends",
+      "tag": "On-device AI · 2026",
+      "text": "An offline, privacy-first Android app that turns scattered lab reports into per-person health trends, with on-device OCR and a small local model. No cloud, no accounts.",
+      "url": "https://github.com/pikulsomesh/LabTrends",
+      "repo": "https://github.com/pikulsomesh/LabTrends"
+    },
+    {
+      "title": "India Iceberg Index",
+      "tag": "AI & labor · 2026",
+      "text": "Maps how exposed India's workforce is to generative AI, district by district, by combining occupational AI-exposure scores with national labor survey data.",
+      "url": "https://github.com/pikulsomesh/india-iceberg-index",
+      "repo": "https://github.com/pikulsomesh/india-iceberg-index"
     }
   ],
   "service": [
@@ -393,5 +420,50 @@
     "Reviewer: Representation Learning in Biology Conference (2021)",
     "Reviewer: MIT Machine Intelligence and Manufacturing Operations Symposium (2023)",
     "Mentor to nine MIT students and interns, now at Google, Meta and top PhD programs"
+  ],
+  "theses": [
+    {
+      "year": 2023,
+      "venue": "MIT Sloan (MBA thesis, at Amgen)",
+      "title": "AI-Assisted Reaction Impurity Prediction and Inverse Structure Elucidation",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "cites": 2
+    },
+    {
+      "year": 2022,
+      "venue": "MIT (PhD thesis)",
+      "title": "Designing Macromolecules Using Machine Learning and Simulations",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en"
+    },
+    {
+      "year": 2017,
+      "venue": "IIT Roorkee (B.Tech thesis)",
+      "title": "Cartilage Regeneration for Treatment of Osteoarthritis Using Magneto-Hyperthermic Scaffold and Induced Media",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en"
+    }
+  ],
+  "other": [
+    {
+      "year": 2020,
+      "venue": "TensorFlow Community Blog",
+      "title": "Optimizing Peptides in TensorFlow 2",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "kind": "Blog"
+    },
+    {
+      "year": 2020,
+      "venue": "MRS Bulletin",
+      "title": "Book Review: Biochemistry for Materials Science: Catalysts, Complexes and Proteins",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "kind": "Book review"
+    },
+    {
+      "year": 2014,
+      "venue": "Society of Operations Management, XVIII Annual International Conference",
+      "title": "Passenger Demand Forecasting of Indian Aviation Industry",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "cites": 2,
+      "kind": "Conference paper"
+    }
   ]
 }

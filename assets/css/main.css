@@ -548,3 +548,8 @@ section { padding: clamp(64px, 10vw, 128px) 0; }
   .toc a.active { border-bottom-color: var(--accent); }
   .chapter { scroll-margin-top: 130px; }
 }
+.build { display: flex; flex-direction: column; }
+.build p { flex: 1; }
+.build-links { display: flex; gap: 16px; font-family: var(--font-mono); font-size: 12px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+.build-links a { text-decoration: none; color: var(--accent); }
+.build-links a:hover { text-decoration: underline; }
