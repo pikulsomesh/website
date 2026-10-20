@@ -1,0 +1,438 @@
+{
+  "name": "Somesh Mohapatra",
+  "credentials": "PhD, MBA",
+  "location": "Dallas–Fort Worth, Texas",
+  "email": "someshm@alum.mit.edu",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/pikulsomesh/",
+    "scholar": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+    "github": "https://github.com/pikulsomesh",
+    "lab_github": "https://github.com/learningmatter-mit",
+    "tedx": "https://www.youtube.com/watch?v=kCuIpB-AuWo"
+  },
+  "_comment_proof": "Hero proof strip. Where LinkedIn and the resume disagree, see the 'Claims to confirm' table in the discovery doc.",
+  "proof": [
+    {
+      "value": "90+",
+      "label": "people in the AI, data science and product organization I lead"
+    },
+    {
+      "value": "150+",
+      "label": "facilities in scope for the manufacturing digital platform"
+    },
+    {
+      "value": "15+",
+      "label": "peer-reviewed papers, incl. 2 in Nature Chemistry"
+    },
+    {
+      "value": "Top 1%",
+      "label": "CEO Award, of 120K+ Caterpillar employees"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "cat-director",
+      "years": "2025 – now",
+      "tag": "operator",
+      "role": "Director, Analytics · Head of Data Science & Product Management",
+      "org": "Caterpillar Inc.",
+      "points": [
+        "Lead a 90+ person organization of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.",
+        "Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.",
+        "Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.",
+        "Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain."
+      ],
+      "metrics": [
+        {
+          "value": "GTC · CES",
+          "label": "Work shown at NVIDIA GTC DC 2025 and CES 2026"
+        },
+        {
+          "value": "4 → 150+",
+          "label": "Pilot plants to global rollout plan"
+        }
+      ]
+    },
+    {
+      "id": "cat-strategy",
+      "years": "2025",
+      "tag": "executive",
+      "role": "Senior Manager, Strategy & Analytics · Chief of Staff to SVP",
+      "org": "Caterpillar Resource Industries ($15B segment)",
+      "points": [
+        "Led the enterprise strategy workstream for sustainable mining, reporting into the Group President's office.",
+        "Built the TAM/SAM framework with AI-driven adoption modelling across diesel, electric and hybrid propulsion.",
+        "Informed M&A and venture decisions in autonomy and digital mine software; prepared board-level and Investor Day material."
+      ],
+      "metrics": [
+        {
+          "value": "$3B+",
+          "label": "Market opportunity identified"
+        },
+        {
+          "value": "Board",
+          "label": "Level strategy and capital-allocation work"
+        }
+      ]
+    },
+    {
+      "id": "cat-electrification",
+      "years": "2024 – 2025",
+      "tag": "builder",
+      "role": "Manager, Analytics · Minesite Electrification",
+      "org": "Caterpillar Inc.",
+      "points": [
+        "Architected an OEM-agnostic data platform linking 10+ subsystems: battery trucks, fast chargers, energy storage, fleet and energy management.",
+        "Negotiated interoperability and encryption protocols with OEM partners, enabling commercial data services.",
+        "Shipped Early Learner dashboards with agentic workflows and natural-language query for the top five global miners."
+      ],
+      "metrics": [
+        {
+          "value": "10+",
+          "label": "Subsystems on one data platform"
+        },
+        {
+          "value": "60%",
+          "label": "Less analyst reporting time"
+        }
+      ]
+    },
+    {
+      "id": "cat-procurement",
+      "years": "2023 – 2024",
+      "tag": "builder",
+      "role": "Manager, Analytics · Strategic Procurement & Supply Resiliency",
+      "org": "Caterpillar Inc.",
+      "points": [
+        "Co-led the enterprise supply resiliency digital thread: scenario planning and risk across 1.5M parts, 7,000+ suppliers and $20B of annual spend.",
+        "Designed ChatDocs, a GenAI platform (LLMs, hybrid RAG, fine-tuning) that extracts terms from contracts, quality certificates and risk reports.",
+        "Led 12 Purdue Data Mine students building predictive risk analytics over 110+ datasets for 180 countries."
+      ],
+      "metrics": [
+        {
+          "value": "$1M+",
+          "label": "Annual savings from ChatDocs"
+        },
+        {
+          "value": "CEO Award",
+          "label": "Top 1% of 120K+ employees"
+        }
+      ]
+    },
+    {
+      "id": "amgen",
+      "years": "2022",
+      "tag": "scientist",
+      "role": "AI/ML Fellow, Future Operations Leader program",
+      "org": "Amgen · MIT LGO",
+      "points": [
+        "Built graph neural networks that predict reaction impurities in small-molecule drug synthesis, and an impurity propagation framework across multi-step routes.",
+        "Adapted inverse structure elucidation from mass spec and NMR, cutting unknown-compound identification from weeks to hours.",
+        "Presented at NeurIPS 2022 (AI for Accelerated Materials Design workshop) within four months; became my MIT Sloan thesis."
+      ],
+      "metrics": [
+        {
+          "value": "$120K+",
+          "label": "Saved per unknown identification"
+        },
+        {
+          "value": "Weeks → hours",
+          "label": "Structure elucidation time"
+        }
+      ]
+    },
+    {
+      "id": "mit",
+      "years": "2018 – 2022",
+      "tag": "scientist",
+      "role": "PhD, Machine Learning for Molecular Design · MBA, Leaders for Global Operations",
+      "org": "Massachusetts Institute of Technology",
+      "points": [
+        "Advised by Prof. Rafael Gómez-Bombarelli. Thesis: Designing Macromolecules Using Machine Learning and Simulations.",
+        "Closed AI → synthesis → experiment loops with 30+ researchers across five labs, raising experimental throughput 10x.",
+        "Open-sourced GLAMOUR and Peptimizer; helped secure $2.27M in grants; mentored nine students.",
+        "TEDxBoston speaker on how AI can make rare diseases rarer."
+      ],
+      "metrics": [
+        {
+          "value": "15+",
+          "label": "Papers · Nature Chemistry, ACS Central Science"
+        },
+        {
+          "value": "1",
+          "label": "US patent application (AI-designed delivery peptides)"
+        }
+      ]
+    },
+    {
+      "id": "google",
+      "years": "2020",
+      "tag": "scientist",
+      "role": "Research Scientist (intern), Google Accelerated Sciences",
+      "org": "Google Research",
+      "points": [
+        "Built ML models for CRISPRi guide RNA design across all 20,000 human genes, beating the prior state of the art by 20%+.",
+        "Co-developed tooling for automated model building, hyperparameter tuning, architecture search and feature attribution."
+      ],
+      "metrics": [
+        {
+          "value": "20%+",
+          "label": "Accuracy gain over prior SOTA"
+        }
+      ]
+    },
+    {
+      "id": "matsci",
+      "years": "2018 – 2020",
+      "tag": "executive",
+      "role": "Co-Founder & Head of Business Operations",
+      "org": "MatSci AI",
+      "points": [
+        "Scaled from two founders to a 30-person team across the US and India, with full P&L ownership.",
+        "Ran the sales cycle end to end and built the customer success function.",
+        "Flagship RPA/ML product automated customer-inquiry processing for an oil and gas pipeline client."
+      ],
+      "metrics": [
+        {
+          "value": "30",
+          "label": "Person team built from zero"
+        },
+        {
+          "value": "$3M+",
+          "label": "Annual client savings"
+        }
+      ]
+    },
+    {
+      "id": "early",
+      "years": "2014 – 2018",
+      "tag": "scientist",
+      "role": "Gold Medalist, B.Tech · Research at Harvard, OIST, UIDAI and in quant trading",
+      "org": "IIT Roorkee and beyond",
+      "points": [
+        "Institute Gold Medal (rank 1 of 110); finished a four-year degree in three.",
+        "SN Bose Scholar at Harvard (cancer immunotherapy) and OIST fellow (computational genomics).",
+        "Quantitative researcher at EIS Global, Singapore: 20%+ lift in high-frequency trading models.",
+        "Technical Executive at UIDAI (Aadhaar), delivering $3M analytics programs and privacy policy analysis."
+      ],
+      "metrics": [
+        {
+          "value": "Rank 1",
+          "label": "Of 110, IIT Roorkee"
+        }
+      ]
+    }
+  ],
+  "pillars": [
+    {
+      "title": "Industrial AI & digital twins",
+      "icon": "twin",
+      "text": "Physics-grounded twins of factories and fleets that people can query in plain language, built on Omniverse, OpenUSD and CUDA.",
+      "tags": [
+        "Omniverse",
+        "OpenUSD",
+        "Predictive maintenance",
+        "Scheduling"
+      ]
+    },
+    {
+      "title": "Agentic & GenAI platforms",
+      "icon": "agent",
+      "text": "Governed agents, hybrid RAG and evaluation harnesses that make the second team faster than the first.",
+      "tags": [
+        "NeMo",
+        "Hybrid RAG",
+        "Evals",
+        "LLMOps"
+      ]
+    },
+    {
+      "title": "Machine learning research",
+      "icon": "graph",
+      "text": "Graph neural networks, generative models and closed-loop experimentation, from molecules to machines.",
+      "tags": [
+        "GNNs",
+        "Generative design",
+        "Low-data ML",
+        "PyTorch"
+      ]
+    },
+    {
+      "title": "Strategy & operating leadership",
+      "icon": "compass",
+      "text": "Market sizing, capital allocation, org design and P&L, the work that decides whether AI changes the business.",
+      "tags": [
+        "TAM/SAM",
+        "M&A",
+        "Org design",
+        "CSCP"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "id": "work-twin",
+      "feature": true,
+      "kicker": "Caterpillar · 2025 – now",
+      "title": "A factory you can ask questions",
+      "text": "Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line.",
+      "impact": [
+        {
+          "value": "4 plants",
+          "label": "US & UK pilots"
+        },
+        {
+          "value": "GTC · CES",
+          "label": "NVIDIA showcases"
+        }
+      ],
+      "tags": [
+        "Omniverse",
+        "NeMo",
+        "Digital twin"
+      ]
+    },
+    {
+      "id": "work-chatdocs",
+      "feature": true,
+      "kicker": "Caterpillar · 2023",
+      "title": "ChatDocs: reading 7,000 suppliers' fine print",
+      "text": "Hybrid-RAG extraction over supplier contracts, quality certificates and risk reports, feeding the supply resiliency digital thread.",
+      "impact": [
+        {
+          "value": "$1M+",
+          "label": "Annual savings"
+        },
+        {
+          "value": "1,500+ h",
+          "label": "Hours returned"
+        }
+      ],
+      "tags": [
+        "LLMs",
+        "Hybrid RAG",
+        "Procurement"
+      ]
+    },
+    {
+      "id": "work-resiliency",
+      "kicker": "Caterpillar · 2023 – 2024",
+      "title": "Supply resiliency digital thread",
+      "text": "Scenario planning and supplier risk across 1.5M parts and $20B of spend, with 110+ external signals on politics, regulation and markets.",
+      "impact": [
+        {
+          "value": "1.5M",
+          "label": "Parts"
+        },
+        {
+          "value": "$20B",
+          "label": "Spend in scope"
+        }
+      ],
+      "tags": [
+        "Risk",
+        "Scenario planning"
+      ]
+    },
+    {
+      "id": "work-mining",
+      "kicker": "Caterpillar · 2024 – 2025",
+      "title": "One data language for an electric mine",
+      "text": "An OEM-agnostic platform linking battery trucks, chargers and energy systems, with natural-language dashboards for the world's largest miners.",
+      "impact": [
+        {
+          "value": "10+",
+          "label": "Subsystems"
+        },
+        {
+          "value": "Top 5",
+          "label": "Global miners"
+        }
+      ],
+      "tags": [
+        "Electrification",
+        "Data platform"
+      ]
+    },
+    {
+      "id": "work-strategy",
+      "kicker": "Caterpillar · 2025",
+      "title": "Sizing the sustainable-mining market",
+      "text": "TAM/SAM with AI-driven adoption curves by propulsion type, used to steer product, M&A and venture bets in a $15B segment.",
+      "impact": [
+        {
+          "value": "$3B+",
+          "label": "Opportunity"
+        },
+        {
+          "value": "Board",
+          "label": "Audience"
+        }
+      ],
+      "tags": [
+        "Strategy",
+        "Capital allocation"
+      ]
+    },
+    {
+      "id": "work-research",
+      "kicker": "MIT · Google · Amgen",
+      "title": "AI that designs molecules, then makes them",
+      "text": "GLAMOUR graph representations, deep learning for fast-flow peptide synthesis and impurity prediction for drug manufacturing.",
+      "impact": [
+        {
+          "value": "2×",
+          "label": "Nature Chemistry"
+        },
+        {
+          "value": "10×",
+          "label": "Lab throughput"
+        }
+      ],
+      "tags": [
+        "GNNs",
+        "Open source"
+      ],
+      "href": "research/"
+    }
+  ],
+  "recognition": [
+    {
+      "year": "2026",
+      "title": "CES 2026, NVIDIA booth",
+      "text": "Presented Caterpillar's manufacturing digital platform built on Omniverse."
+    },
+    {
+      "year": "2025",
+      "title": "NVIDIA GTC Washington DC",
+      "text": "Digital-twin work featured in the keynote."
+    },
+    {
+      "year": "2025",
+      "title": "Chairman's Enterprise Excellence Award",
+      "text": "One project selected across Caterpillar, for supply resiliency."
+    },
+    {
+      "year": "2023",
+      "title": "Caterpillar CEO Award",
+      "text": "Top 1% of 120K+ employees, for GenAI in supply chain."
+    },
+    {
+      "year": "2023",
+      "title": "TEDxBoston",
+      "text": "How AI can make rare diseases rarer."
+    },
+    {
+      "year": "2017",
+      "title": "Institute Gold Medal, IIT Roorkee",
+      "text": "Rank 1 of 110."
+    }
+  ],
+  "certifications": [
+    "Certified Supply Chain Professional (ASCM)",
+    "CFA Program Level I",
+    "CMA Part 1 (IMA)",
+    "AI Leadership: Strategy, Governance and Agentic Systems (Harvard Data Science Review)",
+    "NVIDIA: Observable, Scalable Multi-Agent Workflows"
+  ]
+}

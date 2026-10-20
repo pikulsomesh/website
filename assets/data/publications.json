@@ -1,0 +1,150 @@
+{
+  "_comment": "Selected works. Source: Semantic Scholar author 114955765 and Google Scholar. Add new entries at the top; 'theme' drives the filter chips.",
+  "stats": {
+    "citations": "490+",
+    "hIndex": 10,
+    "asOf": "2026-10"
+  },
+  "items": [
+    {
+      "year": 2024,
+      "venue": "ACS Central Science",
+      "theme": "Therapeutics",
+      "title": "Design of Cytotoxic T Cell Epitopes by Machine Learning of Human Degrons",
+      "url": "https://doi.org/10.1021/acscentsci.3c01544"
+    },
+    {
+      "year": 2023,
+      "venue": "ACS Central Science",
+      "theme": "Materials",
+      "title": "A Model Ensemble Approach Enables Data-Driven Property Prediction for Chemically Deconstructable Thermosets",
+      "url": "https://doi.org/10.1021/acscentsci.3c00502"
+    },
+    {
+      "year": 2022,
+      "venue": "Mach. Learn.: Sci. Technol.",
+      "theme": "Methods",
+      "title": "Chemistry-Informed Macromolecule Graph Representation for Similarity Computation, Unsupervised and Supervised Learning (GLAMOUR)",
+      "url": "https://doi.org/10.1088/2632-2153/ac545e"
+    },
+    {
+      "year": 2022,
+      "venue": "Acc. Mater. Res.",
+      "theme": "Methods",
+      "title": "Learning Matter: Materials Design with Machine Learning and Atomistic Simulations",
+      "url": "https://doi.org/10.1021/accountsmr.1c00238"
+    },
+    {
+      "year": 2022,
+      "venue": "Advanced Science",
+      "theme": "Manufacturing",
+      "title": "Machine Learning Guides Peptide Nucleic Acid Flow Synthesis and Sequence Design",
+      "url": "https://doi.org/10.1002/advs.202201988"
+    },
+    {
+      "year": 2022,
+      "venue": "NeurIPS Workshop · Amgen",
+      "theme": "Manufacturing",
+      "title": "AI-Assisted Chemical Reaction Impurity Prediction and Propagation",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en"
+    },
+    {
+      "year": 2021,
+      "venue": "Nature Chemistry",
+      "theme": "Therapeutics",
+      "title": "Deep Learning to Design Nuclear-Targeting Abiotic Miniproteins",
+      "url": "https://doi.org/10.1038/s41557-021-00766-3"
+    },
+    {
+      "year": 2021,
+      "venue": "Nature Chemistry",
+      "theme": "Materials",
+      "title": "Bottlebrush Polymers with Discrete Sidechains Display Stereochemistry- and Conformation-Dependent Biological Properties",
+      "url": "https://doi.org/10.1038/s41557-021-00826-8"
+    },
+    {
+      "year": 2021,
+      "venue": "JACS Au",
+      "theme": "Therapeutics",
+      "title": "Deep Learning Enables Discovery of a Short Nuclear Targeting Peptide for Efficient Delivery of Antisense Oligomers",
+      "url": "https://doi.org/10.1021/jacsau.1c00327"
+    },
+    {
+      "year": 2021,
+      "venue": "JACS Au",
+      "theme": "Materials",
+      "title": "Synthetic Glycomacromolecules of Defined Valency, Absolute Configuration, and Topology Distinguish between Human Lectins",
+      "url": "https://doi.org/10.1021/jacsau.1c00255"
+    },
+    {
+      "year": 2020,
+      "venue": "ACS Central Science",
+      "theme": "Manufacturing",
+      "title": "Deep Learning for Prediction and Optimization of Fast-Flow Peptide Synthesis",
+      "url": "https://doi.org/10.1021/acscentsci.0c00979"
+    },
+    {
+      "year": 2020,
+      "venue": "ACS Central Science",
+      "theme": "Materials",
+      "title": "Quantitative Mapping of Molecular Substituents to Macroscopic Properties Enables Predictive Design of Oligoethylene Glycol-Based Lithium Electrolytes",
+      "url": "https://doi.org/10.1021/acscentsci.0c00475"
+    },
+    {
+      "year": 2020,
+      "venue": "Nature Machine Intelligence",
+      "theme": "Methods",
+      "title": "Reusability Report: Designing Organic Photoelectronic Molecules with Descriptor Conditional Recurrent Neural Networks",
+      "url": "https://doi.org/10.1038/s42256-020-00268-w"
+    },
+    {
+      "year": 2017,
+      "venue": "J. Materials Science",
+      "theme": "Materials",
+      "title": "Implantable Magnetic Nanocomposites for Hyperthermia Treatment: Biocompatibility Studies",
+      "url": "https://doi.org/10.1007/s10853-017-1136-0"
+    }
+  ],
+  "patents": [
+    {
+      "title": "Designing Antisense Oligonucleotide Delivery Peptides by Interpretable Machine Learning",
+      "number": "US 2025/0228954 A1",
+      "url": "https://patents.google.com/patent/US20250228954A1"
+    }
+  ],
+  "code": [
+    {
+      "title": "GLAMOUR",
+      "text": "Graph learning over macromolecule representations.",
+      "url": "https://github.com/learningmatter-mit/GLAMOUR"
+    },
+    {
+      "title": "Peptimizer",
+      "text": "Machine learning for peptide design and synthesis optimization.",
+      "url": "https://github.com/learningmatter-mit/peptimizer"
+    }
+  ],
+  "talks": [
+    {
+      "year": 2026,
+      "title": "Manufacturing & Supply Digital Platform, NVIDIA booth",
+      "venue": "CES 2026"
+    },
+    {
+      "year": 2023,
+      "title": "AI for (not so) rare genetic diseases",
+      "venue": "TEDxBoston",
+      "url": "https://www.youtube.com/watch?v=kCuIpB-AuWo"
+    },
+    {
+      "year": 2022,
+      "title": "AI-assisted impurity prediction",
+      "venue": "NeurIPS 2022, AI4Mat workshop"
+    },
+    {
+      "year": 2021,
+      "title": "Graph learning over macromolecules",
+      "venue": "ICML / ICLR 2021 workshops"
+    }
+  ]
+}
