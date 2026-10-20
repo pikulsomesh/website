@@ -240,12 +240,12 @@ function renderPlaybook(pb) {
 function renderResearch(pubs) {
   const list = $('#pubs');
   if (!list) return;
-  $('#pub-stats').textContent = `${pubs.stats.citations} citations · h-index ${pubs.stats.hIndex} · as of ${pubs.stats.asOf}`;
+  $('#pub-stats').textContent = `${pubs.stats.citations} citations · h-index ${pubs.stats.hIndex} · i10-index ${pubs.stats.i10} · Google Scholar, ${pubs.stats.asOf}`;
   const themes = ['All', ...new Set(pubs.items.map((p) => p.theme))];
   let theme = 'All';
   const draw = () => {
     list.innerHTML = pubs.items.filter((p) => theme === 'All' || p.theme === theme).map((p) => `
-      <li class="pub"><span class="yr">${p.year}</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.theme)}</span></div><span class="venue">${esc(p.venue)}</span></li>`).join('');
+      <li class="pub"><span class="yr">${p.year}</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.theme)}${p.cites ? ` · ${p.cites} citations` : ''}</span></div><span class="venue">${esc(p.venue)}</span></li>`).join('');
   };
   $('#pub-filters').innerHTML = themes.map((t, i) => `<button class="chip" aria-pressed="${i === 0}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
   $('#pub-filters').addEventListener('click', (e) => {
