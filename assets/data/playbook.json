@@ -1,0 +1,102 @@
+{
+  "_comment": "Beliefs distilled from five industry points of view. Industry names are deliberately generic. 'apply' maps industry id -> how the belief plays out there; a missing key dims that industry.",
+  "industries": [
+    { "id": "medtech", "name": "Medical devices" },
+    { "id": "energy", "name": "Energy & utilities" },
+    { "id": "building", "name": "Building products" },
+    { "id": "minerals", "name": "Critical minerals" },
+    { "id": "agri", "name": "Agricultural genetics" }
+  ],
+  "beliefs": [
+    {
+      "title": "Find the business's core learning problem first",
+      "why": "Every industry has one quantity whose improvement compounds. AI earns its budget by moving that number, not by adding a chatbot.",
+      "apply": {
+        "medtech": "Yield is a learning problem: each device built carries data on why the next will pass or fail.",
+        "energy": "The forecast is the product. Weather, load and price forecasts sit under every trade and dispatch.",
+        "minerals": "In a ramp-up, AI's first job is to shorten the learning curve on yield and time to qualification.",
+        "agri": "Decades of trial and field data are the science; the job is making them compound across seasons."
+      }
+    },
+    {
+      "title": "Context is the moat; models are a commodity",
+      "why": "Everyone can rent a frontier model. What is scarce is trusted, permissioned, versioned context an agent can act on.",
+      "apply": {
+        "building": "A shared context layer is the direct answer to what should be centralized.",
+        "minerals": "Map data to the process it describes; structured and unstructured knowledge behind one permission model.",
+        "agri": "Model choice should be a routing decision you can change in an afternoon. The context layer is the center of gravity."
+      }
+    },
+    {
+      "title": "Govern by design, so the safe path is the fast path",
+      "why": "Controls belong in the platform: identity, guardrails, logging and change control, not a review gate at the end.",
+      "apply": {
+        "medtech": "Validated by design: locked model versions and risk-based assurance built into the platform.",
+        "energy": "Grid, markets and ratemaking each carry their own rules; the platform enforces them.",
+        "minerals": "Process IP is the crown jewel, and every architecture choice is tested against leaking it.",
+        "agri": "Autonomy is a permission earned per workflow, never a setting you turn on."
+      }
+    },
+    {
+      "title": "Risk-tier every model",
+      "why": "A meeting summarizer and a model that sets a process parameter do not deserve the same review. Proportion is what lets you move fast where it is safe.",
+      "apply": {
+        "medtech": "Four tiers, from direct product-quality impact (full validation) down to productivity tools.",
+        "energy": "A model that shapes a market offer or a rate filing gets a different review from a summarizer.",
+        "minerals": "Tiered review from email assistants to models recommending furnace setpoints.",
+        "agri": "Authority tiers decide what an agent may read, propose or execute."
+      }
+    },
+    {
+      "title": "Build once, reuse many times",
+      "why": "A platform justifies itself only when the fifth team ships in a fraction of the first team's effort.",
+      "apply": {
+        "medtech": "Shared data, MLOps and validation first; then every plant and planner reuses them.",
+        "building": "If the same capability is rebuilt in three teams, that is a platform gap, not a talent gap.",
+        "minerals": "Composable and compostable: modular parts, each replaceable in 18 months.",
+        "agri": "Golden paths: the first delivery is a paved road with one solution on it."
+      }
+    },
+    {
+      "title": "Central standards, federated delivery",
+      "why": "The enterprise owns architecture, security and reusable platforms. Business units own their data and outcomes. The line is drawn explicitly.",
+      "apply": {
+        "energy": "A federated organization with one standard and clear decision rights.",
+        "building": "Centralize the rules of the road; federate ownership of domain data.",
+        "agri": "Explicit RACI between the platform team and the domains it serves."
+      }
+    },
+    {
+      "title": "Measure value created, not models built",
+      "why": "A model matters only when it changes a decision: a bid, a work order, a capital plan. Start from the decision and its owner.",
+      "apply": {
+        "medtech": "Forecasts are measured in procedures served; a stockout is a delayed procedure.",
+        "energy": "Decisions, not models. Every initiative names the decision it changes.",
+        "building": "Adoption, quality, reuse and speed, each traced to margin, revenue or customer outcome.",
+        "agri": "Evaluation is the product, not the QA step."
+      }
+    },
+    {
+      "title": "Every answer has a token bill",
+      "why": "Inference cost per agentic workflow is rising. The harness, caching and routing matter more than the model's horsepower.",
+      "apply": {
+        "building": "Most of the token bill is avoidable with context, caching and routing.",
+        "agri": "Cost control is a platform capability every team inherits for free."
+      }
+    }
+  ],
+  "stack": {
+    "_comment": "Reference architecture layers with the native service on each cloud.",
+    "clouds": ["AWS", "Azure", "Google Cloud"],
+    "layers": [
+      { "layer": "Systems of record", "desc": "ERP, MES, PLM, historians", "AWS": "SAP on AWS · IoT SiteWise", "Azure": "SAP on Azure · IoT Hub", "Google Cloud": "SAP on GCP · Manufacturing Data Engine" },
+      { "layer": "Lakehouse", "desc": "Open tables, lineage, quality", "AWS": "S3 + Iceberg · Glue", "Azure": "Fabric OneLake", "Google Cloud": "BigQuery + BigLake" },
+      { "layer": "Context layer", "desc": "Catalog, semantics, knowledge", "AWS": "DataZone · Kendra", "Azure": "Purview · AI Search", "Google Cloud": "Dataplex · Vertex AI Search" },
+      { "layer": "Model platform", "desc": "Training, registry, serving", "AWS": "SageMaker", "Azure": "Azure Machine Learning", "Google Cloud": "Vertex AI" },
+      { "layer": "Foundation models", "desc": "Routed, evaluated, cached", "AWS": "Bedrock", "Azure": "Azure AI Foundry", "Google Cloud": "Vertex AI Model Garden" },
+      { "layer": "Agents", "desc": "Tools, memory, authority tiers", "AWS": "Bedrock AgentCore", "Azure": "AI Foundry Agent Service", "Google Cloud": "Vertex AI Agent Engine" },
+      { "layer": "Simulation & twins", "desc": "Physics, OpenUSD, scenarios", "AWS": "NVIDIA Omniverse on EC2", "Azure": "NVIDIA Omniverse on Azure", "Google Cloud": "NVIDIA Omniverse on GCP" },
+      { "layer": "Experience", "desc": "Chat, 3D, dashboards", "AWS": "Amplify · QuickSight", "Azure": "Power BI · Copilot Studio", "Google Cloud": "Looker · Firebase" }
+    ]
+  }
+}

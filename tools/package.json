@@ -1,0 +1,13 @@
+{
+  "name": "site-tools",
+  "private": true,
+  "type": "module",
+  "description": "Offline helpers for the static site. Nothing here runs on GitHub Pages.",
+  "scripts": {
+    "embeddings": "node build_embeddings.mjs",
+    "check": "node check_site.mjs"
+  },
+  "dependencies": {
+    "onnxruntime-node": "1.20.1"
+  }
+}

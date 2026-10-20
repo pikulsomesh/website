@@ -1,0 +1,1190 @@
+[
+ {
+  "series": "Lab Series",
+  "vol": null,
+  "title": "System One Models will optimize tokenomics and latency",
+  "date": "2026-09-27",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576",
+  "excerpt": "System One Models or Contrastive Language Models have taken the feeds by storm with Jev by TypeSafe AI (super-cheap API), Julia-1 by Supersonic Labs (at 144M), and recently CLM-8B by Stanford University and NVIDIA(open source, 8B). What…",
+  "tags": []
+ },
+ {
+  "series": "Lab Series",
+  "vol": 31,
+  "title": "Spec-Driven Development for AI Agents",
+  "date": "2026-08-31",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7500309594141986816",
+  "excerpt": "As autonomous coding agents become standard tooling across software engineering, the primary bottleneck in AI-assisted development has shifted from raw model capability to prompt and context structure. Simply passing massive, unstructured…",
+  "tags": [
+   "aiagents",
+   "developerexperience",
+   "google",
+   "softwareengineering",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 26,
+  "title": "The Automation Trap in Innovation",
+  "date": "2026-08-23",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7497393297020104704",
+  "excerpt": "We often assume that generative AI will seamlessly remove the friction from the innovation process. However, recent research published in the Harvard Business Review reveals a more complex reality. AI frequently deepens the human…",
+  "tags": [
+   "columbiabusinessschool",
+   "generativeai",
+   "harvardbusinessschool",
+   "innovation",
+   "kelloggschool"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 30,
+  "title": "The State of Open Models and the Infrastructure Shift",
+  "date": "2026-08-18",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7495277695715409922",
+  "excerpt": "The debate between proprietary APIs and open-weight architectures is reaching a critical inflection point. Just recently, I discussed the radical feasibility experiment of running Moonshot AI's 2.78-trillion-parameter Kimi (Moonshot AI) K3…",
+  "tags": [
+   "enterprisearchitecture",
+   "huggingface",
+   "machinelearning",
+   "opensourceai",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 29,
+  "title": "The 2.8 Trillion Parameter Experiment and the Open-Weight Future",
+  "date": "2026-08-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7491867817365909505",
+  "excerpt": "Just a month ago, the idea of having a 2.8T parameter model open-sourced, let alone hosting it was completely unthinkable, even with aggressive quantization. A recent open-source engineering exercise called kimi-k3-in-c by developer Fareed…",
+  "tags": [
+   "enterpriseai",
+   "machinelearning",
+   "moe",
+   "opensourceai",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 25,
+  "title": "The Rise of Task Crossover",
+  "date": "2026-08-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7490861306774736896",
+  "excerpt": "When predicting how artificial intelligence will change the workforce, most analysts begin with a fixed list of tasks associated with a specific job and ask which ones a model can automate, similar to my personal research inspired by the…",
+  "tags": [
+   "aistrategy",
+   "futureofwork",
+   "openai",
+   "organizationaldesign",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 24,
+  "title": "Beyond the Horseless Carriage",
+  "date": "2026-07-31",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7488785159106809858",
+  "excerpt": "When the automobile was first introduced, early designs were literally called horseless carriages. Manufacturers took the existing form factor of a wooden buggy, removed the horse, and installed a small engine. It took years for designers…",
+  "tags": [
+   "aiproductstrategy",
+   "leanux",
+   "productdiscovery",
+   "productmanagement",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 29,
+  "title": "The Return to Determinism in an Agentic World",
+  "date": "2026-07-28",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7487703952457875457",
+  "excerpt": "The history of artificial intelligence is a pendulum swinging between absolute control and creative chaos. In the 1950s, early AI models were envisioned as massive, deterministic decision trees. Post 1990s came neural networks, plunging…",
+  "tags": [
+   "agenticai",
+   "ai",
+   "graphengineering",
+   "machinelearning",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 24,
+  "title": "Defending Against Cognitive Surrender",
+  "date": "2026-07-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485176512648794113",
+  "excerpt": "In the rush to integrate artificial intelligence into daily operations, we are confronting a dangerous psychological side effect: cognitive surrender. A recent article in the Harvard Business Review by Melchior Tamisier-Fayard, Theodoros…",
+  "tags": [
+   "cognitivescience",
+   "futureofwork",
+   "generativeai",
+   "innovation",
+   "management"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 28,
+  "title": "The Trillion-Parameter Open Weight Era and Qwen 3.8",
+  "date": "2026-07-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485175047331004416",
+  "excerpt": "For a long time, the prevailing wisdom in the artificial intelligence community was that true frontier models, those exceeding a trillion parameters, would remain locked behind proprietary APIs. The compute required to train and run them…",
+  "tags": [
+   "alibaba",
+   "machinelearning",
+   "opensourceai",
+   "qwen",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 23,
+  "title": "Listening to the Iron",
+  "date": "2026-07-06",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479719984471085056",
+  "excerpt": "To the experienced ear, the clatter of a diesel engine or the hum of a turbine speaks volumes. It is akin to a doctor listening to a patient's heartbeat. On any given factory floor, you can find a veteran technician who will tilt his head,…",
+  "tags": [
+   "acousticanalysis",
+   "heavyindustry",
+   "industrialai",
+   "manufacturing",
+   "predictivemaintenance"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 23,
+  "title": "Capability Debt in the AI-Augmented Codebase",
+  "date": "2026-07-06",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479717317849817088",
+  "excerpt": "When engineering organizations rush to demonstrate return on investment for their artificial intelligence initiatives, the entry-level developer workforce is often the first target for cost reduction. The logic seems simple: automate…",
+  "tags": [
+   "devops",
+   "enterpriseai",
+   "futureofwork",
+   "machinelearning",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 27,
+  "title": "Token Optimization in Agentic Developer Workflows",
+  "date": "2026-07-06",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479715738396688384",
+  "excerpt": "As developer workflows shift toward agentic AI systems like Anthropic Claude Code and Cursor, we are encountering a new type of architectural bottleneck: command-line interface noise. When an autonomous agent executes terminal commands to…",
+  "tags": [
+   "agenticai",
+   "developertools",
+   "rustlang",
+   "softwareengineering",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 22,
+  "title": "The Upgradable Beast",
+  "date": "2026-06-25",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475749297423134721",
+  "excerpt": "Imagine an operations manager arriving at a job site early in the morning, reviewing the fleet metrics, and noticing something unusual. Overnight, without a single technician touching the equipment, every excavator and forklift in the yard…",
+  "tags": [
+   "assetmanagement",
+   "automation",
+   "heavyequipment",
+   "heavymachinery",
+   "industrialai"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 26,
+  "title": "Accelerating Inference with Block Diffusion Speculative Decoding",
+  "date": "2026-06-25",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475748470314754049",
+  "excerpt": "As artificial intelligence systems transition from simple, single turn interactions toward complex, coordinated multiagent workflows, low latency inference becomes a primary engineering constraint. Standard autoregressive large language…",
+  "tags": [
+   "agenticai",
+   "blackwell",
+   "llminference",
+   "machinelearning",
+   "nvidia"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 22,
+  "title": "High Variance and the Decider Mandate",
+  "date": "2026-06-25",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475746659927478273",
+  "excerpt": "When we evaluate how artificial intelligence alters the enterprise, the conversation usually slides into a predictable binary: full automation versus basic productivity gains. At the recent AI and Society Forum at Massachusetts Institute…",
+  "tags": [
+   "aioperations",
+   "futureofwork",
+   "industrialai",
+   "machinelearning",
+   "mit"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 25,
+  "title": "Reverse Engineering the Physical World with SuperFrusta",
+  "date": "2026-06-13",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471352192289882112",
+  "excerpt": "In industrial robotics and the development of digital twins, a recurring challenge is the reality of mixed-vintage facilities. We frequently see state-of-the-art autonomous systems operating directly alongside legacy machinery. In these…",
+  "tags": [
+   "computervision",
+   "cvpr2026",
+   "digitaltwins",
+   "industrialai",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 22,
+  "title": "The Agentic Manager",
+  "date": "2026-06-13",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471350735528468480",
+  "excerpt": "A common question echoing across enterprise teams right now is, \"What 10% of my job should I focus on to maintain a competitive edge against AI? Marco Argenti, CIO at Goldman Sachs, recently addressed this in the Harvard Business Review,…",
+  "tags": [
+   "agenticai",
+   "artificialintelligence",
+   "enterprisearchitecture",
+   "futureofwork",
+   "management"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 24,
+  "title": "The Encoder-Free Multimodal Frontier",
+  "date": "2026-06-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468786078687326208",
+  "excerpt": "Gemma 4 12B by Google DeepMind / Google brings high-performance multimodal intelligence directly to consumer laptops. By bridging the gap between edge-friendly models and advanced large-scale architectures, it packages massive capabilities…",
+  "tags": [
+   "agenticai",
+   "googledeepmind",
+   "machinelearning",
+   "opensourceai",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 21,
+  "title": "Reasoning from First Principles and Human Data",
+  "date": "2026-06-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468784263220359170",
+  "excerpt": "In the discussion surrounding advanced artificial intelligence, a critical question remains: are we building systems to automate humans out of the loop, or are we designing tools to amplify human capability? The core philosophy of the…",
+  "tags": [
+   "artificialintelligence",
+   "enterpriseai",
+   "humanintheloop",
+   "machinelearning",
+   "microsoftai"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 21,
+  "title": "The Second Great Compression",
+  "date": "2026-05-27",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465478954477350912",
+  "excerpt": "The startup landscape is undergoing its most profound transformation since the internet revolution. A Harvard Business Review article by Vivian S. Lee, MD, PhD, MBA, Linda Mantia, and Jon McNeill outlines exactly how agentic artificial…",
+  "tags": [
+   "agenticai",
+   "entrepreneurship",
+   "futureofwork",
+   "innovation",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 23,
+  "title": "Macro Evals for Agentic Systems",
+  "date": "2026-05-27",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465475923874873345",
+  "excerpt": "When a multi-agent system fails, the root cause is rarely a single bad response. It is often a structural issue, such as a handoff occurring too late or a specialist agent missing a critical signal across multiple runs. To improve these…",
+  "tags": [
+   "agenticai",
+   "machinelearning",
+   "macroevals",
+   "openai",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 20,
+  "title": "Precision Mining and the Thinking Drill",
+  "date": "2026-05-27",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465473786687963136",
+  "excerpt": "For over a century, industrial mining has been defined by brute force. Massive rotary drills punch continuous holes into the earth, breaking ground based on geological surveys and core samples that might be weeks or months old. The…",
+  "tags": [
+   "automation",
+   "futureofmining",
+   "geosciences",
+   "heavyequipment",
+   "industrialai"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 20,
+  "title": "Building AI With the Shop Floor",
+  "date": "2026-05-24",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7464325820652806144",
+  "excerpt": "The industrial sector often operates under the assumption that artificial intelligence is a finished product that management buys and installs to automate the frontline workforce. A recent piece in the Harvard Business Review by Tracey…",
+  "tags": [
+   "accenture",
+   "futureofwork",
+   "industrialai",
+   "machinelearning",
+   "manufacturing"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 22,
+  "title": "The Orchestration Layer and Antigravity 2.0",
+  "date": "2026-05-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7463356080694149121",
+  "excerpt": "In developing agentic workflows, the hardest part is rarely the model's reasoning. The real friction is orchestration. Running multiple autonomous agents across different tasks usually turns into a chaotic management problem. Google just…",
+  "tags": [
+   "agenticai",
+   "google",
+   "machinelearning",
+   "softwareengineering",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 19,
+  "title": "Cooling the Cloud with Intelligence",
+  "date": "2026-05-14",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460686237503275008",
+  "excerpt": "In the age of cloud computing, some of the most critical heavy equipment does not move earth or manufacture goods. It fights heat. Picture a sprawling data center on a sweltering day. Industrial chillers, massive HVAC systems, and heavy…",
+  "tags": [
+   "automation",
+   "cloudcomputing",
+   "datacenters",
+   "greentech",
+   "industrialai"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 21,
+  "title": "Agentic AI Meets the Mainframe",
+  "date": "2026-05-14",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460685152793509888",
+  "excerpt": "We spend a lot of time discussing modern cloud architectures, but the reality is that the backbone of global civilization still runs on mainframes. Financial services, government infrastructure, and manufacturing production controls rely…",
+  "tags": [
+   "agenticai",
+   "cobol",
+   "enterpriseai",
+   "hypercubic",
+   "legacymodernization"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 19,
+  "title": "When Software Loses Its Head",
+  "date": "2026-05-14",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460683811186638848",
+  "excerpt": "For decades, enterprise software companies built their competitive moats around the user interface. Workforces developed muscle memory for navigating specific dashboards, and that operational friction kept companies locked into legacy…",
+  "tags": [
+   "agenticai",
+   "aioperations",
+   "dataarchitecture",
+   "enterprisesoftware",
+   "futureofwork"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 18,
+  "title": "Powering Up the Predictive Plant",
+  "date": "2026-05-07",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458290985446580224",
+  "excerpt": "In the heart of a power plant, a gas turbine the size of a bus spins at thousands of revolutions per minute, generating the electricity that entire cities depend on. The stakes are incredibly high. A single cracked turbine blade can…",
+  "tags": [
+   "automation",
+   "energysector",
+   "engineering",
+   "heavymachinery",
+   "industrialai"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 20,
+  "title": "The Consumerization of the Local Agent",
+  "date": "2026-05-07",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458289590999785472",
+  "excerpt": "Perplexity officially launched its Personal Computer app for Apple MacOS. This moves autonomous AI agents out of the cloud and directly onto your local machine. Why it matters: Until now, giving an AI agent control of your operating system…",
+  "tags": [
+   "agenticai",
+   "artificialintelligence",
+   "futureofwork",
+   "machinelearning",
+   "perplexity"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 18,
+  "title": "The New Lunar Society",
+  "date": "2026-05-07",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7457972904589201409",
+  "excerpt": "The first Industrial Revolution was ignited by a small group of engineers, scientists, and industrialists who called themselves the Lunar Society. Figures like James Watt and Josiah Wedgwood did not just invent hardware. They applied the…",
+  "tags": [
+   "artificialintelligence",
+   "engineering",
+   "futureofwork",
+   "industrialrevolution",
+   "manufacturing"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 17,
+  "title": "Cranes of the Future and the Power of Prediction",
+  "date": "2026-05-03",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7456525873702428672",
+  "excerpt": "High above a busy port, a gigantic container crane swings 40-ton cargo boxes with ease. But when that machine grinds to a halt because of an unexpected motor failure, the ripple effect is immediate. At a major terminal, a single crane…",
+  "tags": [
+   "automation",
+   "engineering",
+   "futureofwork",
+   "globaltrade",
+   "heavyequipment"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 19,
+  "title": "Deconstructing Model Capacity and the Incompressibility Framework",
+  "date": "2026-05-01",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455809762195333120",
+  "excerpt": "A fascinating paper published on April 27 offers an ingenious approach to understanding the physical limits of large language models. The author, Bojie Li at PineAI, introduces an incompressibility framework bounded by Shannon entropy to…",
+  "tags": [
+   "aiarchitecture",
+   "datascience",
+   "generativeai",
+   "machinelearning",
+   "modeldistillation"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 17,
+  "title": "The Human Accelerator",
+  "date": "2026-04-30",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455445788111060992",
+  "excerpt": "In the context of artificial intelligence, we often discuss the human in the loop as a safety mechanism or an auditor. But long before we talked about algorithmic guardrails, I experienced the human loop in a much more profound way.…",
+  "tags": [
+   "artificialintelligence",
+   "careerjourney",
+   "computationalscience",
+   "iisc",
+   "iitroorkee"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 16,
+  "title": "Warehouse Workhorses Go Smart",
+  "date": "2026-04-27",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7454364479850643456",
+  "excerpt": "When we think of heavy machinery, we usually picture massive excavators in open mines or tractors in open fields. But some of the most critical equipment operates entirely indoors. Consider a mega distribution center. Dozens of forklifts…",
+  "tags": [
+   "futureofwork",
+   "heavyequipment",
+   "industrialai",
+   "logistics",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 18,
+  "title": "The Autonomous Research Architecture of Deep Research Max",
+  "date": "2026-04-24",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7453242483007967232",
+  "excerpt": "The gap between a standard language model summarizing web pages and a system capable of enterprise-grade due diligence is massive. Google DeepMind recently announced a significant architectural step to close that gap with Deep Research…",
+  "tags": [
+   "agenticai",
+   "datascience",
+   "enterpriseai",
+   "generativeai",
+   "googledeepmind"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 15,
+  "title": "Ground Truth in Manufacturing",
+  "date": "2026-04-23",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452901629839724545",
+  "excerpt": "As James Leffew and I visited Caterpillar Inc. Lafayette to share our work with the facility, Sadia Khalil, PhD (Lead Data Scientist) and Gizem Agar, Ph.D. (Technical Product Manager) on my team visited Sanford, and shared the updates on…",
+  "tags": [
+   "caterpillar",
+   "datascience",
+   "iamcaterpillar",
+   "industrialai",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 15,
+  "title": "When Bolts Become Smart",
+  "date": "2026-04-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7451438534856441856",
+  "excerpt": "A towering telehandler on a massive construction site abruptly halts operations. The culprit isn't a blown engine or a catastrophic hydraulic failure. Instead, a few high-tension bolts on its jib have slowly worked themselves loose. It is…",
+  "tags": [
+   "aiinconstruction",
+   "automation",
+   "constructiontech",
+   "engineering",
+   "futureofwork"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 17,
+  "title": "Eliminating the KV Cache Bottleneck",
+  "date": "2026-04-15",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7450200328219672576",
+  "excerpt": "The parameter race gets the headlines, but the AI efficiency race is where production bottlenecks are actually solved. For long context language models, the primary bottleneck is the key-value cache. As context windows expand, storing the…",
+  "tags": [
+   "datacompression",
+   "generativeai",
+   "googleresearch",
+   "llm",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 14,
+  "title": "Closing the Gap in the Engine Center",
+  "date": "2026-04-15",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7450198966387785731",
+  "excerpt": "Artificial intelligence often feels abstract when discussed in a conference room or a laboratory. The true test of these systems occurs when they hit the floor of a high-precision facility like the Caterpillar Inc. Lafayette Facility. I…",
+  "tags": [
+   "aiinaction",
+   "caterpillar",
+   "digitaltransformation",
+   "engineeringleadership",
+   "gtc2026"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 15,
+  "title": "The Construction Site Conductor",
+  "date": "2026-04-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447747201235202048",
+  "excerpt": "A large construction project operates like a massive symphony. Excavators, haul trucks, and cranes are the instruments, and they all need to play in perfect time. However, reality often looks more like chaos. A loader sits idle because the…",
+  "tags": [
+   "aiinconstruction",
+   "automation",
+   "civilengineering",
+   "constructionmanagement",
+   "constructiontech"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 16,
+  "title": "The Anatomy of the Agent Harness",
+  "date": "2026-04-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447746538526765056",
+  "excerpt": "When an AI agent fails in production - forgetting previous steps, failing to execute tool calls, or cluttering its context window - engineers often blame the foundational model. However, the issue is rarely the model itself; it is the…",
+  "tags": [
+   "agenticai",
+   "aiarchitecture",
+   "devops",
+   "largelanguagemodels",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 13,
+  "title": "Solving the Last Mile of AI Transformation",
+  "date": "2026-04-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447744967734882304",
+  "excerpt": "Most organizations are finding themselves pilot-rich but transformation-poor. They have hundreds of active AI deployments, yet these often remain isolated islands of productivity. A recent Harvard Business Review piece by Karim Lakhani at…",
+  "tags": [
+   "agenticai",
+   "aiintegration",
+   "aistrategy",
+   "businesstransformation",
+   "changemanagement"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 14,
+  "title": "The Fuel Whisperer",
+  "date": "2026-04-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7446351813613871104",
+  "excerpt": "In heavy industries from mining to commercial shipping, fuel is liquid gold. Yet, on almost every large-scale construction site or extraction pit, a significant portion of that gold literally goes up in smoke. Consider a busy earthmoving…",
+  "tags": [
+   "automation",
+   "constructiontech",
+   "datascience",
+   "edgecomputing",
+   "emissionsreduction"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 15,
+  "title": "The Rise of Native Omnimodal Architectures",
+  "date": "2026-04-01",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445083712658079744",
+  "excerpt": "For years, the standard approach to building multimodal AI involved stitching disparate systems together. You would have a speech-to-text transcriber, a text-based language model for reasoning, and a text-to-speech generator for the…",
+  "tags": [
+   "aiarchitecture",
+   "generativeai",
+   "largelanguagemodels",
+   "machinelearning",
+   "omnimodalai"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 12,
+  "title": "Onboarding the Algorithmic Colleague",
+  "date": "2026-04-01",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445080886603214848",
+  "excerpt": "The primary challenge in adopting agentic AI is rarely the technology itself. It is the management of the work. While generative capabilities continue to expand rapidly, a massive gap remains on the human side of the equation. Recent data…",
+  "tags": [
+   "agenticai",
+   "aistrategy",
+   "artificialintelligence",
+   "automation",
+   "businessoperations"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 13,
+  "title": "Edge Intelligence at the Fringe",
+  "date": "2026-03-25",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442586264236855296",
+  "excerpt": "Oil rigs in the ocean, wind farms on distant hills, and surface mines in the desert all share a critical operational constraint. They operate with spotty connectivity and have zero time to wait for cloud computing latency. Consider an oil…",
+  "tags": [
+   "automation",
+   "connectivity",
+   "datascience",
+   "edgeai",
+   "edgecomputing"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 14,
+  "title": "The Return of the Adversarial Network",
+  "date": "2026-03-25",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442583908426321920",
+  "excerpt": "In software engineering, good architecture often rhymes. We are currently seeing a classic machine learning pattern reemerge in the world of autonomous agents: the Generative Adversarial Network. A recent technical deep dive from Anthropic…",
+  "tags": [
+   "agenticai",
+   "aiarchitecture",
+   "anthropic",
+   "devops",
+   "generativeai"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 10,
+  "title": "The Brain Fry Epidemic",
+  "date": "2026-03-25",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442582824789995522",
+  "excerpt": "The expectation was that artificial intelligence would make jobs easier. Instead, it is increasingly making workers exhausted. A recent Harvard Business Review x Boston Consulting Group (BCG) article highlights a growing phenomenon called…",
+  "tags": [
+   "agenticai",
+   "artificialintelligence",
+   "automation",
+   "burnout",
+   "cognitiveload"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 12,
+  "title": "The Augmented Mechanic and the Cyborg Crew",
+  "date": "2026-03-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440236347573022720",
+  "excerpt": "Servicing a giant piece of equipment can feel like solving a three dimensional puzzle where every single bolt and wire matters. Consider a young field technician facing a daunting task: diagnosing a complex fault in a massive power shovel…",
+  "tags": [
+   "ar",
+   "augmentedreality",
+   "automation",
+   "bigdata",
+   "constructiontech"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 9,
+  "title": "The Evaluation Crisis of Long-Running Agents",
+  "date": "2026-03-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440235125294141440",
+  "excerpt": "The industry is experiencing a rapid shift from conversational AI to autonomous, long-running agents. Tools like Anthropic's Claude Code, the viral open source project OpenClaw, and NVIDIA's newly announced NeMoClaw are proving that AI can…",
+  "tags": [
+   "agenticai",
+   "aievaluation",
+   "anthropic",
+   "claudecode",
+   "cybersecurity"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 13,
+  "title": "Rethinking the Residual Connection",
+  "date": "2026-03-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440234493065699328",
+  "excerpt": "For almost a decade, the residual connection has been treated as an untouchable truth in deep learning architecture. Every transformer layer simply adds its new output to a running sum of everything that came before it. A new paper from…",
+  "tags": [
+   "aiarchitecture",
+   "deeplearning",
+   "largelanguagemodels",
+   "machinelearning",
+   "moonshotai"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 11,
+  "title": "Mine of the Autonomous Future",
+  "date": "2026-03-15",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7438756960046456832",
+  "excerpt": "Deep in the Australian outback, a mechanical ballet plays out in the red dirt. Massive 250-ton haul trucks move iron ore day and night, tracing perfect lines across the terraced pits. The cabs are completely empty. The Problem: The Human…",
+  "tags": [
+   "aiinindustry",
+   "automation",
+   "autonomousvehicles",
+   "bigdata",
+   "constructiontech"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 12,
+  "title": "The Death of Agent Middleware",
+  "date": "2026-03-12",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437975244188860418",
+  "excerpt": "Building an agentic demo is easy. Shipping that agent safely to production is incredibly hard. After the thrill of a quick prototype, engineering teams usually hit a wall. They spend months building the hidden middleware required for…",
+  "tags": [
+   "agenticai",
+   "devops",
+   "machinelearning",
+   "microservices",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 8,
+  "title": "You Cannot Automate a Secret",
+  "date": "2026-03-11",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437524474888921088",
+  "excerpt": "When companies talk about Generative AI readiness, the conversation usually focuses on two things: the Data Layer and the Technology Layer. Organizations are spending millions cleaning up their data lakes and securing access to the best…",
+  "tags": [
+   "aistrategy",
+   "automation",
+   "businessoperations",
+   "changemanagement",
+   "futureofwork"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 10,
+  "title": "Digital Twin, Real Win",
+  "date": "2026-03-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7436430192698531840",
+  "excerpt": "Imagine a factory maintenance chief actively troubleshooting with a 3D digital replica of a power generator. It sounds like science fiction, but it is rapidly becoming the standard operating procedure for heavy industry. The core problem…",
+  "tags": [
+   "digitaltwin",
+   "heavyequipment",
+   "industrialai",
+   "manufacturing",
+   "mining"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 11,
+  "title": "Shrinking the Frontier with Data Quality",
+  "date": "2026-03-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435440892137693185",
+  "excerpt": "There is an ongoing assumption in AI that to get better multimodal reasoning, you just need to throw more parameters and more tokens at the problem. The industry is currently seeing models trained on over a trillion tokens just to…",
+  "tags": [
+   "artificialintelligence",
+   "machinelearning",
+   "microsoftresearch",
+   "multimodalai",
+   "opensource"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 7,
+  "title": "Handing Over the Mouse",
+  "date": "2026-03-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435166104718790657",
+  "excerpt": "For the past few years, artificial intelligence has lived inside a chat window. You type a question, it types an answer, and you do the actual work of moving that information into your systems. That era is ending. The new frontier is the…",
+  "tags": []
+ },
+ {
+  "series": "Lab Series",
+  "vol": 9,
+  "title": "The New Efficiency Frontier",
+  "date": "2026-02-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430053068085518336",
+  "excerpt": "We usually have to choose between the \"Smart Model\" (expensive, slow) and the \"Fast Model\" (cheap, less capable). Anthropic just broke that curve with Claude Sonnet 4.6. I have been testing it extensively for the past week, and it is…",
+  "tags": [
+   "anthropic",
+   "claude",
+   "generativeai",
+   "llm",
+   "softwareengineering"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 8,
+  "title": "The Decoupling of the Agent",
+  "date": "2026-02-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430052849549524992",
+  "excerpt": "We are used to AI being a destination. You go to a website to talk to the bot. But the future is likely headless. The agent runs on your infrastructure, and the interface is just wherever you happen to be. I was reading about OpenClaw (the…",
+  "tags": [
+   "ai",
+   "devops",
+   "localllm",
+   "openclaw",
+   "opensource"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 9,
+  "title": "From Dumb Iron to Smart Iron",
+  "date": "2026-02-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430050973303156736",
+  "excerpt": "Not every company can afford to replace their entire fleet with 2026 models. Most mining and construction sites are running mixed fleets where autonomous haul trucks work alongside bulldozers built thirty years ago. The challenge is that…",
+  "tags": [
+   "constructiontech",
+   "heavyequipment",
+   "iiot",
+   "mining",
+   "predictivemaintenance"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 8,
+  "title": "Green Giants on the Charge",
+  "date": "2026-02-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430049528151670784",
+  "excerpt": "The strangest sound on a modern construction site is silence. I recently watched a 30 ton hybrid excavator working in a dense urban zone. When the operator swung the boom, the diesel engine dropped to idle. The machine moved on pure…",
+  "tags": [
+   "constructiontech",
+   "electrification",
+   "heavyequipment",
+   "hybridexcavator",
+   "industrialai"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 6,
+  "title": "The Art of the Interruption",
+  "date": "2026-02-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430048359618363392",
+  "excerpt": "We typically assume that as AI agents become more autonomous, the human drifts further away from the controls. We imagine a world where we just click \"Go\" and walk away for coffee. A new research paper from Anthropic analyzes millions of…",
+  "tags": [
+   "agenticai",
+   "airesearch",
+   "anthropic",
+   "devops",
+   "futureofwork"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 5,
+  "title": "From Firefighter to Conductor",
+  "date": "2026-02-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430047727998160896",
+  "excerpt": "For the last five years, supply chain leaders have had one unspoken job title: Professional Firefighter. They wake up to a disruption, spend the day chasing parts or rescheduling trucks, and go to bed hoping the next day is quieter. They…",
+  "tags": [
+   "agenticai",
+   "futureofwork",
+   "logistics",
+   "orchestration",
+   "sap"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 7,
+  "title": "Cooling on the Edge",
+  "date": "2026-02-12",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427580238722834432",
+  "excerpt": "I once stood on an oil rig deck in the tropics where the ambient temperature was pushing 110 degrees. The massive diesel generators were running at peak load to keep the operation powered. Suddenly, the high temp alarms started screaming.…",
+  "tags": [
+   "coolingsystems",
+   "dieselgenerators",
+   "heavyequipment",
+   "industrialai",
+   "predictivemaintenance"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 7,
+  "title": "The Death of the Keyword Match",
+  "date": "2026-02-12",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427579281980948480",
+  "excerpt": "We often build search systems based on lexical matching. Does the query string match the database field? But Airbnb just released a paper detailing why this fails at scale, especially with features like \"flexible dates.\" When the search…",
+  "tags": [
+   "airbnb",
+   "informationretrieval",
+   "machinelearning",
+   "searchengineering",
+   "systemdesign"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 4,
+  "title": "The Tax Strategist vs. The Data Entry Clerk",
+  "date": "2026-02-12",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427577693170233344",
+  "excerpt": "Tax planning is one of the highest value services a financial advisor can offer. It is also the most operationally painful. Usually, it involves requesting PDF tax returns, manually keying data into planning software, and cross referencing…",
+  "tags": [
+   "ai",
+   "altruist",
+   "financialadvisors",
+   "fintech",
+   "taxplanning"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 6,
+  "title": "The Ghost in the Gearbox",
+  "date": "2026-02-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7426052216094093312",
+  "excerpt": "A veteran mechanic once told me that before a transmission fails, it starts to sing. It is a high-pitched, ghostly whine that sits just above the roar of the diesel engine. To the operator, it sounded normal. But deep inside the planetary…",
+  "tags": [
+   "ai",
+   "conditionmonitoring",
+   "heavyindustry",
+   "mining",
+   "predictivemaintenance"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 6,
+  "title": "Big Data is lazy. Smart Data is engineering",
+  "date": "2026-02-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425036214904184833",
+  "excerpt": "We are leaving the era where we dump every raw log into the training bucket and hope the model figures it out. Training on petabytes of redundant data is not just expensive. It is inefficient. The new frontier is Data Pruning. How do we…",
+  "tags": [
+   "algorithms",
+   "dataengineering",
+   "datapruning",
+   "googleresearch",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 3,
+  "title": "Accounting and AI are best friends",
+  "date": "2026-02-05",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425033846947008513",
+  "excerpt": "For years, the consensus has been that accounting would be the first profession to fall to AI. It involves rules, structure, and numbers—the perfect playground for automation. But new field evidence suggests the opposite is happening. I…",
+  "tags": [
+   "accounting",
+   "airesearch",
+   "fintech",
+   "futureofwork",
+   "mit"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 5,
+  "title": "The Scaling Laws of Agent Systems",
+  "date": "2026-01-31",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423208499230347264",
+  "excerpt": "We accept that adding parameters makes an LLM smarter. We call these the Scaling Laws. But for Agent Systems, we have been operating on intuition. We add a \"manager\" agent or split a task into three sub-agents, hoping it works better. It…",
+  "tags": [
+   "agenticai",
+   "airesearch",
+   "googledeepmind",
+   "machinelearning",
+   "multiagentsystems"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 5,
+  "title": "Tire Tracks of Insight",
+  "date": "2026-01-31",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423207508862947329",
+  "excerpt": "The sound of a mining tire blowing out is not a pop. It is a cannon blast. When a 14 foot tall tire ruptures, the explosion doesn't just destroy the rubber; it shatters the rim and grounds a critical production asset for shifts. That…",
+  "tags": [
+   "heavyequipment",
+   "industrialai",
+   "mining",
+   "otrtires",
+   "predictivemaintenance"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 4,
+  "title": "Hydraulic Heartache to Harmony",
+  "date": "2026-01-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419846718252404736",
+  "excerpt": "In excavators and dozers, hydraulic systems are the arteries that lift, dig, and push. A single compromised seal can escalate into a major failure, bringing a multimillion-dollar operation to a halt. The Data: A giant excavator that…",
+  "tags": [
+   "fluidpower",
+   "heavyequipment",
+   "hydraulicsystems",
+   "industrialai",
+   "mining"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 4,
+  "title": "The Inversion of the 80/20 Rule",
+  "date": "2026-01-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419845350124892161",
+  "excerpt": "We are used to spending 80% of our engineering time building the \"Happy Path. These are the standard, mundane workflows. The daily data movements, the standard approvals, the repetitive reporting. We spend weeks architecting these because…",
+  "tags": [
+   "aiengineering",
+   "devops",
+   "industrialai",
+   "lowcode",
+   "n8n"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 2,
+  "title": "Optimization without the math degree",
+  "date": "2026-01-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419765914641883137",
+  "excerpt": "In every factory I visit, the Plant Manager knows the constraints better than anyone else. They know the boiler cannot run past 400 degrees. They know Shift A cannot work back-to-back weekends. They know the storage tank only holds 5,000…",
+  "tags": [
+   "futureofwork",
+   "industrialai",
+   "manufacturing",
+   "microsoftresearch",
+   "operationsresearch"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 3,
+  "title": "The Self-Tuning Engine",
+  "date": "2026-01-17",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7418097649125494784",
+  "excerpt": "For decades, the best diagnostic tool on a mine site was a master mechanic’s ear. They could stand next to a 4,000-horsepower diesel engine, listen to the idle, and tell you if an injector was fouling or a valve was loose. But in modern…",
+  "tags": [
+   "dieselengine",
+   "edgecomputing",
+   "heavyindustry",
+   "industrialai",
+   "mining"
+  ]
+ },
+ {
+  "series": "Lab Series",
+  "vol": 3,
+  "title": "We assume 7 billion parameters is the floor for reasoning. It is not",
+  "date": "2026-01-15",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417409986680504320",
+  "excerpt": "A new paper from Amazon Web Services (AWS) completely dismantles the assumption that you need a massive model to build effective agents. They took a 350 million parameter model, the OPT-350M from Meta, and fine-tuned it specifically for…",
+  "tags": [
+   "aiengineering",
+   "aws",
+   "edgeai",
+   "industrialai",
+   "machinelearning"
+  ]
+ },
+ {
+  "series": "The Human Loop",
+  "vol": 1,
+  "title": "The \"Trust Gap\" is widening. And it’s not about the technology",
+  "date": "2026-01-12",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7416605876175814656",
+  "excerpt": "We talk a lot about \"Model Hallucinations.\" We don't talk enough about \"Management Hallucinations\" - specifically, the belief that if we just deploy a smart enough tool, employees will happily use it. New data from Harvard Business Review…",
+  "tags": [
+   "aiadoption",
+   "culture",
+   "futureofwork",
+   "hbr",
+   "leadership"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 2,
+  "title": "The Billion-Dollar Wear Problem",
+  "date": "2026-01-10",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7415839536993210369",
+  "excerpt": "If you own a dozer or an excavator, you likely know the rule. Half of your maintenance cost is in the undercarriage. It is the brutal interface between the machine and the earth. Whether it is the abrasive silica of a mine site, the impact…",
+  "tags": [
+   "agtech",
+   "heavyequipment",
+   "industrialai",
+   "mining",
+   "predictivemaintenance"
+  ]
+ },
+ {
+  "series": "Digital Iron",
+  "vol": 1,
+  "title": "Hydraulic Safety",
+  "date": "2026-01-04",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7413441385640427520",
+  "excerpt": "Hydraulic energy hides in hoses, accumulators, and valve blocks—until it doesn’t. We often fear the moving parts of a machine. But in heavy equipment, the invisible energy stored at 3,000+ PSI is just as deadly. Pinhole leaks can inject…",
+  "tags": [
+   "heavyequipment",
+   "hydraulicsafety",
+   "industrialai",
+   "predictivesafety",
+   "systemdesign"
+  ]
+ }
+]

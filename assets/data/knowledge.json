@@ -1,0 +1,131 @@
+{
+  "_comment": "Hand-written entries for the Ask About Somesh index, on top of what tools/build_embeddings.mjs derives from the other data files. url is relative to the site root, or absolute for external links.",
+  "entries": [
+    {
+      "id": "about",
+      "kind": "About",
+      "title": "Who Somesh is",
+      "url": "#top",
+      "text": "Somesh Mohapatra is an AI and analytics executive: Director of Analytics at Caterpillar leading data science, AI engineering and product management, with an MIT PhD in machine learning for materials and an MIT Sloan MBA in operations. A scientist, builder and operator who turns frontier AI research into running industrial systems."
+    },
+    {
+      "id": "role-now",
+      "kind": "About",
+      "title": "Current role at Caterpillar",
+      "url": "#trajectory",
+      "text": "Director of Analytics, Head of Data Science and Head of Product Management for Caterpillar's Modern Manufacturing digital platform. Leads a 90+ person organization across the US and India."
+    },
+    {
+      "id": "location",
+      "kind": "About",
+      "title": "Based in Dallas–Fort Worth, Texas",
+      "url": "#contact",
+      "text": "Location: Dallas–Fort Worth metroplex, Texas, USA. Works across the US, UK and India."
+    },
+    {
+      "id": "open-to",
+      "kind": "Contact",
+      "title": "Open to leadership roles, advisory and speaking",
+      "url": "#contact",
+      "text": "Interested in new roles and conversations with recruiters and hiring teams: Chief AI Officer, VP or Head of AI, Data and Analytics, board advisory in AI and manufacturing, and speaking on enterprise AI and digital twins."
+    },
+    {
+      "id": "contact",
+      "kind": "Contact",
+      "title": "How to get in touch",
+      "url": "#contact",
+      "text": "Reach Somesh by email or LinkedIn message. Contact details, resume and links to LinkedIn, Google Scholar and GitHub."
+    },
+    {
+      "id": "leadership-style",
+      "kind": "Philosophy",
+      "title": "How he leads AI organizations",
+      "url": "playbook/",
+      "text": "Central standards with federated delivery; one governed platform that makes every next team faster; risk-tiered model governance; and measuring decisions changed and value created rather than models built. Build the team that builds the models."
+    },
+    {
+      "id": "hands-on",
+      "kind": "Philosophy",
+      "title": "A hands-on builder",
+      "url": "#work",
+      "text": "Still writes code and builds prototypes: digital twin assistants on NVIDIA Omniverse, agentic RAG systems, on-device ML side projects, and this website's in-browser language model."
+    },
+    {
+      "id": "pnl",
+      "kind": "Experience",
+      "title": "Founder: ran a company with full P&L",
+      "url": "#tl-matsci",
+      "text": "Co-founded and ran MatSci AI, an AI startup for manufacturing, scaling from two founders to a 30-person company across the US and India with full P&L ownership: revenue, costs, margins, cash flow, hiring and sales."
+    },
+    {
+      "id": "digital-twins",
+      "kind": "Expertise",
+      "title": "Digital twins and physical AI",
+      "url": "#work-twin",
+      "text": "Builds physics-based digital twins of factories with NVIDIA Omniverse and OpenUSD, with conversational AI so plant managers can query production, inventory and maintenance in natural language. Work shown at NVIDIA GTC and CES 2026."
+    },
+    {
+      "id": "genai",
+      "kind": "Expertise",
+      "title": "Generative AI and RAG in the enterprise",
+      "url": "#work-chatdocs",
+      "text": "Designed ChatDocs, an enterprise GenAI platform using large language models, hybrid retrieval-augmented generation and fine-tuning to extract terms from supplier contracts and quality certificates, saving over a million dollars a year."
+    },
+    {
+      "id": "tedx",
+      "kind": "Talk",
+      "title": "TEDxBoston talk",
+      "url": "https://www.youtube.com/watch?v=kCuIpB-AuWo",
+      "text": "TEDxBoston talk on how artificial intelligence can make rare diseases rarer, based on PhD work designing peptides for antisense drug delivery."
+    },
+    {
+      "id": "education",
+      "kind": "Education",
+      "title": "Education: MIT PhD, MIT Sloan MBA, IIT Roorkee",
+      "url": "resume/",
+      "text": "Studied at MIT (PhD in machine learning for molecular design), MIT Sloan (MBA, Leaders for Global Operations) and IIT Roorkee (B.Tech, Institute Gold Medalist, rank 1 of 110). University degrees and schooling."
+    },
+    {
+      "id": "scholar",
+      "kind": "Link",
+      "title": "Google Scholar profile",
+      "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
+      "text": "Full list of publications and citations on Google Scholar: Nature Chemistry, ACS Central Science, Nature Machine Intelligence, JACS Au."
+    },
+    {
+      "id": "linkedin",
+      "kind": "Link",
+      "title": "LinkedIn profile",
+      "url": "https://www.linkedin.com/in/pikulsomesh/",
+      "text": "Somesh on LinkedIn, where he publishes the Digital Iron, The Human Loop and Lab Series essays."
+    },
+    {
+      "id": "github",
+      "kind": "Link",
+      "title": "GitHub",
+      "url": "https://github.com/pikulsomesh",
+      "text": "Code on GitHub, including this website and open-source research software."
+    },
+    {
+      "id": "resume",
+      "kind": "Page",
+      "title": "Resume",
+      "url": "resume/",
+      "text": "Full web resume with experience, education and certifications, printable to PDF."
+    },
+    {
+      "id": "writing",
+      "kind": "Page",
+      "title": "Writing and essays",
+      "url": "writing/",
+      "text": "Essay series on LinkedIn: Digital Iron on AI for heavy equipment, The Human Loop on AI and the future of work, and Lab Series on models, agents and infrastructure."
+    },
+    {
+      "id": "certs",
+      "kind": "Credentials",
+      "title": "Certifications",
+      "url": "resume/#certifications",
+      "text": "Certified Supply Chain Professional (CSCP), CFA Level I, CMA Part 1, Harvard AI Leadership program, NVIDIA multi-agent workflows, Lean Six Sigma."
+    }
+  ]
+}
