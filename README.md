@@ -6,7 +6,7 @@ Personal site of Somesh Mohapatra. Pure static HTML, CSS and vanilla JavaScript,
 
 ```
 index.html              Home: hero, trajectory, moments, capabilities, work, recognition, writing, contact
-playbook/               Eight beliefs × five industries, plus the multi-cloud reference stack
+playbook/               Full data & AI point of view: 10 beliefs, 12 chapters
 writing/                Digital Iron, The Human Loop and Lab Series, filterable
 research/               Papers, patent, open source, talks
 resume/                 Web resume; "Save as PDF" uses the print stylesheet
@@ -29,8 +29,8 @@ Edit the JSON in `assets/data/` and commit. No build is needed.
 | File | What it holds |
 | --- | --- |
 | `profile.json` | Proof numbers, timeline, capabilities, selected work, recognition, certifications, links |
-| `playbook.json` | Beliefs, how each applies by industry, the reference stack per cloud |
-| `publications.json` | Papers, patent, code, talks, citation stats |
+| `playbook.json` | Thesis, beliefs and chapters (blocks: p, list, table, cards, steps, layers, tiers, timeline, callout) |
+| `publications.json` | Papers, preprints, chapters, conference and invited talks, patent, code, service, citation stats |
 | `writing.json` | Essay index (title, date, LinkedIn URL, excerpt, tags) |
 | `knowledge.json` | Extra hand-written answers for the assistant |
 | `embeddings.json` | Generated; do not edit by hand |

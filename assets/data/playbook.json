@@ -1,102 +1,1189 @@
 {
-  "_comment": "Beliefs distilled from five industry points of view. Industry names are deliberately generic. 'apply' maps industry id -> how the belief plays out there; a missing key dims that industry.",
-  "industries": [
-    { "id": "medtech", "name": "Medical devices" },
-    { "id": "energy", "name": "Energy & utilities" },
-    { "id": "building", "name": "Building products" },
-    { "id": "minerals", "name": "Critical minerals" },
-    { "id": "agri", "name": "Agricultural genetics" }
-  ],
-  "beliefs": [
+  "_comment": "One complete point of view on running data and AI in an enterprise. No company or vendor names. Each chapter is a list of blocks; block types: p, list, table, cards, layers, steps, tiers, timeline, callout.",
+  "thesis": "My job is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.",
+  "principles": [
     {
-      "title": "Find the business's core learning problem first",
-      "why": "Every industry has one quantity whose improvement compounds. AI earns its budget by moving that number, not by adding a chatbot.",
-      "apply": {
-        "medtech": "Yield is a learning problem: each device built carries data on why the next will pass or fail.",
-        "energy": "The forecast is the product. Weather, load and price forecasts sit under every trade and dispatch.",
-        "minerals": "In a ramp-up, AI's first job is to shorten the learning curve on yield and time to qualification.",
-        "agri": "Decades of trial and field data are the science; the job is making them compound across seasons."
-      }
+      "title": "Start from the business's core learning problem",
+      "text": "Every business has one quantity whose improvement compounds: yield, forecast accuracy, cycle time, first-pass quality. AI earns its budget by moving that number."
+    },
+    {
+      "title": "Data is an enterprise asset, not an IT by-product",
+      "text": "Every critical domain needs a named owner, measurable quality, discoverability and accountable stewardship."
     },
     {
       "title": "Context is the moat; models are a commodity",
-      "why": "Everyone can rent a frontier model. What is scarce is trusted, permissioned, versioned context an agent can act on.",
-      "apply": {
-        "building": "A shared context layer is the direct answer to what should be centralized.",
-        "minerals": "Map data to the process it describes; structured and unstructured knowledge behind one permission model.",
-        "agri": "Model choice should be a routing decision you can change in an afternoon. The context layer is the center of gravity."
-      }
+      "text": "Anyone can rent a frontier model. The scarce asset is trusted, permissioned, versioned context an agent can act on."
+    },
+    {
+      "title": "The platform makes the second team faster than the first",
+      "text": "Any capable group can ship one solution. A platform justifies itself when the fifth team ships in a fraction of the first team's effort."
+    },
+    {
+      "title": "Autonomy is earned per workflow",
+      "text": "It is never a setting you switch on. The tier is set by how reversible an action is and what a wrong one costs."
     },
     {
       "title": "Govern by design, so the safe path is the fast path",
-      "why": "Controls belong in the platform: identity, guardrails, logging and change control, not a review gate at the end.",
-      "apply": {
-        "medtech": "Validated by design: locked model versions and risk-based assurance built into the platform.",
-        "energy": "Grid, markets and ratemaking each carry their own rules; the platform enforces them.",
-        "minerals": "Process IP is the crown jewel, and every architecture choice is tested against leaking it.",
-        "agri": "Autonomy is a permission earned per workflow, never a setting you turn on."
-      }
+      "text": "Identity, guardrails, policy and logging live in the platform, not in a committee at the end."
     },
     {
-      "title": "Risk-tier every model",
-      "why": "A meeting summarizer and a model that sets a process parameter do not deserve the same review. Proportion is what lets you move fast where it is safe.",
-      "apply": {
-        "medtech": "Four tiers, from direct product-quality impact (full validation) down to productivity tools.",
-        "energy": "A model that shapes a market offer or a rate filing gets a different review from a summarizer.",
-        "minerals": "Tiered review from email assistants to models recommending furnace setpoints.",
-        "agri": "Authority tiers decide what an agent may read, propose or execute."
-      }
-    },
-    {
-      "title": "Build once, reuse many times",
-      "why": "A platform justifies itself only when the fifth team ships in a fraction of the first team's effort.",
-      "apply": {
-        "medtech": "Shared data, MLOps and validation first; then every plant and planner reuses them.",
-        "building": "If the same capability is rebuilt in three teams, that is a platform gap, not a talent gap.",
-        "minerals": "Composable and compostable: modular parts, each replaceable in 18 months.",
-        "agri": "Golden paths: the first delivery is a paved road with one solution on it."
-      }
-    },
-    {
-      "title": "Central standards, federated delivery",
-      "why": "The enterprise owns architecture, security and reusable platforms. Business units own their data and outcomes. The line is drawn explicitly.",
-      "apply": {
-        "energy": "A federated organization with one standard and clear decision rights.",
-        "building": "Centralize the rules of the road; federate ownership of domain data.",
-        "agri": "Explicit RACI between the platform team and the domains it serves."
-      }
-    },
-    {
-      "title": "Measure value created, not models built",
-      "why": "A model matters only when it changes a decision: a bid, a work order, a capital plan. Start from the decision and its owner.",
-      "apply": {
-        "medtech": "Forecasts are measured in procedures served; a stockout is a delayed procedure.",
-        "energy": "Decisions, not models. Every initiative names the decision it changes.",
-        "building": "Adoption, quality, reuse and speed, each traced to margin, revenue or customer outcome.",
-        "agri": "Evaluation is the product, not the QA step."
-      }
+      "title": "Evaluation is the product, not the QA step",
+      "text": "The difference between a demo and a capability is that someone can tell you, on demand, whether it still works."
     },
     {
       "title": "Every answer has a token bill",
-      "why": "Inference cost per agentic workflow is rising. The harness, caching and routing matter more than the model's horsepower.",
-      "apply": {
-        "building": "Most of the token bill is avoidable with context, caching and routing.",
-        "agri": "Cost control is a platform capability every team inherits for free."
-      }
+      "text": "Most of it is avoidable. The harness matters more than the horsepower."
+    },
+    {
+      "title": "Central standards, federated delivery",
+      "text": "Do once, centrally, what must be identical. Leave with the domains what needs proximity. Write the line down."
+    },
+    {
+      "title": "Measure decisions changed and value created",
+      "text": "Not models built, pilots run or people trained. If Finance would not sign the number, it is not a result."
     }
   ],
-  "stack": {
-    "_comment": "Reference architecture layers with the native service on each cloud.",
-    "clouds": ["AWS", "Azure", "Google Cloud"],
-    "layers": [
-      { "layer": "Systems of record", "desc": "ERP, MES, PLM, historians", "AWS": "SAP on AWS · IoT SiteWise", "Azure": "SAP on Azure · IoT Hub", "Google Cloud": "SAP on GCP · Manufacturing Data Engine" },
-      { "layer": "Lakehouse", "desc": "Open tables, lineage, quality", "AWS": "S3 + Iceberg · Glue", "Azure": "Fabric OneLake", "Google Cloud": "BigQuery + BigLake" },
-      { "layer": "Context layer", "desc": "Catalog, semantics, knowledge", "AWS": "DataZone · Kendra", "Azure": "Purview · AI Search", "Google Cloud": "Dataplex · Vertex AI Search" },
-      { "layer": "Model platform", "desc": "Training, registry, serving", "AWS": "SageMaker", "Azure": "Azure Machine Learning", "Google Cloud": "Vertex AI" },
-      { "layer": "Foundation models", "desc": "Routed, evaluated, cached", "AWS": "Bedrock", "Azure": "Azure AI Foundry", "Google Cloud": "Vertex AI Model Garden" },
-      { "layer": "Agents", "desc": "Tools, memory, authority tiers", "AWS": "Bedrock AgentCore", "Azure": "AI Foundry Agent Service", "Google Cloud": "Vertex AI Agent Engine" },
-      { "layer": "Simulation & twins", "desc": "Physics, OpenUSD, scenarios", "AWS": "NVIDIA Omniverse on EC2", "Azure": "NVIDIA Omniverse on Azure", "Google Cloud": "NVIDIA Omniverse on GCP" },
-      { "layer": "Experience", "desc": "Chat, 3D, dashboards", "AWS": "Amplify · QuickSight", "Azure": "Power BI · Copilot Studio", "Google Cloud": "Looker · Firebase" }
-    ]
-  }
+  "chapters": [
+    {
+      "id": "strategy",
+      "num": "01",
+      "title": "Strategy & value",
+      "lead": "Enterprises rarely need a parallel AI organization sitting beside the business. They need a small capability that makes every existing team measurably faster at what it already does. The test for any initiative: does it make an existing team's job easier, or does it add one more layer to manage?",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "The flywheel I am trying to start"
+        },
+        {
+          "type": "steps",
+          "variant": "loop",
+          "items": [
+            {
+              "title": "Trusted data",
+              "text": "Owned domains with measured quality."
+            },
+            {
+              "title": "Reusable data products and context",
+              "text": "Defined once, used by every team."
+            },
+            {
+              "title": "Shared AI platform",
+              "text": "Gateway, evaluation, agents and paved paths."
+            },
+            {
+              "title": "Better employee and customer experiences",
+              "text": "Answers inside the tools people already use."
+            },
+            {
+              "title": "Faster decisions and innovation",
+              "text": "Cycle time, quality and cost move."
+            },
+            {
+              "title": "More value, learning and adoption",
+              "text": "Which feeds richer data back into the loop."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "How I choose what goes first"
+        },
+        {
+          "type": "p",
+          "text": "A portfolio is a sequencing problem, not a wish list. The first capabilities set precedent, so they need to be the ones most likely to succeed and most likely to build the shared foundations everything else depends on. I score candidates on four filters."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "High volume",
+              "text": "Enough repetitions a year that a small per-transaction gain compounds into something worth the engineering."
+            },
+            {
+              "title": "Document-bound",
+              "text": "The work is reading, extracting and deciding from text and records, which is where current models are strongest."
+            },
+            {
+              "title": "Rules exist",
+              "text": "There is a policy, playbook or standard to point to, so correctness can be checked rather than debated."
+            },
+            {
+              "title": "Reversible",
+              "text": "A wrong output is caught and corrected cheaply. Irreversible processes wait until the platform has a track record."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value sits, and it is the work my research career prepared me for."
+        },
+        {
+          "type": "h",
+          "text": "The value case: what I will and will not claim"
+        },
+        {
+          "type": "table",
+          "head": [
+            "I will report",
+            "I will not report"
+          ],
+          "rows": [
+            [
+              "Cost per transaction before and after, with Finance agreeing the baseline",
+              "Hours saved multiplied by a loaded rate, presented as cash"
+            ],
+            [
+              "Cycle time measured end to end, not just for the automated step",
+              "Headcount reductions not agreed with the leader who owns that headcount"
+            ],
+            [
+              "Straight-through processing and exception rates, trended",
+              "Revenue attributed to a productivity tool"
+            ],
+            [
+              "Capacity redeployed, named by team and role",
+              "Pilot results extrapolated to enterprise scale without a scaled measurement"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "One inflated benefit claim that fails an audit costs more credibility than three honest quarters earn. I would rather report a smaller verified number than a larger arguable one."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "num": "02",
+      "title": "Data foundation",
+      "lead": "Most AI disappointment traces back to data, not models. So no model work starts until the data it depends on is owned, defined and measured.",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "Ownership with names attached"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Owner",
+              "text": "A business leader accountable for the domain's data and for hitting its quality targets."
+            },
+            {
+              "title": "Steward",
+              "text": "Owns definitions, business rules and the glossary for the domain."
+            },
+            {
+              "title": "Custodian",
+              "text": "Owns the pipelines, access controls and operational health of the data."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "One pipeline, three layers of trust"
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Sources",
+              "text": "ERP, MES, CRM, PLM, historians, documents and sensors."
+            },
+            {
+              "title": "Bronze",
+              "text": "Raw ingest, immutable and replayable."
+            },
+            {
+              "title": "Silver",
+              "text": "Cleansed and conformed against the quality framework."
+            },
+            {
+              "title": "Gold",
+              "text": "Curated data products with owners and contracts."
+            },
+            {
+              "title": "Catalog & lineage",
+              "text": "Meaning is looked up, not inferred, from source column to decision."
+            },
+            {
+              "title": "Agents & decisions",
+              "text": "Analytics, models and agents consume Gold through the context layer."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Quality you can see"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Dimension",
+            "The question it answers"
+          ],
+          "rows": [
+            [
+              "Completeness",
+              "Are the required fields and records present?"
+            ],
+            [
+              "Conformance",
+              "Does the data follow standards, formats, units and plausible ranges?"
+            ],
+            [
+              "Consistency",
+              "Does the same business object mean the same thing in every system?"
+            ],
+            [
+              "Accuracy & integrity",
+              "Do values reflect physical reality, and do relationships hold?"
+            ],
+            [
+              "Timeliness & alignment",
+              "Is it fresh enough for the decision, and aligned in time across sensors and systems?"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "I track coverage in two directions: whether a standard exists for a domain, and whether it is actually in use at every site and system. \"We have a standard\" and \"the standard is used everywhere\" are different claims, and federation succeeds or fails on the second."
+        },
+        {
+          "type": "h",
+          "text": "No model before the data is ready"
+        },
+        {
+          "type": "p",
+          "text": "Every use case earns a data readiness score, technical and business, before development starts."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Technical readiness",
+            "Business readiness"
+          ],
+          "rows": [
+            [
+              "Quality measured on the five dimensions",
+              "Every term the use case depends on is defined, owned and approved"
+            ],
+            [
+              "Named owner, steward and custodian",
+              "The process is documented and mapped to its data"
+            ],
+            [
+              "Column-level lineage from source to decision",
+              "The decision is mapped: who makes it today and what will change"
+            ],
+            [
+              "Every Gold metric has a definition, unit, logic, valid range and owner",
+              "A named business owner and a measured baseline exist"
+            ],
+            [
+              "Access rights and retention are clear",
+              "Legal basis, training and procedure updates are planned"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "Data quality is also an economics lever. Once meaning is looked up rather than inferred, every downstream model call spends fewer tokens working out what the data means."
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "num": "03",
+      "title": "Context & knowledge",
+      "lead": "The context layer is where a company's advantage actually lives. Models change every few months; decades of operating records, designs, procedures and expert know-how do not.",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "A semantic layer",
+              "text": "Business definitions fixed once, so \"yield\", \"on-time\" or \"active customer\" mean one thing to every person and every agent."
+            },
+            {
+              "title": "Retrieval beyond vectors",
+              "text": "Vector, graph and structured retrieval together. Many enterprise questions are relational, and graphs are the natural shape for lineage, networks and dependencies."
+            },
+            {
+              "title": "Entitlements inherited from source",
+              "text": "An agent can never surface data the requesting person could not open directly. Permissions travel with the data."
+            },
+            {
+              "title": "Lineage and provenance",
+              "text": "Every answer traces to the record that produced it, which is also how AI-assisted work earns a defensible audit trail."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Three levels of return"
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Level 1 · Productivity",
+              "text": "Specifications, procedures, design rules and quality records become discoverable and reusable."
+            },
+            {
+              "title": "Level 2 · Innovation speed",
+              "text": "New projects start from approved context, data products and components instead of rebuilding them."
+            },
+            {
+              "title": "Level 3 · New products",
+              "text": "Trusted context can eventually power customer-facing services. A strategic option, validated before it is committed."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tacit knowledge deserves its own program. In plants and labs the most valuable know-how lives in experienced people. Capturing it as structured guidance, with their names on it, both protects the company and gives those experts the recognition they rarely get."
+        }
+      ]
+    },
+    {
+      "id": "platform",
+      "num": "04",
+      "title": "AI platform",
+      "lead": "Seven layers, each with one owner and one reason to exist. A layer belongs in the center only if doing it once, identically, is clearly better than doing it many times in context.",
+      "blocks": [
+        {
+          "type": "layers",
+          "items": [
+            {
+              "n": "L7",
+              "title": "Domain solutions",
+              "owner": "Federated",
+              "text": "Built by domain teams on the paved path. Use-case selection, workflow redesign and domain evaluation criteria stay close to the work."
+            },
+            {
+              "n": "L6",
+              "title": "Golden paths",
+              "owner": "Central",
+              "text": "Scaffolds, SDKs, reference apps, release gates and templates for each authority tier. This is the product the platform team actually sells."
+            },
+            {
+              "n": "L5",
+              "title": "Evaluation & observability",
+              "owner": "Central, non-negotiable",
+              "text": "Golden datasets, regression gates, tracing, drift watch and continuous production sampling."
+            },
+            {
+              "n": "L4",
+              "title": "Agent runtime & orchestration",
+              "owner": "Central",
+              "text": "Tool registry, planning and memory, human-in-the-loop checkpoints, rollback and a tested kill switch."
+            },
+            {
+              "n": "L3",
+              "title": "Model gateway",
+              "owner": "Central, mandatory",
+              "text": "One path to every model: routing and fallback, caching, policy and PII filters, cost attribution per team."
+            },
+            {
+              "n": "L2",
+              "title": "Context",
+              "owner": "Central standards, domain-curated",
+              "text": "Semantic layer, vector, graph and structured retrieval, inherited entitlements, lineage. The moat."
+            },
+            {
+              "n": "L1",
+              "title": "Data estate",
+              "owner": "Domains, contracted to the platform",
+              "text": "Operational, engineering, commercial and enterprise data, delivered as governed data products."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Governance spans every layer rather than sitting as a gate at the end. Cybersecurity, enterprise architecture, legal and finance are partners in the design, not reviewers of the result."
+        },
+        {
+          "type": "h",
+          "text": "The gateway is the control point"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Control",
+              "text": "Policy enforcement, PII and trade-secret filters, logging, data-residency routing and per-request identity. One place to change a rule and one place to prove it was applied."
+            },
+            {
+              "title": "Economics",
+              "text": "Cost attributed to the requesting team on every call, routing by task class, semantic caching and budget alerts. Finance sees a real bill by domain."
+            },
+            {
+              "title": "Optionality",
+              "text": "Provider abstraction, so a workload can move between model vendors or clouds as prices and terms change. Negotiating leverage becomes a design property."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Retrofitting a gateway after eighteen months of direct model calls is a year of painful work. A gateway that only routes, logs and attributes cost is worth more in month two than a complete platform in month nine, because it starts producing the usage data that tells you what to build next."
+        },
+        {
+          "type": "h",
+          "text": "The golden path, end to end"
+        },
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Intake · 1 week",
+              "text": "A one-page business case: the workflow, the decision changed, the baseline, the named owner, the authority tier and the data. No production owner, no start."
+            },
+            {
+              "title": "Scaffold · day one",
+              "text": "A repository that already works, with gateway auth, approved retrieval, tracing, an evaluation stub and CI. The first commit is domain logic."
+            },
+            {
+              "title": "Evaluate · continuous",
+              "text": "No golden dataset, no promotion. Domains write the criteria; the platform runs the harness and regression gates on every change."
+            },
+            {
+              "title": "Review · 3 days",
+              "text": "One parallel review of security, privacy, responsible AI and architecture against a published checklist scaled to the tier."
+            },
+            {
+              "title": "Deploy",
+              "text": "Production means operated: a named owner, on-call, dashboards for quality, latency and cost, and a documented rollback."
+            },
+            {
+              "title": "Measure · 30/90/180 days",
+              "text": "The intake baseline is re-measured with Finance. Capabilities that miss their threshold are fixed or retired."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "Step a builder faces",
+            "Without a paved path",
+            "On the golden path"
+          ],
+          "rows": [
+            [
+              "Get model access",
+              "Open a vendor account, wait on legal, manage keys locally",
+              "One gateway credential, already reviewed"
+            ],
+            [
+              "Reach trustworthy data",
+              "Find a source, negotiate access, re-implement permissions",
+              "Registered context sources with entitlements and lineage"
+            ],
+            [
+              "Know if it works",
+              "Spot-check by hand and argue in a meeting",
+              "Golden dataset, scored runs, regression gate"
+            ],
+            [
+              "Pass review",
+              "Four sequential queues and unclear standards",
+              "One parallel, tier-scaled review"
+            ],
+            [
+              "Run it",
+              "Whoever built it, until they change roles",
+              "Named owner, on-call, dashboards, rollback"
+            ],
+            [
+              "Prove value",
+              "A slide asserting hours saved",
+              "A baseline re-measured with Finance"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "The commitment I publish: intake decisions in five working days, a scaffold the day a use case is approved, combined review in three days for lower tiers. A central function that is slow and mandatory is worse than none, so if we miss, domains get a documented exception path."
+        },
+        {
+          "type": "h",
+          "text": "Physical AI and digital twins"
+        },
+        {
+          "type": "p",
+          "text": "For operations-heavy businesses the platform extends into simulation. A physics-grounded digital twin of a plant, line or fleet becomes a place to test schedules, layouts and maintenance strategies before touching the real world, and a conversational layer lets planners query it in plain language. Physics stays in the loop: thermal limits, capacity constraints and degradation curves bound what a model may say, and hybrid physics-ML beats either alone when failure data is thin."
+        }
+      ]
+    },
+    {
+      "id": "agents",
+      "num": "05",
+      "title": "Agentic systems",
+      "lead": "Autonomy is not a property of the technology. It is a permission granted per workflow, set by two questions: how reversible is the action, and how expensive is a wrong one?",
+      "blocks": [
+        {
+          "type": "tiers",
+          "items": [
+            {
+              "n": "T1",
+              "title": "Assist",
+              "risk": "Reversible · low cost of error",
+              "may": "Retrieve, summarize, draft and explain. Output goes to a person who decides what to do with it.",
+              "control": "The human is the actor. The agent never writes anywhere.",
+              "evidence": "Golden dataset, citation to source on every claim, light security review, usage telemetry."
+            },
+            {
+              "n": "T2",
+              "title": "Propose",
+              "risk": "Reversible · moderate cost",
+              "may": "Prepare a complete action, such as a plan change, a case response or a document, and stage it for approval.",
+              "control": "Explicit human approval before anything commits, logged with the reasoning shown.",
+              "evidence": "Everything in T1, plus approval and override rates and a review of what humans corrected."
+            },
+            {
+              "n": "T3",
+              "title": "Act within bounds",
+              "risk": "Reversible · high volume",
+              "may": "Execute inside declared limits on value, scope and time. Escalate anything outside them.",
+              "control": "Bounds enforced in the runtime, not the prompt. Kill switch and one-step rollback are mandatory.",
+              "evidence": "Everything in T2, plus shadow mode until agreement with humans clears a threshold, a full audit trail and sampled human review."
+            },
+            {
+              "n": "T4",
+              "title": "Operate",
+              "risk": "Hard to reverse · high consequence",
+              "may": "Own a recurring process end to end and report by exception.",
+              "control": "A named executive is accountable. Dual control on irreversible steps. Formal change management.",
+              "evidence": "Sustained T3 performance, a documented failure-mode analysis, and sign-off from the business owner, legal and cybersecurity."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "The rules that make tiers real"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The tier is declared at intake and enforced by the runtime, not asserted in a design document.",
+            "Tiers are earned, not assigned. Nothing launches above T2, and promotion requires evidence from live operation.",
+            "Every agent has one named human owner who is accountable for its behavior and reachable when it misbehaves.",
+            "Anything touching regulatory submissions, safety, product release or contractual commitments stays at T2 by default, however good the model gets.",
+            "The kill switch is tested. An untested rollback is not a rollback."
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Four patterns worth standardizing"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Grounded answer",
+              "text": "Retrieve, ground, answer, cite. The workhorse. Measure retrieval quality, not just the answer."
+            },
+            {
+              "title": "Structured extraction",
+              "text": "Document to schema with confidence scores and a human queue for low-confidence fields. The highest near-term return in most enterprises."
+            },
+            {
+              "title": "Tool-using workflow",
+              "text": "Plan, call registered tools, check results, escalate. Tools are registered and permissioned centrally, never ad hoc."
+            },
+            {
+              "title": "Monitor and escalate",
+              "text": "Watch a stream, detect a condition, raise a case with the evidence attached."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "What I would not do: build a multi-agent architecture because it is interesting. Most enterprise problems are one well-grounded model with good retrieval and a clean tool interface. Multi-agent designs multiply failure modes, cost and debugging effort, and should be used only where a single agent has demonstrably failed."
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "num": "06",
+      "title": "Governance, risk & responsible AI",
+      "lead": "Speed and control only conflict when governance is a committee. When it is written standards plus automated enforcement, both come from the same place.",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "What \"production-ready\" means, written down"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Requirement",
+            "The bar",
+            "How it is enforced"
+          ],
+          "rows": [
+            [
+              "Validation",
+              "A golden dataset with domain-written criteria, scored above an agreed threshold, with a regression gate on every model, prompt or retrieval change",
+              "Automated in CI; a failing gate blocks promotion"
+            ],
+            [
+              "Traceability",
+              "Every output traceable to the sources and tool calls that produced it, retained as long as legal requires",
+              "Tracing on by default; absence fails the gate"
+            ],
+            [
+              "Monitoring",
+              "Live quality, latency, cost, usage and escalation dashboards with alert owners",
+              "Provisioned by the platform at deploy"
+            ],
+            [
+              "Ownership",
+              "A named technical owner, a named business owner, an on-call path and a tested rollback",
+              "Recorded in the service registry; no owner, no production"
+            ],
+            [
+              "Risk management",
+              "Declared tier, runtime-enforced bounds, documented failure modes, a review cadence matched to the tier",
+              "Enforced by the runtime, reviewed at tier depth"
+            ],
+            [
+              "Entitlements",
+              "The system never surfaces data the user could not access directly",
+              "Inherited from source at the context layer"
+            ]
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Risk-tier every model, not just every agent"
+        },
+        {
+          "type": "p",
+          "text": "A meeting summarizer and a model that sets a process parameter, prices a contract or informs a regulatory filing do not deserve the same review. Higher tiers get locked model versions, formal change control, independent validation by people outside the build line, and drift monitoring with management-of-change when the process shifts. Lower tiers get a light, fast path. Proportion is what lets the organization move quickly where it is safe."
+        },
+        {
+          "type": "h",
+          "text": "Anchored in recognized frameworks"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Framework",
+            "How I use it"
+          ],
+          "rows": [
+            [
+              "NIST AI RMF and its Generative AI Profile",
+              "The organizing structure: govern, map, measure, manage"
+            ],
+            [
+              "ISO/IEC 42001",
+              "The target AI management system, with certification readiness as an option where customers need evidence"
+            ],
+            [
+              "ISO/IEC 23894",
+              "The AI risk-assessment method"
+            ],
+            [
+              "EU AI Act",
+              "Applied wherever operations reach the EU; most industrial uses are not high-risk, but HR and employment uses can be"
+            ],
+            [
+              "OWASP LLM and agentic guidance, MITRE ATLAS",
+              "Threat taxonomy for red-teaming"
+            ],
+            [
+              "NIST CSF 2.0, SP 800-53, IEC 62443",
+              "Cyber and OT controls owned by security, with AI controls mapped onto them"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The frameworks converge on four things: risk-based classification, transparency, meaningful human oversight and accountability. Every higher-tier review also asks three ethical questions: how serious could the harm be, who is most vulnerable, and who holds responsibility?"
+        },
+        {
+          "type": "h",
+          "text": "A short policy stack and a few clear forums"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Policy stack",
+              "text": "AI policy and principles; acceptable use; risk classification; data for AI; model and agent lifecycle; third-party AI; AI incident response."
+            },
+            {
+              "title": "Steering committee · quarterly",
+              "text": "Strategy, risk appetite, funding and the highest-tier approvals, with internal audit observing."
+            },
+            {
+              "title": "Governance council · bi-weekly",
+              "text": "Lower-tier approvals, policy, exceptions and incidents, with security, legal, privacy and data governance."
+            },
+            {
+              "title": "Data council and site champions · monthly",
+              "text": "Standards, glossary, quality targets and data contracts; adoption, feedback and intake from the front line."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Risks I treat as first-class"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Intellectual property and trade secrets: contractual and technical guarantees that no vendor trains on company data, and classification-aware routing so the most sensitive material reaches only approved deployments.",
+            "Regulatory and claims exposure: anything that could become a submission or a public claim stays human-approved with full traceability, indefinitely.",
+            "Data residency and cross-border transfer: the gateway routes by data classification and jurisdiction, because asking each team to get it right is not a control.",
+            "Entitlement leakage: zero tolerance, measured and reported."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "num": "07",
+      "title": "Economics of AI",
+      "lead": "Enterprise AI programs rarely fail on capability. They stall when unit economics turn out to be indefensible at scale: a per-query cost that was invisible for forty pilot users becomes a line item someone has to defend for four thousand.",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "Where the money actually goes"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Context bloat",
+              "text": "Stuffing everything retrievable into the window because it is easier than retrieving well. Usually the largest avoidable line."
+            },
+            {
+              "title": "Over-powered routing",
+              "text": "Sending classification and extraction to a frontier model because it was the scaffold default."
+            },
+            {
+              "title": "Retry and loop waste",
+              "text": "Agents that re-plan on ambiguity instead of escalating. Cost grows non-linearly."
+            },
+            {
+              "title": "No caching",
+              "text": "The same questions answered from scratch hundreds of times a day."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "The optimization ladder"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Move",
+            "What changes",
+            "Cost to implement"
+          ],
+          "rows": [
+            [
+              "Retrieval discipline",
+              "Rank and trim context to what the task needs; often better accuracy too",
+              "Low"
+            ],
+            [
+              "Task-class routing",
+              "Small models for classification and extraction, frontier models only for open reasoning",
+              "Low once the gateway exists"
+            ],
+            [
+              "Semantic caching",
+              "Near-duplicate questions served from cache with freshness rules",
+              "Moderate"
+            ],
+            [
+              "Batch versus interactive",
+              "Anything not waiting on a person moves to scheduled batch",
+              "Low"
+            ],
+            [
+              "Distillation",
+              "A small model trained on a large one's traces for a narrow, stable, high-volume task",
+              "High; justified only at real volume"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The harness matters more than the horsepower. A cheap model that starts with company context, the right skill pack and clean tools routinely beats an expensive model that has to research what the company is on every call."
+        },
+        {
+          "type": "h",
+          "text": "What I report every month"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Cost per outcome by capability, trended: the headline number",
+            "Spend by domain, attributed at the gateway and reconciled with Finance",
+            "Cache hit rate, and the spend it avoided",
+            "Routing mix by model class, with drift flagged",
+            "Idle capability spend: what we pay for things nobody uses"
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Build, buy and partner"
+        },
+        {
+          "type": "p",
+          "text": "Partners accelerate work we have specified; they never define the architecture. Anything load-bearing, such as the gateway, the evaluation harness and the context layer, is owned by employees, whoever writes the first version. Every vendor faces three tests: can we leave within two quarters, does the contract prohibit training on our data, and does using it deepen our own team's capability or replace it?"
+        }
+      ]
+    },
+    {
+      "id": "organization",
+      "num": "08",
+      "title": "Organization & talent",
+      "lead": "The org chart is a leverage question, not a staffing question. A deliberately small central core owns what must be done once; embedded practitioners sit with the business; an independent function validates the highest-risk models.",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Embedded pods",
+              "text": "Close to the decision. Data scientists and AI engineers sit with operations, supply chain, R&D, commercial and finance, with a business owner setting priorities and measuring value."
+            },
+            {
+              "title": "Central platform & methods",
+              "text": "Built once, used everywhere: platform engineering, evaluation and operations, architecture and governance."
+            },
+            {
+              "title": "Independent validation",
+              "text": "A small model-risk function that validates the highest-tier models and reports outside the build line, so the organization never grades its own work."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Who decides what"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Role",
+            "Decides"
+          ],
+          "rows": [
+            [
+              "Business domains",
+              "Which use cases are worth doing, what good output looks like, whether to accept the residual risk of a tier, when a capability stops being worth operating"
+            ],
+            [
+              "Data & AI leadership",
+              "Architecture and the paved path, the production bar and release gates, model routing and cost controls, what is built centrally versus federated"
+            ],
+            [
+              "Executive sponsor",
+              "Ambition and risk appetite, funding, cross-business trade-offs, the highest-tier authorizations"
+            ],
+            [
+              "Security, legal, risk",
+              "Enterprise controls, the operational-technology boundary, regulatory interpretation"
+            ]
+          ]
+        },
+        {
+          "type": "h",
+          "text": "What each side owes the other"
+        },
+        {
+          "type": "table",
+          "head": [
+            "The core owes the domains",
+            "The domains owe the core"
+          ],
+          "rows": [
+            [
+              "An intake decision in 5 days",
+              "A named production owner"
+            ],
+            [
+              "A working scaffold the same day",
+              "An agreed baseline"
+            ],
+            [
+              "Review in 3 days",
+              "Evaluation criteria for their workflow"
+            ],
+            [
+              "Published standards, working examples and a person who answers",
+              "Use of the paved path, or a documented exception"
+            ]
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Talent: the part only a leader can do"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Hire deliberately mixed profiles",
+              "text": "Statisticians and forecasters, optimization specialists, ML and GenAI engineers who ship, and domain engineers who want to model."
+            },
+            {
+              "title": "Grow on a real technical ladder",
+              "text": "Principal and distinguished tracks that pay as well as management, so the best scientists keep doing science."
+            },
+            {
+              "title": "Rotate for domain fluency",
+              "text": "Embedded practitioners spend two or three quarters in a domain, then return to the core with what they learned. Patterns that work become part of the paved path."
+            },
+            {
+              "title": "Four competency tracks",
+              "text": "Platform engineering, applied AI engineering, AI product management, and evaluation and operations, each with levelled expectations and portfolio-based promotion."
+            },
+            {
+              "title": "One hiring bar",
+              "text": "Structured hiring and performance management across every location, the same process I built from zero at a startup and run today across two countries."
+            },
+            {
+              "title": "Literacy beyond the team",
+              "text": "Analysts, engineers and leaders across the business learn to frame a decision, read a forecast interval and question a model."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "change",
+      "num": "09",
+      "title": "Change & adoption",
+      "lead": "Adoption is earned, not mandated. If someone can get an answer faster by going around the platform, they will, and they should. That is a defect report about the platform.",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Capacity, not cuts",
+              "text": "The goal is fewer repetitive tasks, faster decisions and more room for engineering, customer and creative work. Where workforce change is genuinely needed, the answer is transparency, reskilling and redeployment, not a promise that technology never affects jobs."
+            },
+            {
+              "title": "Teams move up the stack",
+              "text": "Existing BI and analytics teams are developed, not displaced. They move from one-off reports to building the reusable data products and agentic tools everyone else uses."
+            },
+            {
+              "title": "Treat internal users as customers",
+              "text": "Design for the person doing the work, not the reporting layer. A tool that costs a frontline user time will be abandoned by week three, whatever the mandate says."
+            },
+            {
+              "title": "Earn trust before asking for it",
+              "text": "Start with grounded, cited assistance. Never ask an expert to trust a model whose failure modes you cannot explain. Experts forgive a model that is uncertain and never forgive one that is confidently wrong."
+            },
+            {
+              "title": "A literacy ladder open to everyone",
+              "text": "AI fluency is a company-wide ladder anyone can climb, not a perk for a technical elite."
+            },
+            {
+              "title": "Listening before pitching",
+              "text": "The first month is a listening tour on the floor, in the lab and with the field teams. I am the AI leader in the room, not the domain expert."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "One front door"
+        },
+        {
+          "type": "p",
+          "text": "Getting an answer today often means knowing which system holds the data, which analyst owns it, whether a dashboard exists and whom to ask if it does not. The end state is one governed front door, inside each person's existing permissions, that composes an answer or a live view from approved data products rather than a one-off chat reply. It is also the single best lever on cost, because every call starts warm with the right context."
+        }
+      ]
+    },
+    {
+      "id": "first-year",
+      "num": "10",
+      "title": "The first 90 days and first year",
+      "lead": "A 30/60/90-day plan, then three quarters to prove, widen and industrialize. The first thirty days are weighted toward listening and toward the domain knowledge I do not yet have: architecture can be proposed quickly, but understanding how the business actually runs cannot.",
+      "blocks": [
+        {
+          "type": "timeline",
+          "items": [
+            {
+              "when": "Days 1–30",
+              "title": "Listen and inventory",
+              "text": "Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production.",
+              "out": "A written baseline and a shortlist of lighthouse use cases with named owners."
+            },
+            {
+              "when": "Days 31–60",
+              "title": "Decide and publish",
+              "text": "Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed and first hires opened. Two lighthouse use cases selected, with baselines agreed in writing with Finance.",
+              "out": "Published standards, an agreed roadmap, a funded plan, two use cases in build."
+            },
+            {
+              "when": "Days 61–90",
+              "title": "Ship something real",
+              "text": "Gateway live with routing, logging and cost attribution, plus a migration plan for existing direct model use. Golden path v1. The first lighthouse in production with a named owner, dashboards and a measured baseline. The first monthly value and cost report.",
+              "out": "A working platform with one real capability on it."
+            },
+            {
+              "when": "Quarter 2",
+              "title": "Prove the path",
+              "text": "Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First 90-day value re-measurement.",
+              "out": ""
+            },
+            {
+              "when": "Quarter 3",
+              "title": "Widen",
+              "text": "Every priority area has at least one production capability. Cost-per-outcome trends reported. The first rotation completes and its lessons join the paved path. Vendor strategy formalized under the two-quarter exit test.",
+              "out": ""
+            },
+            {
+              "when": "Quarter 4",
+              "title": "Industrialize",
+              "text": "Reuse rate becomes a reported metric. The first capabilities are retired for missing their value threshold, a sign of health. The year-two roadmap is built with domain leaders, not for them.",
+              "out": ""
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "What year one should prove"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A platform every team uses because it is the fastest route, with a pilot-to-production rate I can state as a number.",
+            "A benefits register agreed with Finance, with baselines captured before launch and a figure I will defend line by line.",
+            "A production bar enforced in the release gate, zero entitlement violations, and security, legal and compliance calling themselves co-authors.",
+            "A reported, rising reuse rate and a retired-capabilities list that is not empty.",
+            "A lean team on a published competency model, with internal candidates filling senior roles."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scorecard",
+      "num": "11",
+      "title": "The scorecard",
+      "lead": "Model count, pilot count and people trained are activity metrics. They tell a leadership team nothing about whether the investment was worth making. This is the scorecard I would run, and expect to be held to.",
+      "blocks": [
+        {
+          "type": "table",
+          "head": [
+            "Dimension",
+            "Metric",
+            "How the baseline is set"
+          ],
+          "rows": [
+            [
+              "Business value",
+              "Verified annualized benefit by capability: cost, cycle time, capacity released",
+              "Measured before launch, agreed with Finance, re-measured at 30, 90 and 180 days"
+            ],
+            [
+              "Speed",
+              "Cycle time in the targeted process; experiments or iterations avoided",
+              "Prior-period actuals from the system of record"
+            ],
+            [
+              "Adoption",
+              "Weekly active users by function; repeat use at month six",
+              "Zero at launch; targets set per capability"
+            ],
+            [
+              "Pilot to production",
+              "Share of initiated use cases reaching production with a named owner",
+              "The first-month inventory"
+            ],
+            [
+              "Reuse",
+              "Share of new solutions built on the paved path",
+              "Zero at launch"
+            ],
+            [
+              "Unit economics",
+              "Cost per resolved task, by capability, monthly",
+              "First month of gateway telemetry"
+            ],
+            [
+              "Reliability",
+              "Uptime, latency and quality against the golden dataset",
+              "Set at production entry"
+            ],
+            [
+              "Data quality",
+              "Five-dimension scores and coverage by domain and site",
+              "First data readiness assessment"
+            ],
+            [
+              "Risk",
+              "Review findings; entitlement violations",
+              "Zero tolerance for entitlement violations"
+            ],
+            [
+              "Capability",
+              "Practitioners at each competency level; internal fill rate",
+              "Team baseline at day 60"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Reporting is short enough to be read: one page monthly on value, cost, adoption, reliability and risk; a quarterly portfolio review of what is being promoted and what is being retired."
+        },
+        {
+          "type": "callout",
+          "text": "The uncomfortable metric: capabilities retired for missing their value threshold. If that number is zero after a year, either the thresholds are not real or nobody is checking. I report it deliberately."
+        }
+      ]
+    },
+    {
+      "id": "not-do",
+      "num": "12",
+      "title": "What I would not do",
+      "lead": "These are the commitments that are easy to make on day one and hard to keep in month eight, when something is behind and a shortcut is available. I want them held against me.",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Build a shadow delivery organization",
+              "text": "A central team that competes with domain teams ends up owning a portfolio it cannot operate. The platform's product is the paved path."
+            },
+            {
+              "title": "Start a pilot without a production owner",
+              "text": "The pilot graveyard is filled with pilots nobody was ever going to run. Saying no early is worth more than the pilot."
+            },
+            {
+              "title": "Grant autonomy before evaluation exists",
+              "text": "No agent acts without a golden dataset, a measured threshold, a tested rollback and a named owner."
+            },
+            {
+              "title": "Accept lock-in for short-term speed",
+              "text": "If we cannot leave within two quarters, it is a strategy commitment, not a tool choice, and it goes to the executive sponsor."
+            },
+            {
+              "title": "Chase a model zoo",
+              "text": "Supporting every new model and framework is a maintenance tax. A small approved set, reviewed on a schedule."
+            },
+            {
+              "title": "Overstate the value",
+              "text": "No hours-times-rate arithmetic presented as cash and no pilot results extrapolated to the enterprise."
+            },
+            {
+              "title": "Centralize domain judgment",
+              "text": "What counts as a good answer in a domain is the domain's call. The moment the center defines it, the standards stop being trusted."
+            },
+            {
+              "title": "Hire ahead of the operating model",
+              "text": "Twenty people without a paved path produce twenty bespoke solutions. Run light, then hire into a structure that makes each person more effective."
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

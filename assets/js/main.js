@@ -185,79 +185,104 @@ function renderWritingPage(posts) {
 }
 
 /* ---------- Playbook page ---------- */
-function renderPlaybook(pb) {
-  const list = $('#beliefs');
-  if (!list) return;
-  list.innerHTML = pb.beliefs.map((b, i) => `
-    <li><button class="belief-btn" role="tab" aria-selected="${i === 0}" data-i="${i}">
-      <span class="n">${String(i + 1).padStart(2, '0')}</span><strong>${esc(b.title)}</strong>
-    </button></li>`).join('');
-  const panel = $('#belief-panel');
-  const show = (i) => {
-    const b = pb.beliefs[i];
-    $$('.belief-btn', list).forEach((btn) => btn.setAttribute('aria-selected', String(Number(btn.dataset.i) === i)));
-    panel.innerHTML = `
-      <span class="eyebrow">Belief ${String(i + 1).padStart(2, '0')}</span>
-      <h3>${esc(b.title)}</h3>
-      <p class="why">${esc(b.why)}</p>
-      <div class="industries">${pb.industries.map((ind) => {
-        const a = b.apply[ind.id];
-        return `<div class="industry${a ? '' : ' off'}"><span class="name">${esc(ind.name)}</span><p>${a ? esc(a) : 'Not a lead theme here.'}</p></div>`;
-      }).join('')}</div>`;
-  };
-  list.addEventListener('click', (e) => { const btn = e.target.closest('.belief-btn'); if (btn) show(Number(btn.dataset.i)); });
-  list.addEventListener('keydown', (e) => {
-    if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return;
-    e.preventDefault();
-    const btns = $$('.belief-btn', list);
-    const cur = btns.indexOf(document.activeElement);
-    const next = btns[(cur + (e.key === 'ArrowDown' ? 1 : -1) + btns.length) % btns.length];
-    next.focus(); next.click();
-  });
-  const m = location.hash.match(/^#belief-(\d+)$/);
-  show(m ? Math.min(Number(m[1]) - 1, pb.beliefs.length - 1) : 0);
+const BLOCKS = {
+  h: (b) => `<h3 class="pb-h">${esc(b.text)}</h3>`,
+  p: (b) => `<p>${esc(b.text)}</p>`,
+  list: (b) => `<ul class="pb-list">${b.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`,
+  callout: (b) => `<blockquote class="pb-callout">${esc(b.text)}</blockquote>`,
+  table: (b) => `<div class="table-wrap"><table><thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.map((r) => `<tr>${r.map((c, i) => `<td${i === 0 ? ' class="first"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`,
+  cards: (b) => `<div class="pb-cards">${b.items.map((c) => `<div class="pb-card"><b>${esc(c.title)}</b><p>${esc(c.text)}</p></div>`).join('')}</div>`,
+  steps: (b) => `<ol class="pb-steps${b.variant === 'loop' ? ' loop' : ''}">${b.items.map((st, i) => `<li><span class="sn mono">${String(i + 1).padStart(2, '0')}</span><b>${esc(st.title)}</b><p>${esc(st.text)}</p></li>`).join('')}</ol>`,
+  layers: (b) => `<div class="pb-layers">${b.items.map((l, i) => `
+    <div class="layer${i === 0 ? '' : ''}"><button class="layer-btn" aria-expanded="false"><span class="mono">${esc(l.n)}</span><b>${esc(l.title)}</b><span class="owner">${esc(l.owner)}</span></button>
+    <div class="layer-body"><div><p>${esc(l.text)}</p></div></div></div>`).join('')}</div>`,
+  tiers: (b) => `<div class="pb-tiers" data-tiers='${esc(JSON.stringify(b.items))}'>
+    <div class="tier-tabs" role="tablist">${b.items.map((t, i) => `<button role="tab" class="tier-tab" aria-selected="${i === 0}" data-i="${i}"><span class="mono">${esc(t.n)}</span>${esc(t.title)}</button>`).join('')}</div>
+    <div class="tier-scale" aria-hidden="true"><span>More reversible</span><i></i><span>Higher consequence</span></div>
+    <div class="tier-panel" role="tabpanel"></div></div>`,
+  timeline: (b) => `<ol class="pb-timeline">${b.items.map((t) => `<li><span class="when mono">${esc(t.when)}</span><div><b>${esc(t.title)}</b><p>${esc(t.text)}</p>${t.out ? `<p class="out"><span class="mono">Deliverable</span> ${esc(t.out)}</p>` : ''}</div></li>`).join('')}</ol>`,
+};
 
-  // Reference stack with cloud switcher
-  const stack = $('#stack');
-  if (!stack) return;
-  const clouds = pb.stack.clouds;
-  let cloud = clouds[0];
-  const drawStack = () => {
-    stack.querySelector('tbody').innerHTML = pb.stack.layers.map((l, i) => `
-      <tr><td class="mono">L${i}</td><td><b>${esc(l.layer)}</b><span>${esc(l.desc)}</span></td><td class="svc">${esc(l[cloud])}</td></tr>`).join('');
-  };
-  $('#cloud-switch').innerHTML = clouds.map((c, i) => `<button class="chip" aria-pressed="${i === 0}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
-  $('#cloud-switch').addEventListener('click', (e) => {
-    const b = e.target.closest('.chip'); if (!b) return;
-    cloud = b.dataset.c;
-    $$('#cloud-switch .chip').forEach((c) => c.setAttribute('aria-pressed', String(c === b)));
-    drawStack();
+function drawTier(wrap, i) {
+  const items = JSON.parse(wrap.dataset.tiers);
+  const t = items[i];
+  $$('.tier-tab', wrap).forEach((b) => b.setAttribute('aria-selected', String(Number(b.dataset.i) === i)));
+  wrap.querySelector('.tier-scale i').style.setProperty('--pos', `${(i / (items.length - 1)) * 100}%`);
+  wrap.querySelector('.tier-panel').innerHTML = `
+    <div class="tier-head"><span class="tier-n">${esc(t.n)}</span><div><b>${esc(t.title)}</b><span>${esc(t.risk)}</span></div></div>
+    <dl><dt>What the agent may do</dt><dd>${esc(t.may)}</dd><dt>Control</dt><dd>${esc(t.control)}</dd><dt>Evidence to launch</dt><dd>${esc(t.evidence)}</dd></dl>`;
+}
+
+function renderPlaybook(pb) {
+  const host = $('#chapters');
+  if (!host) return;
+  $('#pb-thesis').textContent = pb.thesis;
+  $('#principles').innerHTML = pb.principles.map((x, i) => `
+    <article class="principle reveal"><span class="mono">${String(i + 1).padStart(2, '0')}</span><b>${esc(x.title)}</b><p>${esc(x.text)}</p></article>`).join('');
+  $('#toc').innerHTML = pb.chapters.map((c) => `<a href="#${esc(c.id)}"><span class="mono">${esc(c.num)}</span>${esc(c.title)}</a>`).join('');
+  host.innerHTML = pb.chapters.map((c) => `
+    <section class="chapter" id="${esc(c.id)}">
+      <span class="eyebrow">Chapter ${esc(c.num)}</span>
+      <h2>${esc(c.title)}</h2>
+      <p class="chapter-lead">${esc(c.lead)}</p>
+      ${c.blocks.map((b) => (BLOCKS[b.type] ? BLOCKS[b.type](b) : '')).join('')}
+    </section>`).join('');
+
+  $$('.pb-tiers', host).forEach((w) => {
+    drawTier(w, 0);
+    w.addEventListener('click', (e) => { const b = e.target.closest('.tier-tab'); if (b) drawTier(w, Number(b.dataset.i)); });
   });
-  drawStack();
+  host.addEventListener('click', (e) => {
+    const b = e.target.closest('.layer-btn');
+    if (b) b.setAttribute('aria-expanded', String(b.getAttribute('aria-expanded') !== 'true'));
+  });
+
+  // Scrollspy for the chapter index
+  const links = $$('#toc a');
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${en.target.id}`));
+        const act = $('#toc a.active');
+        if (act && matchMedia('(max-width: 960px)').matches) act.scrollIntoView({ inline: 'center', block: 'nearest' });
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    $$('.chapter', host).forEach((c) => spy.observe(c));
+  }
 }
 
 /* ---------- Research page ---------- */
+function pubRow(p, label) {
+  const title = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
+  const meta = [label, p.coFirst ? 'co-first author' : '', p.cites ? `${p.cites} citations` : ''].filter(Boolean).join(' · ');
+  return `<li class="pub"><span class="yr">${esc(p.year)}</span><div><b>${title}</b><span>${esc(meta)}</span></div><span class="venue">${esc(p.venue)}</span></li>`;
+}
+
 function renderResearch(pubs) {
   const list = $('#pubs');
   if (!list) return;
   $('#pub-stats').textContent = `${pubs.stats.citations} citations · h-index ${pubs.stats.hIndex} · i10-index ${pubs.stats.i10} · Google Scholar, ${pubs.stats.asOf}`;
-  const themes = ['All', ...new Set(pubs.items.map((p) => p.theme))];
-  let theme = 'All';
-  const draw = () => {
-    list.innerHTML = pubs.items.filter((p) => theme === 'All' || p.theme === theme).map((p) => `
-      <li class="pub"><span class="yr">${p.year}</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.theme)}${p.cites ? ` · ${p.cites} citations` : ''}</span></div><span class="venue">${esc(p.venue)}</span></li>`).join('');
-  };
-  $('#pub-filters').innerHTML = themes.map((t, i) => `<button class="chip" aria-pressed="${i === 0}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
+  const groups = [
+    ['Peer-reviewed', pubs.papers, 'Journal'],
+    ['Preprints', pubs.preprints, 'Preprint'],
+    ['Book chapters', pubs.chapters, 'Chapter'],
+  ];
+  let group = 0;
+  const draw = () => { const [, items, label] = groups[group]; list.innerHTML = items.map((p) => pubRow(p, label)).join(''); };
+  $('#pub-filters').innerHTML = groups.map(([name, items], i) => `<button class="chip" aria-pressed="${i === 0}" data-g="${i}">${esc(name)} <span class="mono">${items.length}</span></button>`).join('');
   $('#pub-filters').addEventListener('click', (e) => {
     const b = e.target.closest('.chip'); if (!b) return;
-    theme = b.dataset.t;
+    group = Number(b.dataset.g);
     $$('#pub-filters .chip').forEach((c) => c.setAttribute('aria-pressed', String(c === b)));
     draw();
   });
   draw();
   $('#patents').innerHTML = pubs.patents.map((p) => `<li class="pub"><span class="yr">Patent</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.number)}</span></div><span class="venue">USPTO</span></li>`).join('');
   $('#code').innerHTML = pubs.code.map((c) => `<article class="card"><span class="kicker mono">Open source</span><h3><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a></h3><p>${esc(c.text)}</p></article>`).join('');
-  $('#talk-list').innerHTML = pubs.talks.map((t) => `<li class="pub"><span class="yr">${t.year}</span><div><b>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title)}</b></div><span class="venue">${esc(t.venue)}</span></li>`).join('');
+  $('#talk-list').innerHTML = pubs.talks.map((t) => `<li class="pub"><span class="yr">${t.year}</span><div><b>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title)}</b><span>Invited</span></div><span class="venue">${esc(t.venue)}</span></li>`).join('');
+  $('#conf-list').innerHTML = pubs.conference.map((c) => `<li class="pub"><span class="yr">${c.year}</span><div><b>${esc(c.title)}</b><span>${esc(c.kind)}</span></div><span class="venue">${esc(c.venue)}</span></li>`).join('');
+  $('#service').innerHTML = pubs.service.map((x) => `<li>${esc(x)}</li>`).join('');
 }
 
 /* ---------- Resume page ---------- */
@@ -286,7 +311,7 @@ function openFromHash() {
   if (!t) return;
   const row = t.classList.contains('tl-item') && t.querySelector('.tl-row');
   if (row) { t.hidden = false; row.setAttribute('aria-expanded', 'true'); }
-  t.scrollIntoView({ block: 'start' });
+  t.scrollIntoView({ block: 'start', behavior: 'instant' });
 }
 
 /* ---------- Boot ---------- */
@@ -308,6 +333,8 @@ async function boot() {
   }
   observeReveals();
   openFromHash();
+  // Web fonts can reflow long pages after the first jump; land on the target again once they settle.
+  if (location.hash && document.fonts) document.fonts.ready.then(() => requestAnimationFrame(openFromHash));
   addEventListener('hashchange', openFromHash);
 }
 
