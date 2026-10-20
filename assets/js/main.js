@@ -15,6 +15,9 @@ async function getJSON(name) {
   return res.json();
 }
 
+// "2026-10-20" -> "Oct 20, 2026"
+const fmtDate = (iso) => new Date(`${iso}T00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
   set(k, v) { try { localStorage.setItem(k, v); } catch { /* private mode */ } },
@@ -164,10 +167,10 @@ function renderWritingPage(posts) {
     const term = (q.value || '').trim().toLowerCase();
     const shown = posts.filter((p) => (series === 'all' || p.series === series) &&
       (!term || `${p.title} ${p.excerpt} ${p.tags.join(' ')}`.toLowerCase().includes(term)));
-    $('#post-count').textContent = `${shown.length} of ${posts.length}`;
+    $('#post-count').textContent = `${shown.length} of ${posts.length}${posts.length ? ` · latest ${fmtDate(posts[0].date)}` : ''}`;
     list.innerHTML = shown.length ? shown.map((p) => `
       <li class="post">
-        <div class="meta"><span class="s">${esc(p.series)}${p.vol ? ' · ' + p.vol : ''}</span>${esc(new Date(p.date + 'T00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }))}</div>
+        <div class="meta"><span class="s">${esc(p.series)}${p.vol ? ' · ' + p.vol : ''}</span>${esc(fmtDate(p.date))}</div>
         <div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
         <p>${esc(p.excerpt)}</p>
         <div class="tags">${p.tags.map((t) => `<span class="tag">#${esc(t)}</span>`).join('')}</div></div>
@@ -271,10 +274,11 @@ function pubRow(p, label) {
   return `<li class="pub"><span class="yr">${esc(p.year)}</span><div><b>${title}</b><span>${esc(meta)}</span></div><span class="venue">${esc(p.venue)}</span></li>`;
 }
 
-function renderResearch(pubs) {
+function renderResearch(pubs, site) {
   const list = $('#pubs');
   if (!list) return;
-  $('#pub-stats').textContent = `${pubs.stats.citations} citations · h-index ${pubs.stats.hIndex} · i10-index ${pubs.stats.i10} · Google Scholar, ${pubs.stats.asOf}`;
+  const asOf = site && site.scholar ? fmtDate(site.scholar) : pubs.stats.asOf;
+  $('#pub-stats').textContent = `${pubs.stats.citations} citations · h-index ${pubs.stats.hIndex} · i10-index ${pubs.stats.i10} · Google Scholar, as of ${asOf}`;
   const groups = [
     ['Peer-reviewed', pubs.papers, 'Journal'],
     ['Preprints', pubs.preprints, 'Preprint'],
@@ -318,6 +322,14 @@ function wireEmail(p) {
   });
 }
 
+/* ---------- Freshness ---------- */
+// site.json is rewritten by tools/sync_sources.mjs on every scheduled refresh.
+function renderUpdated(site) {
+  if (!site || !site.updated) return;
+  const foot = $('.site-footer .wrap > span');
+  if (foot) foot.insertAdjacentHTML('beforeend', ` · <span class="updated">Last updated ${esc(fmtDate(site.updated))}</span>`);
+}
+
 /* ---------- Deep links (used by the assistant) ---------- */
 function openFromHash() {
   const id = decodeURIComponent(location.hash.slice(1));
@@ -330,6 +342,8 @@ function openFromHash() {
 
 /* ---------- Boot ---------- */
 async function boot() {
+  const site = await getJSON('site.json').catch(() => null);
+  renderUpdated(site);
   try {
     if (['home', 'resume'].includes(PAGE) || $('[data-email]')) {
       const profile = await getJSON('profile.json');
@@ -341,7 +355,7 @@ async function boot() {
       renderSeriesTeaser(posts); renderWritingPage(posts);
     }
     if (PAGE === 'playbook') renderPlaybook(await getJSON('playbook.json'));
-    if (PAGE === 'research') renderResearch(await getJSON('publications.json'));
+    if (PAGE === 'research') renderResearch(await getJSON('publications.json'), site);
   } catch (err) {
     console.error('Content failed to load', err);
   }
