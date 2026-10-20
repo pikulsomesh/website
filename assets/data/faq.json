@@ -1,0 +1,33 @@
+{
+  "_comment": "Questions people and answer engines ask. Rendered as the home page FAQ and as FAQPage structured data by tools/build_seo.mjs. Keep answers factual and self-contained.",
+  "items": [
+    {
+      "q": "Who is Somesh Mohapatra?",
+      "a": "Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader. He is Director of Analytics at Caterpillar Inc., where he leads a 90+ person organization building digital twins and agentic AI for global manufacturing. He holds a PhD in machine learning for molecular design from MIT and an MBA from MIT Sloan's Leaders for Global Operations program."
+    },
+    {
+      "q": "What does Somesh Mohapatra do at Caterpillar?",
+      "a": "He is Director of Analytics and Head of Data Science and Product Management for Caterpillar's Modern Manufacturing digital platform, covering predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics across 150+ facilities. Earlier at Caterpillar he was chief of staff for strategy in the $15B Resource Industries segment, led minesite electrification analytics, and built ChatDocs, a GenAI platform for supplier contracts that earned the CEO Award."
+    },
+    {
+      "q": "Where did Somesh Mohapatra study?",
+      "a": "He earned a PhD in machine learning for molecular design at MIT (2018 to 2022), advised by Prof. Rafael Gómez-Bombarelli, a dual-degree MBA from the MIT Sloan Leaders for Global Operations program, and a B.Tech from IIT Roorkee, where he won the Institute Gold Medal as rank 1 of 110."
+    },
+    {
+      "q": "What is Somesh Mohapatra's research about?",
+      "a": "His research applies machine learning to molecules, materials and manufacturing: graph representations of macromolecules (GLAMOUR), deep learning for peptide design and fast-flow peptide synthesis, and reaction impurity prediction for drug manufacturing. He has 15+ peer-reviewed papers, including two in Nature Chemistry and several in ACS Central Science, and a US patent application on AI-designed drug delivery peptides."
+    },
+    {
+      "q": "How does Somesh Mohapatra approach enterprise AI?",
+      "a": "His playbook treats data and AI as a multiplier for the business a company already wants to become: start from the business's core learning problem, fix data foundations before models, run one governed AI platform with risk-tiered governance, grant agents autonomy per workflow, and measure decisions changed and value created rather than pilots launched."
+    },
+    {
+      "q": "What is Somesh Mohapatra open to?",
+      "a": "He is glad to talk with leaders working on AI-driven transformation in manufacturing, supply chain and operations, about leadership roles, board advisory and speaking on enterprise AI and digital twins."
+    },
+    {
+      "q": "Where is Somesh Mohapatra based, and how can I contact him?",
+      "a": "He is based in the Dallas–Fort Worth area of Texas and works across the US, UK and India. The best ways to reach him are email (from the contact section of someshmohapatra.in) or LinkedIn at linkedin.com/in/pikulsomesh."
+    }
+  ]
+}

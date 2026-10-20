@@ -271,6 +271,16 @@ section { padding: clamp(64px, 10vw, 128px) 0; }
 .recog span { color: var(--ink-2); font-size: 15px; }
 @media (max-width: 760px) { .recog { grid-template-columns: 1fr; } }
 
+/* ---------- FAQ ---------- */
+.faq { margin-top: 24px; border-top: 1px solid var(--rule); }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-family: var(--font-mono); font-size: 14px; color: var(--ink-2); width: 28px; height: 28px; flex: none; border-radius: 50%; border: 1px solid var(--rule); display: grid; place-items: center; transition: transform .3s var(--ease); }
+.faq-item[open] summary::after { transform: rotate(45deg); background: var(--accent-soft); border-color: var(--accent); }
+.faq-item h3 { font-family: var(--font-body); font-size: 17px; font-weight: 500; margin: 0; }
+.faq-item p { color: var(--ink-2); margin: 0 0 20px; max-width: 70ch; }
+
 /* ---------- Writing teaser / list ---------- */
 .series-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .series h3 { font-family: var(--font-display); font-size: 32px; font-weight: 400; margin: 6px 0 8px; }

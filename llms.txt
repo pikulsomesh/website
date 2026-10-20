@@ -1,0 +1,28 @@
+# Somesh Mohapatra
+
+> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc. leading a 90+ person organization that builds digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
+
+This is his personal site. Every page is static HTML; the content also lives in plain JSON under /assets/data/. A full plain-text version of the site is at https://someshmohapatra.in/llms-full.txt.
+
+## Pages
+
+- [Home](https://someshmohapatra.in/): profile, career timeline, selected work, recognition and FAQ
+- [Playbook](https://someshmohapatra.in/playbook/): a complete point of view on running data and AI in an enterprise, in 12 chapters
+- [Research](https://someshmohapatra.in/research/): 15 peer-reviewed papers, preprints, talks and a patent application
+- [Writing](https://someshmohapatra.in/writing/): 80 essays from the Digital Iron, The Human Loop and Lab Series, published on LinkedIn
+- [Resume](https://someshmohapatra.in/resume/): experience, education and certifications
+
+## Data
+
+- [Profile](https://someshmohapatra.in/assets/data/profile.json): roles, outcomes, recognition, certifications
+- [Publications](https://someshmohapatra.in/assets/data/publications.json): papers, talks, patent, Google Scholar metrics
+- [Playbook](https://someshmohapatra.in/assets/data/playbook.json): full playbook text
+- [Writing](https://someshmohapatra.in/assets/data/writing.json): essay titles, dates, excerpts and links
+- [FAQ](https://someshmohapatra.in/assets/data/faq.json): short answers about who he is and what he does
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/pikulsomesh/)
+- [Google Scholar](https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en)
+- [GitHub](https://github.com/pikulsomesh)
+- [TEDxBoston talk](https://www.youtube.com/watch?v=kCuIpB-AuWo)
