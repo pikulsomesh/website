@@ -26,9 +26,9 @@ His research applies machine learning to molecules, materials and manufacturing:
 
 His playbook treats data and AI as a multiplier for the business a company already wants to become: start from the business's core learning problem, fix data foundations before models, run one governed AI platform with risk-tiered governance, grant agents autonomy per workflow, and measure decisions changed and value created rather than pilots launched.
 
-### What is Somesh Mohapatra open to?
+### What does Somesh Mohapatra speak and write about?
 
-He is glad to talk with leaders working on AI-driven transformation in manufacturing, supply chain and operations, about leadership roles, board advisory and speaking on enterprise AI and digital twins.
+He writes and speaks about enterprise AI, digital twins, agentic systems and AI in manufacturing, supply chain and operations, through his LinkedIn essay series, invited talks and his playbook on data and AI at scale. He is always glad to compare notes with practitioners, researchers and leaders working on the same problems.
 
 ### Where is Somesh Mohapatra based, and how can I contact him?
 
@@ -222,9 +222,9 @@ Google Scholar (Oct 2026): 710 citations, h-index 12.
 - LabTrends: An offline, privacy-first Android app that turns scattered lab reports into per-person health trends, with on-device OCR and a small local model. No cloud, no accounts. https://github.com/pikulsomesh/LabTrends
 - India Iceberg Index: Maps how exposed India's workforce is to generative AI, district by district, by combining occupational AI-exposure scores with national labor survey data. https://github.com/pikulsomesh/india-iceberg-index
 
-## Playbook: how I would run data and AI in your company
+## Playbook: how I think about data and AI at scale
 
-My job is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.
+The goal is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.
 
 ### Ten beliefs
 
@@ -243,7 +243,7 @@ My job is not to turn a company into an AI company. It is to make data and AI a 
 
 Enterprises rarely need a parallel AI organization sitting beside the business. They need a small capability that makes every existing team measurably faster at what it already does. The test for any initiative: does it make an existing team's job easier, or does it add one more layer to manage?
 
-#### The flywheel I am trying to start
+#### The flywheel worth starting
 
 - Trusted data: Owned domains with measured quality.
 - Reusable data products and context: Defined once, used by every team.
@@ -265,15 +265,15 @@ A portfolio is a sequencing problem, not a wish list. The first capabilities set
 Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value sits, and it is the work my research career prepared me for.
 
 
-#### The value case: what I will and will not claim
+#### The value case: what counts and what does not
 
-I will report | I will not report
+Counts as value | Does not count
 Cost per transaction before and after, with Finance agreeing the baseline | Hours saved multiplied by a loaded rate, presented as cash
 Cycle time measured end to end, not just for the automated step | Headcount reductions not agreed with the leader who owns that headcount
 Straight-through processing and exception rates, trended | Revenue attributed to a productivity tool
 Capacity redeployed, named by team and role | Pilot results extrapolated to enterprise scale without a scaled measurement
 
-One inflated benefit claim that fails an audit costs more credibility than three honest quarters earn. I would rather report a smaller verified number than a larger arguable one.
+One inflated benefit claim that fails an audit costs more credibility than three honest quarters earn. A smaller verified number is worth more than a larger arguable one.
 
 ### 02. Data foundation
 
@@ -410,7 +410,7 @@ Autonomy is not a property of the technology. It is a permission granted per wor
 - Tool-using workflow: Plan, call registered tools, check results, escalate. Tools are registered and permissioned centrally, never ad hoc.
 - Monitor and escalate: Watch a stream, detect a condition, raise a case with the evidence attached.
 
-What I would not do: build a multi-agent architecture because it is interesting. Most enterprise problems are one well-grounded model with good retrieval and a clean tool interface. Multi-agent designs multiply failure modes, cost and debugging effort, and should be used only where a single agent has demonstrably failed.
+A common mistake: building a multi-agent architecture because it is interesting. Most enterprise problems are one well-grounded model with good retrieval and a clean tool interface. Multi-agent designs multiply failure modes, cost and debugging effort, and should be used only where a single agent has demonstrably failed.
 
 ### 06. Governance, risk & responsible AI
 
@@ -540,54 +540,54 @@ Adoption is earned, not mandated. If someone can get an answer faster by going a
 - Treat internal users as customers: Design for the person doing the work, not the reporting layer. A tool that costs a frontline user time will be abandoned by week three, whatever the mandate says.
 - Earn trust before asking for it: Start with grounded, cited assistance. Never ask an expert to trust a model whose failure modes you cannot explain. Experts forgive a model that is uncertain and never forgive one that is confidently wrong.
 - A literacy ladder open to everyone: AI fluency is a company-wide ladder anyone can climb, not a perk for a technical elite.
-- Listening before pitching: The first month is a listening tour on the floor, in the lab and with the field teams. I am the AI leader in the room, not the domain expert.
+- Listening before pitching: Every program starts with listening on the floor, in the lab and with the field teams. The AI lead in the room is not the domain expert, and should not act like one.
 
 
 #### One front door
 
 Getting an answer today often means knowing which system holds the data, which analyst owns it, whether a dashboard exists and whom to ask if it does not. The end state is one governed front door, inside each person's existing permissions, that composes an answer or a live view from approved data products rather than a one-off chat reply. It is also the single best lever on cost, because every call starts warm with the right context.
 
-### 10. The first 90 days and first year
+### 10. How a program matures
 
-A 30/60/90-day plan, then three quarters to prove, widen and industrialize. The first thirty days are weighted toward listening and toward the domain knowledge I do not yet have: architecture can be proposed quickly, but understanding how the business actually runs cannot.
-- Days 1–30 · Listen and inventory: Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production. Deliverable: A written baseline and a shortlist of lighthouse use cases with named owners.
-- Days 31–60 · Decide and publish: Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed and first hires opened. Two lighthouse use cases selected, with baselines agreed in writing with Finance. Deliverable: Published standards, an agreed roadmap, a funded plan, two use cases in build.
-- Days 61–90 · Ship something real: Gateway live with routing, logging and cost attribution, plus a migration plan for existing direct model use. Golden path v1. The first lighthouse in production with a named owner, dashboards and a measured baseline. The first monthly value and cost report. Deliverable: A working platform with one real capability on it.
-- Quarter 2 · Prove the path: Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First 90-day value re-measurement.
-- Quarter 3 · Widen: Every priority area has at least one production capability. Cost-per-outcome trends reported. The first rotation completes and its lessons join the paved path. Vendor strategy formalized under the two-quarter exit test.
-- Quarter 4 · Industrialize: Reuse rate becomes a reported metric. The first capabilities are retired for missing their value threshold, a sign of health. The year-two roadmap is built with domain leaders, not for them.
+Data and AI programs that last move through recognizable stages, and each stage has a different job: understand, decide, ship, prove, widen and industrialize. Skipping a stage is how most programs stall. The early work is weighted toward listening and toward domain knowledge: architecture can be proposed quickly, but understanding how the business actually runs cannot.
+- Stage 1 · Listen and inventory: Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production. Deliverable: A written baseline and a shortlist of lighthouse use cases with named owners.
+- Stage 2 · Decide and publish: Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed. Two lighthouse use cases selected, with baselines agreed in writing with Finance. Deliverable: Published standards, an agreed roadmap, a funded plan, two use cases in build.
+- Stage 3 · Ship something real: Gateway live with routing, logging and cost attribution, plus a migration plan for existing direct model use. Golden path v1. The first lighthouse in production with a named owner, dashboards and a measured baseline. The first monthly value and cost report. Deliverable: A working platform with one real capability on it.
+- Stage 4 · Prove the path: Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First value re-measurement against the agreed baselines.
+- Stage 5 · Widen: Every priority area has at least one production capability. Cost-per-outcome trends reported. The first rotation completes and its lessons join the paved path. Vendor strategy formalized under the two-quarter exit test.
+- Stage 6 · Industrialize: Reuse rate becomes a reported metric. The first capabilities are retired for missing their value threshold, a sign of health. The next roadmap is built with domain leaders, not for them.
 
 
-#### What year one should prove
+#### What a maturing program should be able to show
 
-- A platform every team uses because it is the fastest route, with a pilot-to-production rate I can state as a number.
-- A benefits register agreed with Finance, with baselines captured before launch and a figure I will defend line by line.
+- A platform every team uses because it is the fastest route, with a pilot-to-production rate anyone can state as a number.
+- A benefits register agreed with Finance, with baselines captured before launch and figures that hold up line by line.
 - A production bar enforced in the release gate, zero entitlement violations, and security, legal and compliance calling themselves co-authors.
 - A reported, rising reuse rate and a retired-capabilities list that is not empty.
 - A lean team on a published competency model, with internal candidates filling senior roles.
 
 ### 11. The scorecard
 
-Model count, pilot count and people trained are activity metrics. They tell a leadership team nothing about whether the investment was worth making. This is the scorecard I would run, and expect to be held to.
+Model count, pilot count and people trained are activity metrics. They tell a leadership team nothing about whether the investment was worth making. These are the measures a program should be held to.
 Dimension | Metric | How the baseline is set
 Business value | Verified annualized benefit by capability: cost, cycle time, capacity released | Measured before launch, agreed with Finance, re-measured at 30, 90 and 180 days
 Speed | Cycle time in the targeted process; experiments or iterations avoided | Prior-period actuals from the system of record
 Adoption | Weekly active users by function; repeat use at month six | Zero at launch; targets set per capability
-Pilot to production | Share of initiated use cases reaching production with a named owner | The first-month inventory
+Pilot to production | Share of initiated use cases reaching production with a named owner | The initial inventory
 Reuse | Share of new solutions built on the paved path | Zero at launch
 Unit economics | Cost per resolved task, by capability, monthly | First month of gateway telemetry
 Reliability | Uptime, latency and quality against the golden dataset | Set at production entry
 Data quality | Five-dimension scores and coverage by domain and site | First data readiness assessment
 Risk | Review findings; entitlement violations | Zero tolerance for entitlement violations
-Capability | Practitioners at each competency level; internal fill rate | Team baseline at day 60
+Capability | Practitioners at each competency level; internal fill rate | Team baseline at program start
 
 Reporting is short enough to be read: one page monthly on value, cost, adoption, reliability and risk; a quarterly portfolio review of what is being promoted and what is being retired.
 
 The uncomfortable metric: capabilities retired for missing their value threshold. If that number is zero after a year, either the thresholds are not real or nobody is checking. I report it deliberately.
 
-### 12. What I would not do
+### 12. What I avoid
 
-These are the commitments that are easy to make on day one and hard to keep in month eight, when something is behind and a shortcut is available. I want them held against me.
+These are the commitments that are easy to make at the start of a program and hard to keep in month eight, when something is behind and a shortcut is available.
 - Build a shadow delivery organization: A central team that competes with domain teams ends up owning a portfolio it cannot operate. The platform's product is the paved path.
 - Start a pilot without a production owner: The pilot graveyard is filled with pilots nobody was ever going to run. Saying no early is worth more than the pilot.
 - Grant autonomy before evaluation exists: No agent acts without a golden dataset, a measured threshold, a tested rollback and a named owner.

@@ -93,7 +93,7 @@ function jsonld(page, modified) {
     graph.push(web('WebPage', 'Playbook'), {
       '@type': 'Article',
       '@id': `${SITE}playbook/#article`,
-      headline: 'How I would run data and AI in your company',
+      headline: 'How I think about data and AI at scale',
       description: playbook.thesis,
       image: IMAGE,
       author: { '@id': PERSON_ID },
@@ -310,7 +310,7 @@ ${pubs.talks.map((t) => `- ${t.title}. ${t.venue}, ${t.year}.`).join('\n')}
 
 ${profile.builds.map((b) => `- ${b.title}: ${b.text} ${b.url}`).join('\n')}
 
-## Playbook: how I would run data and AI in your company
+## Playbook: how I think about data and AI at scale
 
 ${playbook.thesis}
 

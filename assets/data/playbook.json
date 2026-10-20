@@ -1,6 +1,6 @@
 {
   "_comment": "One complete point of view on running data and AI in an enterprise. No company or vendor names. Each chapter is a list of blocks; block types: p, list, table, cards, layers, steps, tiers, timeline, callout.",
-  "thesis": "My job is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.",
+  "thesis": "The goal is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.",
   "principles": [
     {
       "title": "Start from the business's core learning problem",
@@ -52,7 +52,7 @@
       "blocks": [
         {
           "type": "h",
-          "text": "The flywheel I am trying to start"
+          "text": "The flywheel worth starting"
         },
         {
           "type": "steps",
@@ -119,13 +119,13 @@
         },
         {
           "type": "h",
-          "text": "The value case: what I will and will not claim"
+          "text": "The value case: what counts and what does not"
         },
         {
           "type": "table",
           "head": [
-            "I will report",
-            "I will not report"
+            "Counts as value",
+            "Does not count"
           ],
           "rows": [
             [
@@ -148,7 +148,7 @@
         },
         {
           "type": "callout",
-          "text": "One inflated benefit claim that fails an audit costs more credibility than three honest quarters earn. I would rather report a smaller verified number than a larger arguable one."
+          "text": "One inflated benefit claim that fails an audit costs more credibility than three honest quarters earn. A smaller verified number is worth more than a larger arguable one."
         }
       ]
     },
@@ -599,7 +599,7 @@
         },
         {
           "type": "callout",
-          "text": "What I would not do: build a multi-agent architecture because it is interesting. Most enterprise problems are one well-grounded model with good retrieval and a clean tool interface. Multi-agent designs multiply failure modes, cost and debugging effort, and should be used only where a single agent has demonstrably failed."
+          "text": "A common mistake: building a multi-agent architecture because it is interesting. Most enterprise problems are one well-grounded model with good retrieval and a clean tool interface. Multi-agent designs multiply failure modes, cost and debugging effort, and should be used only where a single agent has demonstrably failed."
         }
       ]
     },
@@ -987,7 +987,7 @@
             },
             {
               "title": "Listening before pitching",
-              "text": "The first month is a listening tour on the floor, in the lab and with the field teams. I am the AI leader in the room, not the domain expert."
+              "text": "Every program starts with listening on the floor, in the lab and with the field teams. The AI lead in the room is not the domain expert, and should not act like one."
             }
           ]
         },
@@ -1002,61 +1002,61 @@
       ]
     },
     {
-      "id": "first-year",
+      "id": "maturity",
       "num": "10",
-      "title": "The first 90 days and first year",
-      "lead": "A 30/60/90-day plan, then three quarters to prove, widen and industrialize. The first thirty days are weighted toward listening and toward the domain knowledge I do not yet have: architecture can be proposed quickly, but understanding how the business actually runs cannot.",
+      "title": "How a program matures",
+      "lead": "Data and AI programs that last move through recognizable stages, and each stage has a different job: understand, decide, ship, prove, widen and industrialize. Skipping a stage is how most programs stall. The early work is weighted toward listening and toward domain knowledge: architecture can be proposed quickly, but understanding how the business actually runs cannot.",
       "blocks": [
         {
           "type": "timeline",
           "items": [
             {
-              "when": "Days 1–30",
+              "when": "Stage 1",
               "title": "Listen and inventory",
               "text": "Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production.",
               "out": "A written baseline and a shortlist of lighthouse use cases with named owners."
             },
             {
-              "when": "Days 31–60",
+              "when": "Stage 2",
               "title": "Decide and publish",
-              "text": "Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed and first hires opened. Two lighthouse use cases selected, with baselines agreed in writing with Finance.",
+              "text": "Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed. Two lighthouse use cases selected, with baselines agreed in writing with Finance.",
               "out": "Published standards, an agreed roadmap, a funded plan, two use cases in build."
             },
             {
-              "when": "Days 61–90",
+              "when": "Stage 3",
               "title": "Ship something real",
               "text": "Gateway live with routing, logging and cost attribution, plus a migration plan for existing direct model use. Golden path v1. The first lighthouse in production with a named owner, dashboards and a measured baseline. The first monthly value and cost report.",
               "out": "A working platform with one real capability on it."
             },
             {
-              "when": "Quarter 2",
+              "when": "Stage 4",
               "title": "Prove the path",
-              "text": "Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First 90-day value re-measurement.",
+              "text": "Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First value re-measurement against the agreed baselines.",
               "out": ""
             },
             {
-              "when": "Quarter 3",
+              "when": "Stage 5",
               "title": "Widen",
               "text": "Every priority area has at least one production capability. Cost-per-outcome trends reported. The first rotation completes and its lessons join the paved path. Vendor strategy formalized under the two-quarter exit test.",
               "out": ""
             },
             {
-              "when": "Quarter 4",
+              "when": "Stage 6",
               "title": "Industrialize",
-              "text": "Reuse rate becomes a reported metric. The first capabilities are retired for missing their value threshold, a sign of health. The year-two roadmap is built with domain leaders, not for them.",
+              "text": "Reuse rate becomes a reported metric. The first capabilities are retired for missing their value threshold, a sign of health. The next roadmap is built with domain leaders, not for them.",
               "out": ""
             }
           ]
         },
         {
           "type": "h",
-          "text": "What year one should prove"
+          "text": "What a maturing program should be able to show"
         },
         {
           "type": "list",
           "items": [
-            "A platform every team uses because it is the fastest route, with a pilot-to-production rate I can state as a number.",
-            "A benefits register agreed with Finance, with baselines captured before launch and a figure I will defend line by line.",
+            "A platform every team uses because it is the fastest route, with a pilot-to-production rate anyone can state as a number.",
+            "A benefits register agreed with Finance, with baselines captured before launch and figures that hold up line by line.",
             "A production bar enforced in the release gate, zero entitlement violations, and security, legal and compliance calling themselves co-authors.",
             "A reported, rising reuse rate and a retired-capabilities list that is not empty.",
             "A lean team on a published competency model, with internal candidates filling senior roles."
@@ -1068,7 +1068,7 @@
       "id": "scorecard",
       "num": "11",
       "title": "The scorecard",
-      "lead": "Model count, pilot count and people trained are activity metrics. They tell a leadership team nothing about whether the investment was worth making. This is the scorecard I would run, and expect to be held to.",
+      "lead": "Model count, pilot count and people trained are activity metrics. They tell a leadership team nothing about whether the investment was worth making. These are the measures a program should be held to.",
       "blocks": [
         {
           "type": "table",
@@ -1096,7 +1096,7 @@
             [
               "Pilot to production",
               "Share of initiated use cases reaching production with a named owner",
-              "The first-month inventory"
+              "The initial inventory"
             ],
             [
               "Reuse",
@@ -1126,7 +1126,7 @@
             [
               "Capability",
               "Practitioners at each competency level; internal fill rate",
-              "Team baseline at day 60"
+              "Team baseline at program start"
             ]
           ]
         },
@@ -1143,8 +1143,8 @@
     {
       "id": "not-do",
       "num": "12",
-      "title": "What I would not do",
-      "lead": "These are the commitments that are easy to make on day one and hard to keep in month eight, when something is behind and a shortcut is available. I want them held against me.",
+      "title": "What I avoid",
+      "lead": "These are the commitments that are easy to make at the start of a program and hard to keep in month eight, when something is behind and a shortcut is available.",
       "blocks": [
         {
           "type": "cards",
