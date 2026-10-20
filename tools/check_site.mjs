@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 let failures = 0;
@@ -21,7 +22,9 @@ for (const f of ['assets/models/minilm/model_quantized.onnx', 'assets/models/min
   if (!fs.existsSync(path.join(ROOT, f))) fail(`missing ${f}`);
 }
 
-const pages = ['index.html', '404.html', ...['playbook', 'writing', 'research', 'resume'].map((p) => `${p}/index.html`)];
+const pages = ['index.html', '404.html', ...fs.readdirSync(ROOT, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && fs.existsSync(path.join(ROOT, d.name, 'index.html')))
+  .map((d) => `${d.name}/index.html`)];
 for (const page of pages) {
   const file = path.join(ROOT, page);
   if (!fs.existsSync(file)) { fail(`missing ${page}`); continue; }
@@ -35,6 +38,10 @@ for (const page of pages) {
     if (!fs.existsSync(target)) fail(`${page}: broken link ${url}`);
   }
 }
+
+// Structured data, crawler fallbacks, sitemap and llms.txt are generated from the data files.
+try { execFileSync('node', [path.join(ROOT, 'tools/build_seo.mjs'), '--check'], { stdio: 'inherit' }); }
+catch { fail('SEO files are stale; run node tools/build_seo.mjs and commit the result'); }
 
 if (failures) { console.error(`\n${failures} problem(s)`); process.exit(1); }
 console.log(`✓ ${pages.length} pages, data files and model assets look good`);

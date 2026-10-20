@@ -1,0 +1,681 @@
+# Somesh Mohapatra, PhD, MBA
+
+Source: https://someshmohapatra.in/ (generated from the site's data files)
+
+Dallas–Fort Worth, Texas. LinkedIn: https://www.linkedin.com/in/pikulsomesh/ · Google Scholar: https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en · GitHub: https://github.com/pikulsomesh
+
+## Frequently asked questions
+
+### Who is Somesh Mohapatra?
+
+Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader. He is Director of Analytics at Caterpillar Inc., where he leads a 90+ person organization building digital twins and agentic AI for global manufacturing. He holds a PhD in machine learning for molecular design from MIT and an MBA from MIT Sloan's Leaders for Global Operations program.
+
+### What does Somesh Mohapatra do at Caterpillar?
+
+He is Director of Analytics and Head of Data Science and Product Management for Caterpillar's Modern Manufacturing digital platform, covering predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics across 150+ facilities. Earlier at Caterpillar he was chief of staff for strategy in the $15B Resource Industries segment, led minesite electrification analytics, and built ChatDocs, a GenAI platform for supplier contracts that earned the CEO Award.
+
+### Where did Somesh Mohapatra study?
+
+He earned a PhD in machine learning for molecular design at MIT (2018 to 2022), advised by Prof. Rafael Gómez-Bombarelli, a dual-degree MBA from the MIT Sloan Leaders for Global Operations program, and a B.Tech from IIT Roorkee, where he won the Institute Gold Medal as rank 1 of 110.
+
+### What is Somesh Mohapatra's research about?
+
+His research applies machine learning to molecules, materials and manufacturing: graph representations of macromolecules (GLAMOUR), deep learning for peptide design and fast-flow peptide synthesis, and reaction impurity prediction for drug manufacturing. He has 15+ peer-reviewed papers, including two in Nature Chemistry and several in ACS Central Science, and a US patent application on AI-designed drug delivery peptides.
+
+### How does Somesh Mohapatra approach enterprise AI?
+
+His playbook treats data and AI as a multiplier for the business a company already wants to become: start from the business's core learning problem, fix data foundations before models, run one governed AI platform with risk-tiered governance, grant agents autonomy per workflow, and measure decisions changed and value created rather than pilots launched.
+
+### What is Somesh Mohapatra open to?
+
+He is glad to talk with leaders working on AI-driven transformation in manufacturing, supply chain and operations, about leadership roles, board advisory and speaking on enterprise AI and digital twins.
+
+### Where is Somesh Mohapatra based, and how can I contact him?
+
+He is based in the Dallas–Fort Worth area of Texas and works across the US, UK and India. The best ways to reach him are email (from the contact section of someshmohapatra.in) or LinkedIn at linkedin.com/in/pikulsomesh.
+
+## Experience
+
+### Director, Analytics · Head of Data Science & Product Management · Caterpillar Inc. (2025 – now)
+
+- Lead a 90+ person organization of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.
+- Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.
+- Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.
+- Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.
+- Outcomes: GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 → 150+ (Pilot plants to global rollout plan)
+
+### Senior Manager, Strategy & Analytics · Chief of Staff to SVP · Caterpillar Resource Industries ($15B segment) (2025)
+
+- Led the enterprise strategy workstream for sustainable mining, reporting into the Group President's office.
+- Built the TAM/SAM framework with AI-driven adoption modelling across diesel, electric and hybrid propulsion.
+- Informed M&A and venture decisions in autonomy and digital mine software; prepared board-level and Investor Day material.
+- Outcomes: $3B+ (Market opportunity identified); Board (Level strategy and capital-allocation work)
+
+### Manager, Analytics · Minesite Electrification · Caterpillar Inc. (2024 – 2025)
+
+- Architected an OEM-agnostic data platform linking 10+ subsystems: battery trucks, fast chargers, energy storage, fleet and energy management.
+- Negotiated interoperability and encryption protocols with OEM partners, enabling commercial data services.
+- Shipped Early Learner dashboards with agentic workflows and natural-language query for the top five global miners.
+- Outcomes: 10+ (Subsystems on one data platform); 60% (Less analyst reporting time)
+
+### Manager, Analytics · Strategic Procurement & Supply Resiliency · Caterpillar Inc. (2023 – 2024)
+
+- Co-led the enterprise supply resiliency digital thread: scenario planning and risk across 1.5M parts, 7,000+ suppliers and $20B of annual spend.
+- Designed ChatDocs, a GenAI platform (LLMs, hybrid RAG, fine-tuning) that extracts terms from contracts, quality certificates and risk reports.
+- Led 12 Purdue Data Mine students building predictive risk analytics over 110+ datasets for 180 countries.
+- Outcomes: $1M+ (Annual savings from ChatDocs); CEO Award (Top 1% of 120K+ employees)
+
+### AI/ML Fellow, Future Operations Leader program · Amgen · MIT LGO (2022)
+
+- Built graph neural networks that predict reaction impurities in small-molecule drug synthesis, and an impurity propagation framework across multi-step routes.
+- Adapted inverse structure elucidation from mass spec and NMR, cutting unknown-compound identification from weeks to hours.
+- Presented at NeurIPS 2022 (AI for Accelerated Materials Design workshop) within four months; became my MIT Sloan thesis.
+- Outcomes: $120K+ (Saved per unknown identification); Weeks → hours (Structure elucidation time)
+
+### PhD, Machine Learning for Molecular Design · MBA, Leaders for Global Operations · Massachusetts Institute of Technology (2018 – 2022)
+
+- Advised by Prof. Rafael Gómez-Bombarelli. Thesis: Designing Macromolecules Using Machine Learning and Simulations.
+- Closed AI → synthesis → experiment loops with 30+ researchers across five labs, raising experimental throughput 10x.
+- Open-sourced GLAMOUR and Peptimizer; helped secure $2.27M in grants; mentored nine students.
+- TEDxBoston speaker on how AI can make rare diseases rarer.
+- Outcomes: 15+ (Papers · Nature Chemistry, ACS Central Science); 1 (US patent application (AI-designed delivery peptides))
+
+### Research Scientist (intern), Google Accelerated Sciences · Google Research (2020)
+
+- Built ML models for CRISPRi guide RNA design across all 20,000 human genes, beating the prior state of the art by 20%+.
+- Co-developed tooling for automated model building, hyperparameter tuning, architecture search and feature attribution.
+- Outcomes: 20%+ (Accuracy gain over prior SOTA)
+
+### Co-Founder & Head of Business Operations · MatSci AI (2018 – 2020)
+
+- Scaled from two founders to a 30-person team across the US and India, with full P&L ownership.
+- Ran the sales cycle end to end and built the customer success function.
+- Flagship RPA/ML product automated customer-inquiry processing for an oil and gas pipeline client.
+- Outcomes: 30 (Person team built from zero); $3M+ (Annual client savings)
+
+### Gold Medalist, B.Tech · Research at Harvard, OIST, UIDAI and in quant trading · IIT Roorkee and beyond (2014 – 2018)
+
+- Institute Gold Medal (rank 1 of 110); finished a four-year degree in three.
+- SN Bose Scholar at Harvard (cancer immunotherapy) and OIST fellow (computational genomics).
+- Quantitative researcher at EIS Global, Singapore: 20%+ lift in high-frequency trading models.
+- Technical Executive at UIDAI (Aadhaar), delivering $3M analytics programs and privacy policy analysis.
+- Outcomes: Rank 1 (Of 110, IIT Roorkee)
+
+## Selected work
+
+### A factory you can ask questions (Caterpillar · 2025 – now)
+
+Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line. Impact: 4 plants US & UK pilots; GTC · CES NVIDIA showcases.
+
+### ChatDocs: reading 7,000 suppliers' fine print (Caterpillar · 2023)
+
+Hybrid-RAG extraction over supplier contracts, quality certificates and risk reports, feeding the supply resiliency digital thread. Impact: $1M+ Annual savings; 1,500+ h Hours returned.
+
+### Supply resiliency digital thread (Caterpillar · 2023 – 2024)
+
+Scenario planning and supplier risk across 1.5M parts and $20B of spend, with 110+ external signals on politics, regulation and markets. Impact: 1.5M Parts; $20B Spend in scope.
+
+### One data language for an electric mine (Caterpillar · 2024 – 2025)
+
+An OEM-agnostic platform linking battery trucks, chargers and energy systems, with natural-language dashboards for the world's largest miners. Impact: 10+ Subsystems; Top 5 Global miners.
+
+### Sizing the sustainable-mining market (Caterpillar · 2025)
+
+TAM/SAM with AI-driven adoption curves by propulsion type, used to steer product, M&A and venture bets in a $15B segment. Impact: $3B+ Opportunity; Board Audience.
+
+### AI that designs molecules, then makes them (MIT · Google · Amgen)
+
+GLAMOUR graph representations, deep learning for fast-flow peptide synthesis and impurity prediction for drug manufacturing. Impact: 2× Nature Chemistry; 10× Lab throughput.
+
+## Capabilities
+
+- Industrial AI & digital twins: Physics-grounded twins of factories and fleets that people can query in plain language, built on Omniverse, OpenUSD and CUDA.
+- Agentic & GenAI platforms: Governed agents, hybrid RAG and evaluation harnesses that make the second team faster than the first.
+- Machine learning research: Graph neural networks, generative models and closed-loop experimentation, from molecules to machines.
+- Strategy & operating leadership: Market sizing, capital allocation, org design and P&L, the work that decides whether AI changes the business.
+
+## Recognition
+
+- 2026: CES 2026, NVIDIA booth. Presented Caterpillar's manufacturing digital platform built on Omniverse.
+- 2025: NVIDIA GTC Washington DC. Digital-twin work featured in the keynote.
+- 2025: Chairman's Enterprise Excellence Award. One project selected across Caterpillar, for supply resiliency.
+- 2023: Caterpillar CEO Award. Top 1% of 120K+ employees, for GenAI in supply chain.
+- 2023: TEDxBoston. How AI can make rare diseases rarer.
+- 2017: Institute Gold Medal, IIT Roorkee. Rank 1 of 110.
+
+## Education
+
+- PhD, Machine Learning for Molecular Design, Massachusetts Institute of Technology (2018 – 2022). Advisor: Prof. Rafael Gómez-Bombarelli.
+- MBA, Leaders for Global Operations (dual degree), MIT Sloan School of Management (2021 – 2022).
+- B.Tech, Indian Institute of Technology Roorkee (2014 – 2017). Institute Gold Medal, rank 1 of 110.
+
+## Certifications
+
+- Certified Supply Chain Professional (ASCM)
+- CFA Program Level I
+- CMA Part 1 (IMA)
+- AI Leadership: Strategy, Governance and Agentic Systems (Harvard Data Science Review)
+- NVIDIA: Observable, Scalable Multi-Agent Workflows
+
+## Research
+
+Google Scholar (Oct 2026): 710 citations, h-index 12.
+
+### Peer-reviewed papers
+
+- Design of Cytotoxic T Cell Epitopes by Machine Learning of Human Degrons. ACS Central Science, 2024. https://doi.org/10.1021/acscentsci.3c01544
+- A Model Ensemble Approach Enables Data-Driven Property Prediction for Chemically Deconstructable Thermosets in the Low-Data Regime. ACS Central Science, 2023. https://doi.org/10.1021/acscentsci.3c00502
+- Chemistry-Informed Macromolecule Graph Representation for Similarity Computation, Unsupervised and Supervised Learning (GLAMOUR). Machine Learning: Science and Technology, 2022. https://doi.org/10.1088/2632-2153/ac545e
+- Machine Learning Guides Peptide Nucleic Acid Flow Synthesis and Sequence Design. Advanced Science, 2022. https://doi.org/10.1002/advs.202201988
+- Learning Matter: Materials Design with Machine Learning and Atomistic Simulations. Accounts of Materials Research, 2022. https://doi.org/10.1021/accountsmr.1c00238
+- Bottlebrush Polymers with Flexible Enantiomeric Side Chains Display Differential Biological Properties. Nature Chemistry, 2022. https://doi.org/10.1038/s41557-021-00826-8
+- Deep Learning to Design Nuclear-Targeting Abiotic Miniproteins. Nature Chemistry, 2021. https://doi.org/10.1038/s41557-021-00766-3
+- Deep Learning Enables Discovery of a Short Nuclear Targeting Peptide for Efficient Delivery of Antisense Oligomers. JACS Au, 2021. https://doi.org/10.1021/jacsau.1c00327
+- Synthetic Glycomacromolecules of Defined Valency, Absolute Configuration, and Topology Distinguish between Human Lectins. JACS Au, 2021. https://doi.org/10.1021/jacsau.1c00255
+- Deep Learning for Prediction and Optimization of Fast-Flow Peptide Synthesis. ACS Central Science, 2020. https://doi.org/10.1021/acscentsci.0c00979
+- Designing Organic Photoelectronic Molecules with Descriptor Conditional Recurrent Neural Networks. Nature Machine Intelligence, 2020. https://doi.org/10.1038/s42256-020-00268-w
+- Quantitative Mapping of Molecular Substituents to Macroscopic Properties Enables Predictive Design of Oligoethylene Glycol-Based Lithium Electrolytes. ACS Central Science, 2020. https://doi.org/10.1021/acscentsci.0c00475
+- Systematic Investigation and In Vitro Biocompatibility Studies on Implantable Magnetic Nanocomposites for Hyperthermia Treatment of Osteoarthritic Knee Joints. Journal of Materials Science, 2017. https://doi.org/10.1007/s10853-017-1136-0
+- Functionalized Nano-Graphene Oxide as Multi-Modal Clinic for Effective Drug Delivery. Int. J. Pharmaceutical Sciences and Nanotechnology, 2017. https://doi.org/10.37285/ijpsn.2017.10.4.3
+- Implantable Magnetic-Dielectric Composites for Prolonged Hyperthermia Treatment of Hepatic Lesions. J. Biotechnology and Biomaterials, 2016. https://doi.org/10.4172/2155-952X.1000230
+
+### Preprints
+
+- Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand. ChemRxiv, 2023.
+- ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results. arXiv, 2021. https://arxiv.org/abs/2108.09810
+- AI-Assisted Reaction Impurity Prediction and Inverse Structure Elucidation. ChemRxiv, 2022.
+- AI-Assisted Chemical Reaction Impurity Prediction and Propagation. ChemRxiv, 2022.
+- Translating L-Peptides into Non-Canonical Linear and Macrocyclic Peptides. ChemRxiv, 2022.
+- The (In)Effectiveness of Intermediate Task Training for Domain Adaptation and Cross-Lingual Transfer Learning. arXiv, 2022. https://arxiv.org/abs/2210.01091
+- Sentiment Is All You Need to Win US Presidential Elections. arXiv · IJCNLP NLP4DH, 2022. https://arxiv.org/abs/2209.13487
+
+### Book chapters
+
+- Impact of Cyclodextrin in Drug Delivery System: Current Status and Future Perspective. Sustainable Agriculture Reviews, Springer, 2018. https://doi.org/10.1007/978-3-319-75190-0_10
+- Cancer Chemotherapy: Polycaprolactone (PCL)-Based Drug Delivery. Encyclopedia of Polymer Applications, Taylor & Francis, 2017.
+
+### Patent
+
+- Designing Antisense Oligonucleotide Delivery Peptides by Interpretable Machine Learning. US 2025/0228954 A1 · provisional filed Jan 24, 2020. https://patents.google.com/patent/US20250228954A1
+
+### Invited talks
+
+- Manufacturing & supply digital platform on NVIDIA Omniverse. CES 2026, NVIDIA booth, 2026.
+- Multi-objective optimization in industry. Indian Institute of Management Mumbai, 2024.
+- AI and humanities for rare diseases. IIT Roorkee, 2024.
+- AI, autonomy and sustainability in heavy industry. Massachusetts Institute of Technology, 2024.
+- Innovation capabilities of generative AI for materials scientists. Northeastern University, 2023.
+- AI to make rare diseases rarer. TEDxBoston, 2023.
+- AI, drug discovery and the future of work. AI at UC Irvine speaker series, 2022.
+- How does AI help in drug discovery?. The Sci-AI Podcast, 2022.
+- Machine learning for (non)linear (non)canonical peptides. American Peptide Symposium e-Seminar, 2021.
+- Peptimizer: optimizing peptides using machine learning. Google Accelerated Sciences seminar, 2020.
+- Future of biological sequence design. University of Rhode Island, 2020.
+- Multiferroics: a crack in the event horizon. Indian Physics Association, 2015.
+
+## Recent builds
+
+- Baby Senses Lab: Developmental world models with one network per sense, each fed age-filtered input, plus a public site that shows a photo, video or sound the way a baby of a chosen age might sense it. https://pikulsomesh.github.io/developmental-world-models/
+- Digital Twin History: An open, cited history of digital twins and physical AI, from andon lights and Apollo's simulators to live factory twins and AI world models. Dataset and interactive site. https://pikulsomesh.github.io/digital-twin-history/
+- Michelin Kitchen Twin: A browser-based 3D twin of a three-star kitchen running a full dinner service, modeled like a manufacturing plant: covers are the build plan, every plate a bill of materials. https://pikulsomesh.github.io/michelin-kitchen-twin/
+- Auto-Twin: From a walkthrough video to a live digital twin: a world-model splat converted to OpenUSD, bound to cloud telemetry and rendered in the browser, Blender or Omniverse. https://pikulsomesh.github.io/foodbank-spatial-twin/
+- LabTrends: An offline, privacy-first Android app that turns scattered lab reports into per-person health trends, with on-device OCR and a small local model. No cloud, no accounts. https://github.com/pikulsomesh/LabTrends
+- India Iceberg Index: Maps how exposed India's workforce is to generative AI, district by district, by combining occupational AI-exposure scores with national labor survey data. https://github.com/pikulsomesh/india-iceberg-index
+
+## Playbook: how I would run data and AI in your company
+
+My job is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.
+
+### Ten beliefs
+
+1. Start from the business's core learning problem. Every business has one quantity whose improvement compounds: yield, forecast accuracy, cycle time, first-pass quality. AI earns its budget by moving that number.
+2. Data is an enterprise asset, not an IT by-product. Every critical domain needs a named owner, measurable quality, discoverability and accountable stewardship.
+3. Context is the moat; models are a commodity. Anyone can rent a frontier model. The scarce asset is trusted, permissioned, versioned context an agent can act on.
+4. The platform makes the second team faster than the first. Any capable group can ship one solution. A platform justifies itself when the fifth team ships in a fraction of the first team's effort.
+5. Autonomy is earned per workflow. It is never a setting you switch on. The tier is set by how reversible an action is and what a wrong one costs.
+6. Govern by design, so the safe path is the fast path. Identity, guardrails, policy and logging live in the platform, not in a committee at the end.
+7. Evaluation is the product, not the QA step. The difference between a demo and a capability is that someone can tell you, on demand, whether it still works.
+8. Every answer has a token bill. Most of it is avoidable. The harness matters more than the horsepower.
+9. Central standards, federated delivery. Do once, centrally, what must be identical. Leave with the domains what needs proximity. Write the line down.
+10. Measure decisions changed and value created. Not models built, pilots run or people trained. If Finance would not sign the number, it is not a result.
+
+### 01. Strategy & value
+
+Enterprises rarely need a parallel AI organization sitting beside the business. They need a small capability that makes every existing team measurably faster at what it already does. The test for any initiative: does it make an existing team's job easier, or does it add one more layer to manage?
+
+#### The flywheel I am trying to start
+
+- Trusted data: Owned domains with measured quality.
+- Reusable data products and context: Defined once, used by every team.
+- Shared AI platform: Gateway, evaluation, agents and paved paths.
+- Better employee and customer experiences: Answers inside the tools people already use.
+- Faster decisions and innovation: Cycle time, quality and cost move.
+- More value, learning and adoption: Which feeds richer data back into the loop.
+
+
+#### How I choose what goes first
+
+A portfolio is a sequencing problem, not a wish list. The first capabilities set precedent, so they need to be the ones most likely to succeed and most likely to build the shared foundations everything else depends on. I score candidates on four filters.
+
+- High volume: Enough repetitions a year that a small per-transaction gain compounds into something worth the engineering.
+- Document-bound: The work is reading, extracting and deciding from text and records, which is where current models are strongest.
+- Rules exist: There is a policy, playbook or standard to point to, so correctness can be checked rather than debated.
+- Reversible: A wrong output is caught and corrected cheaply. Irreversible processes wait until the platform has a track record.
+
+Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value sits, and it is the work my research career prepared me for.
+
+
+#### The value case: what I will and will not claim
+
+I will report | I will not report
+Cost per transaction before and after, with Finance agreeing the baseline | Hours saved multiplied by a loaded rate, presented as cash
+Cycle time measured end to end, not just for the automated step | Headcount reductions not agreed with the leader who owns that headcount
+Straight-through processing and exception rates, trended | Revenue attributed to a productivity tool
+Capacity redeployed, named by team and role | Pilot results extrapolated to enterprise scale without a scaled measurement
+
+One inflated benefit claim that fails an audit costs more credibility than three honest quarters earn. I would rather report a smaller verified number than a larger arguable one.
+
+### 02. Data foundation
+
+Most AI disappointment traces back to data, not models. So no model work starts until the data it depends on is owned, defined and measured.
+
+#### Ownership with names attached
+
+- Owner: A business leader accountable for the domain's data and for hitting its quality targets.
+- Steward: Owns definitions, business rules and the glossary for the domain.
+- Custodian: Owns the pipelines, access controls and operational health of the data.
+
+
+#### One pipeline, three layers of trust
+
+- Sources: ERP, MES, CRM, PLM, historians, documents and sensors.
+- Bronze: Raw ingest, immutable and replayable.
+- Silver: Cleansed and conformed against the quality framework.
+- Gold: Curated data products with owners and contracts.
+- Catalog & lineage: Meaning is looked up, not inferred, from source column to decision.
+- Agents & decisions: Analytics, models and agents consume Gold through the context layer.
+
+
+#### Quality you can see
+
+Dimension | The question it answers
+Completeness | Are the required fields and records present?
+Conformance | Does the data follow standards, formats, units and plausible ranges?
+Consistency | Does the same business object mean the same thing in every system?
+Accuracy & integrity | Do values reflect physical reality, and do relationships hold?
+Timeliness & alignment | Is it fresh enough for the decision, and aligned in time across sensors and systems?
+
+I track coverage in two directions: whether a standard exists for a domain, and whether it is actually in use at every site and system. "We have a standard" and "the standard is used everywhere" are different claims, and federation succeeds or fails on the second.
+
+
+#### No model before the data is ready
+
+Every use case earns a data readiness score, technical and business, before development starts.
+
+Technical readiness | Business readiness
+Quality measured on the five dimensions | Every term the use case depends on is defined, owned and approved
+Named owner, steward and custodian | The process is documented and mapped to its data
+Column-level lineage from source to decision | The decision is mapped: who makes it today and what will change
+Every Gold metric has a definition, unit, logic, valid range and owner | A named business owner and a measured baseline exist
+Access rights and retention are clear | Legal basis, training and procedure updates are planned
+
+Data quality is also an economics lever. Once meaning is looked up rather than inferred, every downstream model call spends fewer tokens working out what the data means.
+
+### 03. Context & knowledge
+
+The context layer is where a company's advantage actually lives. Models change every few months; decades of operating records, designs, procedures and expert know-how do not.
+- A semantic layer: Business definitions fixed once, so "yield", "on-time" or "active customer" mean one thing to every person and every agent.
+- Retrieval beyond vectors: Vector, graph and structured retrieval together. Many enterprise questions are relational, and graphs are the natural shape for lineage, networks and dependencies.
+- Entitlements inherited from source: An agent can never surface data the requesting person could not open directly. Permissions travel with the data.
+- Lineage and provenance: Every answer traces to the record that produced it, which is also how AI-assisted work earns a defensible audit trail.
+
+
+#### Three levels of return
+
+- Level 1 · Productivity: Specifications, procedures, design rules and quality records become discoverable and reusable.
+- Level 2 · Innovation speed: New projects start from approved context, data products and components instead of rebuilding them.
+- Level 3 · New products: Trusted context can eventually power customer-facing services. A strategic option, validated before it is committed.
+
+Tacit knowledge deserves its own program. In plants and labs the most valuable know-how lives in experienced people. Capturing it as structured guidance, with their names on it, both protects the company and gives those experts the recognition they rarely get.
+
+### 04. AI platform
+
+Seven layers, each with one owner and one reason to exist. A layer belongs in the center only if doing it once, identically, is clearly better than doing it many times in context.
+- L7 · Domain solutions: Built by domain teams on the paved path. Use-case selection, workflow redesign and domain evaluation criteria stay close to the work. Owner: Federated
+- L6 · Golden paths: Scaffolds, SDKs, reference apps, release gates and templates for each authority tier. This is the product the platform team actually sells. Owner: Central
+- L5 · Evaluation & observability: Golden datasets, regression gates, tracing, drift watch and continuous production sampling. Owner: Central, non-negotiable
+- L4 · Agent runtime & orchestration: Tool registry, planning and memory, human-in-the-loop checkpoints, rollback and a tested kill switch. Owner: Central
+- L3 · Model gateway: One path to every model: routing and fallback, caching, policy and PII filters, cost attribution per team. Owner: Central, mandatory
+- L2 · Context: Semantic layer, vector, graph and structured retrieval, inherited entitlements, lineage. The moat. Owner: Central standards, domain-curated
+- L1 · Data estate: Operational, engineering, commercial and enterprise data, delivered as governed data products. Owner: Domains, contracted to the platform
+
+Governance spans every layer rather than sitting as a gate at the end. Cybersecurity, enterprise architecture, legal and finance are partners in the design, not reviewers of the result.
+
+
+#### The gateway is the control point
+
+- Control: Policy enforcement, PII and trade-secret filters, logging, data-residency routing and per-request identity. One place to change a rule and one place to prove it was applied.
+- Economics: Cost attributed to the requesting team on every call, routing by task class, semantic caching and budget alerts. Finance sees a real bill by domain.
+- Optionality: Provider abstraction, so a workload can move between model vendors or clouds as prices and terms change. Negotiating leverage becomes a design property.
+
+Retrofitting a gateway after eighteen months of direct model calls is a year of painful work. A gateway that only routes, logs and attributes cost is worth more in month two than a complete platform in month nine, because it starts producing the usage data that tells you what to build next.
+
+
+#### The golden path, end to end
+
+- Intake · 1 week: A one-page business case: the workflow, the decision changed, the baseline, the named owner, the authority tier and the data. No production owner, no start.
+- Scaffold · day one: A repository that already works, with gateway auth, approved retrieval, tracing, an evaluation stub and CI. The first commit is domain logic.
+- Evaluate · continuous: No golden dataset, no promotion. Domains write the criteria; the platform runs the harness and regression gates on every change.
+- Review · 3 days: One parallel review of security, privacy, responsible AI and architecture against a published checklist scaled to the tier.
+- Deploy: Production means operated: a named owner, on-call, dashboards for quality, latency and cost, and a documented rollback.
+- Measure · 30/90/180 days: The intake baseline is re-measured with Finance. Capabilities that miss their threshold are fixed or retired.
+
+Step a builder faces | Without a paved path | On the golden path
+Get model access | Open a vendor account, wait on legal, manage keys locally | One gateway credential, already reviewed
+Reach trustworthy data | Find a source, negotiate access, re-implement permissions | Registered context sources with entitlements and lineage
+Know if it works | Spot-check by hand and argue in a meeting | Golden dataset, scored runs, regression gate
+Pass review | Four sequential queues and unclear standards | One parallel, tier-scaled review
+Run it | Whoever built it, until they change roles | Named owner, on-call, dashboards, rollback
+Prove value | A slide asserting hours saved | A baseline re-measured with Finance
+
+The commitment I publish: intake decisions in five working days, a scaffold the day a use case is approved, combined review in three days for lower tiers. A central function that is slow and mandatory is worse than none, so if we miss, domains get a documented exception path.
+
+
+#### Physical AI and digital twins
+
+For operations-heavy businesses the platform extends into simulation. A physics-grounded digital twin of a plant, line or fleet becomes a place to test schedules, layouts and maintenance strategies before touching the real world, and a conversational layer lets planners query it in plain language. Physics stays in the loop: thermal limits, capacity constraints and degradation curves bound what a model may say, and hybrid physics-ML beats either alone when failure data is thin.
+
+### 05. Agentic systems
+
+Autonomy is not a property of the technology. It is a permission granted per workflow, set by two questions: how reversible is the action, and how expensive is a wrong one?
+- T1 · Assist: Reversible · low cost of error May: Retrieve, summarize, draft and explain. Output goes to a person who decides what to do with it. Control: The human is the actor. The agent never writes anywhere. Evidence to launch: Golden dataset, citation to source on every claim, light security review, usage telemetry.
+- T2 · Propose: Reversible · moderate cost May: Prepare a complete action, such as a plan change, a case response or a document, and stage it for approval. Control: Explicit human approval before anything commits, logged with the reasoning shown. Evidence to launch: Everything in T1, plus approval and override rates and a review of what humans corrected.
+- T3 · Act within bounds: Reversible · high volume May: Execute inside declared limits on value, scope and time. Escalate anything outside them. Control: Bounds enforced in the runtime, not the prompt. Kill switch and one-step rollback are mandatory. Evidence to launch: Everything in T2, plus shadow mode until agreement with humans clears a threshold, a full audit trail and sampled human review.
+- T4 · Operate: Hard to reverse · high consequence May: Own a recurring process end to end and report by exception. Control: A named executive is accountable. Dual control on irreversible steps. Formal change management. Evidence to launch: Sustained T3 performance, a documented failure-mode analysis, and sign-off from the business owner, legal and cybersecurity.
+
+
+#### The rules that make tiers real
+
+- The tier is declared at intake and enforced by the runtime, not asserted in a design document.
+- Tiers are earned, not assigned. Nothing launches above T2, and promotion requires evidence from live operation.
+- Every agent has one named human owner who is accountable for its behavior and reachable when it misbehaves.
+- Anything touching regulatory submissions, safety, product release or contractual commitments stays at T2 by default, however good the model gets.
+- The kill switch is tested. An untested rollback is not a rollback.
+
+
+#### Four patterns worth standardizing
+
+- Grounded answer: Retrieve, ground, answer, cite. The workhorse. Measure retrieval quality, not just the answer.
+- Structured extraction: Document to schema with confidence scores and a human queue for low-confidence fields. The highest near-term return in most enterprises.
+- Tool-using workflow: Plan, call registered tools, check results, escalate. Tools are registered and permissioned centrally, never ad hoc.
+- Monitor and escalate: Watch a stream, detect a condition, raise a case with the evidence attached.
+
+What I would not do: build a multi-agent architecture because it is interesting. Most enterprise problems are one well-grounded model with good retrieval and a clean tool interface. Multi-agent designs multiply failure modes, cost and debugging effort, and should be used only where a single agent has demonstrably failed.
+
+### 06. Governance, risk & responsible AI
+
+Speed and control only conflict when governance is a committee. When it is written standards plus automated enforcement, both come from the same place.
+
+#### What "production-ready" means, written down
+
+Requirement | The bar | How it is enforced
+Validation | A golden dataset with domain-written criteria, scored above an agreed threshold, with a regression gate on every model, prompt or retrieval change | Automated in CI; a failing gate blocks promotion
+Traceability | Every output traceable to the sources and tool calls that produced it, retained as long as legal requires | Tracing on by default; absence fails the gate
+Monitoring | Live quality, latency, cost, usage and escalation dashboards with alert owners | Provisioned by the platform at deploy
+Ownership | A named technical owner, a named business owner, an on-call path and a tested rollback | Recorded in the service registry; no owner, no production
+Risk management | Declared tier, runtime-enforced bounds, documented failure modes, a review cadence matched to the tier | Enforced by the runtime, reviewed at tier depth
+Entitlements | The system never surfaces data the user could not access directly | Inherited from source at the context layer
+
+
+#### Risk-tier every model, not just every agent
+
+A meeting summarizer and a model that sets a process parameter, prices a contract or informs a regulatory filing do not deserve the same review. Higher tiers get locked model versions, formal change control, independent validation by people outside the build line, and drift monitoring with management-of-change when the process shifts. Lower tiers get a light, fast path. Proportion is what lets the organization move quickly where it is safe.
+
+
+#### Anchored in recognized frameworks
+
+Framework | How I use it
+NIST AI RMF and its Generative AI Profile | The organizing structure: govern, map, measure, manage
+ISO/IEC 42001 | The target AI management system, with certification readiness as an option where customers need evidence
+ISO/IEC 23894 | The AI risk-assessment method
+EU AI Act | Applied wherever operations reach the EU; most industrial uses are not high-risk, but HR and employment uses can be
+OWASP LLM and agentic guidance, MITRE ATLAS | Threat taxonomy for red-teaming
+NIST CSF 2.0, SP 800-53, IEC 62443 | Cyber and OT controls owned by security, with AI controls mapped onto them
+
+The frameworks converge on four things: risk-based classification, transparency, meaningful human oversight and accountability. Every higher-tier review also asks three ethical questions: how serious could the harm be, who is most vulnerable, and who holds responsibility?
+
+
+#### A short policy stack and a few clear forums
+
+- Policy stack: AI policy and principles; acceptable use; risk classification; data for AI; model and agent lifecycle; third-party AI; AI incident response.
+- Steering committee · quarterly: Strategy, risk appetite, funding and the highest-tier approvals, with internal audit observing.
+- Governance council · bi-weekly: Lower-tier approvals, policy, exceptions and incidents, with security, legal, privacy and data governance.
+- Data council and site champions · monthly: Standards, glossary, quality targets and data contracts; adoption, feedback and intake from the front line.
+
+
+#### Risks I treat as first-class
+
+- Intellectual property and trade secrets: contractual and technical guarantees that no vendor trains on company data, and classification-aware routing so the most sensitive material reaches only approved deployments.
+- Regulatory and claims exposure: anything that could become a submission or a public claim stays human-approved with full traceability, indefinitely.
+- Data residency and cross-border transfer: the gateway routes by data classification and jurisdiction, because asking each team to get it right is not a control.
+- Entitlement leakage: zero tolerance, measured and reported.
+
+### 07. Economics of AI
+
+Enterprise AI programs rarely fail on capability. They stall when unit economics turn out to be indefensible at scale: a per-query cost that was invisible for forty pilot users becomes a line item someone has to defend for four thousand.
+
+#### Where the money actually goes
+
+- Context bloat: Stuffing everything retrievable into the window because it is easier than retrieving well. Usually the largest avoidable line.
+- Over-powered routing: Sending classification and extraction to a frontier model because it was the scaffold default.
+- Retry and loop waste: Agents that re-plan on ambiguity instead of escalating. Cost grows non-linearly.
+- No caching: The same questions answered from scratch hundreds of times a day.
+
+
+#### The optimization ladder
+
+Move | What changes | Cost to implement
+Retrieval discipline | Rank and trim context to what the task needs; often better accuracy too | Low
+Task-class routing | Small models for classification and extraction, frontier models only for open reasoning | Low once the gateway exists
+Semantic caching | Near-duplicate questions served from cache with freshness rules | Moderate
+Batch versus interactive | Anything not waiting on a person moves to scheduled batch | Low
+Distillation | A small model trained on a large one's traces for a narrow, stable, high-volume task | High; justified only at real volume
+
+The harness matters more than the horsepower. A cheap model that starts with company context, the right skill pack and clean tools routinely beats an expensive model that has to research what the company is on every call.
+
+
+#### What I report every month
+
+- Cost per outcome by capability, trended: the headline number
+- Spend by domain, attributed at the gateway and reconciled with Finance
+- Cache hit rate, and the spend it avoided
+- Routing mix by model class, with drift flagged
+- Idle capability spend: what we pay for things nobody uses
+
+
+#### Build, buy and partner
+
+Partners accelerate work we have specified; they never define the architecture. Anything load-bearing, such as the gateway, the evaluation harness and the context layer, is owned by employees, whoever writes the first version. Every vendor faces three tests: can we leave within two quarters, does the contract prohibit training on our data, and does using it deepen our own team's capability or replace it?
+
+### 08. Organization & talent
+
+The org chart is a leverage question, not a staffing question. A deliberately small central core owns what must be done once; embedded practitioners sit with the business; an independent function validates the highest-risk models.
+- Embedded pods: Close to the decision. Data scientists and AI engineers sit with operations, supply chain, R&D, commercial and finance, with a business owner setting priorities and measuring value.
+- Central platform & methods: Built once, used everywhere: platform engineering, evaluation and operations, architecture and governance.
+- Independent validation: A small model-risk function that validates the highest-tier models and reports outside the build line, so the organization never grades its own work.
+
+
+#### Who decides what
+
+Role | Decides
+Business domains | Which use cases are worth doing, what good output looks like, whether to accept the residual risk of a tier, when a capability stops being worth operating
+Data & AI leadership | Architecture and the paved path, the production bar and release gates, model routing and cost controls, what is built centrally versus federated
+Executive sponsor | Ambition and risk appetite, funding, cross-business trade-offs, the highest-tier authorizations
+Security, legal, risk | Enterprise controls, the operational-technology boundary, regulatory interpretation
+
+
+#### What each side owes the other
+
+The core owes the domains | The domains owe the core
+An intake decision in 5 days | A named production owner
+A working scaffold the same day | An agreed baseline
+Review in 3 days | Evaluation criteria for their workflow
+Published standards, working examples and a person who answers | Use of the paved path, or a documented exception
+
+
+#### Talent: the part only a leader can do
+
+- Hire deliberately mixed profiles: Statisticians and forecasters, optimization specialists, ML and GenAI engineers who ship, and domain engineers who want to model.
+- Grow on a real technical ladder: Principal and distinguished tracks that pay as well as management, so the best scientists keep doing science.
+- Rotate for domain fluency: Embedded practitioners spend two or three quarters in a domain, then return to the core with what they learned. Patterns that work become part of the paved path.
+- Four competency tracks: Platform engineering, applied AI engineering, AI product management, and evaluation and operations, each with levelled expectations and portfolio-based promotion.
+- One hiring bar: Structured hiring and performance management across every location, the same process I built from zero at a startup and run today across two countries.
+- Literacy beyond the team: Analysts, engineers and leaders across the business learn to frame a decision, read a forecast interval and question a model.
+
+### 09. Change & adoption
+
+Adoption is earned, not mandated. If someone can get an answer faster by going around the platform, they will, and they should. That is a defect report about the platform.
+- Capacity, not cuts: The goal is fewer repetitive tasks, faster decisions and more room for engineering, customer and creative work. Where workforce change is genuinely needed, the answer is transparency, reskilling and redeployment, not a promise that technology never affects jobs.
+- Teams move up the stack: Existing BI and analytics teams are developed, not displaced. They move from one-off reports to building the reusable data products and agentic tools everyone else uses.
+- Treat internal users as customers: Design for the person doing the work, not the reporting layer. A tool that costs a frontline user time will be abandoned by week three, whatever the mandate says.
+- Earn trust before asking for it: Start with grounded, cited assistance. Never ask an expert to trust a model whose failure modes you cannot explain. Experts forgive a model that is uncertain and never forgive one that is confidently wrong.
+- A literacy ladder open to everyone: AI fluency is a company-wide ladder anyone can climb, not a perk for a technical elite.
+- Listening before pitching: The first month is a listening tour on the floor, in the lab and with the field teams. I am the AI leader in the room, not the domain expert.
+
+
+#### One front door
+
+Getting an answer today often means knowing which system holds the data, which analyst owns it, whether a dashboard exists and whom to ask if it does not. The end state is one governed front door, inside each person's existing permissions, that composes an answer or a live view from approved data products rather than a one-off chat reply. It is also the single best lever on cost, because every call starts warm with the right context.
+
+### 10. The first 90 days and first year
+
+A 30/60/90-day plan, then three quarters to prove, widen and industrialize. The first thirty days are weighted toward listening and toward the domain knowledge I do not yet have: architecture can be proposed quickly, but understanding how the business actually runs cannot.
+- Days 1–30 · Listen and inventory: Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production. Deliverable: A written baseline and a shortlist of lighthouse use cases with named owners.
+- Days 31–60 · Decide and publish: Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed and first hires opened. Two lighthouse use cases selected, with baselines agreed in writing with Finance. Deliverable: Published standards, an agreed roadmap, a funded plan, two use cases in build.
+- Days 61–90 · Ship something real: Gateway live with routing, logging and cost attribution, plus a migration plan for existing direct model use. Golden path v1. The first lighthouse in production with a named owner, dashboards and a measured baseline. The first monthly value and cost report. Deliverable: A working platform with one real capability on it.
+- Quarter 2 · Prove the path: Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First 90-day value re-measurement.
+- Quarter 3 · Widen: Every priority area has at least one production capability. Cost-per-outcome trends reported. The first rotation completes and its lessons join the paved path. Vendor strategy formalized under the two-quarter exit test.
+- Quarter 4 · Industrialize: Reuse rate becomes a reported metric. The first capabilities are retired for missing their value threshold, a sign of health. The year-two roadmap is built with domain leaders, not for them.
+
+
+#### What year one should prove
+
+- A platform every team uses because it is the fastest route, with a pilot-to-production rate I can state as a number.
+- A benefits register agreed with Finance, with baselines captured before launch and a figure I will defend line by line.
+- A production bar enforced in the release gate, zero entitlement violations, and security, legal and compliance calling themselves co-authors.
+- A reported, rising reuse rate and a retired-capabilities list that is not empty.
+- A lean team on a published competency model, with internal candidates filling senior roles.
+
+### 11. The scorecard
+
+Model count, pilot count and people trained are activity metrics. They tell a leadership team nothing about whether the investment was worth making. This is the scorecard I would run, and expect to be held to.
+Dimension | Metric | How the baseline is set
+Business value | Verified annualized benefit by capability: cost, cycle time, capacity released | Measured before launch, agreed with Finance, re-measured at 30, 90 and 180 days
+Speed | Cycle time in the targeted process; experiments or iterations avoided | Prior-period actuals from the system of record
+Adoption | Weekly active users by function; repeat use at month six | Zero at launch; targets set per capability
+Pilot to production | Share of initiated use cases reaching production with a named owner | The first-month inventory
+Reuse | Share of new solutions built on the paved path | Zero at launch
+Unit economics | Cost per resolved task, by capability, monthly | First month of gateway telemetry
+Reliability | Uptime, latency and quality against the golden dataset | Set at production entry
+Data quality | Five-dimension scores and coverage by domain and site | First data readiness assessment
+Risk | Review findings; entitlement violations | Zero tolerance for entitlement violations
+Capability | Practitioners at each competency level; internal fill rate | Team baseline at day 60
+
+Reporting is short enough to be read: one page monthly on value, cost, adoption, reliability and risk; a quarterly portfolio review of what is being promoted and what is being retired.
+
+The uncomfortable metric: capabilities retired for missing their value threshold. If that number is zero after a year, either the thresholds are not real or nobody is checking. I report it deliberately.
+
+### 12. What I would not do
+
+These are the commitments that are easy to make on day one and hard to keep in month eight, when something is behind and a shortcut is available. I want them held against me.
+- Build a shadow delivery organization: A central team that competes with domain teams ends up owning a portfolio it cannot operate. The platform's product is the paved path.
+- Start a pilot without a production owner: The pilot graveyard is filled with pilots nobody was ever going to run. Saying no early is worth more than the pilot.
+- Grant autonomy before evaluation exists: No agent acts without a golden dataset, a measured threshold, a tested rollback and a named owner.
+- Accept lock-in for short-term speed: If we cannot leave within two quarters, it is a strategy commitment, not a tool choice, and it goes to the executive sponsor.
+- Chase a model zoo: Supporting every new model and framework is a maintenance tax. A small approved set, reviewed on a schedule.
+- Overstate the value: No hours-times-rate arithmetic presented as cash and no pilot results extrapolated to the enterprise.
+- Centralize domain judgment: What counts as a good answer in a domain is the domain's call. The moment the center defines it, the standards stop being trusted.
+- Hire ahead of the operating model: Twenty people without a paved path produce twenty bespoke solutions. Run light, then hire into a structure that makes each person more effective.
+
+## Writing
+
+- 2026-09-27 · Lab Series: System One Models will optimize tokenomics and latency. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576
+- 2026-08-31 · Lab Series: Spec-Driven Development for AI Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7500309594141986816
+- 2026-08-23 · The Human Loop: The Automation Trap in Innovation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7497393297020104704
+- 2026-08-18 · Lab Series: The State of Open Models and the Infrastructure Shift. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7495277695715409922
+- 2026-08-08 · Lab Series: The 2.8 Trillion Parameter Experiment and the Open-Weight Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7491867817365909505
+- 2026-08-05 · The Human Loop: The Rise of Task Crossover. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7490861306774736896
+- 2026-07-31 · The Human Loop: Beyond the Horseless Carriage. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7488785159106809858
+- 2026-07-28 · Lab Series: The Return to Determinism in an Agentic World. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7487703952457875457
+- 2026-07-21 · The Human Loop: Defending Against Cognitive Surrender. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485176512648794113
+- 2026-07-21 · Lab Series: The Trillion-Parameter Open Weight Era and Qwen 3.8. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485175047331004416
+- 2026-07-06 · Digital Iron: Listening to the Iron. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479719984471085056
+- 2026-07-06 · The Human Loop: Capability Debt in the AI-Augmented Codebase. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479717317849817088
+- 2026-07-06 · Lab Series: Token Optimization in Agentic Developer Workflows. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479715738396688384
+- 2026-06-25 · Digital Iron: The Upgradable Beast. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475749297423134721
+- 2026-06-25 · Lab Series: Accelerating Inference with Block Diffusion Speculative Decoding. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475748470314754049
+- 2026-06-25 · The Human Loop: High Variance and the Decider Mandate. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475746659927478273
+- 2026-06-13 · Lab Series: Reverse Engineering the Physical World with SuperFrusta. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471352192289882112
+- 2026-06-13 · The Human Loop: The Agentic Manager. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471350735528468480
+- 2026-06-05 · Lab Series: The Encoder-Free Multimodal Frontier. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468786078687326208
+- 2026-06-05 · The Human Loop: Reasoning from First Principles and Human Data. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468784263220359170
+- 2026-05-27 · The Human Loop: The Second Great Compression. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465478954477350912
+- 2026-05-27 · Lab Series: Macro Evals for Agentic Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465475923874873345
+- 2026-05-27 · Digital Iron: Precision Mining and the Thinking Drill. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465473786687963136
+- 2026-05-24 · The Human Loop: Building AI With the Shop Floor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7464325820652806144
+- 2026-05-21 · Lab Series: The Orchestration Layer and Antigravity 2.0. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7463356080694149121
+- 2026-05-14 · Digital Iron: Cooling the Cloud with Intelligence. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460686237503275008
+- 2026-05-14 · Lab Series: Agentic AI Meets the Mainframe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460685152793509888
+- 2026-05-14 · The Human Loop: When Software Loses Its Head. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460683811186638848
+- 2026-05-07 · Digital Iron: Powering Up the Predictive Plant. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458290985446580224
+- 2026-05-07 · Lab Series: The Consumerization of the Local Agent. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458289590999785472
+- 2026-05-07 · The Human Loop: The New Lunar Society. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7457972904589201409
+- 2026-05-03 · Digital Iron: Cranes of the Future and the Power of Prediction. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7456525873702428672
+- 2026-05-01 · Lab Series: Deconstructing Model Capacity and the Incompressibility Framework. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455809762195333120
+- 2026-04-30 · The Human Loop: The Human Accelerator. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455445788111060992
+- 2026-04-27 · Digital Iron: Warehouse Workhorses Go Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7454364479850643456
+- 2026-04-24 · Lab Series: The Autonomous Research Architecture of Deep Research Max. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7453242483007967232
+- 2026-04-23 · The Human Loop: Ground Truth in Manufacturing. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452901629839724545
+- 2026-04-19 · Digital Iron: When Bolts Become Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7451438534856441856
+- 2026-04-15 · Lab Series: Eliminating the KV Cache Bottleneck. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7450200328219672576
+- 2026-04-15 · The Human Loop: Closing the Gap in the Engine Center. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7450198966387785731
+- 2026-04-08 · Digital Iron: The Construction Site Conductor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447747201235202048
+- 2026-04-08 · Lab Series: The Anatomy of the Agent Harness. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447746538526765056
+- 2026-04-08 · The Human Loop: Solving the Last Mile of AI Transformation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447744967734882304
+- 2026-04-05 · Digital Iron: The Fuel Whisperer. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7446351813613871104
+- 2026-04-01 · Lab Series: The Rise of Native Omnimodal Architectures. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445083712658079744
+- 2026-04-01 · The Human Loop: Onboarding the Algorithmic Colleague. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445080886603214848
+- 2026-03-25 · Digital Iron: Edge Intelligence at the Fringe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442586264236855296
+- 2026-03-25 · Lab Series: The Return of the Adversarial Network. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442583908426321920
+- 2026-03-25 · The Human Loop: The Brain Fry Epidemic. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442582824789995522
+- 2026-03-19 · Digital Iron: The Augmented Mechanic and the Cyborg Crew. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440236347573022720
+- 2026-03-19 · The Human Loop: The Evaluation Crisis of Long-Running Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440235125294141440
+- 2026-03-19 · Lab Series: Rethinking the Residual Connection. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440234493065699328
+- 2026-03-15 · Digital Iron: Mine of the Autonomous Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7438756960046456832
+- 2026-03-12 · Lab Series: The Death of Agent Middleware. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437975244188860418
+- 2026-03-11 · The Human Loop: You Cannot Automate a Secret. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437524474888921088
+- 2026-03-08 · Digital Iron: Digital Twin, Real Win. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7436430192698531840
+- 2026-03-05 · Lab Series: Shrinking the Frontier with Data Quality. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435440892137693185
+- 2026-03-05 · The Human Loop: Handing Over the Mouse. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435166104718790657
+- 2026-02-19 · Lab Series: The New Efficiency Frontier. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430053068085518336
+- 2026-02-19 · Lab Series: The Decoupling of the Agent. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430052849549524992
+- 2026-02-19 · Digital Iron: From Dumb Iron to Smart Iron. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430050973303156736
+- 2026-02-19 · Digital Iron: Green Giants on the Charge. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430049528151670784
+- 2026-02-19 · The Human Loop: The Art of the Interruption. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430048359618363392
+- 2026-02-19 · The Human Loop: From Firefighter to Conductor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430047727998160896
+- 2026-02-12 · Digital Iron: Cooling on the Edge. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427580238722834432
+- 2026-02-12 · Lab Series: The Death of the Keyword Match. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427579281980948480
+- 2026-02-12 · The Human Loop: The Tax Strategist vs. The Data Entry Clerk. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427577693170233344
+- 2026-02-08 · Digital Iron: The Ghost in the Gearbox. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7426052216094093312
+- 2026-02-05 · Lab Series: Big Data is lazy. Smart Data is engineering. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425036214904184833
+- 2026-02-05 · The Human Loop: Accounting and AI are best friends. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425033846947008513
+- 2026-01-31 · Lab Series: The Scaling Laws of Agent Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423208499230347264
+- 2026-01-31 · Digital Iron: Tire Tracks of Insight. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423207508862947329
+- 2026-01-21 · Digital Iron: Hydraulic Heartache to Harmony. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419846718252404736
+- 2026-01-21 · Lab Series: The Inversion of the 80/20 Rule. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419845350124892161
+- 2026-01-21 · The Human Loop: Optimization without the math degree. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419765914641883137
+- 2026-01-17 · Digital Iron: The Self-Tuning Engine. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7418097649125494784
+- 2026-01-15 · Lab Series: We assume 7 billion parameters is the floor for reasoning. It is not. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417409986680504320
+- 2026-01-12 · The Human Loop: The "Trust Gap" is widening. And it’s not about the technology. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7416605876175814656
+- 2026-01-10 · Digital Iron: The Billion-Dollar Wear Problem. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7415839536993210369
+- 2026-01-04 · Digital Iron: Hydraulic Safety. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7413441385640427520

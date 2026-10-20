@@ -9,6 +9,17 @@
   <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <script>
+    // Old deep links from the previous site: send them to the closest page instead of a dead end.
+    (function () {
+      var p = location.pathname.toLowerCase();
+      var to = /^\/(\d{4}\/|category\/|tag\/|post|blog|article|news|feed)/.test(p) ? '/writing/'
+        : /(paper|publication|research|scholar|patent|talk)/.test(p) ? '/research/'
+        : /(cv|resume)/.test(p) ? '/resume/'
+        : /(contact|about)/.test(p) ? '/#contact' : '';
+      if (to) location.replace(to);
+    })();
+  </script>
 </head>
 <body>
   <main class="wrap page-hero" style="min-height:70vh">
