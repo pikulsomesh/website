@@ -86,7 +86,7 @@ function parseScholar(html) {
 
 async function scholar() {
   const pubs = read('publications.json');
-  const listed = ['papers', 'preprints', 'chapters', 'patents'].flatMap((k) => (pubs[k] || []).map((p) => ({ list: k, p })));
+  const listed = ['papers', 'preprints', 'chapters', 'patents', 'theses', 'other'].flatMap((k) => (pubs[k] || []).map((p) => ({ list: k, p })));
   const out = { source: 'Google Scholar', statsChanged: false, citesChanged: [], newOnScholar: [] };
   // Scholar items left off the site on purpose (thesis, reviews, other authors' merges).
   const ignored = fs.existsSync(IGNORE) ? fs.readFileSync(IGNORE, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#')) : [];
