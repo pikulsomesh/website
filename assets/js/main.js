@@ -207,15 +207,47 @@ const BLOCKS = {
   table: (b) => `<div class="table-wrap"><table><thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.map((r) => `<tr>${r.map((c, i) => `<td${i === 0 ? ' class="first"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`,
   cards: (b) => `<div class="pb-cards">${b.items.map((c) => `<div class="pb-card"><b>${esc(c.title)}</b><p>${esc(c.text)}</p></div>`).join('')}</div>`,
   steps: (b) => `<ol class="pb-steps${b.variant === 'loop' ? ' loop' : ''}">${b.items.map((st, i) => `<li><span class="sn mono">${String(i + 1).padStart(2, '0')}</span><b>${esc(st.title)}</b><p>${esc(st.text)}</p></li>`).join('')}</ol>`,
-  layers: (b) => `<div class="pb-layers">${b.items.map((l, i) => `
-    <div class="layer${i === 0 ? '' : ''}"><button class="layer-btn" aria-expanded="false"><span class="mono">${esc(l.n)}</span><b>${esc(l.title)}</b><span class="owner">${esc(l.owner)}</span></button>
-    <div class="layer-body"><div><p>${esc(l.text)}</p></div></div></div>`).join('')}</div>`,
+  layers: (b) => `<div class="pb-layers">${b.clouds ? `
+    <div class="cloud-pick" role="group" aria-label="Show the stack on a cloud"><span class="mono">Show on</span>${b.clouds.map((c, i) => `<button class="chip" aria-pressed="${i === 0}" data-cloud="${esc(c.id)}">${esc(c.label)}</button>`).join('')}</div>` : ''}${b.items.map((l) => `
+    <div class="layer"><button class="layer-btn" aria-expanded="false"><span class="mono">${esc(l.n)}</span><span class="lt"><b>${esc(l.title)}</b>${svcHTML(l.on)}</span><span class="owner">${esc(l.owner)}</span></button>
+    <div class="layer-body"><div><p>${esc(l.text)}</p></div></div></div>`).join('')}${(b.spans || []).map((x) => `
+    <div class="layer-span"><span class="mono">All</span><div><b>${esc(x.title)}</b><p>${esc(x.text)}</p>${svcHTML(x.on)}</div></div>`).join('')}${b.note ? `
+    <p class="cloud-note">${esc(b.note)}</p>` : ''}</div>`,
   tiers: (b) => `<div class="pb-tiers" data-tiers='${esc(JSON.stringify(b.items))}'>
     <div class="tier-tabs" role="tablist">${b.items.map((t, i) => `<button role="tab" class="tier-tab" aria-selected="${i === 0}" data-i="${i}"><span class="mono">${esc(t.n)}</span>${esc(t.title)}</button>`).join('')}</div>
     <div class="tier-scale" aria-hidden="true"><span>More reversible</span><i></i><span>Higher consequence</span></div>
     <div class="tier-panel" role="tabpanel"></div></div>`,
   timeline: (b) => `<ol class="pb-timeline">${b.items.map((t) => `<li><span class="when mono">${esc(t.when)}</span><div><b>${esc(t.title)}</b><p>${esc(t.text)}</p>${t.out ? `<p class="out"><span class="mono">Deliverable</span> ${esc(t.out)}</p>` : ''}</div></li>`).join('')}</ol>`,
+  decide: (b) => `<div class="pb-decide">
+    <div class="dq">${b.questions.map((q) => `<div class="dq-row"><p>${esc(q.q)}</p><div class="seg" role="group" aria-label="${esc(q.q)}">${['yes', 'no'].map((v) => `<button class="chip" aria-pressed="false" data-q="${esc(q.id)}" data-v="${v}">${v === 'yes' ? 'Yes' : 'No'}</button>`).join('')}</div></div>`).join('')}</div>
+    <p class="d-why" aria-live="polite"></p>
+    <div class="d-opts">${b.items.map((o) => `<div class="d-opt" data-id="${esc(o.id)}"><span class="mono">${esc(o.sub)}</span><b>${esc(o.title)}</b><p>${esc(o.text)}</p><p class="eg"><span class="mono">Typically</span> ${esc(o.eg)}</p></div>`).join('')}</div></div>`,
 };
+
+function svcHTML(on) {
+  return on ? Object.entries(on).map(([c, v]) => `<span class="svc mono" data-c="${esc(c)}" hidden>${esc(v)}</span>`).join('') : '';
+}
+
+/* Buy, partner or build: the rubric from the economics chapter, applied to the answers given so far. */
+function verdict(a) {
+  if (!a.edge) return [null, 'Start with the first question: whether the capability is where the business creates value decides most of this.'];
+  if (a.edge === 'yes') {
+    if (!a.run) return [null, 'It differentiates. Now, can you run it yourselves?'];
+    if (a.run === 'no') return ['partner', 'It differentiates, but you cannot run it yet. Partner to get it built, and keep the architecture, the data and the IP in-house while the team grows into it.'];
+    return ['build', `It differentiates and you can run it, so build it on the shared platform.${a.fast === 'yes' ? ' The technology is moving, so build from swappable parts and record the exit plan for each.' : ''}`];
+  }
+  if (!a.exists) return [null, 'It does not differentiate. Is there a proven product for it?'];
+  if (a.exists === 'yes') return ['buy', `A proven product exists and it is not your edge, so buy it on open standards.${a.fast === 'yes' ? ' The market is moving, so keep the contract short and make sure you could leave within two quarters.' : ''}`];
+  return ['partner', 'Nothing proven to buy and not worth building alone. Partner with a front-runner, share the risk, and revisit as the market catches up.'];
+}
+
+function drawDecide(wrap) {
+  const a = {};
+  $$('.seg .chip[aria-pressed="true"]', wrap).forEach((b) => { a[b.dataset.q] = b.dataset.v; });
+  const [pick, why] = verdict(a);
+  wrap.querySelector('.d-why').textContent = Object.keys(a).length ? why : 'Answer the questions to see where a capability lands.';
+  $$('.d-opt', wrap).forEach((o) => { o.classList.toggle('on', o.dataset.id === pick); o.classList.toggle('off', !!pick && o.dataset.id !== pick); });
+}
 
 function drawTier(wrap, i) {
   const items = JSON.parse(wrap.dataset.tiers);
@@ -246,7 +278,24 @@ function renderPlaybook(pb) {
     drawTier(w, 0);
     w.addEventListener('click', (e) => { const b = e.target.closest('.tier-tab'); if (b) drawTier(w, Number(b.dataset.i)); });
   });
+  $$('.pb-decide', host).forEach((w) => {
+    drawDecide(w);
+    w.addEventListener('click', (e) => {
+      const b = e.target.closest('.seg .chip');
+      if (!b) return;
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      $$('.chip', b.parentElement).forEach((x) => x.setAttribute('aria-pressed', String(x === b && on)));
+      drawDecide(w);
+    });
+  });
   host.addEventListener('click', (e) => {
+    const c = e.target.closest('.cloud-pick .chip');
+    if (c) {
+      const wrap = c.closest('.pb-layers');
+      $$('.cloud-pick .chip', wrap).forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+      $$('.svc', wrap).forEach((x) => { x.hidden = x.dataset.c !== c.dataset.cloud; });
+      return;
+    }
     const b = e.target.closest('.layer-btn');
     if (b) b.setAttribute('aria-expanded', String(b.getAttribute('aria-expanded') !== 'true'));
   });

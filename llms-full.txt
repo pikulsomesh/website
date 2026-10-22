@@ -279,7 +279,7 @@ A portfolio is a sequencing problem, not a wish list. The first capabilities set
 - Rules exist: There is a policy, playbook or standard to point to, so correctness can be checked rather than debated.
 - Reversible: A wrong output is caught and corrected cheaply. Irreversible processes wait until the platform has a track record.
 
-Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value sits, and it is the work my research career prepared me for.
+Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value usually sits.
 
 
 #### The value case: what counts and what does not
@@ -365,8 +365,14 @@ Seven layers, each with one owner and one reason to exist. A layer belongs in th
 - L3 · Model gateway: One path to every model: routing and fallback, caching, policy and PII filters, cost attribution per team. Owner: Central, mandatory
 - L2 · Context: Semantic layer, vector, graph and structured retrieval, inherited entitlements, lineage. The moat. Owner: Central standards, domain-curated
 - L1 · Data estate: Operational, engineering, commercial and enterprise data, delivered as governed data products. Owner: Domains, contracted to the platform
+- Model lifecycle: Training, registry, locked production versions and drift monitoring tied to change control.
+- Identity, audit & security: Who did what and when, keys, sensitive-data discovery and posture, applied the same way at every layer.
 
 Governance spans every layer rather than sitting as a gate at the end. Cybersecurity, enterprise architecture, legal and finance are partners in the design, not reviewers of the result.
+
+- Systems of record stay put: Operational, quality, planning and finance systems remain the record. AI reads from them and writes back only through approved workflows.
+- Portable by choice: Open table formats, standard model packaging, OpenTelemetry traces and MCP tools keep each layer movable between clouds and data platforms.
+- Accelerated where it pays: GPU-accelerated simulation and optimization for digital twins, routing and scheduling, used where the speed-up changes a decision rather than everywhere.
 
 
 #### The gateway is the control point
@@ -510,9 +516,38 @@ The harness matters more than the horsepower. A cheap model that starts with com
 - Idle capability spend: what we pay for things nobody uses
 
 
-#### Build, buy and partner
+#### Buy, partner or build
+
+These decisions set cost structure, timelines and lock-in for years, so I run every one through the same short rubric. Answer the questions for a capability you are weighing.
+
+- Buy: Clear market solutions exist and the capability is not a differentiator. Require modular, interoperable products on open standards, and an exit plan before signing. Typically: Workplace assistants, enterprise search, data catalogs, cloud security posture, managed model hosting.
+- Partner: Share risk with front-runners on work that is not a product yet, or that matters but cannot yet be run in-house. We specify the architecture and own the result; the partner accelerates it. Typically: Physics-grounded digital twins, vision inspection at the line, integration with operational-technology data.
+- Build selectively: Intersects core value creation and creates an advantage competitors cannot buy. Owned by employees, whoever writes the first version, and built on the shared platform. Typically: Process, yield and quality models, the business glossary and process maps, agents that act on proprietary data.
 
 Partners accelerate work we have specified; they never define the architecture. Anything load-bearing, such as the gateway, the evaluation harness and the context layer, is owned by employees, whoever writes the first version. Every vendor faces three tests: can we leave within two quarters, does the contract prohibit training on our data, and does using it deepen our own team's capability or replace it?
+
+- Composable: Modular parts that each do one thing well and connect through clean interfaces: APIs, MCP, OpenTelemetry, open table formats, SQL.
+- Compostable: Every part replaceable without a redesign. The model chosen today will not be the one in production in eighteen months, so each decision is recorded with its exit plan.
+
+
+#### Open-source alternatives, layer by layer
+
+Layer | Open-source options | When I would consider them
+Model hosting | vLLM, SGLang or TGI serving open-weight models | Data that must stay inside a controlled boundary; high, steady volume
+Model gateway | LiteLLM | Routing across several providers with unified budgets
+Agent runtime | LangGraph, Strands Agents, CrewAI; Temporal for durable execution | Edge or on-premises deployment near operations
+Tool protocol | Self-hosted MCP servers | Always: it is the portable, open standard
+Guardrails | NeMo Guardrails, Guardrails AI, Llama Guard, Presidio for PII | Self-hosted models and custom domain rules
+Observability | Langfuse, Arize Phoenix, OpenLLMetry, Grafana | Multi-cloud estates or an existing standard
+Evaluation | Ragas, DeepEval, promptfoo | Evaluations that run in CI on every change
+ML lifecycle | MLflow, Kubeflow, Feast; Evidently for drift | Models at the edge or across clouds
+Context and catalog | DataHub, OpenMetadata | Budget limits and strong in-house engineering
+Knowledge and search | OpenSearch-based retrieval, Vespa | Cost at scale or sovereign deployment
+Data quality | Great Expectations, Soda Core, dbt tests | Almost always viable
+Tables and compute | Apache Iceberg, Trino, Spark, DuckDB | Open format by default
+Digital twins | OpenUSD, physics-ML libraries | OpenUSD as the interchange format
+
+Open source is free to download, not free to run. Budget for patching, security review, support and license checks, since some open models carry use restrictions, and screen model provenance against the business's own supply-chain and customer requirements.
 
 ### 08. Organization & talent
 
@@ -567,7 +602,7 @@ Getting an answer today often means knowing which system holds the data, which a
 ### 10. How a program matures
 
 Data and AI programs that last move through recognizable stages, and each stage has a different job: understand, decide, ship, prove, widen and industrialize. Skipping a stage is how most programs stall. The early work is weighted toward listening and toward domain knowledge: architecture can be proposed quickly, but understanding how the business actually runs cannot.
-- Stage 1 · Listen and inventory: Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production. Deliverable: A written baseline and a shortlist of lighthouse use cases with named owners.
+- Stage 1 · Baseline what exists: Most programs begin with more AI activity than anyone has counted. The first job is an honest inventory of every initiative, with its cost, its owner and whether it is really in production, alongside an understanding of how the work actually runs on the floor, in the lab and in the field. Security, legal, architecture and finance are engaged here so they shape the standards rather than review them. Deliverable: A written baseline and a shortlist of lighthouse use cases with named owners.
 - Stage 2 · Decide and publish: Platform architecture agreed. The production-ready definition and authority tiers drafted with security, legal and compliance, then published. Gateway build started. Team design confirmed. Two lighthouse use cases selected, with baselines agreed in writing with Finance. Deliverable: Published standards, an agreed roadmap, a funded plan, two use cases in build.
 - Stage 3 · Ship something real: Gateway live with routing, logging and cost attribution, plus a migration plan for existing direct model use. Golden path v1. The first lighthouse in production with a named owner, dashboards and a measured baseline. The first monthly value and cost report. Deliverable: A working platform with one real capability on it.
 - Stage 4 · Prove the path: Second lighthouse in production. All new AI work uses the gateway. Embedded practitioners deployed. Review service levels published and reported. Competency model released. First value re-measurement against the agreed baselines.
