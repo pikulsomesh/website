@@ -14,6 +14,10 @@ Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader. He is Dir
 
 He is Director of Analytics and Head of Data Science and Product Management for Caterpillar's Modern Manufacturing digital platform, covering predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics across 150+ facilities. Earlier at Caterpillar he was chief of staff for strategy in the $15B Resource Industries segment, led minesite electrification analytics, and built ChatDocs, a GenAI platform for supplier contracts that earned the CEO Award.
 
+### How large are the teams and programs Somesh Mohapatra has led?
+
+He leads a 90+ person organization as a leader of leaders, with managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities, with a $30M annual budget. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment; he was promoted twice in 2025, to Senior Manager and then Director. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
+
 ### Where did Somesh Mohapatra study?
 
 He earned a PhD in machine learning for molecular design at MIT (2018 to 2022), advised by Prof. Rafael Gómez-Bombarelli, a dual-degree MBA from the MIT Sloan Leaders for Global Operations program, and a B.Tech from IIT Roorkee, where he won the Institute Gold Medal as rank 1 of 110.
@@ -30,6 +34,10 @@ His playbook treats data and AI as a multiplier for the business a company alrea
 
 He writes and speaks about enterprise AI, digital twins, agentic systems and AI in manufacturing, supply chain and operations, through his LinkedIn essay series, invited talks and his playbook on data and AI at scale. He is always glad to compare notes with practitioners, researchers and leaders working on the same problems.
 
+### What is Somesh Mohapatra building and writing about now?
+
+He builds in the open on GitHub (github.com/pikulsomesh): browser-based digital twins, spatial AI that turns a walkthrough video into an OpenUSD twin, developmental world models and on-device AI. He writes weekly on LinkedIn about open-weight models, inference economics, agent design and evaluation, and what AI does to work, teams and judgment.
+
 ### Where is Somesh Mohapatra based, and how can I contact him?
 
 He is based in the Dallas–Fort Worth area of Texas and works across the US, UK and India. The best ways to reach him are email (from the contact section of someshmohapatra.in) or LinkedIn at linkedin.com/in/pikulsomesh.
@@ -38,14 +46,16 @@ He is based in the Dallas–Fort Worth area of Texas and works across the US, UK
 
 ### Director, Analytics · Head of Data Science & Product Management · Caterpillar Inc. (2025 – now)
 
-- Lead a 90+ person organization of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.
+- Lead a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India, plus a senior principal architect.
 - Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.
 - Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.
 - Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.
-- Outcomes: GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 → 150+ (Pilot plants to global rollout plan)
+- Promoted to Director in 2025, my second promotion that year.
+- Outcomes: $30M (Annual platform budget); GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 → 150+ (Pilot plants to global rollout plan)
 
 ### Senior Manager, Strategy & Analytics · Chief of Staff to SVP · Caterpillar Resource Industries ($15B segment) (2025)
 
+- Promoted to Senior Manager to run strategy for the segment.
 - Led the enterprise strategy workstream for sustainable mining, reporting into the Group President's office.
 - Built the TAM/SAM framework with AI-driven adoption modelling across diesel, electric and hybrid propulsion.
 - Informed M&A and venture decisions in autonomy and digital mine software; prepared board-level and Investor Day material.
@@ -105,7 +115,7 @@ He is based in the Dallas–Fort Worth area of Texas and works across the US, UK
 
 ### A factory you can ask questions (Caterpillar · 2025 – now)
 
-Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line. Impact: 4 plants US & UK pilots; GTC · CES NVIDIA showcases.
+Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line. Impact: 4 plants US & UK pilots; GTC · CES NVIDIA showcases. Press: https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-US-Manufacturing-and-Robotics-Leaders-Drive-Americas-Reindustrialization-With-Physical-AI/default.aspx
 
 ### ChatDocs: reading 7,000 suppliers' fine print (Caterpillar · 2023)
 
@@ -130,7 +140,7 @@ GLAMOUR graph representations, deep learning for fast-flow peptide synthesis and
 ## Capabilities
 
 - Industrial AI & digital twins: Physics-grounded twins of factories and fleets that people can query in plain language, built on Omniverse, OpenUSD and CUDA.
-- Agentic & GenAI platforms: Governed agents, hybrid RAG and evaluation harnesses that make the second team faster than the first.
+- Governed agentic & GenAI platforms: Agents, hybrid RAG and evaluation harnesses, with identity, guardrails and audit built into the platform, so the safe path is the fast path and the second team ships faster than the first.
 - Machine learning research: Graph neural networks, generative models and closed-loop experimentation, from molecules to machines.
 - Strategy & operating leadership: Market sizing, capital allocation, org design and P&L, the work that decides whether AI changes the business.
 

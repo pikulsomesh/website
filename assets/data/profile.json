@@ -24,8 +24,8 @@
       "label": "peer-reviewed papers, incl. 2 in Nature Chemistry"
     },
     {
-      "value": "Top 1%",
-      "label": "CEO Award, of 120K+ Caterpillar employees"
+      "value": "$30M",
+      "label": "annual budget for the manufacturing digital platform I lead"
     }
   ],
   "timeline": [
@@ -36,12 +36,17 @@
       "role": "Director, Analytics · Head of Data Science & Product Management",
       "org": "Caterpillar Inc.",
       "points": [
-        "Lead a 90+ person organization of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.",
+        "Lead a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India, plus a senior principal architect.",
         "Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.",
         "Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.",
-        "Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain."
+        "Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.",
+        "Promoted to Director in 2025, my second promotion that year."
       ],
       "metrics": [
+        {
+          "value": "$30M",
+          "label": "Annual platform budget"
+        },
         {
           "value": "GTC · CES",
           "label": "Work shown at NVIDIA GTC DC 2025 and CES 2026"
@@ -59,6 +64,7 @@
       "role": "Senior Manager, Strategy & Analytics · Chief of Staff to SVP",
       "org": "Caterpillar Resource Industries ($15B segment)",
       "points": [
+        "Promoted to Senior Manager to run strategy for the segment.",
         "Led the enterprise strategy workstream for sustainable mining, reporting into the Group President's office.",
         "Built the TAM/SAM framework with AI-driven adoption modelling across diesel, electric and hybrid propulsion.",
         "Informed M&A and venture decisions in autonomy and digital mine software; prepared board-level and Investor Day material."
@@ -235,14 +241,14 @@
       ]
     },
     {
-      "title": "Agentic & GenAI platforms",
+      "title": "Governed agentic & GenAI platforms",
       "icon": "agent",
-      "text": "Governed agents, hybrid RAG and evaluation harnesses that make the second team faster than the first.",
+      "text": "Agents, hybrid RAG and evaluation harnesses, with identity, guardrails and audit built into the platform, so the safe path is the fast path and the second team ships faster than the first.",
       "tags": [
         "NeMo",
         "Hybrid RAG",
         "Evals",
-        "LLMOps"
+        "AI governance"
       ]
     },
     {
@@ -264,7 +270,7 @@
         "TAM/SAM",
         "M&A",
         "Org design",
-        "CSCP"
+        "Operating model"
       ]
     }
   ],
@@ -289,7 +295,11 @@
         "Omniverse",
         "NeMo",
         "Digital twin"
-      ]
+      ],
+      "press": {
+        "label": "NVIDIA press release, GTC DC 2025",
+        "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-US-Manufacturing-and-Robotics-Leaders-Drive-Americas-Reindustrialization-With-Physical-AI/default.aspx"
+      }
     },
     {
       "id": "work-chatdocs",

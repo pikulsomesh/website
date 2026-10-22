@@ -182,6 +182,7 @@ const BLOCKS = {
   'resume/index.html': {
     jobs: resumeHTML,
     certs: () => rows(profile.certifications.map((c) => `<li>${esc(c)}</li>`)),
+    recog: () => rows(profile.recognition.map((r) => `<li>${esc(r.year)} · <b>${esc(r.title)}</b>. ${esc(r.text)}</li>`)),
   },
   'writing/index.html': {
     posts: () => rows(posts.map((p) => `<li class="post"><div class="meta"><span class="s">${esc(p.series)}${p.vol ? ' · ' + esc(p.vol) : ''}</span>${esc(p.date)}</div><div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></li>`)),
@@ -262,7 +263,7 @@ ${profile.timeline.map((t) => `### ${t.role} · ${t.org} (${t.years})\n\n${t.poi
 
 ## Selected work
 
-${profile.work.map((w) => `### ${w.title} (${w.kicker})\n\n${w.text} Impact: ${w.impact.map((m) => `${m.value} ${m.label}`).join('; ')}.`).join('\n\n')}
+${profile.work.map((w) => `### ${w.title} (${w.kicker})\n\n${w.text} Impact: ${w.impact.map((m) => `${m.value} ${m.label}`).join('; ')}.${w.press ? ` Press: ${w.press.url}` : ''}`).join('\n\n')}
 
 ## Capabilities
 
