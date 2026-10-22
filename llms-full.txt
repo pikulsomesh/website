@@ -16,7 +16,7 @@ He is Director of Analytics and Head of Data Science and Product Management for 
 
 ### How large are the teams and programs Somesh Mohapatra has led?
 
-He leads a 90+ person organization as a leader of leaders, with managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities that delivers about $30M a year in value. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment; he was promoted twice in 2025, to Senior Manager and then Director. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
+He leads a 90+ person organization as a leader of leaders, with managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities, with a $30M annual budget. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment; he was promoted twice in 2025, to Senior Manager and then Director. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
 
 ### Where did Somesh Mohapatra study?
 
@@ -51,7 +51,7 @@ He is based in the Dallas–Fort Worth area of Texas and works across the US, UK
 - Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.
 - Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.
 - Promoted to Director in 2025, my second promotion that year.
-- Outcomes: $30M (Annual value from the platform); GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 → 150+ (Pilot plants to global rollout plan)
+- Outcomes: $30M (Annual platform budget); GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 → 150+ (Pilot plants to global rollout plan)
 
 ### Senior Manager, Strategy & Analytics · Chief of Staff to SVP · Caterpillar Resource Industries ($15B segment) (2025)
 
@@ -115,7 +115,7 @@ He is based in the Dallas–Fort Worth area of Texas and works across the US, UK
 
 ### A factory you can ask questions (Caterpillar · 2025 – now)
 
-Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line. Impact: $30M/yr Platform value; 4 plants US & UK pilots; GTC · CES NVIDIA showcases. Press: https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-US-Manufacturing-and-Robotics-Leaders-Drive-Americas-Reindustrialization-With-Physical-AI/default.aspx
+Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line. Impact: 4 plants US & UK pilots; GTC · CES NVIDIA showcases. Press: https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-US-Manufacturing-and-Robotics-Leaders-Drive-Americas-Reindustrialization-With-Physical-AI/default.aspx
 
 ### ChatDocs: reading 7,000 suppliers' fine print (Caterpillar · 2023)
 

@@ -25,7 +25,7 @@
     },
     {
       "value": "$30M",
-      "label": "a year in value from the manufacturing digital platform"
+      "label": "annual budget for the manufacturing digital platform I lead"
     }
   ],
   "timeline": [
@@ -45,7 +45,7 @@
       "metrics": [
         {
           "value": "$30M",
-          "label": "Annual value from the platform"
+          "label": "Annual platform budget"
         },
         {
           "value": "GTC · CES",
@@ -282,10 +282,6 @@
       "title": "A factory you can ask questions",
       "text": "Conversational AI over a 3D digital twin of the plant, so planners and maintenance leads ask about constraints, inventory and schedules in plain language and see the answer on the line.",
       "impact": [
-        {
-          "value": "$30M/yr",
-          "label": "Platform value"
-        },
         {
           "value": "4 plants",
           "label": "US & UK pilots"
