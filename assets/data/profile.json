@@ -235,14 +235,14 @@
       ]
     },
     {
-      "title": "Agentic & GenAI platforms",
+      "title": "Governed agentic & GenAI platforms",
       "icon": "agent",
-      "text": "Governed agents, hybrid RAG and evaluation harnesses that make the second team faster than the first.",
+      "text": "Agents, hybrid RAG and evaluation harnesses, with identity, guardrails and audit built into the platform, so the safe path is the fast path and the second team ships faster than the first.",
       "tags": [
         "NeMo",
         "Hybrid RAG",
         "Evals",
-        "LLMOps"
+        "AI governance"
       ]
     },
     {
@@ -264,7 +264,7 @@
         "TAM/SAM",
         "M&A",
         "Org design",
-        "CSCP"
+        "Operating model"
       ]
     }
   ],

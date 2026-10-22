@@ -312,6 +312,7 @@ function renderResume(p) {
     <div class="org">${esc(t.org)}</div>
     <ul>${t.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
   $('#resume-certs').innerHTML = p.certifications.map((c) => `<li>${esc(c)}</li>`).join('');
+  $('#resume-recog').innerHTML = p.recognition.map((r) => `<li>${esc(r.year)} · <b>${esc(r.title)}</b>. ${esc(r.text)}</li>`).join('');
 }
 
 /* ---------- Contact email (assembled at runtime to deter scrapers) ---------- */

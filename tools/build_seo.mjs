@@ -182,6 +182,7 @@ const BLOCKS = {
   'resume/index.html': {
     jobs: resumeHTML,
     certs: () => rows(profile.certifications.map((c) => `<li>${esc(c)}</li>`)),
+    recog: () => rows(profile.recognition.map((r) => `<li>${esc(r.year)} · <b>${esc(r.title)}</b>. ${esc(r.text)}</li>`)),
   },
   'writing/index.html': {
     posts: () => rows(posts.map((p) => `<li class="post"><div class="meta"><span class="s">${esc(p.series)}${p.vol ? ' · ' + esc(p.vol) : ''}</span>${esc(p.date)}</div><div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></li>`)),
