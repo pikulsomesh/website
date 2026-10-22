@@ -67,7 +67,7 @@ function collectEntries() {
     id: `conf-${i}`, kind: 'Talk', title: t.title, url: 'research/', text: `${t.kind} at ${t.venue}, ${t.year}.`,
   }));
   (profile.builds || []).forEach((b, i) => entries.push({
-    id: `build-${i}`, kind: 'Build', title: b.title, url: b.url, text: `${b.tag}. ${b.text}`,
+    id: `build-${i}`, kind: 'Build', title: b.title, url: b.url || b.repo, text: `${b.theme}, ${b.status}. ${b.problem} ${b.text} Built with ${b.stack.join(', ')}.`,
   }));
   posts.forEach((p, i) => entries.push({
     id: `post-${i}`, kind: p.series, title: p.title, url: p.url, text: p.excerpt,

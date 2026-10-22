@@ -257,14 +257,18 @@ function renderPlaybook(pb) {
 }
 
 /* ---------- Builds (home + research) ---------- */
+// Keep in step with buildCard in tools/build_seo.mjs, which prerenders the same markup.
+const fmtMonth = (iso) => new Date(`${iso}T00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 function buildCard(b) {
-  const live = b.url !== b.repo;
-  return `<article class="card build reveal"><span class="kicker mono">${esc(b.tag)}</span>
-    <h3><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p>${esc(b.text)}</p>
-    <div class="build-links">${live ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a></div></article>`;
+  const links = (b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : '') + `<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>`;
+  return `<article class="card build reveal"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div>
+    <h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3>
+    <p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p>
+    <ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul>
+    <div class="build-links">${links}<span class="build-updated">Updated ${esc(fmtMonth(b.updated))}</span></div></article>`;
 }
 function renderBuilds(p) {
-  const el = $('#builds-grid');
+  const el = $('#builds-grid') || $('#code');
   if (el && p.builds) el.innerHTML = p.builds.map(buildCard).join('');
 }
 
@@ -298,7 +302,6 @@ function renderResearch(pubs, site) {
   });
   draw();
   $('#patents').innerHTML = pubs.patents.map((p) => `<li class="pub"><span class="yr">Patent</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.number)}</span></div><span class="venue">USPTO</span></li>`).join('');
-  $('#code').innerHTML = pubs.code.map(buildCard).join('');
   $('#talk-list').innerHTML = pubs.talks.map((t) => `<li class="pub"><span class="yr">${t.year}</span><div><b>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title)}</b><span>Invited</span></div><span class="venue">${esc(t.venue)}</span></li>`).join('');
   $('#conf-list').innerHTML = pubs.conference.map((c) => `<li class="pub"><span class="yr">${c.year}</span><div><b>${esc(c.title)}</b><span>${esc(c.kind)}</span></div><span class="venue">${esc(c.venue)}</span></li>`).join('');
   $('#service').innerHTML = pubs.service.map((x) => `<li>${esc(x)}</li>`).join('');
@@ -357,7 +360,10 @@ async function boot() {
       renderSeriesTeaser(posts); renderWritingPage(posts);
     }
     if (PAGE === 'playbook') renderPlaybook(await getJSON('playbook.json'));
-    if (PAGE === 'research') renderResearch(await getJSON('publications.json'), site);
+    if (PAGE === 'research') {
+      renderResearch(await getJSON('publications.json'), site);
+      renderBuilds(await getJSON('profile.json'));
+    }
   } catch (err) {
     console.error('Content failed to load', err);
   }
