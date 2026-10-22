@@ -300,8 +300,21 @@
   "talks": [
     {
       "year": 2026,
+      "venue": "In Production Podcast, with Nick Melnychuk",
+      "title": "Process debt: why industrial AI stalls, and why you cannot automate a secret",
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452164828829458432"
+    },
+    {
+      "year": 2026,
       "venue": "CES 2026, NVIDIA booth",
-      "title": "Manufacturing & supply digital platform on NVIDIA Omniverse"
+      "title": "Manufacturing & supply digital platform on NVIDIA Omniverse",
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7422276261064126465"
+    },
+    {
+      "year": 2025,
+      "venue": "Caterpillar Analytics Center of Excellence, Bangalore",
+      "title": "Fireside chat on careers and analytics in global financial services",
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7339417071849545729"
     },
     {
       "year": 2024,

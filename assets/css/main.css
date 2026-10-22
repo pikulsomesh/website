@@ -303,6 +303,11 @@ section { padding: clamp(64px, 10vw, 128px) 0; }
 .post .meta { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); line-height: 1.7; }
 .post .meta .s { color: var(--accent); display: block; }
 .post .meta .sr { display: block; }
+.talk-strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.talk-strip a { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 12px; background: var(--bg-elev); text-decoration: none; }
+.talk-strip a:hover { border-color: var(--accent); }
+.talk-strip .mono { font-size: 12px; color: var(--accent); }
+.talk-strip b { font-weight: 500; font-size: 15px; line-height: 1.4; }
 .chip-sep { width: 1px; align-self: stretch; background: var(--rule); margin: 0 4px; }
 .post h3 { font-size: 19px; margin-bottom: 6px; }
 .post h3 a { text-decoration: none; }

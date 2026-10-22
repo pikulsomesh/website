@@ -145,6 +145,7 @@ const THEMES = [
   { name: 'Physical AI', blurb: 'Digital twins, sensing and AI inside heavy equipment and plants.' },
   { name: 'AI & work', blurb: 'What AI does to teams, judgment and how organizations run.' },
 ];
+const TALKS = 'Talks & appearances';
 const postMeta = (p) => `<span class="s">${esc(p.theme || '')}</span>${esc(fmtDate(p.date))}${p.series ? `<span class="sr">${esc(p.series)}</span>` : ''}`;
 
 function renderSeriesTeaser(posts) {
@@ -167,6 +168,11 @@ function renderWritingPage(posts) {
   const list = $('#post-list');
   if (!list) return;
   const q = $('#post-q');
+  const talks = $('#talk-strip');
+  if (talks) {
+    talks.innerHTML = posts.filter((p) => p.theme === TALKS).map((p) => `
+      <li><a href="${esc(p.url)}" target="_blank" rel="noopener"><span class="mono">${esc(fmtDate(p.date))}</span><b>${esc(p.title)}</b></a></li>`).join('');
+  }
   let filter = 'all';
   const draw = () => {
     const term = (q.value || '').trim().toLowerCase();

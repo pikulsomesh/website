@@ -139,7 +139,7 @@ const SERIES = [
   { name: 'Digital Iron', re: /^digital iron\s*\|?\s*(?:vol\.?\s*(\d+))?\s*[:|–-]?\s*(.+)$/i },
 ];
 
-const THEMES = ['Models & inference', 'Agents & software', 'Physical AI', 'AI & work'];
+const THEMES = ['Models & inference', 'Agents & software', 'Physical AI', 'AI & work', 'Talks & appearances'];
 
 function guessTheme(post) {
   if (post.series === 'Digital Iron' || /physical world|digital twin|omniverse|robot/i.test(post.title)) return 'Physical AI';

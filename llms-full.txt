@@ -146,6 +146,7 @@ GLAMOUR graph representations, deep learning for fast-flow peptide synthesis and
 
 ## Recognition
 
+- 2026: In Production Podcast. Guest, on process debt and why industrial AI stalls.
 - 2026: CES 2026, NVIDIA booth. Presented Caterpillar's manufacturing digital platform built on Omniverse.
 - 2025: NVIDIA GTC Washington DC. Digital-twin work featured in the keynote.
 - 2025: Chairman's Enterprise Excellence Award. One project selected across Caterpillar, for supply resiliency.
@@ -210,7 +211,9 @@ Google Scholar (Oct 2026): 710 citations, h-index 12.
 
 ### Invited talks
 
+- Process debt: why industrial AI stalls, and why you cannot automate a secret. In Production Podcast, with Nick Melnychuk, 2026.
 - Manufacturing & supply digital platform on NVIDIA Omniverse. CES 2026, NVIDIA booth, 2026.
+- Fireside chat on careers and analytics in global financial services. Caterpillar Analytics Center of Excellence, Bangalore, 2025.
 - Multi-objective optimization in industry. Indian Institute of Management Mumbai, 2024.
 - AI and humanities for rare diseases. IIT Roorkee, 2024.
 - AI, autonomy and sustainability in heavy industry. Massachusetts Institute of Technology, 2024.
@@ -610,6 +613,9 @@ These are the commitments that are easy to make at the start of a program and ha
 
 ## Writing
 
+- 2026-10-18 · Models & inference: Baby Senses Lab: seeing, hearing and feeling like a baby. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7517627841350590464
+- 2026-10-09 · Physical AI: An open history of digital twins. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7514413206941937664
+- 2026-10-06 · Agents & software: LabTrends: on-device AI for scattered lab reports. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7513335281089970176
 - 2026-09-27 · Models & inference, Lab Series: System One Models will optimize tokenomics and latency. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576
 - 2026-08-31 · Agents & software, Lab Series: Spec-Driven Development for AI Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7500309594141986816
 - 2026-08-23 · AI & work, The Human Loop: The Automation Trap in Innovation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7497393297020104704
@@ -647,6 +653,7 @@ These are the commitments that are easy to make at the start of a program and ha
 - 2026-04-27 · Physical AI, Digital Iron: Warehouse Workhorses Go Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7454364479850643456
 - 2026-04-24 · Agents & software, Lab Series: The Autonomous Research Architecture of Deep Research Max. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7453242483007967232
 - 2026-04-23 · AI & work, The Human Loop: Ground Truth in Manufacturing. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452901629839724545
+- 2026-04-21 · Talks & appearances: On the In Production Podcast: you cannot automate a secret. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452164828829458432
 - 2026-04-19 · Physical AI, Digital Iron: When Bolts Become Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7451438534856441856
 - 2026-04-15 · Models & inference, Lab Series: Eliminating the KV Cache Bottleneck. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7450200328219672576
 - 2026-04-15 · AI & work, The Human Loop: Closing the Gap in the Engine Center. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7450198966387785731
@@ -656,12 +663,14 @@ These are the commitments that are easy to make at the start of a program and ha
 - 2026-04-05 · Physical AI, Digital Iron: The Fuel Whisperer. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7446351813613871104
 - 2026-04-01 · Models & inference, Lab Series: The Rise of Native Omnimodal Architectures. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445083712658079744
 - 2026-04-01 · AI & work, The Human Loop: Onboarding the Algorithmic Colleague. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445080886603214848
+- 2026-03-27 · Agents & software: Playing around with Google Disco. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7443153873403478017
 - 2026-03-25 · Physical AI, Digital Iron: Edge Intelligence at the Fringe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442586264236855296
 - 2026-03-25 · Models & inference, Lab Series: The Return of the Adversarial Network. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442583908426321920
 - 2026-03-25 · AI & work, The Human Loop: The Brain Fry Epidemic. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442582824789995522
 - 2026-03-19 · Physical AI, Digital Iron: The Augmented Mechanic and the Cyborg Crew. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440236347573022720
 - 2026-03-19 · Agents & software, The Human Loop: The Evaluation Crisis of Long-Running Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440235125294141440
 - 2026-03-19 · Models & inference, Lab Series: Rethinking the Residual Connection. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440234493065699328
+- 2026-03-16 · Agents & software: Building observable multi-agent workflows at NVIDIA GTC. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7439156655021490176
 - 2026-03-15 · Physical AI, Digital Iron: Mine of the Autonomous Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7438756960046456832
 - 2026-03-12 · Agents & software, Lab Series: The Death of Agent Middleware. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437975244188860418
 - 2026-03-11 · AI & work, The Human Loop: You Cannot Automate a Secret. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437524474888921088
@@ -682,11 +691,29 @@ These are the commitments that are easy to make at the start of a program and ha
 - 2026-02-05 · AI & work, The Human Loop: Accounting and AI are best friends. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425033846947008513
 - 2026-01-31 · Agents & software, Lab Series: The Scaling Laws of Agent Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423208499230347264
 - 2026-01-31 · Physical AI, Digital Iron: Tire Tracks of Insight. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423207508862947329
+- 2026-01-28 · Talks & appearances: From the keynote vision to the booth demo at CES 2026. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7422276261064126465
 - 2026-01-21 · Physical AI, Digital Iron: Hydraulic Heartache to Harmony. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419846718252404736
 - 2026-01-21 · Models & inference, Lab Series: The Inversion of the 80/20 Rule. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419845350124892161
 - 2026-01-21 · AI & work, The Human Loop: Optimization without the math degree. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419765914641883137
 - 2026-01-17 · Physical AI, Digital Iron: The Self-Tuning Engine. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7418097649125494784
+- 2026-01-16 · AI & work: India Iceberg Index: How I mapped AI exposure across 1.4 billion people. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417776921708507138
 - 2026-01-15 · Models & inference, Lab Series: We assume 7 billion parameters is the floor for reasoning. It is not. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417409986680504320
+- 2026-01-15 · Physical AI: A timely read for predictive maintenance. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417666605775736832
 - 2026-01-12 · AI & work, The Human Loop: The "Trust Gap" is widening. And it’s not about the technology. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7416605876175814656
 - 2026-01-10 · Physical AI, Digital Iron: The Billion-Dollar Wear Problem. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7415839536993210369
+- 2026-01-08 · Agents & software, Lab Series: Vector Search at 1.5 Billion Scale: It’s Not About the Embeddings, It’s About the Plumbing. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7414902339075186690
+- 2026-01-08 · AI & work: 40,000 Humans, 25,000 Agents: The New Workforce Ratio. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7414900928429973504
 - 2026-01-04 · Physical AI, Digital Iron: Hydraulic Safety. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7413441385640427520
+- 2026-01-02 · Agents & software, Lab Series: Stop trying to prompt your way to reliable AI agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7412895936772767744
+- 2025-12-23 · Models & inference: Performance Hints by Jeff Dean and Sanjay Ghemawat. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7409084538565328896
+- 2025-12-19 · AI & work: 42% of India’s workforce is exposed to AI. But not where you think. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7407910847194361856
+- 2025-11-30 · Models & inference: A smart twist on SHAP for time‐series—“ShaTS”. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7400960390991388672
+- 2025-11-28 · Models & inference: DeepSeek Math-V2 and self-verifying reasoning. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7400239316913971200
+- 2025-11-26 · Models & inference: NVIDIA’s full-stack software ecosystem. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7399521453387481089
+- 2025-11-22 · Models & inference: Exploring the Next Frontier in AI: General World Models Beyond LLMs. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7397811682980524032
+- 2025-11-11 · Models & inference: Machine Learning is Just Nested Optimization. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7393833999363764225
+- 2025-10-30 · Talks & appearances: Our digital-twin work in the NVIDIA GTC DC keynote. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7389471213674414081
+- 2025-10-23 · AI & work: Why I stay hands-on. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7387084801759076352
+- 2025-07-24 · Agents & software: Context Engineering >> Prompt Engineering. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7354146292031238147
+- 2025-06-13 · Talks & appearances: Fireside chat at Caterpillar’s Analytics Center of Excellence, Bangalore. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7339417071849545729
+- 2025-06-09 · Models & inference: Weekend reading: The Illusion of Thinking. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7337700582004006913
