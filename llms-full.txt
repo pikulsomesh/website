@@ -146,6 +146,7 @@ GLAMOUR graph representations, deep learning for fast-flow peptide synthesis and
 
 ## Recognition
 
+- 2026: MIT LGO Alumni Conference. Panelist on the leadership playbook for the AI era.
 - 2026: In Production Podcast. Guest, on process debt and why industrial AI stalls.
 - 2026: CES 2026, NVIDIA booth. Presented Caterpillar's manufacturing digital platform built on Omniverse.
 - 2025: NVIDIA GTC Washington DC. Digital-twin work featured in the keynote.
@@ -211,9 +212,11 @@ Google Scholar (Oct 2026): 710 citations, h-index 12.
 
 ### Invited talks
 
+- Panelist: The Leadership Playbook for the AI Era: Driving Workforce Transformation. MIT LGO Alumni Conference, Durham, 2026.
 - Process debt: why industrial AI stalls, and why you cannot automate a secret. In Production Podcast, with Nick Melnychuk, 2026.
 - Manufacturing & supply digital platform on NVIDIA Omniverse. CES 2026, NVIDIA booth, 2026.
 - Fireside chat on careers and analytics in global financial services. Caterpillar Analytics Center of Excellence, Bangalore, 2025.
+- AI for manufacturing and healthcare across the globe. Institute of Management Technology, Economics of AI course, 2025.
 - Multi-objective optimization in industry. Indian Institute of Management Mumbai, 2024.
 - AI and humanities for rare diseases. IIT Roorkee, 2024.
 - AI, autonomy and sustainability in heavy industry. Massachusetts Institute of Technology, 2024.

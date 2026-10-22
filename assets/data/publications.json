@@ -300,6 +300,12 @@
   "talks": [
     {
       "year": 2026,
+      "venue": "MIT LGO Alumni Conference, Durham",
+      "title": "Panelist: The Leadership Playbook for the AI Era: Driving Workforce Transformation",
+      "url": "https://sites.google.com/view/2026-mit-lgo-alumni-conference/speakers"
+    },
+    {
+      "year": 2026,
       "venue": "In Production Podcast, with Nick Melnychuk",
       "title": "Process debt: why industrial AI stalls, and why you cannot automate a secret",
       "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452164828829458432"
@@ -315,6 +321,11 @@
       "venue": "Caterpillar Analytics Center of Excellence, Bangalore",
       "title": "Fireside chat on careers and analytics in global financial services",
       "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7339417071849545729"
+    },
+    {
+      "year": 2025,
+      "venue": "Institute of Management Technology, Economics of AI course",
+      "title": "AI for manufacturing and healthcare across the globe"
     },
     {
       "year": 2024,
