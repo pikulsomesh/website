@@ -125,9 +125,9 @@ function jsonld(page, modified) {
 
 
 /* Playbook blocks reduced to plain items, shared by the HTML fallback and llms-full.txt. */
-const blockItems = (b) => (b.items || []).map((x) => (typeof x === 'string' ? { text: x } : {
+const blockItems = (b) => [...(b.items || []), ...(b.spans || [])].map((x) => (typeof x === 'string' ? { text: x } : {
   title: [x.n || x.when, x.title].filter(Boolean).join(' · '),
-  text: [x.text, x.owner && `Owner: ${x.owner}`, x.risk, x.may && `May: ${x.may}`, x.control && `Control: ${x.control}`, x.evidence && `Evidence to launch: ${x.evidence}`, x.out && `Deliverable: ${x.out}`].filter(Boolean).join(' '),
+  text: [x.text, x.owner && `Owner: ${x.owner}`, x.risk, x.may && `May: ${x.may}`, x.control && `Control: ${x.control}`, x.evidence && `Evidence to launch: ${x.evidence}`, x.out && `Deliverable: ${x.out}`, x.eg && `Typically: ${x.eg}`].filter(Boolean).join(' '),
 }));
 const blockHTML = (b) => {
   if (b.type === 'h') return `<h3 class="pb-h">${esc(b.text)}</h3>`;

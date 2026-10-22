@@ -1,5 +1,5 @@
 {
-  "_comment": "One complete point of view on running data and AI in an enterprise. No company or vendor names. Each chapter is a list of blocks; block types: p, list, table, cards, layers, steps, tiers, timeline, callout.",
+  "_comment": "One complete point of view on running data and AI in an enterprise. No company names. Cloud services and open-source projects appear only as illustrative examples, in the cloud switcher and the open-source table. Each chapter is a list of blocks; block types: p, list, table, cards, layers (optional clouds, on, spans), steps, tiers, timeline, callout, decide.",
   "thesis": "The goal is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.",
   "principles": [
     {
@@ -115,7 +115,7 @@
         },
         {
           "type": "p",
-          "text": "Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value sits, and it is the work my research career prepared me for."
+          "text": "Alongside those near-term wins I always hold one bet on the core learning problem: a model inside the physical or scientific loop that removes cycles altogether. That is where the largest value usually sits."
         },
         {
           "type": "h",
@@ -359,49 +359,140 @@
               "n": "L7",
               "title": "Domain solutions",
               "owner": "Federated",
-              "text": "Built by domain teams on the paved path. Use-case selection, workflow redesign and domain evaluation criteria stay close to the work."
+              "text": "Built by domain teams on the paved path. Use-case selection, workflow redesign and domain evaluation criteria stay close to the work.",
+              "on": {
+                "aws": "Amazon Q Business; apps on Lambda or ECS",
+                "azure": "Microsoft 365 Copilot; apps on App Service or Container Apps",
+                "gcp": "Gemini Enterprise; apps on Cloud Run"
+              }
             },
             {
               "n": "L6",
               "title": "Golden paths",
               "owner": "Central",
-              "text": "Scaffolds, SDKs, reference apps, release gates and templates for each authority tier. This is the product the platform team actually sells."
+              "text": "Scaffolds, SDKs, reference apps, release gates and templates for each authority tier. This is the product the platform team actually sells.",
+              "on": {
+                "aws": "CDK or Terraform modules, CodePipeline, Service Catalog",
+                "azure": "Bicep or Terraform modules, GitHub Actions, Deployment Environments",
+                "gcp": "Terraform modules, Cloud Build, Cloud Deploy"
+              }
             },
             {
               "n": "L5",
               "title": "Evaluation & observability",
               "owner": "Central, non-negotiable",
-              "text": "Golden datasets, regression gates, tracing, drift watch and continuous production sampling."
+              "text": "Golden datasets, regression gates, tracing, drift watch and continuous production sampling.",
+              "on": {
+                "aws": "Bedrock evaluations, SageMaker Model Monitor, CloudWatch",
+                "azure": "AI Foundry evaluations, Azure Monitor, Application Insights",
+                "gcp": "Vertex AI evaluation, Model Monitoring, Cloud Trace"
+              }
             },
             {
               "n": "L4",
               "title": "Agent runtime & orchestration",
               "owner": "Central",
-              "text": "Tool registry, planning and memory, human-in-the-loop checkpoints, rollback and a tested kill switch."
+              "text": "Tool registry, planning and memory, human-in-the-loop checkpoints, rollback and a tested kill switch.",
+              "on": {
+                "aws": "Bedrock AgentCore",
+                "azure": "AI Foundry Agent Service",
+                "gcp": "Vertex AI Agent Engine"
+              }
             },
             {
               "n": "L3",
               "title": "Model gateway",
               "owner": "Central, mandatory",
-              "text": "One path to every model: routing and fallback, caching, policy and PII filters, cost attribution per team."
+              "text": "One path to every model: routing and fallback, caching, policy and PII filters, cost attribution per team.",
+              "on": {
+                "aws": "Amazon Bedrock with Bedrock Guardrails",
+                "azure": "AI Foundry models behind API Management, AI Content Safety",
+                "gcp": "Vertex AI Model Garden behind Apigee, Model Armor"
+              }
             },
             {
               "n": "L2",
               "title": "Context",
               "owner": "Central standards, domain-curated",
-              "text": "Semantic layer, vector, graph and structured retrieval, inherited entitlements, lineage. The moat."
+              "text": "Semantic layer, vector, graph and structured retrieval, inherited entitlements, lineage. The moat.",
+              "on": {
+                "aws": "SageMaker Catalog, Lake Formation, Bedrock Knowledge Bases",
+                "azure": "Microsoft Purview, Azure AI Search",
+                "gcp": "Dataplex Universal Catalog, Vertex AI Search"
+              }
             },
             {
               "n": "L1",
               "title": "Data estate",
               "owner": "Domains, contracted to the platform",
-              "text": "Operational, engineering, commercial and enterprise data, delivered as governed data products."
+              "text": "Operational, engineering, commercial and enterprise data, delivered as governed data products.",
+              "on": {
+                "aws": "S3 with Iceberg tables, Glue, Athena; IoT SiteWise at the edge",
+                "azure": "Fabric and OneLake on ADLS; IoT Operations at the edge",
+                "gcp": "Cloud Storage with BigQuery and BigLake; Manufacturing Data Engine at the edge"
+              }
             }
-          ]
+          ],
+          "clouds": [
+            {
+              "id": "any",
+              "label": "Any cloud"
+            },
+            {
+              "id": "aws",
+              "label": "AWS"
+            },
+            {
+              "id": "azure",
+              "label": "Azure"
+            },
+            {
+              "id": "gcp",
+              "label": "Google Cloud"
+            }
+          ],
+          "spans": [
+            {
+              "title": "Model lifecycle",
+              "text": "Training, registry, locked production versions and drift monitoring tied to change control.",
+              "on": {
+                "aws": "SageMaker AI and Pipelines",
+                "azure": "Azure Machine Learning",
+                "gcp": "Vertex AI Pipelines"
+              }
+            },
+            {
+              "title": "Identity, audit & security",
+              "text": "Who did what and when, keys, sensitive-data discovery and posture, applied the same way at every layer.",
+              "on": {
+                "aws": "IAM Identity Center, KMS, CloudTrail, Security Hub, Macie",
+                "azure": "Entra ID, Key Vault, activity logs, Defender for Cloud, Purview DLP",
+                "gcp": "Cloud IAM, Cloud KMS, Cloud Audit Logs, Security Command Center"
+              }
+            }
+          ],
+          "note": "The architecture is defined by what each layer must do, so it holds on any cloud. Service names are examples from each provider's public catalog as of 2026, not a recommendation made without seeing an environment."
         },
         {
           "type": "p",
           "text": "Governance spans every layer rather than sitting as a gate at the end. Cybersecurity, enterprise architecture, legal and finance are partners in the design, not reviewers of the result."
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Systems of record stay put",
+              "text": "Operational, quality, planning and finance systems remain the record. AI reads from them and writes back only through approved workflows."
+            },
+            {
+              "title": "Portable by choice",
+              "text": "Open table formats, standard model packaging, OpenTelemetry traces and MCP tools keep each layer movable between clouds and data platforms."
+            },
+            {
+              "title": "Accelerated where it pays",
+              "text": "GPU-accelerated simulation and optimization for digital twins, routing and scheduling, used where the speed-up changes a decision rather than everywhere."
+            }
+          ]
         },
         {
           "type": "h",
@@ -832,11 +923,155 @@
         },
         {
           "type": "h",
-          "text": "Build, buy and partner"
+          "text": "Buy, partner or build"
+        },
+        {
+          "type": "p",
+          "text": "These decisions set cost structure, timelines and lock-in for years, so I run every one through the same short rubric. Answer the questions for a capability you are weighing."
+        },
+        {
+          "type": "decide",
+          "questions": [
+            {
+              "id": "edge",
+              "q": "Is this where the business creates value, so doing it better is a durable advantage?"
+            },
+            {
+              "id": "exists",
+              "q": "Does a proven, off-the-shelf product already do this job?"
+            },
+            {
+              "id": "run",
+              "q": "Can we staff and run it around the clock, with clear ownership of incidents?"
+            },
+            {
+              "id": "fast",
+              "q": "Is the capability changing fast enough that today's leader may not be tomorrow's?"
+            }
+          ],
+          "items": [
+            {
+              "id": "buy",
+              "title": "Buy",
+              "sub": "Commodity capability",
+              "text": "Clear market solutions exist and the capability is not a differentiator. Require modular, interoperable products on open standards, and an exit plan before signing.",
+              "eg": "Workplace assistants, enterprise search, data catalogs, cloud security posture, managed model hosting."
+            },
+            {
+              "id": "partner",
+              "title": "Partner",
+              "sub": "Will commoditize, not yet buyable",
+              "text": "Share risk with front-runners on work that is not a product yet, or that matters but cannot yet be run in-house. We specify the architecture and own the result; the partner accelerates it.",
+              "eg": "Physics-grounded digital twins, vision inspection at the line, integration with operational-technology data."
+            },
+            {
+              "id": "build",
+              "title": "Build selectively",
+              "sub": "Differentiated edge",
+              "text": "Intersects core value creation and creates an advantage competitors cannot buy. Owned by employees, whoever writes the first version, and built on the shared platform.",
+              "eg": "Process, yield and quality models, the business glossary and process maps, agents that act on proprietary data."
+            }
+          ]
         },
         {
           "type": "p",
           "text": "Partners accelerate work we have specified; they never define the architecture. Anything load-bearing, such as the gateway, the evaluation harness and the context layer, is owned by employees, whoever writes the first version. Every vendor faces three tests: can we leave within two quarters, does the contract prohibit training on our data, and does using it deepen our own team's capability or replace it?"
+        },
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Composable",
+              "text": "Modular parts that each do one thing well and connect through clean interfaces: APIs, MCP, OpenTelemetry, open table formats, SQL."
+            },
+            {
+              "title": "Compostable",
+              "text": "Every part replaceable without a redesign. The model chosen today will not be the one in production in eighteen months, so each decision is recorded with its exit plan."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Open-source alternatives, layer by layer"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Layer",
+            "Open-source options",
+            "When I would consider them"
+          ],
+          "rows": [
+            [
+              "Model hosting",
+              "vLLM, SGLang or TGI serving open-weight models",
+              "Data that must stay inside a controlled boundary; high, steady volume"
+            ],
+            [
+              "Model gateway",
+              "LiteLLM",
+              "Routing across several providers with unified budgets"
+            ],
+            [
+              "Agent runtime",
+              "LangGraph, Strands Agents, CrewAI; Temporal for durable execution",
+              "Edge or on-premises deployment near operations"
+            ],
+            [
+              "Tool protocol",
+              "Self-hosted MCP servers",
+              "Always: it is the portable, open standard"
+            ],
+            [
+              "Guardrails",
+              "NeMo Guardrails, Guardrails AI, Llama Guard, Presidio for PII",
+              "Self-hosted models and custom domain rules"
+            ],
+            [
+              "Observability",
+              "Langfuse, Arize Phoenix, OpenLLMetry, Grafana",
+              "Multi-cloud estates or an existing standard"
+            ],
+            [
+              "Evaluation",
+              "Ragas, DeepEval, promptfoo",
+              "Evaluations that run in CI on every change"
+            ],
+            [
+              "ML lifecycle",
+              "MLflow, Kubeflow, Feast; Evidently for drift",
+              "Models at the edge or across clouds"
+            ],
+            [
+              "Context and catalog",
+              "DataHub, OpenMetadata",
+              "Budget limits and strong in-house engineering"
+            ],
+            [
+              "Knowledge and search",
+              "OpenSearch-based retrieval, Vespa",
+              "Cost at scale or sovereign deployment"
+            ],
+            [
+              "Data quality",
+              "Great Expectations, Soda Core, dbt tests",
+              "Almost always viable"
+            ],
+            [
+              "Tables and compute",
+              "Apache Iceberg, Trino, Spark, DuckDB",
+              "Open format by default"
+            ],
+            [
+              "Digital twins",
+              "OpenUSD, physics-ML libraries",
+              "OpenUSD as the interchange format"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "Open source is free to download, not free to run. Budget for patching, security review, support and license checks, since some open models carry use restrictions, and screen model provenance against the business's own supply-chain and customer requirements."
         }
       ]
     },
@@ -1012,8 +1247,8 @@
           "items": [
             {
               "when": "Stage 1",
-              "title": "Listen and inventory",
-              "text": "Structured conversations with executives, domain leaders and platform owners; early engagement with security, legal, architecture and finance so they shape the standards rather than review them. Time on the floor, in the lab and in the field. A full inventory of every AI initiative: cost, owner and whether it is really in production.",
+              "title": "Baseline what exists",
+              "text": "Most programs begin with more AI activity than anyone has counted. The first job is an honest inventory of every initiative, with its cost, its owner and whether it is really in production, alongside an understanding of how the work actually runs on the floor, in the lab and in the field. Security, legal, architecture and finance are engaged here so they shape the standards rather than review them.",
               "out": "A written baseline and a shortlist of lighthouse use cases with named owners."
             },
             {
