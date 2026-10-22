@@ -284,14 +284,16 @@ section { padding: clamp(64px, 10vw, 128px) 0; }
 .faq-item p { color: var(--ink-2); margin: 0 0 20px; max-width: 70ch; }
 
 /* ---------- Writing teaser / list ---------- */
-.series-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.series h3 { font-family: var(--font-display); font-size: 32px; font-weight: 400; margin: 6px 0 8px; }
+.series-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.series h3 { font-family: var(--font-display); font-size: 28px; font-weight: 400; margin: 6px 0 8px; }
 .series .count { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
 .series ol { list-style: none; padding: 0; margin: 16px 0 0; border-top: 1px solid var(--rule); }
 .series li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
 .series li a { text-decoration: none; display: flex; gap: 10px; }
-.series li .v { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); padding-top: 3px; flex: none; width: 44px; }
-@media (max-width: 900px) { .series-grid { grid-template-columns: 1fr; } }
+.series li .v { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); padding-top: 3px; flex: none; width: 48px; }
+.series h3 a { text-decoration: none; }
+@media (max-width: 1100px) { .series-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .series-grid { grid-template-columns: 1fr; } }
 
 .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 24px; }
 .search-input { flex: 1 1 260px; min-width: 0; font: inherit; font-size: 15px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--rule); background: var(--bg-elev); color: var(--ink); }
@@ -300,6 +302,8 @@ section { padding: clamp(64px, 10vw, 128px) 0; }
 .post { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
 .post .meta { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); line-height: 1.7; }
 .post .meta .s { color: var(--accent); display: block; }
+.post .meta .sr { display: block; }
+.chip-sep { width: 1px; align-self: stretch; background: var(--rule); margin: 0 4px; }
 .post h3 { font-size: 19px; margin-bottom: 6px; }
 .post h3 a { text-decoration: none; }
 .post p { color: var(--ink-2); font-size: 15px; margin: 0 0 10px; }

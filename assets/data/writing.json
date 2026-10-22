@@ -6,7 +6,8 @@
   "date": "2026-09-27",
   "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576",
   "excerpt": "System One Models or Contrastive Language Models have taken the feeds by storm with Jev by TypeSafe AI (super-cheap API), Julia-1 by Supersonic Labs (at 144M), and recently CLM-8B by Stanford University and NVIDIA(open source, 8B). What…",
-  "tags": []
+  "tags": [],
+  "theme": "Models & inference"
  },
  {
   "series": "Lab Series",
@@ -21,7 +22,8 @@
    "google",
    "softwareengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -36,7 +38,8 @@
    "harvardbusinessschool",
    "innovation",
    "kelloggschool"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -51,7 +54,8 @@
    "machinelearning",
    "opensourceai",
    "systemdesign"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Lab Series",
@@ -66,7 +70,8 @@
    "moe",
    "opensourceai",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -81,7 +86,8 @@
    "openai",
    "organizationaldesign",
    "systemdesign"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "The Human Loop",
@@ -96,7 +102,8 @@
    "productdiscovery",
    "productmanagement",
    "systemdesign"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -111,7 +118,8 @@
    "graphengineering",
    "machinelearning",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -126,7 +134,8 @@
    "generativeai",
    "innovation",
    "management"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -141,7 +150,8 @@
    "opensourceai",
    "qwen",
    "systemdesign"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Digital Iron",
@@ -156,7 +166,8 @@
    "industrialai",
    "manufacturing",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -171,7 +182,8 @@
    "futureofwork",
    "machinelearning",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Lab Series",
@@ -186,7 +198,8 @@
    "rustlang",
    "softwareengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -201,7 +214,8 @@
    "heavyequipment",
    "heavymachinery",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -216,7 +230,8 @@
    "llminference",
    "machinelearning",
    "nvidia"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -231,7 +246,8 @@
    "industrialai",
    "machinelearning",
    "mit"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -246,7 +262,8 @@
    "digitaltwins",
    "industrialai",
    "machinelearning"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -261,7 +278,8 @@
    "enterprisearchitecture",
    "futureofwork",
    "management"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -276,7 +294,8 @@
    "machinelearning",
    "opensourceai",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -291,7 +310,8 @@
    "humanintheloop",
    "machinelearning",
    "microsoftai"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "The Human Loop",
@@ -306,7 +326,8 @@
    "futureofwork",
    "innovation",
    "machinelearning"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -321,7 +342,8 @@
    "macroevals",
    "openai",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -336,7 +358,8 @@
    "geosciences",
    "heavyequipment",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -351,7 +374,8 @@
    "industrialai",
    "machinelearning",
    "manufacturing"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -366,7 +390,8 @@
    "machinelearning",
    "softwareengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -381,7 +406,8 @@
    "datacenters",
    "greentech",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -396,7 +422,8 @@
    "enterpriseai",
    "hypercubic",
    "legacymodernization"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -411,7 +438,8 @@
    "dataarchitecture",
    "enterprisesoftware",
    "futureofwork"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -426,7 +454,8 @@
    "engineering",
    "heavymachinery",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -441,7 +470,8 @@
    "futureofwork",
    "machinelearning",
    "perplexity"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -456,7 +486,8 @@
    "futureofwork",
    "industrialrevolution",
    "manufacturing"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -471,7 +502,8 @@
    "futureofwork",
    "globaltrade",
    "heavyequipment"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -486,7 +518,8 @@
    "generativeai",
    "machinelearning",
    "modeldistillation"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -501,7 +534,8 @@
    "computationalscience",
    "iisc",
    "iitroorkee"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -516,7 +550,8 @@
    "industrialai",
    "logistics",
    "machinelearning"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -531,7 +566,8 @@
    "enterpriseai",
    "generativeai",
    "googledeepmind"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -546,7 +582,8 @@
    "iamcaterpillar",
    "industrialai",
    "machinelearning"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -561,7 +598,8 @@
    "constructiontech",
    "engineering",
    "futureofwork"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -576,7 +614,8 @@
    "googleresearch",
    "llm",
    "machinelearning"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -591,7 +630,8 @@
    "digitaltransformation",
    "engineeringleadership",
    "gtc2026"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -606,7 +646,8 @@
    "civilengineering",
    "constructionmanagement",
    "constructiontech"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -621,7 +662,8 @@
    "devops",
    "largelanguagemodels",
    "machinelearning"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -636,7 +678,8 @@
    "aistrategy",
    "businesstransformation",
    "changemanagement"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -651,7 +694,8 @@
    "datascience",
    "edgecomputing",
    "emissionsreduction"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -666,7 +710,8 @@
    "largelanguagemodels",
    "machinelearning",
    "omnimodalai"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -681,7 +726,8 @@
    "artificialintelligence",
    "automation",
    "businessoperations"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -696,7 +742,8 @@
    "datascience",
    "edgeai",
    "edgecomputing"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -711,7 +758,8 @@
    "anthropic",
    "devops",
    "generativeai"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -726,7 +774,8 @@
    "automation",
    "burnout",
    "cognitiveload"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -741,7 +790,8 @@
    "automation",
    "bigdata",
    "constructiontech"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -756,7 +806,8 @@
    "anthropic",
    "claudecode",
    "cybersecurity"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Lab Series",
@@ -771,7 +822,8 @@
    "largelanguagemodels",
    "machinelearning",
    "moonshotai"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Digital Iron",
@@ -786,7 +838,8 @@
    "autonomousvehicles",
    "bigdata",
    "constructiontech"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -801,7 +854,8 @@
    "machinelearning",
    "microservices",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -816,7 +870,8 @@
    "businessoperations",
    "changemanagement",
    "futureofwork"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -831,7 +886,8 @@
    "industrialai",
    "manufacturing",
    "mining"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -846,7 +902,8 @@
    "microsoftresearch",
    "multimodalai",
    "opensource"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -855,7 +912,8 @@
   "date": "2026-03-05",
   "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435166104718790657",
   "excerpt": "For the past few years, artificial intelligence has lived inside a chat window. You type a question, it types an answer, and you do the actual work of moving that information into your systems. That era is ending. The new frontier is the…",
-  "tags": []
+  "tags": [],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -870,7 +928,8 @@
    "generativeai",
    "llm",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Lab Series",
@@ -885,7 +944,8 @@
    "localllm",
    "openclaw",
    "opensource"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -900,7 +960,8 @@
    "iiot",
    "mining",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Digital Iron",
@@ -915,7 +976,8 @@
    "heavyequipment",
    "hybridexcavator",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -930,7 +992,8 @@
    "anthropic",
    "devops",
    "futureofwork"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "The Human Loop",
@@ -945,7 +1008,8 @@
    "logistics",
    "orchestration",
    "sap"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -960,7 +1024,8 @@
    "heavyequipment",
    "industrialai",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -975,7 +1040,8 @@
    "machinelearning",
    "searchengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -990,7 +1056,8 @@
    "financialadvisors",
    "fintech",
    "taxplanning"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1005,7 +1072,8 @@
    "heavyindustry",
    "mining",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -1020,7 +1088,8 @@
    "datapruning",
    "googleresearch",
    "machinelearning"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -1035,7 +1104,8 @@
    "fintech",
    "futureofwork",
    "mit"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -1050,7 +1120,8 @@
    "googledeepmind",
    "machinelearning",
    "multiagentsystems"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -1065,7 +1136,8 @@
    "mining",
    "otrtires",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Digital Iron",
@@ -1080,7 +1152,8 @@
    "hydraulicsystems",
    "industrialai",
    "mining"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -1095,7 +1168,8 @@
    "industrialai",
    "lowcode",
    "n8n"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -1110,7 +1184,8 @@
    "manufacturing",
    "microsoftresearch",
    "operationsresearch"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1125,7 +1200,8 @@
    "heavyindustry",
    "industrialai",
    "mining"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -1140,7 +1216,8 @@
    "edgeai",
    "industrialai",
    "machinelearning"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -1155,7 +1232,8 @@
    "futureofwork",
    "hbr",
    "leadership"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1170,7 +1248,8 @@
    "industrialai",
    "mining",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Digital Iron",
@@ -1185,6 +1264,7 @@
    "industrialai",
    "predictivesafety",
    "systemdesign"
-  ]
+  ],
+  "theme": "Physical AI"
  }
 ]

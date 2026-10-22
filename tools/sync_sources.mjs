@@ -14,9 +14,11 @@
 // LinkedIn: there is no way to list a profile's posts without signing in, so
 // new posts come from links. Paste post URLs, one per line, into
 // tools/inbox/linkedin.txt (or pass them as arguments). Each public post page
-// is read for its headline, date, text and hashtags. Processed links are
-// removed from the inbox; links that are not one of the three series stay
-// there with a note so a person can decide.
+// is read for its headline, date, text and hashtags. Series posts get a topic
+// from their title. A post outside the three series is added only when its
+// line names a topic after the link, as in "<url> | Agents & software", so a
+// person decides what standalone posts appear. Processed links are removed
+// from the inbox; the rest stay there with a note.
 //
 // Writes assets/data/site.json with the dates shown on the site, and prints a
 // JSON report on the last line of stdout for whoever runs it.
@@ -137,6 +139,15 @@ const SERIES = [
   { name: 'Digital Iron', re: /^digital iron\s*\|?\s*(?:vol\.?\s*(\d+))?\s*[:|–-]?\s*(.+)$/i },
 ];
 
+const THEMES = ['Models & inference', 'Agents & software', 'Physical AI', 'AI & work'];
+
+function guessTheme(post) {
+  if (post.series === 'Digital Iron' || /physical world|digital twin|omniverse|robot/i.test(post.title)) return 'Physical AI';
+  if (/agent|harness|orchestration|middleware|spec-driven|determinism|mainframe|evals|codebase/i.test(post.title) && post.title !== 'The Agentic Manager') return 'Agents & software';
+  if (post.series === 'Lab Series') return 'Models & inference';
+  return 'AI & work';
+}
+
 const activityId = (url) => (decodeURIComponent(url).match(/(?:activity|share|ugcPost)[:-](\d{15,})/) || [])[1] || null;
 
 function excerpt(body) {
@@ -177,6 +188,11 @@ async function linkedin() {
   const fromInbox = fs.existsSync(INBOX)
     ? fs.readFileSync(INBOX, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#')).map((l) => l.split(/\s+/)[0])
     : [];
+  // A topic written after the link ("<url> | Physical AI") lets a standalone post in.
+  const chosen = new Map(fs.existsSync(INBOX)
+    ? fs.readFileSync(INBOX, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'))
+      .map((l) => [l.split(/\s+/)[0], (l.match(/\|\s*([^#]+?)\s*(?:#.*)?$/) || [])[1]])
+    : []);
   const urls = [...new Set([...rest, ...fromInbox])];
   const posts = read('writing.json');
   const known = new Set(posts.map((p) => activityId(p.url)).filter(Boolean));
@@ -188,13 +204,15 @@ async function linkedin() {
     try {
       const post = await readPost(url);
       if (known.has(activityId(post.url)) || posts.some((p) => p.date === post.date && sameTitle(p.title, post.title))) { out.skipped.push({ url, why: 'already on the site' }); continue; }
-      if (!post.series) {
-        out.skipped.push({ url, why: `not one of the three series: "${post.title.slice(0, 80)}"` });
-        keep.push(`${url}  # not a series post; delete this line or set its series by hand`);
+      const theme = THEMES.find((t) => t.toLowerCase() === (chosen.get(url) || '').toLowerCase());
+      if (!post.series && !theme) {
+        out.skipped.push({ url, why: `not one of the three series and no topic given: "${post.title.slice(0, 80)}"` });
+        keep.push(`${url}  # not a series post; add " | <topic>" (${THEMES.join(', ')}) to publish it, or delete this line`);
         continue;
       }
+      post.theme = theme || guessTheme(post);
       posts.push(post); known.add(activityId(post.url));
-      out.added.push({ series: post.series, vol: post.vol, title: post.title, date: post.date });
+      out.added.push({ series: post.series, vol: post.vol, title: post.title, date: post.date, theme: post.theme });
     } catch (e) {
       out.failed.push({ url, why: e.message });
       keep.push(`${url}  # failed: ${e.message}`);

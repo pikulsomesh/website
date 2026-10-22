@@ -610,83 +610,83 @@ These are the commitments that are easy to make at the start of a program and ha
 
 ## Writing
 
-- 2026-09-27 · Lab Series: System One Models will optimize tokenomics and latency. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576
-- 2026-08-31 · Lab Series: Spec-Driven Development for AI Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7500309594141986816
-- 2026-08-23 · The Human Loop: The Automation Trap in Innovation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7497393297020104704
-- 2026-08-18 · Lab Series: The State of Open Models and the Infrastructure Shift. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7495277695715409922
-- 2026-08-08 · Lab Series: The 2.8 Trillion Parameter Experiment and the Open-Weight Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7491867817365909505
-- 2026-08-05 · The Human Loop: The Rise of Task Crossover. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7490861306774736896
-- 2026-07-31 · The Human Loop: Beyond the Horseless Carriage. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7488785159106809858
-- 2026-07-28 · Lab Series: The Return to Determinism in an Agentic World. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7487703952457875457
-- 2026-07-21 · The Human Loop: Defending Against Cognitive Surrender. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485176512648794113
-- 2026-07-21 · Lab Series: The Trillion-Parameter Open Weight Era and Qwen 3.8. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485175047331004416
-- 2026-07-06 · Digital Iron: Listening to the Iron. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479719984471085056
-- 2026-07-06 · The Human Loop: Capability Debt in the AI-Augmented Codebase. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479717317849817088
-- 2026-07-06 · Lab Series: Token Optimization in Agentic Developer Workflows. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479715738396688384
-- 2026-06-25 · Digital Iron: The Upgradable Beast. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475749297423134721
-- 2026-06-25 · Lab Series: Accelerating Inference with Block Diffusion Speculative Decoding. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475748470314754049
-- 2026-06-25 · The Human Loop: High Variance and the Decider Mandate. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475746659927478273
-- 2026-06-13 · Lab Series: Reverse Engineering the Physical World with SuperFrusta. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471352192289882112
-- 2026-06-13 · The Human Loop: The Agentic Manager. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471350735528468480
-- 2026-06-05 · Lab Series: The Encoder-Free Multimodal Frontier. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468786078687326208
-- 2026-06-05 · The Human Loop: Reasoning from First Principles and Human Data. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468784263220359170
-- 2026-05-27 · The Human Loop: The Second Great Compression. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465478954477350912
-- 2026-05-27 · Lab Series: Macro Evals for Agentic Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465475923874873345
-- 2026-05-27 · Digital Iron: Precision Mining and the Thinking Drill. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465473786687963136
-- 2026-05-24 · The Human Loop: Building AI With the Shop Floor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7464325820652806144
-- 2026-05-21 · Lab Series: The Orchestration Layer and Antigravity 2.0. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7463356080694149121
-- 2026-05-14 · Digital Iron: Cooling the Cloud with Intelligence. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460686237503275008
-- 2026-05-14 · Lab Series: Agentic AI Meets the Mainframe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460685152793509888
-- 2026-05-14 · The Human Loop: When Software Loses Its Head. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460683811186638848
-- 2026-05-07 · Digital Iron: Powering Up the Predictive Plant. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458290985446580224
-- 2026-05-07 · Lab Series: The Consumerization of the Local Agent. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458289590999785472
-- 2026-05-07 · The Human Loop: The New Lunar Society. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7457972904589201409
-- 2026-05-03 · Digital Iron: Cranes of the Future and the Power of Prediction. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7456525873702428672
-- 2026-05-01 · Lab Series: Deconstructing Model Capacity and the Incompressibility Framework. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455809762195333120
-- 2026-04-30 · The Human Loop: The Human Accelerator. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455445788111060992
-- 2026-04-27 · Digital Iron: Warehouse Workhorses Go Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7454364479850643456
-- 2026-04-24 · Lab Series: The Autonomous Research Architecture of Deep Research Max. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7453242483007967232
-- 2026-04-23 · The Human Loop: Ground Truth in Manufacturing. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452901629839724545
-- 2026-04-19 · Digital Iron: When Bolts Become Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7451438534856441856
-- 2026-04-15 · Lab Series: Eliminating the KV Cache Bottleneck. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7450200328219672576
-- 2026-04-15 · The Human Loop: Closing the Gap in the Engine Center. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7450198966387785731
-- 2026-04-08 · Digital Iron: The Construction Site Conductor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447747201235202048
-- 2026-04-08 · Lab Series: The Anatomy of the Agent Harness. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447746538526765056
-- 2026-04-08 · The Human Loop: Solving the Last Mile of AI Transformation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447744967734882304
-- 2026-04-05 · Digital Iron: The Fuel Whisperer. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7446351813613871104
-- 2026-04-01 · Lab Series: The Rise of Native Omnimodal Architectures. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445083712658079744
-- 2026-04-01 · The Human Loop: Onboarding the Algorithmic Colleague. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445080886603214848
-- 2026-03-25 · Digital Iron: Edge Intelligence at the Fringe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442586264236855296
-- 2026-03-25 · Lab Series: The Return of the Adversarial Network. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442583908426321920
-- 2026-03-25 · The Human Loop: The Brain Fry Epidemic. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442582824789995522
-- 2026-03-19 · Digital Iron: The Augmented Mechanic and the Cyborg Crew. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440236347573022720
-- 2026-03-19 · The Human Loop: The Evaluation Crisis of Long-Running Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440235125294141440
-- 2026-03-19 · Lab Series: Rethinking the Residual Connection. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440234493065699328
-- 2026-03-15 · Digital Iron: Mine of the Autonomous Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7438756960046456832
-- 2026-03-12 · Lab Series: The Death of Agent Middleware. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437975244188860418
-- 2026-03-11 · The Human Loop: You Cannot Automate a Secret. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437524474888921088
-- 2026-03-08 · Digital Iron: Digital Twin, Real Win. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7436430192698531840
-- 2026-03-05 · Lab Series: Shrinking the Frontier with Data Quality. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435440892137693185
-- 2026-03-05 · The Human Loop: Handing Over the Mouse. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435166104718790657
-- 2026-02-19 · Lab Series: The New Efficiency Frontier. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430053068085518336
-- 2026-02-19 · Lab Series: The Decoupling of the Agent. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430052849549524992
-- 2026-02-19 · Digital Iron: From Dumb Iron to Smart Iron. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430050973303156736
-- 2026-02-19 · Digital Iron: Green Giants on the Charge. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430049528151670784
-- 2026-02-19 · The Human Loop: The Art of the Interruption. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430048359618363392
-- 2026-02-19 · The Human Loop: From Firefighter to Conductor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430047727998160896
-- 2026-02-12 · Digital Iron: Cooling on the Edge. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427580238722834432
-- 2026-02-12 · Lab Series: The Death of the Keyword Match. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427579281980948480
-- 2026-02-12 · The Human Loop: The Tax Strategist vs. The Data Entry Clerk. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427577693170233344
-- 2026-02-08 · Digital Iron: The Ghost in the Gearbox. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7426052216094093312
-- 2026-02-05 · Lab Series: Big Data is lazy. Smart Data is engineering. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425036214904184833
-- 2026-02-05 · The Human Loop: Accounting and AI are best friends. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425033846947008513
-- 2026-01-31 · Lab Series: The Scaling Laws of Agent Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423208499230347264
-- 2026-01-31 · Digital Iron: Tire Tracks of Insight. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423207508862947329
-- 2026-01-21 · Digital Iron: Hydraulic Heartache to Harmony. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419846718252404736
-- 2026-01-21 · Lab Series: The Inversion of the 80/20 Rule. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419845350124892161
-- 2026-01-21 · The Human Loop: Optimization without the math degree. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419765914641883137
-- 2026-01-17 · Digital Iron: The Self-Tuning Engine. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7418097649125494784
-- 2026-01-15 · Lab Series: We assume 7 billion parameters is the floor for reasoning. It is not. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417409986680504320
-- 2026-01-12 · The Human Loop: The "Trust Gap" is widening. And it’s not about the technology. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7416605876175814656
-- 2026-01-10 · Digital Iron: The Billion-Dollar Wear Problem. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7415839536993210369
-- 2026-01-04 · Digital Iron: Hydraulic Safety. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7413441385640427520
+- 2026-09-27 · Models & inference, Lab Series: System One Models will optimize tokenomics and latency. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576
+- 2026-08-31 · Agents & software, Lab Series: Spec-Driven Development for AI Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7500309594141986816
+- 2026-08-23 · AI & work, The Human Loop: The Automation Trap in Innovation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7497393297020104704
+- 2026-08-18 · Models & inference, Lab Series: The State of Open Models and the Infrastructure Shift. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7495277695715409922
+- 2026-08-08 · Models & inference, Lab Series: The 2.8 Trillion Parameter Experiment and the Open-Weight Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7491867817365909505
+- 2026-08-05 · AI & work, The Human Loop: The Rise of Task Crossover. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7490861306774736896
+- 2026-07-31 · AI & work, The Human Loop: Beyond the Horseless Carriage. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7488785159106809858
+- 2026-07-28 · Agents & software, Lab Series: The Return to Determinism in an Agentic World. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7487703952457875457
+- 2026-07-21 · AI & work, The Human Loop: Defending Against Cognitive Surrender. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485176512648794113
+- 2026-07-21 · Models & inference, Lab Series: The Trillion-Parameter Open Weight Era and Qwen 3.8. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7485175047331004416
+- 2026-07-06 · Physical AI, Digital Iron: Listening to the Iron. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479719984471085056
+- 2026-07-06 · Agents & software, The Human Loop: Capability Debt in the AI-Augmented Codebase. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479717317849817088
+- 2026-07-06 · Agents & software, Lab Series: Token Optimization in Agentic Developer Workflows. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7479715738396688384
+- 2026-06-25 · Physical AI, Digital Iron: The Upgradable Beast. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475749297423134721
+- 2026-06-25 · Models & inference, Lab Series: Accelerating Inference with Block Diffusion Speculative Decoding. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475748470314754049
+- 2026-06-25 · AI & work, The Human Loop: High Variance and the Decider Mandate. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7475746659927478273
+- 2026-06-13 · Physical AI, Lab Series: Reverse Engineering the Physical World with SuperFrusta. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471352192289882112
+- 2026-06-13 · AI & work, The Human Loop: The Agentic Manager. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7471350735528468480
+- 2026-06-05 · Models & inference, Lab Series: The Encoder-Free Multimodal Frontier. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468786078687326208
+- 2026-06-05 · AI & work, The Human Loop: Reasoning from First Principles and Human Data. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7468784263220359170
+- 2026-05-27 · AI & work, The Human Loop: The Second Great Compression. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465478954477350912
+- 2026-05-27 · Agents & software, Lab Series: Macro Evals for Agentic Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465475923874873345
+- 2026-05-27 · Physical AI, Digital Iron: Precision Mining and the Thinking Drill. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7465473786687963136
+- 2026-05-24 · AI & work, The Human Loop: Building AI With the Shop Floor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7464325820652806144
+- 2026-05-21 · Agents & software, Lab Series: The Orchestration Layer and Antigravity 2.0. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7463356080694149121
+- 2026-05-14 · Physical AI, Digital Iron: Cooling the Cloud with Intelligence. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460686237503275008
+- 2026-05-14 · Agents & software, Lab Series: Agentic AI Meets the Mainframe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460685152793509888
+- 2026-05-14 · AI & work, The Human Loop: When Software Loses Its Head. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7460683811186638848
+- 2026-05-07 · Physical AI, Digital Iron: Powering Up the Predictive Plant. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458290985446580224
+- 2026-05-07 · Agents & software, Lab Series: The Consumerization of the Local Agent. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7458289590999785472
+- 2026-05-07 · AI & work, The Human Loop: The New Lunar Society. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7457972904589201409
+- 2026-05-03 · Physical AI, Digital Iron: Cranes of the Future and the Power of Prediction. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7456525873702428672
+- 2026-05-01 · Models & inference, Lab Series: Deconstructing Model Capacity and the Incompressibility Framework. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455809762195333120
+- 2026-04-30 · AI & work, The Human Loop: The Human Accelerator. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7455445788111060992
+- 2026-04-27 · Physical AI, Digital Iron: Warehouse Workhorses Go Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7454364479850643456
+- 2026-04-24 · Agents & software, Lab Series: The Autonomous Research Architecture of Deep Research Max. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7453242483007967232
+- 2026-04-23 · AI & work, The Human Loop: Ground Truth in Manufacturing. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452901629839724545
+- 2026-04-19 · Physical AI, Digital Iron: When Bolts Become Smart. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7451438534856441856
+- 2026-04-15 · Models & inference, Lab Series: Eliminating the KV Cache Bottleneck. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7450200328219672576
+- 2026-04-15 · AI & work, The Human Loop: Closing the Gap in the Engine Center. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7450198966387785731
+- 2026-04-08 · Physical AI, Digital Iron: The Construction Site Conductor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447747201235202048
+- 2026-04-08 · Agents & software, Lab Series: The Anatomy of the Agent Harness. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447746538526765056
+- 2026-04-08 · AI & work, The Human Loop: Solving the Last Mile of AI Transformation. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7447744967734882304
+- 2026-04-05 · Physical AI, Digital Iron: The Fuel Whisperer. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7446351813613871104
+- 2026-04-01 · Models & inference, Lab Series: The Rise of Native Omnimodal Architectures. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445083712658079744
+- 2026-04-01 · AI & work, The Human Loop: Onboarding the Algorithmic Colleague. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7445080886603214848
+- 2026-03-25 · Physical AI, Digital Iron: Edge Intelligence at the Fringe. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442586264236855296
+- 2026-03-25 · Models & inference, Lab Series: The Return of the Adversarial Network. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442583908426321920
+- 2026-03-25 · AI & work, The Human Loop: The Brain Fry Epidemic. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7442582824789995522
+- 2026-03-19 · Physical AI, Digital Iron: The Augmented Mechanic and the Cyborg Crew. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440236347573022720
+- 2026-03-19 · Agents & software, The Human Loop: The Evaluation Crisis of Long-Running Agents. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440235125294141440
+- 2026-03-19 · Models & inference, Lab Series: Rethinking the Residual Connection. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7440234493065699328
+- 2026-03-15 · Physical AI, Digital Iron: Mine of the Autonomous Future. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7438756960046456832
+- 2026-03-12 · Agents & software, Lab Series: The Death of Agent Middleware. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437975244188860418
+- 2026-03-11 · AI & work, The Human Loop: You Cannot Automate a Secret. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7437524474888921088
+- 2026-03-08 · Physical AI, Digital Iron: Digital Twin, Real Win. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7436430192698531840
+- 2026-03-05 · Models & inference, Lab Series: Shrinking the Frontier with Data Quality. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435440892137693185
+- 2026-03-05 · AI & work, The Human Loop: Handing Over the Mouse. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435166104718790657
+- 2026-02-19 · Models & inference, Lab Series: The New Efficiency Frontier. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430053068085518336
+- 2026-02-19 · Agents & software, Lab Series: The Decoupling of the Agent. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430052849549524992
+- 2026-02-19 · Physical AI, Digital Iron: From Dumb Iron to Smart Iron. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430050973303156736
+- 2026-02-19 · Physical AI, Digital Iron: Green Giants on the Charge. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430049528151670784
+- 2026-02-19 · AI & work, The Human Loop: The Art of the Interruption. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430048359618363392
+- 2026-02-19 · AI & work, The Human Loop: From Firefighter to Conductor. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7430047727998160896
+- 2026-02-12 · Physical AI, Digital Iron: Cooling on the Edge. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427580238722834432
+- 2026-02-12 · Models & inference, Lab Series: The Death of the Keyword Match. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427579281980948480
+- 2026-02-12 · AI & work, The Human Loop: The Tax Strategist vs. The Data Entry Clerk. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7427577693170233344
+- 2026-02-08 · Physical AI, Digital Iron: The Ghost in the Gearbox. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7426052216094093312
+- 2026-02-05 · Models & inference, Lab Series: Big Data is lazy. Smart Data is engineering. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425036214904184833
+- 2026-02-05 · AI & work, The Human Loop: Accounting and AI are best friends. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7425033846947008513
+- 2026-01-31 · Agents & software, Lab Series: The Scaling Laws of Agent Systems. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423208499230347264
+- 2026-01-31 · Physical AI, Digital Iron: Tire Tracks of Insight. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7423207508862947329
+- 2026-01-21 · Physical AI, Digital Iron: Hydraulic Heartache to Harmony. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419846718252404736
+- 2026-01-21 · Models & inference, Lab Series: The Inversion of the 80/20 Rule. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419845350124892161
+- 2026-01-21 · AI & work, The Human Loop: Optimization without the math degree. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7419765914641883137
+- 2026-01-17 · Physical AI, Digital Iron: The Self-Tuning Engine. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7418097649125494784
+- 2026-01-15 · Models & inference, Lab Series: We assume 7 billion parameters is the floor for reasoning. It is not. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417409986680504320
+- 2026-01-12 · AI & work, The Human Loop: The "Trust Gap" is widening. And it’s not about the technology. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7416605876175814656
+- 2026-01-10 · Physical AI, Digital Iron: The Billion-Dollar Wear Problem. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7415839536993210369
+- 2026-01-04 · Physical AI, Digital Iron: Hydraulic Safety. https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7413441385640427520

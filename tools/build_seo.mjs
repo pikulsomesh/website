@@ -190,7 +190,7 @@ const BLOCKS = {
     recog: () => rows(profile.recognition.map((r) => `<li>${esc(r.year)} · <b>${esc(r.title)}</b>. ${esc(r.text)}</li>`)),
   },
   'writing/index.html': {
-    posts: () => rows(posts.map((p) => `<li class="post"><div class="meta"><span class="s">${esc(p.series)}${p.vol ? ' · ' + esc(p.vol) : ''}</span>${esc(p.date)}</div><div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></li>`)),
+    posts: () => rows(posts.map((p) => `<li class="post"><div class="meta"><span class="s">${esc(p.theme || '')}</span>${esc(p.date)}${p.series ? `<span class="sr">${esc(p.series)}</span>` : ''}</div><div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></li>`)),
   },
   'playbook/index.html': {
     thesis: () => esc(playbook.thesis),
@@ -226,7 +226,7 @@ This is his personal site. Every page is static HTML; the content also lives in 
 - [Home](${SITE}): profile, career timeline, selected work, recognition and FAQ
 - [Playbook](${SITE}playbook/): a complete point of view on running data and AI in an enterprise, in ${playbook.chapters.length} chapters
 - [Research](${SITE}research/): ${pubs.papers.length} peer-reviewed papers, preprints, talks and a patent application
-- [Writing](${SITE}writing/): ${posts.length} essays from the Digital Iron, The Human Loop and Lab Series, published on LinkedIn
+- [Writing](${SITE}writing/): ${posts.length} essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
 - [Resume](${SITE}resume/): experience, education and certifications
 
 ## Data
@@ -327,7 +327,7 @@ ${playbook.principles.map((p, i) => `${i + 1}. ${p.title}. ${p.text}`).join('\n'
 ${playbookText()}
 ## Writing
 
-${posts.map((p) => `- ${p.date} · ${p.series}: ${p.title}. ${p.url}`).join('\n')}
+${posts.map((p) => `- ${p.date} · ${[p.theme, p.series].filter(Boolean).join(', ')}: ${p.title}. ${p.url}`).join('\n')}
 `;
 }
 
