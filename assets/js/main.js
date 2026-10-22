@@ -127,6 +127,7 @@ function renderWork(p) {
       <h3>${w.href ? `<a href="${ROOT}${esc(w.href)}">${esc(w.title)}</a>` : esc(w.title)}</h3>
       <p>${esc(w.text)}</p>
       <div class="impact">${w.impact.map((m) => `<div><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join('')}</div>
+      ${w.press ? `<a class="press" href="${esc(w.press.url)}" target="_blank" rel="noopener">${esc(w.press.label)} ↗</a>` : ''}
     </article>`).join('');
 }
 

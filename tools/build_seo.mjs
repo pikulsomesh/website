@@ -263,7 +263,7 @@ ${profile.timeline.map((t) => `### ${t.role} · ${t.org} (${t.years})\n\n${t.poi
 
 ## Selected work
 
-${profile.work.map((w) => `### ${w.title} (${w.kicker})\n\n${w.text} Impact: ${w.impact.map((m) => `${m.value} ${m.label}`).join('; ')}.`).join('\n\n')}
+${profile.work.map((w) => `### ${w.title} (${w.kicker})\n\n${w.text} Impact: ${w.impact.map((m) => `${m.value} ${m.label}`).join('; ')}.${w.press ? ` Press: ${w.press.url}` : ''}`).join('\n\n')}
 
 ## Capabilities
 
