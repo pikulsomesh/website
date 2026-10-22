@@ -172,9 +172,14 @@ const resumeHTML = () => profile.timeline.map((t) => `
         <div class="org">${esc(t.org)}</div>
         <ul>${t.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('') + '\n      ';
 
+// Same markup as buildCard in assets/js/main.js.
+const fmtMonth = (iso) => new Date(`${iso}T00:00Z`).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+const buildsHTML = () => rows(profile.builds.map((b) => `<article class="card build"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div><h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p><ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul><div class="build-links">${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a><span class="build-updated">Updated ${esc(fmtMonth(b.updated))}</span></div></article>`));
+
 const BLOCKS = {
-  'index.html': { timeline: timelineHTML, faq: faqHTML },
+  'index.html': { timeline: timelineHTML, faq: faqHTML, builds: buildsHTML },
   'research/index.html': {
+    builds: buildsHTML,
     pubs: () => rows(pubs.papers.map((p) => pubRow(p, 'Journal'))),
     talks: () => rows(pubs.talks.map((t) => `<li class="pub"><span class="yr">${esc(t.year)}</span><div><b>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title)}</b><span>Invited</span></div><span class="venue">${esc(t.venue)}</span></li>`)),
     patents: () => rows(pubs.patents.map((p) => `<li class="pub"><span class="yr">Patent</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.number)}</span></div><span class="venue">USPTO</span></li>`)),
@@ -309,7 +314,7 @@ ${pubs.talks.map((t) => `- ${t.title}. ${t.venue}, ${t.year}.`).join('\n')}
 
 ## Recent builds
 
-${profile.builds.map((b) => `- ${b.title}: ${b.text} ${b.url}`).join('\n')}
+${profile.builds.map((b) => `- ${b.title} (${b.theme}; ${b.status}): ${b.problem} ${b.text} Stack: ${b.stack.join(', ')}. ${b.url || b.repo}`).join('\n')}
 
 ## Playbook: how I think about data and AI at scale
 

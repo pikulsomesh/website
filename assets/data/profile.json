@@ -446,45 +446,126 @@
   ],
   "builds": [
     {
-      "title": "Baby Senses Lab",
-      "tag": "World models · 2026",
-      "text": "Developmental world models with one network per sense, each fed age-filtered input, plus a public site that shows a photo, video or sound the way a baby of a chosen age might sense it.",
-      "url": "https://pikulsomesh.github.io/developmental-world-models/",
-      "repo": "https://github.com/pikulsomesh/developmental-world-models"
-    },
-    {
-      "title": "Digital Twin History",
-      "tag": "Physical AI · 2026",
-      "text": "An open, cited history of digital twins and physical AI, from andon lights and Apollo's simulators to live factory twins and AI world models. Dataset and interactive site.",
-      "url": "https://pikulsomesh.github.io/digital-twin-history/",
-      "repo": "https://github.com/pikulsomesh/digital-twin-history"
-    },
-    {
-      "title": "Michelin Kitchen Twin",
-      "tag": "Digital twin · 2026",
-      "text": "A browser-based 3D twin of a three-star kitchen running a full dinner service, modeled like a manufacturing plant: covers are the build plan, every plate a bill of materials.",
-      "url": "https://pikulsomesh.github.io/michelin-kitchen-twin/",
-      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin"
-    },
-    {
       "title": "Auto-Twin",
-      "tag": "Spatial AI · 2026",
-      "text": "From a walkthrough video to a live digital twin: a world-model splat converted to OpenUSD, bound to cloud telemetry and rendered in the browser, Blender or Omniverse.",
+      "theme": "Spatial AI",
+      "status": "In progress",
+      "state": "building",
+      "updated": "2026-10-19",
+      "problem": "Digital twins usually start with weeks of laser scanning and CAD. Can a walkthrough video and a world model stand one up for about twenty cents of compute?",
+      "text": "A video tour of the Central Texas Food Bank becomes a Gaussian-splat world through the World Labs API, is converted to OpenUSD, bound to live telemetry on AWS and rendered in the browser, Blender or Omniverse. Cost guards make every paid call resumable and never double-billed.",
+      "stack": [
+        "World model API",
+        "Gaussian splats",
+        "OpenUSD",
+        "AWS Lambda + SAM",
+        "three.js",
+        "Blender"
+      ],
       "url": "https://pikulsomesh.github.io/foodbank-spatial-twin/",
       "repo": "https://github.com/pikulsomesh/foodbank-spatial-twin"
     },
     {
+      "title": "Michelin Kitchen Twin",
+      "theme": "Digital twin",
+      "status": "Live",
+      "state": "live",
+      "updated": "2026-10-12",
+      "problem": "Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone.",
+      "text": "A 3D twin of a three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers.",
+      "stack": [
+        "three.js",
+        "Discrete-event simulation",
+        "MRP and BOMs",
+        "OpenUSD export",
+        "Coding agents"
+      ],
+      "url": "https://pikulsomesh.github.io/michelin-kitchen-twin/",
+      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin"
+    },
+    {
+      "title": "Baby Senses Lab",
+      "theme": "World models",
+      "status": "Live · 2 papers in draft",
+      "state": "live",
+      "updated": "2026-10-19",
+      "problem": "AI world models train on adult-quality data from day one. Infants start with blurry, muffled input and still learn fast. What does that staging buy a model?",
+      "text": "One world model per sense (vision, hearing, touch, body position), each fed through an age-tuned filter and grown as it trains, then fused. The public site lets parents see and hear like a baby of any age; researchers get the findings, papers and code.",
+      "stack": [
+        "PyTorch",
+        "World models",
+        "Network growth",
+        "Multisensory fusion"
+      ],
+      "url": "https://pikulsomesh.github.io/developmental-world-models/",
+      "repo": "https://github.com/pikulsomesh/developmental-world-models"
+    },
+    {
       "title": "LabTrends",
-      "tag": "On-device AI · 2026",
-      "text": "An offline, privacy-first Android app that turns scattered lab reports into per-person health trends, with on-device OCR and a small local model. No cloud, no accounts.",
-      "url": "https://github.com/pikulsomesh/LabTrends",
+      "theme": "On-device AI",
+      "status": "v1.1 released",
+      "state": "live",
+      "updated": "2026-10-09",
+      "problem": "A family's lab results sit in PDFs and paper scans from different clinics, and seeing a trend usually means handing health data to someone's cloud.",
+      "text": "An Android app that reads reports with on-device OCR, parses biomarkers with rules backed by a small local language model, and has a person confirm every value before it is saved. The release build has no internet permission at all.",
+      "stack": [
+        "React Native + Expo",
+        "Local LLM (llama.rn)",
+        "On-device OCR",
+        "Encrypted SQLite backups"
+      ],
+      "url": null,
       "repo": "https://github.com/pikulsomesh/LabTrends"
     },
     {
+      "title": "Academic Matchmaker",
+      "theme": "In-browser AI",
+      "status": "In progress",
+      "state": "building",
+      "updated": "2026-10-15",
+      "problem": "Prospective PhD students choose advisors from rankings and cold emails rather than research fit.",
+      "text": "Drop in a CV or paper and a small language model running in the browser on WebGPU extracts research interests; embeddings then rank faculty across the top 100 universities. Nothing leaves the device. A scheduled pipeline is rebuilding the faculty index from open scholarly data.",
+      "stack": [
+        "Transformers.js",
+        "WebGPU",
+        "Small LLM (ONNX)",
+        "Embeddings search",
+        "React + Vite"
+      ],
+      "url": null,
+      "repo": "https://github.com/pikulsomesh/academic-matchmaker"
+    },
+    {
+      "title": "Digital Twin History",
+      "theme": "Physical AI",
+      "status": "Live",
+      "state": "live",
+      "updated": "2026-10-07",
+      "problem": "“Digital twin” means something different in every meeting. A shared, cited history gives teams a common vocabulary.",
+      "text": "An open dataset of milestones from andon lights and Apollo's simulators to AI world models and agentic twins, with a walkable 3D factory shown across six eras and research trends from OpenAlex. MIT licensed for courses and talks.",
+      "stack": [
+        "Open dataset",
+        "three.js",
+        "OpenAlex",
+        "Vite"
+      ],
+      "url": "https://pikulsomesh.github.io/digital-twin-history/",
+      "repo": "https://github.com/pikulsomesh/digital-twin-history"
+    },
+    {
       "title": "India Iceberg Index",
-      "tag": "AI & labor · 2026",
-      "text": "Maps how exposed India's workforce is to generative AI, district by district, by combining occupational AI-exposure scores with national labor survey data.",
-      "url": "https://github.com/pikulsomesh/india-iceberg-index",
+      "theme": "AI and work",
+      "status": "Technical paper",
+      "state": "paper",
+      "updated": "2025-12-15",
+      "problem": "Most AI-and-jobs estimates count tech jobs. The larger exposure sits in everyday tasks across the whole economy.",
+      "text": "Adapts the Iceberg Index method to India: generative-AI exposure scores mapped to national occupation codes and weighted by 2023–24 labor survey data, district by district, with an interactive dashboard and a technical paper.",
+      "stack": [
+        "Python",
+        "Streamlit",
+        "pydeck maps",
+        "Labor survey microdata"
+      ],
+      "url": null,
       "repo": "https://github.com/pikulsomesh/india-iceberg-index"
     }
   ]
