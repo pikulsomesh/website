@@ -138,22 +138,27 @@ function renderRecognition(p) {
     <li class="reveal"><span class="yr">${esc(r.year)}</span><div><b>${esc(r.title)}</b><span>${esc(r.text)}</span></div></li>`).join('');
 }
 
-const SERIES = [
-  { name: 'Digital Iron', blurb: 'How AI and sensing change heavy equipment, one machine at a time.' },
-  { name: 'The Human Loop', blurb: 'What AI does to work, teams and judgment inside the enterprise.' },
-  { name: 'Lab Series', blurb: 'Hands-on notes on models, agents and the infrastructure under them.' },
+// Topics run from the most technical to the most organizational; series are kept as a secondary filter.
+const THEMES = [
+  { name: 'Models & inference', blurb: 'Open weights, architectures, inference cost and what the newest models change.' },
+  { name: 'Agents & software', blurb: 'Agent harnesses, evals, spec-driven development and the engineering around them.' },
+  { name: 'Physical AI', blurb: 'Digital twins, sensing and AI inside heavy equipment and plants.' },
+  { name: 'AI & work', blurb: 'What AI does to teams, judgment and how organizations run.' },
 ];
+const TALKS = 'Talks & appearances';
+const postMeta = (p) => `<span class="s">${esc(p.theme || '')}</span>${esc(fmtDate(p.date))}${p.series ? `<span class="sr">${esc(p.series)}</span>` : ''}`;
 
 function renderSeriesTeaser(posts) {
   const el = $('#series');
   if (!el) return;
-  el.innerHTML = SERIES.map((s) => {
-    const items = posts.filter((p) => p.series === s.name);
+  el.innerHTML = THEMES.map((t) => {
+    const items = posts.filter((p) => p.theme === t.name);
+    if (!items.length) return '';
     return `<article class="card series reveal">
       <span class="count">${items.length} essays</span>
-      <h3>${esc(s.name)}</h3>
-      <p>${esc(s.blurb)}</p>
-      <ol>${items.slice(0, 3).map((p) => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener"><span class="v">${p.vol ? 'No. ' + p.vol : ''}</span><span>${esc(p.title)}</span></a></li>`).join('')}</ol>
+      <h3><a href="writing/#${encodeURIComponent(t.name)}">${esc(t.name)}</a></h3>
+      <p>${esc(t.blurb)}</p>
+      <ol>${items.slice(0, 3).map((p) => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener"><span class="v">${esc(fmtDate(p.date).replace(/, \d{4}$/, ''))}</span><span>${esc(p.title)}</span></a></li>`).join('')}</ol>
     </article>`;
   }).join('');
 }
@@ -163,15 +168,20 @@ function renderWritingPage(posts) {
   const list = $('#post-list');
   if (!list) return;
   const q = $('#post-q');
-  let series = 'all';
+  const talks = $('#talk-strip');
+  if (talks) {
+    talks.innerHTML = posts.filter((p) => p.theme === TALKS).map((p) => `
+      <li><a href="${esc(p.url)}" target="_blank" rel="noopener"><span class="mono">${esc(fmtDate(p.date))}</span><b>${esc(p.title)}</b></a></li>`).join('');
+  }
+  let filter = 'all';
   const draw = () => {
     const term = (q.value || '').trim().toLowerCase();
-    const shown = posts.filter((p) => (series === 'all' || p.series === series) &&
+    const shown = posts.filter((p) => (filter === 'all' || p.theme === filter || p.series === filter) &&
       (!term || `${p.title} ${p.excerpt} ${p.tags.join(' ')}`.toLowerCase().includes(term)));
     $('#post-count').textContent = `${shown.length} of ${posts.length}${posts.length ? ` · latest ${fmtDate(posts[0].date)}` : ''}`;
     list.innerHTML = shown.length ? shown.map((p) => `
       <li class="post">
-        <div class="meta"><span class="s">${esc(p.series)}${p.vol ? ' · ' + p.vol : ''}</span>${esc(fmtDate(p.date))}</div>
+        <div class="meta">${postMeta(p)}</div>
         <div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
         <p>${esc(p.excerpt)}</p>
         <div class="tags">${p.tags.map((t) => `<span class="tag">#${esc(t)}</span>`).join('')}</div></div>
@@ -179,7 +189,7 @@ function renderWritingPage(posts) {
   };
   $$('#series-filters .chip').forEach((chip) => chip.addEventListener('click', () => {
     $$('#series-filters .chip').forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
-    series = chip.dataset.filter;
+    filter = chip.dataset.filter;
     draw();
   }));
   q.addEventListener('input', draw);

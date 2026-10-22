@@ -1,1 +1,4 @@
 # Paste LinkedIn post links here, one per line. The weekly update adds them to the site and clears this file.
+# Series posts need only the link. For a post outside the three series, add its topic after a bar to publish it:
+#   https://www.linkedin.com/feed/update/urn:li:activity:... | Agents & software
+# Topics: Models & inference, Agents & software, Physical AI, AI & work, Talks & appearances

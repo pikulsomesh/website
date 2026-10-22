@@ -9,7 +9,7 @@ This is his personal site. Every page is static HTML; the content also lives in 
 - [Home](https://someshmohapatra.in/): profile, career timeline, selected work, recognition and FAQ
 - [Playbook](https://someshmohapatra.in/playbook/): a complete point of view on running data and AI in an enterprise, in 12 chapters
 - [Research](https://someshmohapatra.in/research/): 15 peer-reviewed papers, preprints, talks and a patent application
-- [Writing](https://someshmohapatra.in/writing/): 80 essays from the Digital Iron, The Human Loop and Lab Series, published on LinkedIn
+- [Writing](https://someshmohapatra.in/writing/): 104 essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
 - [Resume](https://someshmohapatra.in/resume/): experience, education and certifications
 
 ## Data

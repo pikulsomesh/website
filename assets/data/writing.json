@@ -1,12 +1,61 @@
 [
  {
+  "series": null,
+  "vol": null,
+  "title": "Baby Senses Lab: seeing, hearing and feeling like a baby",
+  "date": "2026-10-18",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7517627841350590464",
+  "excerpt": "For close to a year, I have been working on one idea from two directions at once. - Approach 1 - machine learning: how should we train models that learn about the world by predicting what they will sense next? - Approach 2 - infant…",
+  "tags": [
+   "developmentalscience",
+   "infantdevelopment",
+   "machinelearning",
+   "openscience",
+   "worldmodels"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "An open history of digital twins",
+  "date": "2026-10-09",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7514413206941937664",
+  "excerpt": "Digital twins have been a passion project of mine for a long time, and the part that fascinates me most is the history. Background - All through my time at Massachusetts Institute of Technology / MIT Leaders for Global Operations (LGO) - I…",
+  "tags": [
+   "digitaltwin",
+   "industry40",
+   "manufacturing",
+   "opensource",
+   "physicalai"
+  ],
+  "theme": "Physical AI"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "LabTrends: on-device AI for scattered lab reports",
+  "date": "2026-10-06",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7513335281089970176",
+  "excerpt": "My family's lab reports live in a dozen places: PDFs in email, photos in chat threads, paper in a drawer, and even when you change PCPs - different applications for different health care providers. Every time a doctor asks \"what was it…",
+  "tags": [
+   "androiddev",
+   "buildinpublic",
+   "healthtech",
+   "privacy",
+   "reactnative"
+  ],
+  "theme": "Agents & software"
+ },
+ {
   "series": "Lab Series",
   "vol": null,
   "title": "System One Models will optimize tokenomics and latency",
   "date": "2026-09-27",
   "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7510033655008792576",
   "excerpt": "System One Models or Contrastive Language Models have taken the feeds by storm with Jev by TypeSafe AI (super-cheap API), Julia-1 by Supersonic Labs (at 144M), and recently CLM-8B by Stanford University and NVIDIA(open source, 8B). What…",
-  "tags": []
+  "tags": [],
+  "theme": "Models & inference"
  },
  {
   "series": "Lab Series",
@@ -21,7 +70,8 @@
    "google",
    "softwareengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -36,7 +86,8 @@
    "harvardbusinessschool",
    "innovation",
    "kelloggschool"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -51,7 +102,8 @@
    "machinelearning",
    "opensourceai",
    "systemdesign"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Lab Series",
@@ -66,7 +118,8 @@
    "moe",
    "opensourceai",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -81,7 +134,8 @@
    "openai",
    "organizationaldesign",
    "systemdesign"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "The Human Loop",
@@ -96,7 +150,8 @@
    "productdiscovery",
    "productmanagement",
    "systemdesign"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -111,7 +166,8 @@
    "graphengineering",
    "machinelearning",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -126,7 +182,8 @@
    "generativeai",
    "innovation",
    "management"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -141,7 +198,8 @@
    "opensourceai",
    "qwen",
    "systemdesign"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Digital Iron",
@@ -156,7 +214,8 @@
    "industrialai",
    "manufacturing",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -171,7 +230,8 @@
    "futureofwork",
    "machinelearning",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Lab Series",
@@ -186,7 +246,8 @@
    "rustlang",
    "softwareengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -201,7 +262,8 @@
    "heavyequipment",
    "heavymachinery",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -216,7 +278,8 @@
    "llminference",
    "machinelearning",
    "nvidia"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -231,7 +294,8 @@
    "industrialai",
    "machinelearning",
    "mit"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -246,7 +310,8 @@
    "digitaltwins",
    "industrialai",
    "machinelearning"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -261,7 +326,8 @@
    "enterprisearchitecture",
    "futureofwork",
    "management"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -276,7 +342,8 @@
    "machinelearning",
    "opensourceai",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -291,7 +358,8 @@
    "humanintheloop",
    "machinelearning",
    "microsoftai"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "The Human Loop",
@@ -306,7 +374,8 @@
    "futureofwork",
    "innovation",
    "machinelearning"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -321,7 +390,8 @@
    "macroevals",
    "openai",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -336,7 +406,8 @@
    "geosciences",
    "heavyequipment",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -351,7 +422,8 @@
    "industrialai",
    "machinelearning",
    "manufacturing"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -366,7 +438,8 @@
    "machinelearning",
    "softwareengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -381,7 +454,8 @@
    "datacenters",
    "greentech",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -396,7 +470,8 @@
    "enterpriseai",
    "hypercubic",
    "legacymodernization"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -411,7 +486,8 @@
    "dataarchitecture",
    "enterprisesoftware",
    "futureofwork"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -426,7 +502,8 @@
    "engineering",
    "heavymachinery",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -441,7 +518,8 @@
    "futureofwork",
    "machinelearning",
    "perplexity"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -456,7 +534,8 @@
    "futureofwork",
    "industrialrevolution",
    "manufacturing"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -471,7 +550,8 @@
    "futureofwork",
    "globaltrade",
    "heavyequipment"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -486,7 +566,8 @@
    "generativeai",
    "machinelearning",
    "modeldistillation"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -501,7 +582,8 @@
    "computationalscience",
    "iisc",
    "iitroorkee"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -516,7 +598,8 @@
    "industrialai",
    "logistics",
    "machinelearning"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -531,7 +614,8 @@
    "enterpriseai",
    "generativeai",
    "googledeepmind"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -546,7 +630,24 @@
    "iamcaterpillar",
    "industrialai",
    "machinelearning"
-  ]
+  ],
+  "theme": "AI & work"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "On the In Production Podcast: you cannot automate a secret",
+  "date": "2026-04-21",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7452164828829458432",
+  "excerpt": "It was a great experience sitting down with Nick Melnychuk on the In Production Podcast. He summarized the core of our conversation perfectly in this post. The industrial sector is rushing to adopt generative AI, but we are consistently…",
+  "tags": [
+   "agenticai",
+   "futureofwork",
+   "generativeai",
+   "industrialai",
+   "machinelearning"
+  ],
+  "theme": "Talks & appearances"
  },
  {
   "series": "Digital Iron",
@@ -561,7 +662,8 @@
    "constructiontech",
    "engineering",
    "futureofwork"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -576,7 +678,8 @@
    "googleresearch",
    "llm",
    "machinelearning"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -591,7 +694,8 @@
    "digitaltransformation",
    "engineeringleadership",
    "gtc2026"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -606,7 +710,8 @@
    "civilengineering",
    "constructionmanagement",
    "constructiontech"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -621,7 +726,8 @@
    "devops",
    "largelanguagemodels",
    "machinelearning"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -636,7 +742,8 @@
    "aistrategy",
    "businesstransformation",
    "changemanagement"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -651,7 +758,8 @@
    "datascience",
    "edgecomputing",
    "emissionsreduction"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -666,7 +774,8 @@
    "largelanguagemodels",
    "machinelearning",
    "omnimodalai"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -681,7 +790,24 @@
    "artificialintelligence",
    "automation",
    "businessoperations"
-  ]
+  ],
+  "theme": "AI & work"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Playing around with Google Disco",
+  "date": "2026-03-27",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7443153873403478017",
+  "excerpt": "We are entering a phase where the user interface itself is generated dynamically. The days of downloading an app and hoping its static menus fit your workflow are ending. I've been experimenting with Google’s Disco, and the implications…",
+  "tags": [
+   "fitnesstech",
+   "futureofwork",
+   "generativeai",
+   "gentab",
+   "googledisco"
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -696,7 +822,8 @@
    "datascience",
    "edgeai",
    "edgecomputing"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -711,7 +838,8 @@
    "anthropic",
    "devops",
    "generativeai"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -726,7 +854,8 @@
    "automation",
    "burnout",
    "cognitiveload"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -741,7 +870,8 @@
    "automation",
    "bigdata",
    "constructiontech"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -756,7 +886,8 @@
    "anthropic",
    "claudecode",
    "cybersecurity"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Lab Series",
@@ -771,7 +902,24 @@
    "largelanguagemodels",
    "machinelearning",
    "moonshotai"
-  ]
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Building observable multi-agent workflows at NVIDIA GTC",
+  "date": "2026-03-16",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7439156655021490176",
+  "excerpt": "Kicking off my first ever GTC right here in San Jose, and I am thrilled to be on the ground a full day before the keynote. My team members, Navid Khajavi, Sadia Khalil, PhD, and I spent today diving deep into an incredible training…",
+  "tags": [
+   "agenticai",
+   "aiagents",
+   "artificialintelligence",
+   "automation",
+   "datascience"
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -786,7 +934,8 @@
    "autonomousvehicles",
    "bigdata",
    "constructiontech"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -801,7 +950,8 @@
    "machinelearning",
    "microservices",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "The Human Loop",
@@ -816,7 +966,8 @@
    "businessoperations",
    "changemanagement",
    "futureofwork"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -831,7 +982,8 @@
    "industrialai",
    "manufacturing",
    "mining"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -846,7 +998,8 @@
    "microsoftresearch",
    "multimodalai",
    "opensource"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -855,7 +1008,8 @@
   "date": "2026-03-05",
   "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7435166104718790657",
   "excerpt": "For the past few years, artificial intelligence has lived inside a chat window. You type a question, it types an answer, and you do the actual work of moving that information into your systems. That era is ending. The new frontier is the…",
-  "tags": []
+  "tags": [],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -870,7 +1024,8 @@
    "generativeai",
    "llm",
    "softwareengineering"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "Lab Series",
@@ -885,7 +1040,8 @@
    "localllm",
    "openclaw",
    "opensource"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -900,7 +1056,8 @@
    "iiot",
    "mining",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Digital Iron",
@@ -915,7 +1072,8 @@
    "heavyequipment",
    "hybridexcavator",
    "industrialai"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -930,7 +1088,8 @@
    "anthropic",
    "devops",
    "futureofwork"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "The Human Loop",
@@ -945,7 +1104,8 @@
    "logistics",
    "orchestration",
    "sap"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -960,7 +1120,8 @@
    "heavyequipment",
    "industrialai",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -975,7 +1136,8 @@
    "machinelearning",
    "searchengineering",
    "systemdesign"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -990,7 +1152,8 @@
    "financialadvisors",
    "fintech",
    "taxplanning"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1005,7 +1168,8 @@
    "heavyindustry",
    "mining",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -1020,7 +1184,8 @@
    "datapruning",
    "googleresearch",
    "machinelearning"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -1035,7 +1200,8 @@
    "fintech",
    "futureofwork",
    "mit"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -1050,7 +1216,8 @@
    "googledeepmind",
    "machinelearning",
    "multiagentsystems"
-  ]
+  ],
+  "theme": "Agents & software"
  },
  {
   "series": "Digital Iron",
@@ -1065,7 +1232,24 @@
    "mining",
    "otrtires",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "From the keynote vision to the booth demo at CES 2026",
+  "date": "2026-01-28",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7422276261064126465",
+  "excerpt": "NVIDIA Omniverse just released the full footage of my presentation from their booth at CES 2026. While our leaders Joe Creed, Ogi Redzic, and Jaime Mineart laid out the strategic roadmap on the keynote stage, I had the privilege of…",
+  "tags": [
+   "caterpillar",
+   "ces2026",
+   "digitaliron",
+   "digitaltwin",
+   "industrialai"
+  ],
+  "theme": "Talks & appearances"
  },
  {
   "series": "Digital Iron",
@@ -1080,7 +1264,8 @@
    "hydraulicsystems",
    "industrialai",
    "mining"
-  ]
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "Lab Series",
@@ -1095,7 +1280,8 @@
    "industrialai",
    "lowcode",
    "n8n"
-  ]
+  ],
+  "theme": "Models & inference"
  },
  {
   "series": "The Human Loop",
@@ -1110,7 +1296,8 @@
    "manufacturing",
    "microsoftresearch",
    "operationsresearch"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1125,7 +1312,24 @@
    "heavyindustry",
    "industrialai",
    "mining"
-  ]
+  ],
+  "theme": "Physical AI"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "India Iceberg Index: How I mapped AI exposure across 1.4 billion people",
+  "date": "2026-01-16",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417776921708507138",
+  "excerpt": "A few weeks ago, I shared a map showing where AI might actually impact the Indian workforce. That visual went viral, but it was just the output. Today, I am releasing the engine behind it. We often see AI exposure studies for the US and…",
+  "tags": [
+   "airesearch",
+   "datascience",
+   "economics",
+   "india",
+   "labormarkets"
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Lab Series",
@@ -1140,7 +1344,24 @@
    "edgeai",
    "industrialai",
    "machinelearning"
-  ]
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "A timely read for predictive maintenance",
+  "date": "2026-01-15",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7417666605775736832",
+  "excerpt": "This blog is a fantastic deep dive into how multimodal Generative AI can transform one of the toughest gaps in the maintenance lifecycle - diagnosing root causes after an alarm triggers. The level of detail in the solution design, from…",
+  "tags": [
+   "ai",
+   "aicommunity",
+   "automation",
+   "aws",
+   "digitaloperations"
+  ],
+  "theme": "Physical AI"
  },
  {
   "series": "The Human Loop",
@@ -1155,7 +1376,8 @@
    "futureofwork",
    "hbr",
    "leadership"
-  ]
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1170,7 +1392,40 @@
    "industrialai",
    "mining",
    "predictivemaintenance"
-  ]
+  ],
+  "theme": "Physical AI"
+ },
+ {
+  "series": "Lab Series",
+  "vol": 2,
+  "title": "Vector Search at 1.5 Billion Scale: It’s Not About the Embeddings, It’s About the Plumbing",
+  "date": "2026-01-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7414902339075186690",
+  "excerpt": "We spend a lot of time discussing embedding models and RAG accuracy. But what happens when your dataset hits 1.5 billion items and your latency budget is under 100ms? That is the reality for Uber. They recently detailed their migration…",
+  "tags": [
+   "aiinfrastructure",
+   "dataengineering",
+   "machinelearning",
+   "opensearch",
+   "systemdesign"
+  ],
+  "theme": "Agents & software"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "40,000 Humans, 25,000 Agents: The New Workforce Ratio",
+  "date": "2026-01-08",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7414900928429973504",
+  "excerpt": "I’m currently at CES2026 in Las Vegas, surrounded by the latest robots and gadgets. But the most significant announcement didn't come from a hardware booth - it came from McKinsey & Company's Global Managing Partner, Bob Sternfels. He just…",
+  "tags": [
+   "aiworkforce",
+   "ces2026",
+   "futureofwork",
+   "generativeai",
+   "hbr"
+  ],
+  "theme": "AI & work"
  },
  {
   "series": "Digital Iron",
@@ -1185,6 +1440,215 @@
    "industrialai",
    "predictivesafety",
    "systemdesign"
-  ]
+  ],
+  "theme": "Physical AI"
+ },
+ {
+  "series": "Lab Series",
+  "vol": 1,
+  "title": "Stop trying to prompt your way to reliable AI agents",
+  "date": "2026-01-02",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7412895936772767744",
+  "excerpt": "Stop trying to \"prompt\" your way to reliable AI agents. In heavy industry (and enterprise), we don't rely on \"magic.\" We rely on Standard Operating Procedures (SOPs). Yet, when we build AI agents, we often expect a system prompt to replace…",
+  "tags": [
+   "agenticai",
+   "aiproduction",
+   "industrialai",
+   "llms",
+   "machinelearning"
+  ],
+  "theme": "Agents & software"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Performance Hints by Jeff Dean and Sanjay Ghemawat",
+  "date": "2025-12-23",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7409084538565328896",
+  "excerpt": "Just finished reading “Performance Hints” by Jeff Dean and Sanjay Ghemawat over the holiday break, and I’m absolutely inspired. Having had the privilege to work at Google and sit in meetings where Jeff would discuss strategies and the…",
+  "tags": [
+   "apidesign",
+   "bestpractices",
+   "careergrowth",
+   "codequality",
+   "continuouslearning"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "42% of India’s workforce is exposed to AI. But not where you think",
+  "date": "2025-12-19",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7407910847194361856",
+  "excerpt": "For the past 2 months, I’ve been digging into a question: Who in India is actually at risk from AI? We usually assume the answer is \"software engineers in Bangalore\" or \"data scientists in Hyderabad. I built the India Iceberg Index -…",
+  "tags": [
+   "artificialintelligence",
+   "economics",
+   "futureofwork",
+   "generativeai",
+   "india"
+  ],
+  "theme": "AI & work"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "A smart twist on SHAP for time‐series—“ShaTS”",
+  "date": "2025-11-30",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7400960390991388672",
+  "excerpt": "Kudos to Manuel Franco de la Peña, Ángel Luis Perales Gómez, and Lorenzo Fernández Maimó (Computer Science Faculty, University of Murcia (FIUM)) for a thoughtful piece of work on explainable AI for time‐series models. They highlight an…",
+  "tags": [
+   "anomalydetection",
+   "explainableai",
+   "iiot",
+   "opensource",
+   "research"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "DeepSeek Math-V2 and self-verifying reasoning",
+  "date": "2025-11-28",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7400239316913971200",
+  "excerpt": "DeepSeek just released their Math-V2 paper, and it represents a fundamental shift in how we train AI for mathematical reasoning. The conventional approach trains models by rewarding correct final answers. This worked well enough to…",
+  "tags": [
+   "ai",
+   "airesearch",
+   "artificialintelligence",
+   "datascience",
+   "deepseek"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "NVIDIA’s full-stack software ecosystem",
+  "date": "2025-11-26",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7399521453387481089",
+  "excerpt": "Over the Thanksgiving break, I took a deep dive into NVIDIA's full-stack software ecosystem. The strategic case is compelling. I have summarized this in a deck using Google / Google DeepMind's NotebookLM. The promise: 50-500x workflow…",
+  "tags": [
+   "ai",
+   "aiatscale",
+   "analytics",
+   "caterpillar",
+   "computeoptimization"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Exploring the Next Frontier in AI: General World Models Beyond LLMs",
+  "date": "2025-11-22",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7397811682980524032",
+  "excerpt": "Excited to see the release of PAN—a general, interactable, and long-horizon world model that marks a major leap beyond what large language models (LLMs) alone can achieve. While LLMs have transformed how we interact with information, the…",
+  "tags": [
+   "ai",
+   "beyondllms",
+   "digitaltransformation",
+   "frontiers",
+   "maintenance"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Machine Learning is Just Nested Optimization",
+  "date": "2025-11-11",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7393833999363764225",
+  "excerpt": "For optimization enthusiasts like me, this is the path forward: neural networks as dynamic, multi-level optimization systems. Google Research's new Nested Learning paper reframes everything: backpropagation is an associative memory.…",
+  "tags": [
+   "ai",
+   "artificialintelligence",
+   "computerscience",
+   "continuallearning",
+   "datascience"
+  ],
+  "theme": "Models & inference"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Our digital-twin work in the NVIDIA GTC DC keynote",
+  "date": "2025-10-30",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7389471213674414081",
+  "excerpt": "It’s been incredible leading the Future of Manufacturing Digital Platform POC efforts at Caterpillar Inc., pushing the boundaries at the forefront of manufacturing digital platforms using NVIDIA tools. I’m truly grateful to have had a…",
+  "tags": [
+   "ai",
+   "caterpillar",
+   "digitaltransformation",
+   "digitaltwin",
+   "futureofwork"
+  ],
+  "theme": "Talks & appearances"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Why I stay hands-on",
+  "date": "2025-10-23",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7387084801759076352",
+  "excerpt": "For me, staying hands-on—even if only 5-10% of the time—does more than keep my technical skills sharp. It develops real empathy for the challenges my team faces, especially when it comes to the “last 20%” of polish that transforms a good…",
+  "tags": [
+   "accelerate",
+   "continuouslearning",
+   "empathyintech",
+   "engineeringleadership",
+   "frameworks"
+  ],
+  "theme": "AI & work"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Context Engineering >> Prompt Engineering",
+  "date": "2025-07-24",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7354146292031238147",
+  "excerpt": "As we continue to explore the expanding impact of generative AI in the enterprise, I’ve been thinking deeply about how we move beyond traditional prompt engineering into something far more powerful: context engineering. In real-world…",
+  "tags": [
+   "aiinbusiness",
+   "aiproductdevelopment",
+   "contextengineering",
+   "enterpriseai",
+   "generativeai"
+  ],
+  "theme": "Agents & software"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Fireside chat at Caterpillar’s Analytics Center of Excellence, Bangalore",
+  "date": "2025-06-13",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7339417071849545729",
+  "excerpt": "Earlier this week, I had the privilege of participating in a deeply engaging fireside chat at Caterpillar Inc.’s Analytics Center of Excellence in the Financial Services Division. I was honored to share the stage with Piyush Gundecha, a…",
+  "tags": [
+   "analytics",
+   "bangalore",
+   "careerjourney",
+   "caterpillar",
+   "coe"
+  ],
+  "theme": "Talks & appearances"
+ },
+ {
+  "series": null,
+  "vol": null,
+  "title": "Weekend reading: The Illusion of Thinking",
+  "date": "2025-06-09",
+  "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7337700582004006913",
+  "excerpt": "As we continue to explore the expanding capabilities of large language models (LLMs), this recent paper from Apple offers a timely and sobering perspective on where we really stand in the journey toward Artificial General Intelligence…",
+  "tags": [
+   "agi",
+   "ai",
+   "airesearch",
+   "appleai",
+   "llm"
+  ],
+  "theme": "Models & inference"
  }
 ]
