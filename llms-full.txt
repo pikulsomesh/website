@@ -16,7 +16,7 @@ He is Director of Analytics and Head of Data Science and Product Management for 
 
 ### How large are the teams and programs Somesh Mohapatra has led?
 
-He is accountable for a 90+ person organization as a leader of leaders, with managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
+He is accountable for a 100+ person organization as a leader of leaders, with nine direct reports and managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities; the platform program runs on a $30M annual budget. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
 
 ### Where did Somesh Mohapatra study?
 
@@ -46,11 +46,11 @@ He is based in the Dallas–Fort Worth area of Texas and works across the US, UK
 
 ### Director, Analytics · Head of Data Science & Product Management · Caterpillar Inc. (2025 – now)
 
-- Accountable for a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.
+- Accountable for a 100+ person organization as a leader of leaders, with nine direct reports: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.
 - Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.
 - With the team, architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.
 - Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.
-- Outcomes: GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 plants (US and UK pilots)
+- Outcomes: $30M (Annual program budget for the platform); GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 plants (US and UK pilots)
 
 ### Senior Manager, Strategy & Analytics · Chief of Staff to SVP · Caterpillar Resource Industries ($15B segment) (2025)
 
@@ -653,6 +653,7 @@ These are the commitments that are easy to make at the start of a program and ha
 
 ## Writing
 
+- 2026-10-22 · Physical AI: A digital twin of a three-star kitchen. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7519170240069427200
 - 2026-10-18 · Models & inference: Baby Senses Lab: seeing, hearing and feeling like a baby. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7517627841350590464
 - 2026-10-09 · Physical AI: An open history of digital twins. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7514413206941937664
 - 2026-10-06 · Agents & software: LabTrends: on-device AI for scattered lab reports. https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7513335281089970176

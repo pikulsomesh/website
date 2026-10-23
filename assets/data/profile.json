@@ -36,12 +36,16 @@
       "role": "Director, Analytics · Head of Data Science & Product Management",
       "org": "Caterpillar Inc.",
       "points": [
-        "Accountable for a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.",
+        "Accountable for a 100+ person organization as a leader of leaders, with nine direct reports: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.",
         "Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.",
         "With the team, architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.",
         "Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain."
       ],
       "metrics": [
+        {
+          "value": "$30M",
+          "label": "Annual program budget for the platform"
+        },
         {
           "value": "GTC · CES",
           "label": "Work shown at NVIDIA GTC DC 2025 and CES 2026"
@@ -480,7 +484,7 @@
       "theme": "Digital twin",
       "status": "Live",
       "state": "live",
-      "updated": "2026-10-12",
+      "updated": "2026-10-22",
       "problem": "Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone.",
       "text": "A 3D twin of a three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers.",
       "stack": [
@@ -491,7 +495,13 @@
         "Coding agents"
       ],
       "url": "https://pikulsomesh.github.io/michelin-kitchen-twin/",
-      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin"
+      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin",
+      "links": [
+        {
+          "label": "LinkedIn post",
+          "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7519170240069427200"
+        }
+      ]
     },
     {
       "title": "Baby Senses Lab",
