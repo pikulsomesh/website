@@ -133,12 +133,14 @@ const blockHTML = (b) => {
   if (b.type === 'h') return `<h3 class="pb-h">${esc(b.text)}</h3>`;
   if (b.type === 'p') return `<p>${esc(b.text)}</p>`;
   if (b.type === 'callout') return `<blockquote class="pb-callout">${esc(b.text)}</blockquote>`;
+  if (b.type === 'source') return `<p class="cloud-note pb-source">${esc(b.text)} <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.label)} ↗</a></p>`;
   if (b.type === 'table') return `<div class="table-wrap"><table><thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   return `<ul class="pb-list">${blockItems(b).map((x) => `<li>${x.title ? `<b>${esc(x.title)}</b> ` : ''}${esc(x.text)}</li>`).join('')}</ul>`;
 };
 const blockText = (b) => {
   if (b.type === 'h') return `\n#### ${b.text}\n`;
   if (b.type === 'p' || b.type === 'callout') return `${b.text}\n`;
+  if (b.type === 'source') return `${b.text} ${b.label}: ${b.url}\n`;
   if (b.type === 'table') return [b.head.join(' | '), ...b.rows.map((r) => r.join(' | '))].join('\n') + '\n';
   return blockItems(b).map((x) => `- ${[x.title, x.text].filter(Boolean).join(': ')}`).join('\n') + '\n';
 };
@@ -173,13 +175,13 @@ const resumeHTML = () => profile.timeline.map((t) => `
         <ul>${t.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('') + '\n      ';
 
 // Same markup as buildCard in assets/js/main.js.
-const fmtMonth = (iso) => new Date(`${iso}T00:00Z`).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
-const buildsHTML = () => rows(profile.builds.map((b) => `<article class="card build"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div><h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p><ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul><div class="build-links">${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a><span class="build-updated">Updated ${esc(fmtMonth(b.updated))}</span></div></article>`));
+const buildsHTML = () => rows(profile.builds.map((b) => `<article class="card build"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div><h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p><ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul><div class="build-links">${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>${(b.links || []).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div></article>`));
 
 const BLOCKS = {
   'index.html': { timeline: timelineHTML, faq: faqHTML, builds: buildsHTML },
   'research/index.html': {
     builds: buildsHTML,
+    latest: () => rows((pubs.latest || []).map((p) => `<article class="card latest-pub"><span class="kicker mono">${esc(p.kind)} · ${esc(p.venue)} · ${esc(p.date)}</span><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3><p>${esc(p.text)}</p><div class="build-links"><a href="${esc(p.url)}" target="_blank" rel="noopener">Read the paper ↗</a>${(p.links || []).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div></article>`)),
     pubs: () => rows(pubs.papers.map((p) => pubRow(p, 'Journal'))),
     talks: () => rows(pubs.talks.map((t) => `<li class="pub"><span class="yr">${esc(t.year)}</span><div><b>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.title)}</a>` : esc(t.title)}</b><span>Invited</span></div><span class="venue">${esc(t.venue)}</span></li>`)),
     patents: () => rows(pubs.patents.map((p) => `<li class="pub"><span class="yr">Patent</span><div><b><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></b><span>${esc(p.number)}</span></div><span class="venue">USPTO</span></li>`)),
@@ -217,7 +219,7 @@ function lastModified(files) {
 function llmsTxt() {
   return `# Somesh Mohapatra
 
-> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc. leading a 90+ person organization that builds digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
+> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc., where his teams build digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
 
 This is his personal site. Every page is static HTML; the content also lives in plain JSON under /assets/data/. A full plain-text version of the site is at ${SITE}llms-full.txt.
 

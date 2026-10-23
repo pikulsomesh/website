@@ -1,5 +1,5 @@
 {
-  "_comment": "Complete record reconciled against the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list.",
+  "_comment": "Complete record reconciled against the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list. 'latest' feeds the featured item at the top of the research page; keep it to the newest one or two.",
   "stats": {
     "citations": "710",
     "hIndex": 12,
@@ -119,18 +119,17 @@
   ],
   "preprints": [
     {
+      "year": 2026,
+      "venue": "arXiv · cs.LG",
+      "title": "Simulating Infant Senses with Age-Tuned Networks",
+      "url": "https://arxiv.org/abs/2610.25377"
+    },
+    {
       "year": 2023,
       "venue": "ChemRxiv",
       "title": "Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand",
       "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
       "cites": 3
-    },
-    {
-      "year": 2021,
-      "venue": "arXiv",
-      "title": "ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results",
-      "url": "https://arxiv.org/abs/2108.09810",
-      "cites": 18
     },
     {
       "year": 2022,
@@ -164,6 +163,13 @@
       "title": "Sentiment Is All You Need to Win US Presidential Elections",
       "url": "https://arxiv.org/abs/2209.13487",
       "cites": 6
+    },
+    {
+      "year": 2021,
+      "venue": "arXiv",
+      "title": "ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results",
+      "url": "https://arxiv.org/abs/2108.09810",
+      "cites": 18
     }
   ],
   "chapters": [
@@ -444,6 +450,26 @@
       "url": "https://scholar.google.com/citations?user=xIx9ENcAAAAJ&hl=en",
       "cites": 2,
       "kind": "Conference paper"
+    }
+  ],
+  "latest": [
+    {
+      "date": "Oct 2026",
+      "kind": "Preprint",
+      "venue": "arXiv",
+      "title": "Simulating Infant Senses with Age-Tuned Networks",
+      "url": "https://arxiv.org/abs/2610.25377",
+      "text": "Brings together what newborns see, hear and feel over the first two years of life, and asks whether small neural networks tuned to a given age can turn those measurements into a quick, inspectable simulation of sensory perception. Part of the Baby Senses Lab.",
+      "links": [
+        {
+          "label": "Baby Senses Lab",
+          "url": "https://pikulsomesh.github.io/developmental-world-models/"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/pikulsomesh/developmental-world-models"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Somesh Mohapatra
 
-> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc. leading a 90+ person organization that builds digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
+> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc., where his teams build digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
 
 This is his personal site. Every page is static HTML; the content also lives in plain JSON under /assets/data/. A full plain-text version of the site is at https://someshmohapatra.in/llms-full.txt.
 

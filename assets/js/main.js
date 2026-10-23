@@ -65,6 +65,10 @@ const ICONS = {
   agent: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 16M12 11.5l5.5 4.5"/></svg>',
   graph: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4v4l-3 2v4l3 2v4M18 4v4l3 2v4l-3 2v4M6 8h12M6 16h12"/></svg>',
   compass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>',
+  doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>',
+  chain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11 16.7 6M7.3 13l9.4 5"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+  molecule: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m12 3 7.8 4.5v9L12 21l-7.8-4.5v-9z"/><circle cx="12" cy="12" r="2.5"/></svg>',
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg>',
 };
 
@@ -123,6 +127,7 @@ function renderWork(p) {
   if (!el) return;
   el.innerHTML = p.work.map((w) => `
     <article class="card work reveal${w.feature ? ' feature' : ''}" id="${esc(w.id)}">
+      ${w.icon ? `<div class="glyph">${ICONS[w.icon] || ''}</div>` : ''}
       <span class="kicker">${esc(w.kicker)}</span>
       <h3>${w.href ? `<a href="${ROOT}${esc(w.href)}">${esc(w.title)}</a>` : esc(w.title)}</h3>
       <p>${esc(w.text)}</p>
@@ -204,6 +209,7 @@ const BLOCKS = {
   p: (b) => `<p>${esc(b.text)}</p>`,
   list: (b) => `<ul class="pb-list">${b.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`,
   callout: (b) => `<blockquote class="pb-callout">${esc(b.text)}</blockquote>`,
+  source: (b) => `<p class="cloud-note pb-source">${esc(b.text)} <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.label)} ↗</a></p>`,
   table: (b) => `<div class="table-wrap"><table><thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.rows.map((r) => `<tr>${r.map((c, i) => `<td${i === 0 ? ' class="first"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`,
   cards: (b) => `<div class="pb-cards">${b.items.map((c) => `<div class="pb-card"><b>${esc(c.title)}</b><p>${esc(c.text)}</p></div>`).join('')}</div>`,
   steps: (b) => `<ol class="pb-steps${b.variant === 'loop' ? ' loop' : ''}">${b.items.map((st, i) => `<li><span class="sn mono">${String(i + 1).padStart(2, '0')}</span><b>${esc(st.title)}</b><p>${esc(st.text)}</p></li>`).join('')}</ol>`,
@@ -317,14 +323,15 @@ function renderPlaybook(pb) {
 
 /* ---------- Builds (home + research) ---------- */
 // Keep in step with buildCard in tools/build_seo.mjs, which prerenders the same markup.
-const fmtMonth = (iso) => new Date(`${iso}T00:00`).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+// `updated` stays in the data for ordering; cards show no dates so the section reads as ongoing work.
 function buildCard(b) {
-  const links = (b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : '') + `<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>`;
+  const links = (b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : '') + `<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>`
+    + (b.links || []).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('');
   return `<article class="card build reveal"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div>
     <h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3>
     <p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p>
     <ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul>
-    <div class="build-links">${links}<span class="build-updated">Updated ${esc(fmtMonth(b.updated))}</span></div></article>`;
+    <div class="build-links">${links}</div></article>`;
 }
 function renderBuilds(p) {
   const el = $('#builds-grid') || $('#code');

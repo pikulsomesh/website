@@ -8,7 +8,7 @@ Dallas–Fort Worth, Texas. LinkedIn: https://www.linkedin.com/in/pikulsomesh/ �
 
 ### Who is Somesh Mohapatra?
 
-Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader. He is Director of Analytics at Caterpillar Inc., where he leads a 90+ person organization building digital twins and agentic AI for global manufacturing. He holds a PhD in machine learning for molecular design from MIT and an MBA from MIT Sloan's Leaders for Global Operations program.
+Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader. He is Director of Analytics at Caterpillar Inc., where his teams build digital twins and agentic AI for global manufacturing. He holds a PhD in machine learning for molecular design from MIT and an MBA from MIT Sloan's Leaders for Global Operations program.
 
 ### What does Somesh Mohapatra do at Caterpillar?
 
@@ -16,11 +16,11 @@ He is Director of Analytics and Head of Data Science and Product Management for 
 
 ### How large are the teams and programs Somesh Mohapatra has led?
 
-He leads a 90+ person organization as a leader of leaders, with managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities, with a $30M annual budget. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment; he was promoted twice in 2025, to Senior Manager and then Director. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
+He is accountable for a 90+ person organization as a leader of leaders, with managers of data scientists, AI and GenAI engineers, simulation developers and product managers across the US and India, and owns the AI and product roadmap for a manufacturing digital platform scoped to 150+ facilities. Earlier at Caterpillar he co-led a supply resiliency program covering 1.5 million parts, 7,000+ suppliers and $20B of annual spend, and did strategy and capital-allocation work for the $15B Resource Industries segment. As a startup co-founder he grew a team from two to 30 people with full P&L ownership.
 
 ### Where did Somesh Mohapatra study?
 
-He earned a PhD in machine learning for molecular design at MIT (2018 to 2022), advised by Prof. Rafael Gómez-Bombarelli, a dual-degree MBA from the MIT Sloan Leaders for Global Operations program, and a B.Tech from IIT Roorkee, where he won the Institute Gold Medal as rank 1 of 110.
+He earned a PhD in machine learning for molecular design at MIT, advised by Prof. Rafael Gómez-Bombarelli, a dual-degree MBA from the MIT Sloan Leaders for Global Operations program, and a B.Tech from IIT Roorkee, where he won the Institute Gold Medal as rank 1 of 110.
 
 ### What is Somesh Mohapatra's research about?
 
@@ -46,16 +46,15 @@ He is based in the Dallas–Fort Worth area of Texas and works across the US, UK
 
 ### Director, Analytics · Head of Data Science & Product Management · Caterpillar Inc. (2025 – now)
 
-- Lead a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India, plus a senior principal architect.
+- Accountable for a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.
 - Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.
-- Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.
+- With the team, architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.
 - Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.
-- Promoted to Director in 2025, my second promotion that year.
-- Outcomes: $30M (Annual platform budget); GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 → 150+ (Pilot plants to global rollout plan)
+- Outcomes: GTC · CES (Work shown at NVIDIA GTC DC 2025 and CES 2026); 4 plants (US and UK pilots)
 
 ### Senior Manager, Strategy & Analytics · Chief of Staff to SVP · Caterpillar Resource Industries ($15B segment) (2025)
 
-- Promoted to Senior Manager to run strategy for the segment.
+- Ran strategy for the segment as chief of staff to the senior vice president.
 - Led the enterprise strategy workstream for sustainable mining, reporting into the Group President's office.
 - Built the TAM/SAM framework with AI-driven adoption modelling across diesel, electric and hybrid propulsion.
 - Informed M&A and venture decisions in autonomy and digital mine software; prepared board-level and Investor Day material.
@@ -193,13 +192,14 @@ Google Scholar (Oct 2026): 710 citations, h-index 12.
 
 ### Preprints
 
+- Simulating Infant Senses with Age-Tuned Networks. arXiv · cs.LG, 2026. https://arxiv.org/abs/2610.25377
 - Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand. ChemRxiv, 2023.
-- ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results. arXiv, 2021. https://arxiv.org/abs/2108.09810
 - AI-Assisted Reaction Impurity Prediction and Inverse Structure Elucidation. ChemRxiv, 2022.
 - AI-Assisted Chemical Reaction Impurity Prediction and Propagation. ChemRxiv, 2022.
 - Translating L-Peptides into Non-Canonical Linear and Macrocyclic Peptides. ChemRxiv, 2022.
 - The (In)Effectiveness of Intermediate Task Training for Domain Adaptation and Cross-Lingual Transfer Learning. arXiv, 2022. https://arxiv.org/abs/2210.01091
 - Sentiment Is All You Need to Win US Presidential Elections. arXiv · IJCNLP NLP4DH, 2022. https://arxiv.org/abs/2209.13487
+- ICLR 2021 Challenge for Computational Geometry & Topology: Design and Results. arXiv, 2021. https://arxiv.org/abs/2108.09810
 
 ### Book chapters
 
@@ -233,7 +233,7 @@ Google Scholar (Oct 2026): 710 citations, h-index 12.
 
 - Auto-Twin (Spatial AI; In progress): Digital twins usually start with weeks of laser scanning and CAD. Can a walkthrough video and a world model stand one up for about twenty cents of compute? A video tour of the Central Texas Food Bank becomes a Gaussian-splat world through the World Labs API, is converted to OpenUSD, bound to live telemetry on AWS and rendered in the browser, Blender or Omniverse. Cost guards make every paid call resumable and never double-billed. Stack: World model API, Gaussian splats, OpenUSD, AWS Lambda + SAM, three.js, Blender. https://pikulsomesh.github.io/foodbank-spatial-twin/
 - Michelin Kitchen Twin (Digital twin; Live): Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone. A 3D twin of a three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers. Stack: three.js, Discrete-event simulation, MRP and BOMs, OpenUSD export, Coding agents. https://pikulsomesh.github.io/michelin-kitchen-twin/
-- Baby Senses Lab (World models; Live · 2 papers in draft): AI world models train on adult-quality data from day one. Infants start with blurry, muffled input and still learn fast. What does that staging buy a model? One world model per sense (vision, hearing, touch, body position), each fed through an age-tuned filter and grown as it trains, then fused. The public site lets parents see and hear like a baby of any age; researchers get the findings, papers and code. Stack: PyTorch, World models, Network growth, Multisensory fusion. https://pikulsomesh.github.io/developmental-world-models/
+- Baby Senses Lab (World models; Live · paper on arXiv): AI world models train on adult-quality data from day one. Infants start with blurry, muffled input and still learn fast. What does that staging buy a model? One world model per sense (vision, hearing, touch, body position), each fed through an age-tuned filter and grown as it trains, then fused. The public site lets parents see and hear like a baby of any age; researchers get the findings, papers and code. Stack: PyTorch, World models, Network growth, Multisensory fusion. https://pikulsomesh.github.io/developmental-world-models/
 - LabTrends (On-device AI; v1.1 released): A family's lab results sit in PDFs and paper scans from different clinics, and seeing a trend usually means handing health data to someone's cloud. An Android app that reads reports with on-device OCR, parses biomarkers with rules backed by a small local language model, and has a person confirm every value before it is saved. The release build has no internet permission at all. Stack: React Native + Expo, Local LLM (llama.rn), On-device OCR, Encrypted SQLite backups. https://github.com/pikulsomesh/LabTrends
 - Academic Matchmaker (In-browser AI; In progress): Prospective PhD students choose advisors from rankings and cold emails rather than research fit. Drop in a CV or paper and a small language model running in the browser on WebGPU extracts research interests; embeddings then rank faculty across the top 100 universities. Nothing leaves the device. A scheduled pipeline is rebuilding the faculty index from open scholarly data. Stack: Transformers.js, WebGPU, Small LLM (ONNX), Embeddings search, React + Vite. https://github.com/pikulsomesh/academic-matchmaker
 - Digital Twin History (Physical AI; Live): “Digital twin” means something different in every meeting. A shared, cited history gives teams a common vocabulary. An open dataset of milestones from andon lights and Apollo's simulators to AI world models and agentic twins, with a walkable 3D factory shown across six eras and research trends from OpenAlex. MIT licensed for courses and talks. Stack: Open dataset, three.js, OpenAlex, Vite. https://pikulsomesh.github.io/digital-twin-history/
@@ -323,6 +323,8 @@ Accuracy & integrity | Do values reflect physical reality, and do relationships 
 Timeliness & alignment | Is it fresh enough for the decision, and aligned in time across sensors and systems?
 
 I track coverage in two directions: whether a standard exists for a domain, and whether it is actually in use at every site and system. "We have a standard" and "the standard is used everywhere" are different claims, and federation succeeds or fails on the second.
+
+For a public account of this kind of journey, MIT CISR's case study follows how Caterpillar built a single, trusted data source and the adoption behind it. Wixom, Rodriguez, Piccoli and Beath, “Caterpillar's Digital Data Journey,” MIT CISR Working Paper No. 467 (2025): https://cisr.mit.edu/publication/MIT_CISRwp467_CaterpillarDataJourney_WixomRodriguezPiccoliBeath
 
 
 #### No model before the data is ready
