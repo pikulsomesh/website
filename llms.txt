@@ -1,6 +1,6 @@
 # Somesh Mohapatra
 
-> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc. leading a 90+ person organization that builds digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
+> Somesh Mohapatra, PhD, MBA, is an AI, data science and product leader: Director of Analytics at Caterpillar Inc., where his teams build digital twins and agentic AI for global manufacturing. MIT PhD in machine learning for molecular design, MIT Sloan MBA (Leaders for Global Operations), IIT Roorkee gold medalist. Based in Dallas–Fort Worth, Texas.
 
 This is his personal site. Every page is static HTML; the content also lives in plain JSON under /assets/data/. A full plain-text version of the site is at https://someshmohapatra.in/llms-full.txt.
 
@@ -9,7 +9,7 @@ This is his personal site. Every page is static HTML; the content also lives in 
 - [Home](https://someshmohapatra.in/): profile, career timeline, selected work, recognition and FAQ
 - [Playbook](https://someshmohapatra.in/playbook/): a complete point of view on running data and AI in an enterprise, in 12 chapters
 - [Research](https://someshmohapatra.in/research/): 15 peer-reviewed papers, preprints, talks and a patent application
-- [Writing](https://someshmohapatra.in/writing/): 104 essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
+- [Writing](https://someshmohapatra.in/writing/): 105 essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
 - [Resume](https://someshmohapatra.in/resume/): experience, education and certifications
 
 ## Data

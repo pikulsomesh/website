@@ -12,10 +12,6 @@
   "_comment_proof": "Hero proof strip. Where LinkedIn and the resume disagree, see the 'Claims to confirm' table in the discovery doc.",
   "proof": [
     {
-      "value": "90+",
-      "label": "people in the AI, data science and product organization I lead"
-    },
-    {
       "value": "150+",
       "label": "facilities in scope for the manufacturing digital platform"
     },
@@ -24,8 +20,12 @@
       "label": "peer-reviewed papers, incl. 2 in Nature Chemistry"
     },
     {
-      "value": "$30M",
-      "label": "annual budget for the manufacturing digital platform I lead"
+      "value": "GTC · CES",
+      "label": "NVIDIA showcases of the team's digital-twin work"
+    },
+    {
+      "value": "US · UK · India",
+      "label": "teams and plants the work spans"
     }
   ],
   "timeline": [
@@ -36,24 +36,23 @@
       "role": "Director, Analytics · Head of Data Science & Product Management",
       "org": "Caterpillar Inc.",
       "points": [
-        "Lead a 90+ person organization as a leader of leaders: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India, plus a senior principal architect.",
+        "Accountable for a 100+ person organization as a leader of leaders, with nine direct reports: managers of data scientists, AI/GenAI engineers, simulation developers and product managers across the US and India.",
         "Own the AI and product roadmap for the Modern Manufacturing digital platform: predictive maintenance, inventory, dynamic scheduling, connected assets and operational metrics.",
-        "Architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.",
-        "Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain.",
-        "Promoted to Director in 2025, my second promotion that year."
+        "With the team, architected a conversational assistant over a 3D digital twin on CUDA-accelerated NVIDIA AI Factory, Omniverse and NeMo agents; piloted across four US and UK plants.",
+        "Two invention disclosures: hierarchical clustering for predictive maintenance in low-data regimes, and hybrid RAG for supply chain."
       ],
       "metrics": [
         {
           "value": "$30M",
-          "label": "Annual platform budget"
+          "label": "Annual program budget for the platform"
         },
         {
           "value": "GTC · CES",
           "label": "Work shown at NVIDIA GTC DC 2025 and CES 2026"
         },
         {
-          "value": "4 → 150+",
-          "label": "Pilot plants to global rollout plan"
+          "value": "4 plants",
+          "label": "US and UK pilots"
         }
       ]
     },
@@ -64,7 +63,7 @@
       "role": "Senior Manager, Strategy & Analytics · Chief of Staff to SVP",
       "org": "Caterpillar Resource Industries ($15B segment)",
       "points": [
-        "Promoted to Senior Manager to run strategy for the segment.",
+        "Ran strategy for the segment as chief of staff to the senior vice president.",
         "Led the enterprise strategy workstream for sustainable mining, reporting into the Group President's office.",
         "Built the TAM/SAM framework with AI-driven adoption modelling across diesel, electric and hybrid propulsion.",
         "Informed M&A and venture decisions in autonomy and digital mine software; prepared board-level and Investor Day material."
@@ -299,7 +298,8 @@
       "press": {
         "label": "NVIDIA press release, GTC DC 2025",
         "url": "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-US-Manufacturing-and-Robotics-Leaders-Drive-Americas-Reindustrialization-With-Physical-AI/default.aspx"
-      }
+      },
+      "icon": "twin"
     },
     {
       "id": "work-chatdocs",
@@ -321,7 +321,8 @@
         "LLMs",
         "Hybrid RAG",
         "Procurement"
-      ]
+      ],
+      "icon": "doc"
     },
     {
       "id": "work-resiliency",
@@ -341,7 +342,8 @@
       "tags": [
         "Risk",
         "Scenario planning"
-      ]
+      ],
+      "icon": "chain"
     },
     {
       "id": "work-mining",
@@ -361,7 +363,8 @@
       "tags": [
         "Electrification",
         "Data platform"
-      ]
+      ],
+      "icon": "bolt"
     },
     {
       "id": "work-strategy",
@@ -381,7 +384,8 @@
       "tags": [
         "Strategy",
         "Capital allocation"
-      ]
+      ],
+      "icon": "compass"
     },
     {
       "id": "work-research",
@@ -402,7 +406,8 @@
         "GNNs",
         "Open source"
       ],
-      "href": "research/"
+      "href": "research/",
+      "icon": "molecule"
     }
   ],
   "recognition": [
@@ -479,7 +484,7 @@
       "theme": "Digital twin",
       "status": "Live",
       "state": "live",
-      "updated": "2026-10-12",
+      "updated": "2026-10-22",
       "problem": "Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone.",
       "text": "A 3D twin of a three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers.",
       "stack": [
@@ -490,12 +495,18 @@
         "Coding agents"
       ],
       "url": "https://pikulsomesh.github.io/michelin-kitchen-twin/",
-      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin"
+      "repo": "https://github.com/pikulsomesh/michelin-kitchen-twin",
+      "links": [
+        {
+          "label": "LinkedIn post",
+          "url": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7519170240069427200"
+        }
+      ]
     },
     {
       "title": "Baby Senses Lab",
       "theme": "World models",
-      "status": "Live · 2 papers in draft",
+      "status": "Live · paper on arXiv",
       "state": "live",
       "updated": "2026-10-19",
       "problem": "AI world models train on adult-quality data from day one. Infants start with blurry, muffled input and still learn fast. What does that staging buy a model?",
@@ -507,7 +518,13 @@
         "Multisensory fusion"
       ],
       "url": "https://pikulsomesh.github.io/developmental-world-models/",
-      "repo": "https://github.com/pikulsomesh/developmental-world-models"
+      "repo": "https://github.com/pikulsomesh/developmental-world-models",
+      "links": [
+        {
+          "label": "arXiv paper",
+          "url": "https://arxiv.org/abs/2610.25377"
+        }
+      ]
     },
     {
       "title": "LabTrends",

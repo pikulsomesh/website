@@ -1,5 +1,5 @@
 {
-  "_comment": "One complete point of view on running data and AI in an enterprise. No company names. Cloud services and open-source projects appear only as illustrative examples, in the cloud switcher and the open-source table. Each chapter is a list of blocks; block types: p, list, table, cards, layers (optional clouds, on, spans), steps, tiers, timeline, callout, decide.",
+  "_comment": "One complete point of view on running data and AI in an enterprise. No company names, except in a cited public case study. Cloud services and open-source projects appear only as illustrative examples, in the cloud switcher and the open-source table. Each chapter is a list of blocks; block types: p, list, table, cards, layers (optional clouds, on, spans), steps, tiers, timeline, callout, decide, source. A 'source' block (text, label, url) adds a cited reference under a section.",
   "thesis": "The goal is not to turn a company into an AI company. It is to make data and AI a multiplier for the company it already wants to become.",
   "principles": [
     {
@@ -248,6 +248,12 @@
         {
           "type": "p",
           "text": "I track coverage in two directions: whether a standard exists for a domain, and whether it is actually in use at every site and system. \"We have a standard\" and \"the standard is used everywhere\" are different claims, and federation succeeds or fails on the second."
+        },
+        {
+          "type": "source",
+          "text": "For a public account of this kind of journey, MIT CISR's case study follows how Caterpillar built a single, trusted data source and the adoption behind it.",
+          "label": "Wixom, Rodriguez, Piccoli and Beath, “Caterpillar's Digital Data Journey,” MIT CISR Working Paper No. 467 (2025)",
+          "url": "https://cisr.mit.edu/publication/MIT_CISRwp467_CaterpillarDataJourney_WixomRodriguezPiccoliBeath"
         },
         {
           "type": "h",
