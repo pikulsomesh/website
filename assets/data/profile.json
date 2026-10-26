@@ -461,23 +461,34 @@
   ],
   "builds": [
     {
-      "title": "Auto-Twin",
+      "title": "Food Bank Spatial Twin",
       "theme": "Spatial AI",
-      "status": "In progress",
-      "state": "building",
-      "updated": "2026-10-19",
-      "problem": "Digital twins usually start with weeks of laser scanning and CAD. Can a walkthrough video and a world model stand one up for about twenty cents of compute?",
-      "text": "A video tour of the Central Texas Food Bank becomes a Gaussian-splat world through the World Labs API, is converted to OpenUSD, bound to live telemetry on AWS and rendered in the browser, Blender or Omniverse. Cost guards make every paid call resumable and never double-billed.",
+      "status": "Live",
+      "state": "live",
+      "updated": "2026-10-25",
+      "problem": "Digital twins usually start from CAD drawings and laser scans, which puts them out of reach for most non-profits. Is a public video tour enough to start one?",
+      "text": "Frames of a public news tour of a food bank become Gaussian-splat captures through a world model, a scripted Blender model fills in the parts the video never showed, and OpenUSD ties both to operations data served from a serverless AWS backend. The twin runs in the browser and in NVIDIA Omniverse on EC2 GPUs. Built in seven days for about $1.54 of compute, with a reference architecture mapped to AWS, Azure and Google Cloud and real sensors priced at about $12 a month to run.",
       "stack": [
         "World model API",
-        "Gaussian splats",
+        "3D Gaussian splatting",
+        "Blender",
         "OpenUSD",
-        "AWS Lambda + SAM",
-        "three.js",
-        "Blender"
+        "AWS SAM + Lambda",
+        "Omniverse on EC2",
+        "three.js"
       ],
       "url": "https://pikulsomesh.github.io/foodbank-spatial-twin/",
-      "repo": "https://github.com/pikulsomesh/foodbank-spatial-twin"
+      "repo": "https://github.com/pikulsomesh/foodbank-spatial-twin",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://github.com/pikulsomesh/foodbank-spatial-twin/tree/main/paper"
+        },
+        {
+          "label": "Cloud architecture and cost",
+          "url": "https://pikulsomesh.github.io/foodbank-spatial-twin/wiki/cost.html"
+        }
+      ]
     },
     {
       "title": "Michelin Kitchen Twin",
