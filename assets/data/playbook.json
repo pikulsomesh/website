@@ -609,6 +609,16 @@
         {
           "type": "p",
           "text": "For operations-heavy businesses the platform extends into simulation. A physics-grounded digital twin of a plant, line or fleet becomes a place to test schedules, layouts and maintenance strategies before touching the real world, and a conversational layer lets planners query it in plain language. Physics stays in the loop: thermal limits, capacity constraints and degradation curves bound what a model may say, and hybrid physics-ML beats either alone when failure data is thin."
+        },
+        {
+          "type": "p",
+          "text": "The cost of a first twin has also collapsed. It no longer has to start as a CAD-first project: existing video, a world model and open standards can stand up a usable facility twin in days, with the sensor layer designed and priced before anything is installed. Keeping OpenUSD as the only contract between capture, data and rendering means each layer can be swapped without rebuilding the rest."
+        },
+        {
+          "type": "source",
+          "text": "As a worked example, I built a twin of a representative food bank from a public news video in seven days, with the data layer on AWS, rendering in NVIDIA Omniverse, and the cloud architecture and full cost published alongside the code.",
+          "label": "Mohapatra, “From Video to Digital Twin: Accelerating Spatial Twins with World Models and NVIDIA Omniverse” (2026): paper, code and live twin",
+          "url": "https://github.com/pikulsomesh/foodbank-spatial-twin"
         }
       ]
     },
