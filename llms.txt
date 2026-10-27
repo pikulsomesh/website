@@ -9,7 +9,8 @@ This is his personal site. Every page is static HTML; the content also lives in 
 - [Home](https://someshmohapatra.in/): profile, career timeline, selected work, recognition and FAQ
 - [Playbook](https://someshmohapatra.in/playbook/): a complete point of view on running data and AI in an enterprise, in 12 chapters
 - [Research](https://someshmohapatra.in/research/): 15 peer-reviewed papers, preprints, talks and a patent application
-- [Writing](https://someshmohapatra.in/writing/): 105 essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
+- [Food Bank Spatial Twin](https://someshmohapatra.in/writing/foodbank-spatial-twin/): Build notes, a build series in 5 parts. A working digital twin of a representative Texas food bank, built from a public news video in seven days for about $1.54 of compute. No CAD drawings, no laser scans, no site visit. Five parts, from why to the full pipeline and the paper.
+- [Writing](https://someshmohapatra.in/writing/): long-form build notes and essays, plus 105 essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
 - [Resume](https://someshmohapatra.in/resume/): experience, education and certifications
 
 ## Data

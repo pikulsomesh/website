@@ -326,7 +326,7 @@ function renderPlaybook(pb) {
 // `updated` stays in the data for ordering; cards show no dates so the section reads as ongoing work.
 function buildCard(b) {
   const links = (b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : '') + `<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>`
-    + (b.links || []).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('');
+    + (b.links || []).map((l) => (l.url.startsWith('/') ? `<a href="${esc(l.url)}">${esc(l.label)} →</a>` : `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`)).join('');
   return `<article class="card build reveal"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div>
     <h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3>
     <p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p>

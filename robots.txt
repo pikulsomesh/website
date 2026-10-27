@@ -1,29 +1,39 @@
 # Everyone, including AI search and answer engines, is welcome to read and cite this site.
+# /content/ holds the Markdown sources and unpublished drafts; the published pages live under /writing/.
 User-agent: *
 Allow: /
+Disallow: /content/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /content/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /content/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /content/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /content/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /content/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /content/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /content/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /content/
 
 Sitemap: https://someshmohapatra.in/sitemap.xml

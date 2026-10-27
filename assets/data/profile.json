@@ -481,8 +481,12 @@
       "repo": "https://github.com/pikulsomesh/foodbank-spatial-twin",
       "links": [
         {
+          "label": "Build notes",
+          "url": "/writing/foodbank-spatial-twin/"
+        },
+        {
           "label": "Paper",
-          "url": "https://github.com/pikulsomesh/foodbank-spatial-twin/tree/main/paper"
+          "url": "https://pikulsomesh.github.io/foodbank-spatial-twin/paper/from-video-to-digital-twin.pdf"
         },
         {
           "label": "Cloud architecture and cost",
