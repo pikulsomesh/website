@@ -22,9 +22,15 @@ for (const f of ['assets/models/minilm/model_quantized.onnx', 'assets/models/min
   if (!fs.existsSync(path.join(ROOT, f))) fail(`missing ${f}`);
 }
 
-const pages = ['index.html', '404.html', ...fs.readdirSync(ROOT, { withFileTypes: true })
-  .filter((d) => d.isDirectory() && fs.existsSync(path.join(ROOT, d.name, 'index.html')))
-  .map((d) => `${d.name}/index.html`)];
+// Every index.html in the site, including generated writing pages a few folders deep.
+const SKIP = new Set(['.git', '.github', 'assets', 'content', 'node_modules', 'tools']);
+const findPages = (dir) => fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })
+  .filter((d) => d.isDirectory() && !SKIP.has(d.name))
+  .flatMap((d) => {
+    const sub = dir ? `${dir}/${d.name}` : d.name;
+    return [...(fs.existsSync(path.join(ROOT, sub, 'index.html')) ? [`${sub}/index.html`] : []), ...findPages(sub)];
+  });
+const pages = ['index.html', '404.html', ...findPages('')];
 for (const page of pages) {
   const file = path.join(ROOT, page);
   if (!fs.existsSync(file)) { fail(`missing ${page}`); continue; }

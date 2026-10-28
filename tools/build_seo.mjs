@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { loadWriting, writingPages, seriesCardsHTML, essaysHTML, writingText, GENERATED, SERIES_NAME } from './lib/writing.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://someshmohapatra.in/';
@@ -21,6 +22,7 @@ const pubs = data('publications.json');
 const playbook = data('playbook.json');
 const posts = data('writing.json');
 const faq = data('faq.json').items;
+const longform = loadWriting(ROOT);
 
 const PERSON_ID = `${SITE}#person`;
 const IMAGE = `${SITE}assets/img/og.jpg`;
@@ -28,7 +30,7 @@ const PAGES = [
   { path: '', file: 'index.html', data: ['profile.json', 'writing.json', 'faq.json'] },
   { path: 'playbook/', file: 'playbook/index.html', data: ['playbook.json'] },
   { path: 'research/', file: 'research/index.html', data: ['publications.json'] },
-  { path: 'writing/', file: 'writing/index.html', data: ['writing.json'] },
+  { path: 'writing/', file: 'writing/index.html', data: ['writing.json', 'content/writing'] },
   { path: 'resume/', file: 'resume/index.html', data: ['profile.json'] },
 ];
 
@@ -112,8 +114,9 @@ function jsonld(page, modified) {
       about: { '@id': PERSON_ID },
       mainEntity: {
         '@type': 'ItemList',
-        numberOfItems: posts.length,
-        itemListElement: posts.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: p.url, name: p.title })),
+        numberOfItems: longform.pages.length + posts.length,
+        itemListElement: [...longform.pages.map((p) => ({ url: SITE + p.path, name: p.kind === 'part' ? `${p.series.title}, part ${p.n}: ${p.title}` : p.title })), ...posts.map((p) => ({ url: p.url, name: p.title }))]
+          .map((x, i) => ({ '@type': 'ListItem', position: i + 1, ...x })),
       },
     }), crumbs('Writing', page.path));
   } else if (page.path === 'resume/') {
@@ -175,7 +178,7 @@ const resumeHTML = () => profile.timeline.map((t) => `
         <ul>${t.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('') + '\n      ';
 
 // Same markup as buildCard in assets/js/main.js.
-const buildsHTML = () => rows(profile.builds.map((b) => `<article class="card build"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div><h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p><ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul><div class="build-links">${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>${(b.links || []).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div></article>`));
+const buildsHTML = () => rows(profile.builds.map((b) => `<article class="card build"><div class="build-top"><span class="kicker mono">${esc(b.theme)}</span><span class="build-status is-${esc(b.state)}">${esc(b.status)}</span></div><h3><a href="${esc(b.url || b.repo)}" target="_blank" rel="noopener">${esc(b.title)}</a></h3><p class="build-problem">${esc(b.problem)}</p><p>${esc(b.text)}</p><ul class="tags build-stack" aria-label="Stack">${b.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul><div class="build-links">${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">Live site ↗</a>` : ''}<a href="${esc(b.repo)}" target="_blank" rel="noopener">Code ↗</a>${(b.links || []).map((l) => (l.url.startsWith('/') ? `<a href="${esc(l.url)}">${esc(l.label)} →</a>` : `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`)).join('')}</div></article>`));
 
 const BLOCKS = {
   'index.html': { timeline: timelineHTML, faq: faqHTML, builds: buildsHTML },
@@ -192,6 +195,8 @@ const BLOCKS = {
     recog: () => rows(profile.recognition.map((r) => `<li>${esc(r.year)} · <b>${esc(r.title)}</b>. ${esc(r.text)}</li>`)),
   },
   'writing/index.html': {
+    series: () => seriesCardsHTML(longform),
+    essays: () => essaysHTML(longform),
     posts: () => rows(posts.map((p) => `<li class="post"><div class="meta"><span class="s">${esc(p.theme || '')}</span>${esc(p.date)}${p.series ? `<span class="sr">${esc(p.series)}</span>` : ''}</div><div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3><p>${esc(p.excerpt)}</p></div></li>`)),
   },
   'playbook/index.html': {
@@ -228,7 +233,7 @@ This is his personal site. Every page is static HTML; the content also lives in 
 - [Home](${SITE}): profile, career timeline, selected work, recognition and FAQ
 - [Playbook](${SITE}playbook/): a complete point of view on running data and AI in an enterprise, in ${playbook.chapters.length} chapters
 - [Research](${SITE}research/): ${pubs.papers.length} peer-reviewed papers, preprints, talks and a patent application
-- [Writing](${SITE}writing/): ${posts.length} essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
+${longform.series.filter((s) => s.published).map((s) => `- [${s.title}](${SITE}${s.path}): ${SERIES_NAME}, a build series in ${s.planned} parts. ${s.description}`).join('\n')}${longform.pages.some((p) => p.kind === 'series') ? '\n' : ''}- [Writing](${SITE}writing/): long-form build notes and essays, plus ${posts.length} essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
 - [Resume](${SITE}resume/): experience, education and certifications
 
 ## Data
@@ -327,7 +332,10 @@ ${playbook.thesis}
 ${playbook.principles.map((p, i) => `${i + 1}. ${p.title}. ${p.text}`).join('\n')}
 
 ${playbookText()}
-## Writing
+## ${SERIES_NAME} and essays
+
+${writingText(SITE, longform)}
+## Writing on LinkedIn
 
 ${posts.map((p) => `- ${p.date} · ${[p.theme, p.series].filter(Boolean).join(', ')}: ${p.title}. ${p.url}`).join('\n')}
 `;
@@ -337,7 +345,8 @@ ${posts.map((p) => `- ${p.date} · ${[p.theme, p.series].filter(Boolean).join(',
 function sitemap(dates) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${PAGES.map((p) => `  <url><loc>${SITE}${p.path}</loc><lastmod>${dates[p.file]}</lastmod></url>`).join('\n')}
+${[...PAGES.map((p) => `  <url><loc>${SITE}${p.path}</loc><lastmod>${dates[p.file]}</lastmod></url>`),
+  ...longform.pages.map((p) => `  <url><loc>${SITE}${p.path}</loc><lastmod>${p.kind === 'series' ? [p.updated, ...p.parts.filter((x) => x.published).map((x) => x.updated)].sort().at(-1) : p.updated}</lastmod></url>`)].join('\n')}
 </urlset>
 `;
 }
@@ -346,12 +355,13 @@ ${PAGES.map((p) => `  <url><loc>${SITE}${p.path}</loc><lastmod>${dates[p.file]}<
 const outputs = {};
 const dates = {};
 for (const page of PAGES) {
-  dates[page.file] = lastModified([page.file, ...page.data.map((d) => `assets/data/${d}`)]);
+  dates[page.file] = lastModified([page.file, ...page.data.map((d) => (d.includes('/') ? d : `assets/data/${d}`))]);
   let html = read(page.file);
   html = fill(html, 'jsonld', jsonld(page, dates[page.file]));
   for (const [name, fn] of Object.entries(BLOCKS[page.file] || {})) html = fill(html, name, fn());
   outputs[page.file] = html;
 }
+Object.assign(outputs, writingPages(SITE, longform));
 outputs['sitemap.xml'] = sitemap(dates);
 outputs['llms.txt'] = llmsTxt();
 outputs['llms-full.txt'] = llmsFullTxt();
@@ -364,7 +374,16 @@ for (const [file, content] of Object.entries(outputs)) {
   const norm = (s) => s.replace(/<lastmod>[^<]*<\/lastmod>|"dateModified":"[^"]*"/g, '');
   if (norm(current) === norm(content)) continue;
   stale.push(file);
-  if (!CHECK) fs.writeFileSync(target, content);
+  if (!CHECK) { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, content); }
+}
+// Pages generated from content/writing/ whose post was removed or set back to draft.
+const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+for (const f of walk(path.join(ROOT, 'writing'))) {
+  const rel = path.relative(ROOT, f).split(path.sep).join('/');
+  if (rel.endsWith('index.html') && !outputs[rel] && fs.readFileSync(f, 'utf8').includes(GENERATED)) {
+    stale.push(rel);
+    if (!CHECK) { fs.unlinkSync(f); try { fs.rmdirSync(path.dirname(f)); } catch { /* not empty */ } }
+  }
 }
 if (CHECK && stale.length) {
   console.error(`SEO files out of date: ${stale.join(', ')}. Run: node tools/build_seo.mjs`);
