@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Build notes · Somesh Mohapatra</title>
+  <subtitle>Long-form write-ups of what Somesh Mohapatra builds, with code, architecture and numbers.</subtitle>
+  <link rel="self" type="application/atom+xml" href="https://someshmohapatra.in/writing/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/"/>
+  <id>https://someshmohapatra.in/writing/</id>
+  <updated>2026-10-28T00:00:00Z</updated>
+  <author><name>Somesh Mohapatra</name><uri>https://someshmohapatra.in/</uri></author>
+  <icon>https://someshmohapatra.in/assets/img/favicon.svg</icon>
+  <logo>https://someshmohapatra.in/assets/img/og.jpg</logo>
+  <entry>
+    <title>The whole pipeline, what it cost, and the paper (Food Bank Spatial Twin, part 5)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/foodbank-spatial-twin/pipeline-and-paper/"/>
+    <id>https://someshmohapatra.in/writing/foodbank-spatial-twin/pipeline-and-paper/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>The food bank twin end to end, from video to world model to Blender to AWS to Omniverse, with the full cost picture, what is real versus simulated, what failed, and the paper that documents it.</summary>
+    <category term="Food Bank Spatial Twin"/>
+    <category term="digital twin"/>
+    <category term="world models"/>
+    <category term="openusd"/>
+    <category term="research paper"/>
+    <content type="html">&lt;p&gt;Four parts, four layers. This one puts them together, adds up the cost, and points to the paper that writes it all down properly.&lt;/p&gt;
+&lt;h2 id=&quot;the-pipeline-on-one-page&quot;&gt;The pipeline on one page&lt;/h2&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/pipeline.svg&quot; alt=&quot;The pipeline from video to world model to Blender to AWS to Omniverse&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;Step 1 captures, step 1b the building, step 2 data on AWS, step 3 any renderer. OpenUSD is the only interface between them.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;video (MP4)
+  -&amp;gt; frames, people masked                       ffmpeg, MediaPipe
+  -&amp;gt; world model: poses + metric depth           20 frames, 200 credits
+  -&amp;gt; fused splats, and locally trained 3DGS      COLMAP + PyTorch, 0 credits
+  -&amp;gt; OpenUSD captures (metres, Y up, floor at 0)
+
+operations data
+  -&amp;gt; Blender, headless                           one script
+  -&amp;gt; facility.glb (browser) + facility.usdz (Omniverse)
+
+twin.usda = facility + captures + operations, one frame
+
+AWS: S3 + HTTP API + Lambda                      /telemetry, /operations
+  -&amp;gt; browser on GitHub Pages | Omniverse on EC2 | Blender&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;OpenUSD is the only interface between the steps. That is what makes the renderer a deployment choice: the browser for anyone with a link, Omniverse when you need RTX and simulation, Blender on a laptop.&lt;/p&gt;
+&lt;h2 id=&quot;what-it-cost&quot;&gt;What it cost&lt;/h2&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;Cost&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;This build: world model, local training, Blender, AWS, GPU trials&lt;/td&gt;&lt;td&gt;about $1.54&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Capture to deployed twin for a full facility of about 135,000 sq ft&lt;/td&gt;&lt;td&gt;about $25 to $50 of cloud spend&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Real sensors on the floor&lt;/td&gt;&lt;td&gt;about $2,700 once, about $12 a month&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Omniverse on demand, 10 hours a week&lt;/td&gt;&lt;td&gt;about $124 a month&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;These are directional, from public list prices and one individual AWS account. Enterprise discounts, quotas and policies will differ.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-real-and-what-is-not&quot;&gt;What is real, and what is not&lt;/h2&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Part&lt;/th&gt;&lt;th&gt;Kind&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Racking aisle, sorting room, client market, community kitchen&lt;/td&gt;&lt;td&gt;Captured from the video, partial&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Absolute scale&lt;/td&gt;&lt;td&gt;Estimated from the world model&amp;#39;s metric depth&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Building shell, cold rooms, staging, kitchen annex&lt;/td&gt;&lt;td&gt;Designed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Volumes, capacities, recipes, step times&lt;/td&gt;&lt;td&gt;Published figures or flagged estimates&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Temperatures, doors, forklifts, inventory&lt;/td&gt;&lt;td&gt;Simulated, and every payload says so&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;h2 id=&quot;what-failed&quot;&gt;What failed&lt;/h2&gt;
+&lt;p&gt;Generating views of unfilmed space failed twice on the provider&amp;#39;s side. Omniverse loaded the splat captures and drew them blank. Both are listed in the repo with what I tried. Filling in unseen space is the open step, and it is the one I expect the next round of world models to close.&lt;/p&gt;
+&lt;h2 id=&quot;the-paper&quot;&gt;The paper&lt;/h2&gt;
+&lt;p&gt;The build is written up as a paper: &lt;em&gt;From Video to Digital Twin: Accelerating Spatial Twins with World Models and NVIDIA Omniverse&lt;/em&gt;. It covers the method, the provenance labels, the measurements, and the limits, with three supplementary movies. &lt;a href=&quot;https://pikulsomesh.github.io/foodbank-spatial-twin/paper/from-video-to-digital-twin.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Read the PDF&lt;/a&gt;, or browse the LaTeX source and figures in the repository&amp;#39;s &lt;code&gt;paper/&lt;/code&gt; folder.&lt;/p&gt;
+&lt;h2 id=&quot;what-i-would-tell-someone-starting-one&quot;&gt;What I would tell someone starting one&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;Start from footage you already have. It is enough to get a first twin and to find out which parts are worth real money.&lt;/li&gt;&lt;li&gt;Pick the contract first. Metres, Y up, floor at zero, one scene format. Everything else becomes swappable.&lt;/li&gt;&lt;li&gt;Label provenance from day one. It is what lets people trust the parts that are real.&lt;/li&gt;&lt;li&gt;Make every paid step resumable and capped, and make cloud GPUs unable to outlive their job.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;If you want the same approach applied to a very different operation, the &lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/&quot;&gt;Michelin Kitchen Twin&lt;/a&gt; series models a three-star kitchen the way a plant is modeled.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>How five parallel AI agent threads built the kitchen twin (Michelin Kitchen Twin, part 5)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/michelin-kitchen-twin/built-by-parallel-agents/"/>
+    <id>https://someshmohapatra.in/writing/michelin-kitchen-twin/built-by-parallel-agents/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>The first version of the kitchen twin was built in a day by five Claude Code threads working in parallel, one each for product, data, simulation, 3D and Studio. What made that work was not the agents. It was one shared contract and clear ownership.</summary>
+    <category term="Michelin Kitchen Twin"/>
+    <category term="ai agents"/>
+    <category term="claude code"/>
+    <category term="software engineering"/>
+    <category term="parallel development"/>
+    <category term="contracts"/>
+    <content type="html">&lt;p&gt;The first working version of this twin was built in a single day by several Claude Code sessions working in parallel, each in its own thread, each owning one part of the repository. I set the goal and the bar (&amp;quot;as realistic as possible, hosted on GitHub Pages&amp;quot;) and approved merges. The sessions wrote the code, the data and the docs, reviewed each other&amp;#39;s interfaces, and merged their own pull requests once CI was green. The days after that were polish, performance and the optimizer.&lt;/p&gt;
+&lt;p&gt;This part is about what made that work, because the lesson carries well beyond kitchens.&lt;/p&gt;
+&lt;h2 id=&quot;who-owned-what&quot;&gt;Who owned what&lt;/h2&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Thread&lt;/th&gt;&lt;th&gt;Owned&lt;/th&gt;&lt;th&gt;Pull requests&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Product&lt;/td&gt;&lt;td&gt;The press-release FAQ and the product requirements: who the twin is for, the two-minute demo, what &amp;quot;realistic&amp;quot; means&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Research and data&lt;/td&gt;&lt;td&gt;&lt;code&gt;data/&lt;/code&gt;: the restaurant chosen for having the most published detail, 14 cited sources, menu, recipes as BOMs and routings, equipment, brigade, layout, the MRP explosion, the site shell and final integration&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Simulation&lt;/td&gt;&lt;td&gt;&lt;code&gt;src/sim&lt;/code&gt; and &lt;code&gt;src/dashboard&lt;/code&gt;: the seeded event engine, guest line, what-ifs, capacity sweep and the operations dashboard&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;3D kitchen&lt;/td&gt;&lt;td&gt;&lt;code&gt;src/scene&lt;/code&gt;: procedural materials, the vaulted kitchen and garden, cooks on a navigation grid, quality tiers, OpenUSD export&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Studio&lt;/td&gt;&lt;td&gt;&lt;code&gt;src/studio&lt;/code&gt;: dining room, menus, seasons, and light and mood, each re-running the whole service&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;Fifteen pull requests in all, each built and tested by CI before merge. The result was about 7,000 lines of data and 10,600 lines of JavaScript and CSS.&lt;/p&gt;
+&lt;h2 id=&quot;product-first-in-writing&quot;&gt;Product first, in writing&lt;/h2&gt;
+&lt;p&gt;The first thread wrote nothing but documents: a working-backwards press release and FAQ, then a requirements doc with KPI definitions and the interfaces between parts. That sounds slow for a one-day build. It was the fastest part of the day, because every later thread could check its own decisions against the same page without asking anyone. &amp;quot;Is this realistic enough?&amp;quot; and &amp;quot;what does the dashboard show at 8:30?&amp;quot; had written answers before any code existed.&lt;/p&gt;
+&lt;p&gt;The FAQ also named the biggest risks up front. Realism on a browser budget was first. Three parallel threads drifting apart was second.&lt;/p&gt;
+&lt;h2 id=&quot;a-contract-not-shared-files&quot;&gt;A contract, not shared files&lt;/h2&gt;
+&lt;p&gt;The fix for drift was a contract. The threads agreed on ids, not on files:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;EQ-*&lt;/code&gt; for equipment, &lt;code&gt;WC-*&lt;/code&gt; for work centers, &lt;code&gt;SL-*&lt;/code&gt; for storage,&lt;/li&gt;&lt;li&gt;&lt;code&gt;RM-*&lt;/code&gt; for raw materials, and &lt;code&gt;INT-*&lt;/code&gt; and &lt;code&gt;FG-*&lt;/code&gt; for intermediate and finished products.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Every part keys off those ids. The simulation&amp;#39;s adapter reads &lt;code&gt;/data&lt;/code&gt; and turns routings into task chains. The 3D scene places a model at each &lt;code&gt;EQ-*&lt;/code&gt; id and exports a USD prim under the same name. The Studio compiles its edits back into the simulation&amp;#39;s input. The dashboard reports utilization by the same ids, so clicking a station highlights it in 3D.&lt;/p&gt;
+&lt;p&gt;The second contract was the event log between the simulation and everything that draws it: &lt;code&gt;ticket.fired&lt;/code&gt;, &lt;code&gt;op.start&lt;/code&gt;, &lt;code&gt;op.end&lt;/code&gt;, &lt;code&gt;staff.move&lt;/code&gt;, &lt;code&gt;machine.state&lt;/code&gt;, &lt;code&gt;inventory.change&lt;/code&gt;, &lt;code&gt;plate.passed&lt;/code&gt;, &lt;code&gt;plate.refire&lt;/code&gt;. The scene never asks the engine how to animate. It reads the same events the dashboard does.&lt;/p&gt;
+&lt;p&gt;When one thread needed something from another, like ingredient prices from the data thread or a lighting hook from the 3D thread, it asked in a message, and the owning thread made the change in its own files. Nobody edited anyone else&amp;#39;s directory.&lt;/p&gt;
+&lt;h2 id=&quot;what-the-agents-did-well-and-what-i-still-did&quot;&gt;What the agents did well, and what I still did&lt;/h2&gt;
+&lt;p&gt;The agents were very good at the volume work: sourcing and structuring 88 ingredients and 53 recipes with citations, writing a discrete-event engine with tests, generating a realistic 3D scene procedurally, and keeping docs in step with code. They were also good at reviewing interfaces, because each thread had a narrow, well-defined thing to protect.&lt;/p&gt;
+&lt;p&gt;The human work was the kind that does not parallelize:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Choosing the bar.&lt;/strong&gt; &amp;quot;Realistic&amp;quot; had to be defined, and the product thread&amp;#39;s documents are where that happened.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Choosing what is honest.&lt;/strong&gt; Deciding that every record is either sourced or marked &lt;code&gt;est&lt;/code&gt;, and that the 3D view is never animated independently of the simulation.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Approving merges.&lt;/strong&gt; CI caught breakage. Judgment about whether a change moved toward the goal stayed with a person.&lt;/li&gt;&lt;/ul&gt;
+&lt;h2 id=&quot;the-lesson-i-took-to-the-next-builds&quot;&gt;The lesson I took to the next builds&lt;/h2&gt;
+&lt;p&gt;Parallel agents scale the same way parallel teams do. They go fast when ownership is clear and the interfaces are written down, and they stall when everyone shares the same files. The food bank twin used the same pattern with OpenUSD as the contract between steps. The Academic Matchmaker used it with a published data format between the pipeline and the site. In every case, the contract decided how fast the build could go.&lt;/p&gt;
+&lt;p&gt;The full story, with links to every pull request, is in the repository&amp;#39;s &lt;code&gt;docs/how-it-was-built.md&lt;/code&gt;. The &lt;a href=&quot;https://pikulsomesh.github.io/michelin-kitchen-twin/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;live twin&lt;/a&gt; opens a full service from a link.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>The cloud layer, a digital twin backend on AWS for $0.00 (Food Bank Spatial Twin, part 4)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/foodbank-spatial-twin/aws-architecture/"/>
+    <id>https://someshmohapatra.in/writing/foodbank-spatial-twin/aws-architecture/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>A serverless AWS backend serves telemetry and operations data in the twin&#39;s own coordinates, a real-sensor path is designed and priced, and Omniverse runs on EC2 GPUs that terminate themselves. What worked and every pitfall.</summary>
+    <category term="Food Bank Spatial Twin"/>
+    <category term="aws"/>
+    <category term="serverless"/>
+    <category term="lambda"/>
+    <category term="omniverse"/>
+    <category term="iot"/>
+    <category term="architecture"/>
+    <content type="html">&lt;p&gt;A twin is geometry plus data. Parts 2 and 3 built the geometry. This part is the data side and where it runs, with one design rule: everything bills only while it runs.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/aws-architecture.jpg&quot; alt=&quot;Reference architecture of the twin on AWS&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;Solid boxes are deployed today, with simulated data. Dashed boxes are the real-sensor path, designed and priced but not installed.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;the-backend-is-three-resources&quot;&gt;The backend is three resources&lt;/h2&gt;
+&lt;p&gt;The whole backend is one AWS SAM template:&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Resource&lt;/th&gt;&lt;th&gt;What it does&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;S3 bucket&lt;/td&gt;&lt;td&gt;Holds the twin&amp;#39;s published assets and a copy of the site&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;HTTP API&lt;/td&gt;&lt;td&gt;&lt;code&gt;GET /telemetry&lt;/code&gt;, &lt;code&gt;GET /operations&lt;/code&gt;, &lt;code&gt;GET /health&lt;/code&gt;, throttled to 5 requests a second&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Lambda (Python, arm64, 128 MB)&lt;/td&gt;&lt;td&gt;Computes the current state of the building from the clock. Stateless, so there is no database&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;/telemetry&lt;/code&gt; returns freezer, cooler and dry-storage temperature, humidity, door state and alarms, plus a forklift looping through the building. &lt;code&gt;/operations&lt;/code&gt; returns inventory, flows, docks and the kitchen. Every position is in metres in the same frame as the OpenUSD scene, so a viewer can pin a badge to a cold room without a lookup table. Every payload says &lt;code&gt;simulated: true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Each cost decision is written into the template, next to the setting it controls:&lt;/p&gt;
+&lt;pre data-lang=&quot;yaml&quot;&gt;&lt;code&gt;Parameters:
+  ThrottleRate:
+    Type: Number
+    Default: 5
+    Description: Steady-state requests per second allowed across the API (cost ceiling).
+  LogRetentionDays:
+    Type: Number
+    Default: 7
+    Description: CloudWatch Logs retention. Logs are the only storage that grows on its own.
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Architectures: [arm64]      # Graviton: about 20% cheaper per GB-second than x86
+    MemorySize: 128             # minimum; the handler does a few microseconds of arithmetic
+    Timeout: 3                  # fail fast, never bill a runaway invocation&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;No NAT gateway, no VPC, no provisioned capacity and no database means nothing bills while nobody is looking.&lt;/p&gt;
+&lt;pre data-lang=&quot;bash&quot;&gt;&lt;code&gt;scripts/deploy.sh   # sam build + deploy, syncs the site to S3, prints the URLs&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Measured after deployment: 1,000 sequential calls all succeeded, with a 67 ms median round trip. Cost Explorer showed $0.00 for the month, inside the free tier. Past the free tier, a viewer polling every five seconds around the clock is roughly 60 cents a month.&lt;/p&gt;
+&lt;h2 id=&quot;the-contract-is-the-product&quot;&gt;The contract is the product&lt;/h2&gt;
+&lt;p&gt;The simulator is deliberately thin. What matters is the JSON contract, because a real feed replaces the simulator without touching any renderer. The real-floor path is designed and priced: LoRaWAN and Bluetooth sensors into AWS IoT Core, a Lambda to normalize, DynamoDB for state. For one facility that is about $2,700 of hardware once and about $12 a month to run.&lt;/p&gt;
+&lt;p&gt;The same design maps onto Azure and Google Cloud, with two honest caveats. Azure IoT Hub has no LoRaWAN network server, so it needs a partner. Google Cloud IoT Core was retired in 2023. Both are designs only and have never been deployed.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/azure-design.jpg&quot; alt=&quot;The same twin designed on Azure&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;Azure, design only: the same contract on Azure Functions and IoT Hub, with a partner LoRaWAN network server.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/gcp-design.jpg&quot; alt=&quot;The same twin designed on Google Cloud&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;Google Cloud, design only: the same contract on Cloud Run, with a partner IoT path since IoT Core was retired.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;All three diagrams are generated from one script into editable draw.io files, so they stay in step with each other.&lt;/p&gt;
+&lt;h2 id=&quot;security-on-the-floor-read-only-by-design&quot;&gt;Security on the floor: read-only by design&lt;/h2&gt;
+&lt;p&gt;A twin that connects to a facility is also a path into it, so the real-floor design treats the plant network the way industrial sites do. It follows the Purdue model&amp;#39;s zones and conduits. Sensors and gateways sit on the floor. A small OT DMZ passes only outbound TLS, with no inbound ports. Every device has its own key or certificate. The cloud side ingests readings and sends no commands, so the twin is read-only. Existing refrigeration and dock controls stay in charge of their own alarms, and the only designed path back toward the floor is a signed, human-approved firmware update. The diagrams draw these trust boundaries as red dashed lines.&lt;/p&gt;
+&lt;h2 id=&quot;omniverse-on-a-gpu-that-cannot-outlive-the-job&quot;&gt;Omniverse on a GPU that cannot outlive the job&lt;/h2&gt;
+&lt;p&gt;Omniverse needs a GPU, and a GPU left running is the classic cloud bill surprise. So the render runs on a single EC2 instance launched for one job: no SSH key, no IAM role, inputs and outputs through presigned S3 URLs, a hard shutdown timer, and shutdown set to terminate. Two lines do most of the work. The user-data script starts with a hard cap, and the launch request says that a shutdown means termination, not a stopped instance that keeps its disk:&lt;/p&gt;
+&lt;pre data-lang=&quot;bash&quot;&gt;&lt;code&gt;shutdown -h +{max_minutes}            # first line of user data: the instance cannot outlive the job&lt;/code&gt;&lt;/pre&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;InstanceInitiatedShutdownBehavior=&amp;quot;terminate&amp;quot;,&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It took seven runs because of these, in the order I hit them:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;&lt;strong&gt;Driver too new.&lt;/strong&gt; The current Deep Learning AMI&amp;#39;s driver crashed Isaac Sim 5.1 a second after start, even on an empty scene. Plain Ubuntu with the 580 server driver worked.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Test with a cube first.&lt;/strong&gt; A one-cube stage separates &amp;quot;the GPU stack is broken&amp;quot; from &amp;quot;my scene is broken&amp;quot;. It took four runs to learn the scene was never the problem.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;New accounts have zero GPU quota.&lt;/strong&gt; Ask on day one. Approval took about an hour, plus 30 minutes to apply.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Budget 12 minutes to the first frame.&lt;/strong&gt; Boot, a 4.5-minute container pull, and a 5-minute shader cache build. Render everything in one session.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Have a fallback instance type.&lt;/strong&gt; On the last run there was no g6.xlarge capacity in the region. A g5.xlarge ran the same setup unchanged.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Splats rendered blank.&lt;/strong&gt; Omniverse rendered the Blender building in RTX, but drew the splat captures as a grey frame. The browser shows the splats instead.&lt;/li&gt;&lt;/ol&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/omniverse-forklift.jpg&quot; alt=&quot;The modeled facility rendered in Omniverse RTX on an AWS GPU&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;The Blender facility rendered in Omniverse RTX on an EC2 GPU, with the forklift on its route.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/pipeline-and-paper/&quot;&gt;Part 5&lt;/a&gt;: the whole pipeline end to end, the full cost picture, and the paper.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>A photoreal 3D kitchen in half a megabyte, driven by the simulation (Michelin Kitchen Twin, part 4)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/michelin-kitchen-twin/3d-kitchen-and-studio/"/>
+    <id>https://someshmohapatra.in/writing/michelin-kitchen-twin/3d-kitchen-and-studio/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>How the kitchen twin renders a realistic kitchen, brigade and garden in the browser with no downloaded models or textures, binds every cook and plate to the simulation, scales from phones to a supersampled Pro Max mode, and exports to OpenUSD for Omniverse.</summary>
+    <category term="Michelin Kitchen Twin"/>
+    <category term="three.js"/>
+    <category term="webgl"/>
+    <category term="procedural generation"/>
+    <category term="openusd"/>
+    <category term="omniverse"/>
+    <category term="digital twin"/>
+    <content type="html">&lt;p&gt;A twin people will not open is not a twin. The product brief said the first ten seconds decide everything: if the opening shot does not look like a real kitchen, and does not move, nothing else gets seen. This part is about meeting that bar on a browser budget.&lt;/p&gt;
+&lt;h2 id=&quot;no-assets-generate-everything-from-the-data&quot;&gt;No assets: generate everything from the data&lt;/h2&gt;
+&lt;p&gt;The usual way to build a realistic 3D scene is to model it in a desktop tool and ship large mesh and texture files. That would have made the first load slow and would have split the scene from the data. Move a range in &lt;code&gt;layout.json&lt;/code&gt; and the 3D model would be wrong until someone re-exported it.&lt;/p&gt;
+&lt;p&gt;Instead, the whole scene is generated from &lt;code&gt;/data&lt;/code&gt; at load time. The vaulted kitchen, the annex, the garden, every bench and machine, the cooks and the plates are built in code, with procedural, physically based materials. The production build is about 1.7 MB, roughly 0.5 MB gzipped, against a 25 MB budget in the brief.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/michelin-kitchen-twin/kitchen-3d.jpg&quot; alt=&quot;The kitchen twin mid-service&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;No downloaded models or textures: geometry and materials are generated from the data when the page loads.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;The scene uses the data&amp;#39;s ids directly. A machine is &lt;code&gt;EQ-*&lt;/code&gt;, a station is &lt;code&gt;WC-*&lt;/code&gt;, an ingredient is &lt;code&gt;RM-*&lt;/code&gt; or &lt;code&gt;INT-*&lt;/code&gt;. The simulation, the dashboard and the 3D view never need a mapping table to agree on what they are talking about.&lt;/p&gt;
+&lt;h2 id=&quot;the-simulation-owns-the-clock&quot;&gt;The simulation owns the clock&lt;/h2&gt;
+&lt;p&gt;The 3D view does not animate anything on its own. The simulation owns time, and the scene mirrors its state:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;const twin = await createKitchenScene(el, { quality: &amp;#39;auto&amp;#39; });
+const binding = bindSim(twin, sim);                 // src/sim drives it; the sim owns the clock
+twin.onFrame((dt) =&amp;gt; { sim.tick(dt); binding.update(dt); });&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The binding syncs a few times a second. Cooks walk to the station the simulation says they are at, along an A* path on a navigation grid. Machines show what the event log says: preheating, busy, idle or faulted, with flames, steam and LEDs to match. Plates appear when a step finishes, ride with the runner to the table, and disappear when the course is eaten. Stock containers empty as ingredients are drawn. Seeking backward replays the simulation from the start with the same seed, so the scene can jump to any second and be right.&lt;/p&gt;
+&lt;p&gt;Because every plate is tied to its ticket, you can click one and see its genealogy: which cook made each component, on which machine, and when.&lt;/p&gt;
+&lt;h2 id=&quot;quality-tiers-measured-not-assumed&quot;&gt;Quality tiers, measured not assumed&lt;/h2&gt;
+&lt;p&gt;Realism costs frame time, so the scene has four tiers:&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Tier&lt;/th&gt;&lt;th&gt;What it does&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Low&lt;/td&gt;&lt;td&gt;1× pixels, no MSAA, 2K shadows. The default on phones and software GPUs&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Medium&lt;/td&gt;&lt;td&gt;Up to 1.5× pixels, MSAA, bloom, 2K shadows&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;High&lt;/td&gt;&lt;td&gt;Up to 2× pixels, ground-truth ambient occlusion, 4K shadows&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Pro Max&lt;/td&gt;&lt;td&gt;For stills. While the camera rests, jittered frames accumulate into a supersampled image with soft shadows and depth of field&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;Auto mode picks a tier from what the browser reports and steps down one level if frames stay under about 28 fps. Stainless steel reflects the kitchen itself, from a reflection probe captured after the scene is built.&lt;/p&gt;
+&lt;p&gt;Performance is measured, not assumed. A script serves the production build, opens it at each tier in a laptop and a phone viewport, orbits the camera while service plays at 30×, and records time to first frame and frames per second. Run on a GPU-less cloud machine, it gives a worst-case floor. Run on real hardware, it checks the targets.&lt;/p&gt;
+&lt;h2 id=&quot;the-studio-redesign-the-restaurant-re-run-the-night&quot;&gt;The Studio: redesign the restaurant, re-run the night&lt;/h2&gt;
+&lt;p&gt;The Studio sits on the same twin. You can change the dining room (table counts and shapes, presets from intimate to private event), the menu (tasting or à la carte, courses, choices, prices), the season, and the light and mood. Every change except lighting recompiles the data, re-runs the whole service headlessly in about 0.1 seconds, and compares the KPIs against the house setup: kitchen close, ticket time, course gap, table wait, guests who walked away, OEE, stockouts, revenue and food cost.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/michelin-kitchen-twin/studio.jpg&quot; alt=&quot;The Studio, with the dining room in 3D and the night&amp;#39;s KPIs&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;The Studio re-runs the whole service on every change and shows the result against the house setup, here naming the chef de cuisine as the constraint.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;Seasons do real work. An out-of-season dish swaps for that season&amp;#39;s dish in the same place on the menu, produce is repriced and delivered short, and the sun moves. Sun position uses the NOAA solar-position formulas for the restaurant&amp;#39;s latitude, so a July service starts in daylight and a January one in the dark. The whole setup lives in the URL, so &amp;quot;62 seats, winter à la carte, candlelit&amp;quot; is a link you can send.&lt;/p&gt;
+&lt;h2 id=&quot;openusd-out-for-omniverse-and-isaac-sim&quot;&gt;OpenUSD out, for Omniverse and Isaac Sim&lt;/h2&gt;
+&lt;p&gt;The browser is the delivery surface, but the model has the same shape as an industrial twin, so it exports to OpenUSD from the page. The stage is laid out the way a factory asset would be: materials, the building, one transform per machine with &lt;code&gt;twin:*&lt;/code&gt; metadata and a simple collider, the work centers with cook positions, the brigade, and a physics scene. Isaac Sim could drop a robot arm at a station.&lt;/p&gt;
+&lt;p&gt;Each machine becomes a USD component that carries its master data, written straight from the scene:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// Equipment: one component per machine, carrying its master data.
+w.open(&amp;#39;def Xform &amp;quot;Equipment&amp;quot;&amp;#39;);
+equipment.forEach((grp, i) =&amp;gt; {
+  const eq = grp.userData.equipment;
+  const p = grp.position;
+  w.open(`def Xform &amp;quot;${safe(eq.id)}&amp;quot; (\n    kind = &amp;quot;component&amp;quot;\n)`);
+  w.line(`double3 xformOp:translate = (${f(p.x)}, ${f(p.y)}, ${f(p.z)})`);
+  w.line(`custom string twin:equipmentId = ${str(eq.id)}`);
+  w.line(`custom string twin:type = ${str(eq.type)}`);
+  if (eq.capacity?.slots != null) w.line(`custom int twin:slots = ${eq.capacity.slots}`);
+  if (eq.tempC != null) w.line(`custom float twin:tempC = ${eq.tempC}`);
+  // ...render meshes, materials and a box collider follow&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The export is generated in the browser, and nothing is uploaded anywhere.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/built-by-parallel-agents/&quot;&gt;Part 5&lt;/a&gt; is how all of this was built, by five AI agent threads working in parallel against one data contract.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Modeling the rest of the building in Blender, from footprints (Food Bank Spatial Twin, part 3)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/foodbank-spatial-twin/blender-facility-model/"/>
+    <id>https://someshmohapatra.in/writing/foodbank-spatial-twin/blender-facility-model/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>Splat captures only read well from where the camera stood. One headless Blender script models the whole food bank from the operations data and publishes it to the browser and Omniverse in the same OpenUSD frame.</summary>
+    <category term="Food Bank Spatial Twin"/>
+    <category term="blender"/>
+    <category term="openusd"/>
+    <category term="digital twin"/>
+    <category term="procedural modeling"/>
+    <content type="html">&lt;p&gt;The captures from Part 2 are real, but they are fragments. Each one looks right from its source cameras and breaks up anywhere else, and together they cover a small fraction of the building. The world model was supposed to fill the gaps, and that step failed. A twin that only exists where a news crew happened to walk is not a twin.&lt;/p&gt;
+&lt;h2 id=&quot;model-the-building-from-the-data-not-from-the-video&quot;&gt;Model the building from the data, not from the video&lt;/h2&gt;
+&lt;p&gt;The fix was to stop asking the video for things it never showed. The operations data already describes the site: the footprint of each area, the cold rooms and their temperature probes, the docks, the racking rows. So the building is modeled from that data, by one script, with Blender running headless as a Python library.&lt;/p&gt;
+&lt;pre data-lang=&quot;bash&quot;&gt;&lt;code&gt;pip install bpy pillow numpy   # bpy wheels need Python 3.13
+python scripts/build_facility.py --blend renders/facility.blend --render docs/img/facility.jpg&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The script builds the shell and dock doors with a trailer, a cut-away freezer and cooler racked inside, four rows of red selective racking with pallets, receiving and order staging, the volunteer sorting room with roller conveyors and scales, the client market, the community kitchen annex, painted lanes, signage and forklifts. The fit-out is inspired by what the video shows. The layout is designed, and labeled as designed.&lt;/p&gt;
+&lt;p&gt;Every area is a few lines of data-driven calls. The racking aisles, for example, are four rows placed in the same coordinates the telemetry uses:&lt;/p&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;def racking():
+    B.area = &amp;quot;DryStorage&amp;quot;
+    rack_row(17.2, 1.1, 1.0, 8.6, &amp;quot;A1&amp;quot;)
+    rack_row(21.5, 1.1, 1.0, 8.6, &amp;quot;A2&amp;quot;)
+    rack_row(22.75, 1.1, 1.0, 8.6, &amp;quot;A3&amp;quot;)
+    rack_row(24.75, 1.1, 1.0, 8.6, &amp;quot;A4&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Underneath, geometry is built from boxes whose hidden faces are skipped, and meshes are merged per area and material. That is why the browser model draws in about 150 calls instead of thousands.&lt;/p&gt;
+&lt;h2 id=&quot;same-frame-as-everything-else&quot;&gt;Same frame as everything else&lt;/h2&gt;
+&lt;p&gt;The model is built in the same coordinate frame as the telemetry: metres, Y up, origin at the dock-door corner. That one decision is why everything lines up without manual fiddling.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/twin-alignment.jpg&quot; alt=&quot;The captured splat zones placed on the facility plan&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;Alignment check: the captured sorting room, market and racking splats dropped onto the facility footprints, in one metric frame.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt; The temperature badges in the browser sit on the cold rooms, the forklift drives the route the telemetry describes, and the captured splats drop into their places on the floor plan.&lt;/p&gt;
+&lt;h2 id=&quot;one-scene-two-outputs&quot;&gt;One scene, two outputs&lt;/h2&gt;
+&lt;p&gt;From a single Blender scene the script writes:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;facility.glb&lt;/code&gt; for the browser, about 1.8 MB and about 150 draw calls, so it runs on a phone. One named node is the forklift the live data animates.&lt;/li&gt;&lt;li&gt;&lt;code&gt;facility.usdz&lt;/code&gt; for Omniverse and other OpenUSD tools, same frame, same names.&lt;/li&gt;&lt;li&gt;Optionally a &lt;code&gt;.blend&lt;/code&gt; to open on a desktop and a Cycles render of the overview.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Every texture is generated procedurally at build time, so the model needs no downloads and the whole thing rebuilds from the repo in minutes.&lt;/p&gt;
+&lt;h2 id=&quot;why-scripted-beats-hand-modeled-here&quot;&gt;Why scripted beats hand-modeled here&lt;/h2&gt;
+&lt;p&gt;A hand-built model is a one-off. A scripted one is a function of the data. Change a footprint in the operations file, and the building, the browser view and the Omniverse stage all change with it on the next build. That is the same discipline a plant uses when the bill of materials drives the build, applied to a building.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/aws-architecture/&quot;&gt;Part 4&lt;/a&gt;: the cloud layer. How the data side runs on AWS for $0.00 so far, and what it took to get Omniverse rendering on a rented GPU.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Semantic matching in the browser, and why it needed concept tags (Academic Matchmaker, part 3)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/academic-matchmaker/semantic-matching-and-tags/"/>
+    <id>https://someshmohapatra.in/writing/academic-matchmaker/semantic-matching-and-tags/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>How the Academic Matchmaker ranks 181,568 researchers on a phone. A 4-bit language model on WebGPU, coarse-to-fine vector search scored with lookup tables, the generic-word failure of pure embeddings, OpenAlex concept tags with synonyms, and a Nobel and Fields laureate test set.</summary>
+    <category term="Academic Matchmaker"/>
+    <category term="semantic search"/>
+    <category term="embeddings"/>
+    <category term="webgpu"/>
+    <category term="binary quantization"/>
+    <category term="tagging"/>
+    <category term="evaluation"/>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/academic-matchmaker/storage-and-data-pipeline/&quot;&gt;Part 2&lt;/a&gt; built an index small enough to ship to a browser. This part is about the search itself: turning a CV into a query, ranking against 48-byte vectors, and the point where semantic similarity alone stopped being good enough.&lt;/p&gt;
+&lt;h2 id=&quot;a-language-model-that-loads-only-when-it-has-to&quot;&gt;A language model that loads only when it has to&lt;/h2&gt;
+&lt;p&gt;A CV is messy text. Before it can be matched, it has to become a short list of research interests. That job goes to Qwen2.5-0.5B-Instruct, quantized to 4 bits and run with Transformers.js in a Web Worker. The worker checks for WebGPU first, uses half-precision weights when the GPU supports them, and falls back to WebAssembly on the CPU:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;const gpu = await webgpuSupport()
+const attempts = gpu
+  ? [
+      { device: &amp;#39;webgpu&amp;#39;, dtype: gpu.fp16 ? &amp;#39;q4f16&amp;#39; : &amp;#39;q4&amp;#39; },
+      { device: &amp;#39;wasm&amp;#39;, dtype: &amp;#39;q4&amp;#39; },
+    ]
+  : [{ device: &amp;#39;wasm&amp;#39;, dtype: &amp;#39;q4&amp;#39; }]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The model is asked for JSON only, and the reader takes the first JSON object it can find, because small models like to wrap their answer in prose. If nothing parses, a rule-based reader splits the text into topics instead.&lt;/p&gt;
+&lt;p&gt;Even at 4 bits the model is a few hundred megabytes. Early versions ran every upload through it. Now an uploaded CV is matched with the embedding model alone, and the language model loads only when someone types in the chat box. For most visitors, the large download never happens.&lt;/p&gt;
+&lt;h2 id=&quot;coarse-to-fine-centroids-then-clusters&quot;&gt;Coarse to fine: centroids, then clusters&lt;/h2&gt;
+&lt;p&gt;The profile is embedded with the same MiniLM model that built the index, so query and index share one vector space. Then the search runs in two stages. It scores the 426 cluster centroids, loads the nearest 24 clusters, and ranks the people in them. When a country or university filter leaves too few people in those clusters, it widens the search, up to 192 clusters, until it has at least 200 candidates.&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;const PROBE_START = 24      // clusters searched first
+const PROBE_MAX = 192       // widest search when a filter leaves few people per cluster
+const ENOUGH_FILTERED = 200 // a filtered search stops widening once it has this many&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each cluster file is fetched once and cached as a promise, so a second search in the same area costs nothing.&lt;/p&gt;
+&lt;h2 id=&quot;scoring-48-bytes-with-48-lookups&quot;&gt;Scoring 48 bytes with 48 lookups&lt;/h2&gt;
+&lt;p&gt;Each person&amp;#39;s vector is 384 sign bits. The obvious way to score one is to loop over 384 dimensions and add or subtract the query&amp;#39;s value at each. Doing that for 10,000 people means about 4 million branches.&lt;/p&gt;
+&lt;p&gt;The trick is to precompute. For each of the 48 bytes in a vector, there are only 256 possible values. So before scoring anyone, the browser builds a 48 × 256 table with the query&amp;#39;s partial dot product for every possible byte. After that, a person&amp;#39;s score is 48 lookups and 47 additions:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// table[j * 256 + b] is q·s over the 8 dimensions of byte j when that byte holds b.
+function bitsTable(q, dim) {
+  const bytes = dim / 8
+  const table = new Float32Array(bytes * 256)
+  for (let j = 0; j &amp;lt; bytes; j++)
+    for (let b = 0; b &amp;lt; 256; b++) {
+      let sum = 0
+      for (let k = 0; k &amp;lt; 8; k++) sum += b &amp;amp; (0x80 &amp;gt;&amp;gt; k) ? q[j * 8 + k] : -q[j * 8 + k]
+      table[j * 256 + b] = sum
+    }
+  return table
+}
+
+// Score: 48 lookups, rescaled so bit scores sit on the same 0-1 scale as full vectors.
+const BITS_SCALE = Math.sqrt(2 / Math.PI)
+let dot = 0
+for (let j = 0, offset = r * bytes; j &amp;lt; bytes; j++) dot += table[j * 256 + bits[offset + j]]
+const score = Math.min(1, dot / (Math.sqrt(dim) * BITS_SCALE))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The table costs 12,288 small sums to build, once per query. Every person after that is cheap, which is why the ranking feels instant on a phone.&lt;/p&gt;
+&lt;h2 id=&quot;where-semantic-matching-went-wrong&quot;&gt;Where semantic matching went wrong&lt;/h2&gt;
+&lt;p&gt;Embeddings are good at &amp;quot;close in meaning&amp;quot; and bad at &amp;quot;this specific thing&amp;quot;. Two failure modes showed up in testing:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Generic words pulled in strangers.&lt;/strong&gt; A business-school CV full of &amp;quot;strategy&amp;quot;, &amp;quot;framework&amp;quot; and &amp;quot;analysis&amp;quot; matched people whose abstracts used the same words about entirely different fields.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Specific asks got blurred.&lt;/strong&gt; Someone looking for &amp;quot;gastrointestinal + peptide&amp;quot; wanted researchers who work on both. A single embedding of that phrase lands somewhere between the two topics and returns people who work on either one.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;More dimensions or a bigger model would not fix this. The fix was to add structure the embeddings do not have.&lt;/p&gt;
+&lt;h2 id=&quot;concept-tags&quot;&gt;Concept tags&lt;/h2&gt;
+&lt;p&gt;Every researcher now carries up to eight tags. Up to six are their strongest OpenAlex topics and up to three are keywords OpenAlex assigned to their recent papers, all with a confidence score above 0.3. The tag names live in one shared &lt;code&gt;tags.json&lt;/code&gt;, most common first, so search rows store small integer ids instead of strings.&lt;/p&gt;
+&lt;p&gt;On the site, a concept like &amp;quot;gastrointestinal&amp;quot; matches a tag when every significant word of the concept, or of one of its synonyms, appears in the tag&amp;#39;s name, in OpenAlex&amp;#39;s keywords for that topic, or in its subfield. Three details do most of the work:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Generic words never count on their own.&lt;/strong&gt; A stop list removes words like &amp;quot;strategy&amp;quot;, &amp;quot;analysis&amp;quot;, &amp;quot;model&amp;quot; and &amp;quot;framework&amp;quot; before matching, and a light stemmer makes &amp;quot;peptides&amp;quot; meet &amp;quot;peptide&amp;quot;.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Synonyms are explicit.&lt;/strong&gt; &amp;quot;Gastrointestinal&amp;quot; also means GI, gut, digestive, intestinal and bowel. Colorectal, IBD and Crohn&amp;#39;s count as narrower terms and score slightly lower.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Concepts are ANDed, and rare tags count more.&lt;/strong&gt; A person matches only if every concept finds one of their tags. A tag that half the database carries is worth half as much as a rare one:&lt;/li&gt;&lt;/ul&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;/** 1 for a rare tag down to 0.5 for one that half the database or more carries. */
+export function rarity(count, total) {
+  if (!count || !total) return 1
+  const share = count / total
+  return share &amp;gt;= 0.5 ? 0.5 : 1 - share
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For uploaded CVs, the same vocabulary works in the other direction. The profile is mapped onto tags whose specific words all appear in it. Interests count double, and tags carried by more than 20% of the database are skipped as too common to tell people apart. Researchers who share those tags get a lift of up to 0.15 on their similarity score. Embeddings still decide who is close, and tags decide who is specifically right.&lt;/p&gt;
+&lt;h2 id=&quot;testing-it-on-nobel-and-fields-laureates&quot;&gt;Testing it on Nobel and Fields laureates&lt;/h2&gt;
+&lt;p&gt;Search quality is easy to claim and hard to show, so the matcher has a fixed test set: the 2026 Fields Medal and Nobel Prize winners. After every data refresh, the pipeline:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;resolves each laureate&amp;#39;s OpenAlex author and ORCID iD, accepting a match only when the name and institution agree, and never guessing;&lt;/li&gt;&lt;li&gt;builds a profile from their public record using the site&amp;#39;s own profile code, and a second one from a saved public CV where one exists, through the same no-language-model path an upload takes;&lt;/li&gt;&lt;li&gt;embeds it, ranks the published vectors, and records the top 10 matches and the topics and papers behind them.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;A run passes when a profile is built and the best match scores at least 0.3, and the site shows &amp;quot;Prize test passing&amp;quot; when at least 80% of runs pass. The latest refresh passed 11 of 11 runs for the laureates it could resolve. The Demo tab shows the well-matched examples with the connections behind each one.&lt;/p&gt;
+&lt;h2 id=&quot;what-i-would-carry-to-the-next-retrieval-build&quot;&gt;What I would carry to the next retrieval build&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;Decide what runs where before choosing models. &amp;quot;Private and serverless&amp;quot; set every other constraint here.&lt;/li&gt;&lt;li&gt;Quantize the index, not the query. Sign bits plus a full-precision query keep most of the ranking for 3% of the storage.&lt;/li&gt;&lt;li&gt;Precompute per query, not per item. One table turns 384 operations per person into 48.&lt;/li&gt;&lt;li&gt;Pair embeddings with tags when people ask for specific things. Similarity finds the neighborhood, and tags make sure the match is specifically right.&lt;/li&gt;&lt;li&gt;Keep a fixed, public test set and run it on every data refresh.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;The code is open, and the &lt;a href=&quot;https://pikulsomesh.github.io/academic-matchmaker/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;live site&lt;/a&gt; is the fastest way to see whether it finds the right people for your work.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Simulating a dinner service, minute by minute (Michelin Kitchen Twin, part 3)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/michelin-kitchen-twin/simulating-dinner-service/"/>
+    <id>https://someshmohapatra.in/writing/michelin-kitchen-twin/simulating-dinner-service/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>The discrete-event simulation behind the kitchen twin. A seeded event heap that replays the same night every time, tickets as work orders, OEE per appliance, a named bottleneck, and an optimizer that tests every fix across five seeds.</summary>
+    <category term="Michelin Kitchen Twin"/>
+    <category term="discrete event simulation"/>
+    <category term="oee"/>
+    <category term="theory of constraints"/>
+    <category term="optimization"/>
+    <category term="javascript"/>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/recipes-as-bills-of-materials/&quot;&gt;Part 2&lt;/a&gt; turned covers into a plan. A plan says what has to be made. It does not say what happens when 14 tables sit down within 20 minutes and the fish station has one chef de partie. That is the simulation&amp;#39;s job.&lt;/p&gt;
+&lt;h2 id=&quot;why-discrete-events&quot;&gt;Why discrete events&lt;/h2&gt;
+&lt;p&gt;A dinner service is a set of things that happen at specific moments: a party arrives, a ticket fires, a cook starts searing, a combi finishes, a plate reaches the pass. Between those moments nothing changes. A discrete-event simulation jumps from one event to the next instead of ticking a clock, so a whole night runs headlessly in a fraction of a second, and the same engine can also play in real time to drive the 3D scene.&lt;/p&gt;
+&lt;p&gt;The engine is plain JavaScript with no dependencies. It has two building blocks.&lt;/p&gt;
+&lt;h2 id=&quot;same-seed-same-night&quot;&gt;Same seed, same night&lt;/h2&gt;
+&lt;p&gt;The first is a seeded random number generator. Operation times are means with lognormal spread, 20% for hands-on work and 5% for machine cycles. Arrivals, party sizes and no-shows are random too. So that a share link can replay the night to the second, every draw comes from mulberry32, a tiny, fast generator that gives the same sequence for the same seed:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// Deterministic PRNG (mulberry32) + helpers. Same seed =&amp;gt; identical service.
+export function makeRng(seed = 1) {
+  let a = (seed &amp;gt;&amp;gt;&amp;gt; 0) || 1;
+  const next = () =&amp;gt; {
+    a = (a + 0x6d2b79f5) &amp;gt;&amp;gt;&amp;gt; 0;
+    let t = a;
+    t = Math.imul(t ^ (t &amp;gt;&amp;gt;&amp;gt; 15), t | 1);
+    t ^= t + Math.imul(t ^ (t &amp;gt;&amp;gt;&amp;gt; 7), t | 61);
+    return ((t ^ (t &amp;gt;&amp;gt;&amp;gt; 14)) &amp;gt;&amp;gt;&amp;gt; 0) / 4294967296;
+  };
+  const normal = () =&amp;gt; {
+    const u = Math.max(next(), 1e-12), v = next();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  };
+  return {
+    next, normal,
+    /** mean-preserving lognormal multiplier with coefficient of variation cv */
+    jitter: (cv) =&amp;gt; (cv ? Math.exp(normal() * cv - (cv * cv) / 2) : 1),
+  };
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;- cv²/2&lt;/code&gt; term keeps the mean of the multiplier at exactly 1. Without it, adding variability would quietly make every operation slower on average, and every what-if would be biased.&lt;/p&gt;
+&lt;p&gt;The second building block is the event queue, a binary min-heap ordered by time and then by insertion order. The tie-break matters. Two events at the same second must always run in the same order, or determinism breaks in ways that are very hard to debug.&lt;/p&gt;
+&lt;h2 id=&quot;tickets-as-work-orders&quot;&gt;Tickets as work orders&lt;/h2&gt;
+&lt;p&gt;Each table&amp;#39;s course is a ticket. Expo fires it early by the planned lead time of its slowest dish, which is just-in-time offset scheduling, and staggers the dish lines so every plate on the table finishes together. Each dish is a small graph of steps, each with a station, an appliance type, a role, a duration, a hands-on time and an ingredient draw. Hands-on time is separate from duration so an oven stays busy after the cook walks away.&lt;/p&gt;
+&lt;p&gt;Resources behave like a plant&amp;#39;s:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Cooks&lt;/strong&gt; have roles, skills, shifts and walking time between stations.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Appliances&lt;/strong&gt; have slots and fail and recover, with mean time between failures and mean time to repair.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Prep&lt;/strong&gt; is exploded from the menu with a safety factor. It consumes raw stock and produces the components that service steps consume.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;The pass&lt;/strong&gt; is a quality gate. Rejected plates and plates held too long trigger re-fires and are counted as waste.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Stockouts&lt;/strong&gt; are handled the way a kitchen handles them. The dish is 86&amp;#39;d, swapped for another option in the same course if one exists, and comped if not.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;The dining room is a second production line. Parties arrive, wait for a table, balk if they wait too long, eat at their own pace, and leave. Every stage has a queue and a KPI.&lt;/p&gt;
+&lt;h2 id=&quot;kpis-a-plant-manager-would-recognize&quot;&gt;KPIs a plant manager would recognize&lt;/h2&gt;
+&lt;p&gt;The dashboard has a toggle between kitchen and factory vocabulary. &amp;quot;Ticket time p90&amp;quot; becomes &amp;quot;lead time p90&amp;quot;, and &amp;quot;covers served&amp;quot; becomes &amp;quot;units shipped&amp;quot;. Behind it:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;ticket time p50, p90 and p95 per course, guest wait, throughput and work in process;&lt;/li&gt;&lt;li&gt;utilization of cooks, stations and appliances, over a rolling 15 minutes;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;OEE = availability × performance × quality&lt;/strong&gt; for every appliance;&lt;/li&gt;&lt;li&gt;first-pass yield, food cost and waste;&lt;/li&gt;&lt;li&gt;and a theory-of-constraints read-out that names the bottleneck and says why.&lt;/li&gt;&lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/michelin-kitchen-twin/dashboard-rush.jpg&quot; alt=&quot;The dashboard naming the constraint during a rush seating&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;120 covers in a rush seating. The read-out names the fish chef de partie as the constraint: 96% busy, 10 tasks queued, 22 tasks waited 3 hours in total over the last 30 minutes.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;Naming the bottleneck is the most useful line on the screen. A dashboard full of red numbers says something is wrong. A sentence that names the resource, its load and its queue says what to fix.&lt;/p&gt;
+&lt;h2 id=&quot;an-optimizer-that-cannot-be-fooled-by-one-lucky-night&quot;&gt;An optimizer that cannot be fooled by one lucky night&lt;/h2&gt;
+&lt;p&gt;The last piece answers &amp;quot;what should I change?&amp;quot; for the most common complaint: guests sitting longer than the menu intends. The optimizer tries two kinds of levers:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;&lt;strong&gt;One more cook&lt;/strong&gt;, cloned from each line role, on the same shift and station.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;A re-sequenced fire&lt;/strong&gt;, calling each course earlier by a larger share of its slowest dish&amp;#39;s lead time.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;Every candidate re-runs the whole night headlessly, from five seeds, and is ranked on the average:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;export const SEEDS = [1, 2, 3, 4, 5];
+const FIRE_LEADS = [1, 1.15, 1.3, 1.5];
+const LEAD_SECS = [75, 150, 225];
+// guards: a candidate that wins on meal time by hurting something else is flagged, not recommended
+const GUARD = { fpyPts: 1, ticketP90Sec: 120, tableWaitP90Sec: 120 };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The guards matter as much as the search. A fix that shortens the meal by firing everything earlier but drops first-pass yield by a point, because plates sit at the pass, is not a fix. It is flagged, not recommended.&lt;/p&gt;
+&lt;p&gt;The common scenarios (40, 62, 90 and 120 guests) and the optimizer&amp;#39;s results are precomputed at build time, so the site opens with answers already on the page. Anything you change re-runs live.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/3d-kitchen-and-studio/&quot;&gt;Part 4&lt;/a&gt; is the photoreal 3D kitchen this simulation drives, and the Studio that lets you redesign the restaurant around it.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>From a news video to a 3D world model (Food Bank Spatial Twin, part 2)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/foodbank-spatial-twin/video-to-world-model/"/>
+    <id>https://someshmohapatra.in/writing/foodbank-spatial-twin/video-to-world-model/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>How twenty frames of a public video tour became metric 3D captures through a world model, and how a Gaussian-splat trainer running on a plain CPU made them photoreal, with the code for each step.</summary>
+    <category term="Food Bank Spatial Twin"/>
+    <category term="world models"/>
+    <category term="gaussian splatting"/>
+    <category term="colmap"/>
+    <category term="pytorch"/>
+    <category term="openusd"/>
+    <content type="html">&lt;p&gt;Part 1 was the why. This part is the first step of the pipeline: turning an 18-minute local news tour into 3D captures that sit in real metres. It is also the step where most of the judgment lives, because the video was shot for television, not for reconstruction.&lt;/p&gt;
+&lt;h2 id=&quot;start-by-reading-the-video-like-a-surveyor&quot;&gt;Start by reading the video like a surveyor&lt;/h2&gt;
+&lt;p&gt;A world model needs overlapping views of one space, so the first job is to pick zones, not to process the whole tour. I sampled one frame every ten seconds and scored each stretch of the video for camera movement, people in shot, and surfaces that reconstruct badly.&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Verdict&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Pallet-racking aisle&lt;/td&gt;&lt;td&gt;Picked first. The camera moves around a bay and down the aisle, and one stretch has no people at all&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Volunteer sorting room&lt;/td&gt;&lt;td&gt;Picked. Clean shots, but the camera barely moves&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Client market&lt;/td&gt;&lt;td&gt;Picked. Good shelves, people block the centre&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Freezer and cooler doors&lt;/td&gt;&lt;td&gt;Skipped. Blank walls and fog&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Community kitchen&lt;/td&gt;&lt;td&gt;Trained later. Stainless steel is hard for splats&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;The racking aisle is also the zone that matters most for a warehouse twin: inventory locations, forklift paths and temperature zones all live there.&lt;/p&gt;
+&lt;h2 id=&quot;frames-and-why-the-automatic-picker-failed&quot;&gt;Frames, and why the automatic picker failed&lt;/h2&gt;
+&lt;p&gt;The script keeps the sharpest frame in each time bucket and crops off the broadcast graphics at the bottom of the screen.&lt;/p&gt;
+&lt;pre data-lang=&quot;bash&quot;&gt;&lt;code&gt;scripts/ingest_and_build.sh --video-file tour.mp4 \
+    --start 305 --interval 4 --crop-bottom 264 --ingest-only&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The obvious way to pick eight inputs from forty is to split the clip into equal segments and take the sharpest frame in each. On interview footage that fails: sharpness rewards in-focus faces, so it picked six nearly identical shots of the two hosts. I chose the inputs by hand for viewpoint spread and fewest people, and masked the hosts out with boxes.&lt;/p&gt;
+&lt;h2 id=&quot;the-world-model-poses-and-metric-depth-for-20-cents&quot;&gt;The world model: poses and metric depth for 20 cents&lt;/h2&gt;
+&lt;p&gt;The world model&amp;#39;s pose task takes the frames and returns, for each one, where the camera was, a depth map in metres, and a confidence map. It costs 10 credits per image, and 1,000 credits is a dollar. Three zones from 20 frames came to 200 credits.&lt;/p&gt;
+&lt;p&gt;The depth passed a simple sanity check. The first racking beam lands about 0.4 m above the lens, which is what you would expect on a real beam about 1.9 m off the floor.&lt;/p&gt;
+&lt;p&gt;The fusion step is local and free. It unprojects every depth map, keeps the most confident sample per 1 cm voxel, and writes the result as Gaussians in both a browser format and OpenUSD.&lt;/p&gt;
+&lt;pre data-lang=&quot;bash&quot;&gt;&lt;code&gt;.venv/bin/python scripts/atlas_twin.py pose
+.venv/bin/python scripts/atlas_twin.py fuse
+.venv/bin/python scripts/atlas_twin.py site   # place the zones on one plan&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Every paid stage writes its operation id to a state file before it waits, and sends an idempotency key derived from the request body, so a re-run resumes instead of paying again. The client also backs off on rate limits and gateway errors, honoring &lt;code&gt;Retry-After&lt;/code&gt;:&lt;/p&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;def req(self, method, path, body=None, *, idem=None, params=None, timeout=120):
+    headers = {&amp;quot;Idempotency-Key&amp;quot;: idem} if idem else {}
+    for attempt in range(6):
+        r = self.s.request(method, self.base + path, json=body, params=params,
+                           headers=headers, timeout=timeout)
+        if r.status_code in (429, 502, 503, 504) and attempt &amp;lt; 5:
+            delay = float(r.headers.get(&amp;quot;Retry-After&amp;quot;) or 2 ** (attempt + 1))
+            time.sleep(delay)
+            continue
+        if r.status_code &amp;gt;= 400:
+            raise PipelineError(f&amp;quot;{method} {path}: HTTP {r.status_code}: {r.text[:800]}&amp;quot;)
+        return r.json() if r.content else {}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A budget guard sits in front of every paid stage. If the estimate for a request is above &lt;code&gt;--max-credits&lt;/code&gt;, the script refuses to submit it.&lt;/p&gt;
+&lt;p&gt;The step I most wanted, generating views of the space the camera never saw, failed twice on the provider&amp;#39;s side with no detail. I stopped retrying until I knew whether failed jobs were billed. That is the open problem, and it is why Part 3 exists.&lt;/p&gt;
+&lt;h2 id=&quot;making-it-photoreal-on-a-cpu&quot;&gt;Making it photoreal on a CPU&lt;/h2&gt;
+&lt;p&gt;The fused captures look right from their source cameras and fall apart when you move. So the second route trains a real 3D Gaussian Splatting model per zone from 49 to 72 frames.&lt;/p&gt;
+&lt;p&gt;The standard trainers rasterize with CUDA kernels, and the machine that builds this repo has no GPU. So &lt;code&gt;scripts/splat_train.py&lt;/code&gt; implements the same method in plain PyTorch tensor code: project each Gaussian to the image, composite front to back, and optimize color, shape and opacity against the frames. With sparse rasterization it runs at about one second per step at 480 pixels on four CPU cores.&lt;/p&gt;
+&lt;p&gt;The heart of it is compositing. Each pixel&amp;#39;s color is a sum over the Gaussians that cover it, front to back, each weighted by its own opacity times the transmittance left by everything in front of it. On a GPU that is a loop per pixel. In tensor code it becomes one sorted list of (pixel, Gaussian) pairs and a &lt;strong&gt;segmented cumulative sum of log(1 − alpha)&lt;/strong&gt;, so transmittance for every pair comes out of one &lt;code&gt;cumsum&lt;/code&gt;:&lt;/p&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;alpha = (opac[gid] * torch.exp(power.clamp(max=0.0))).clamp(max=0.99)
+l1m = torch.log1p(-alpha).double()              # log(1 - alpha), stable for small alpha
+cs = torch.cumsum(l1m, 0)                       # running sum across all pairs, sorted by pixel then depth
+with torch.no_grad():                           # index of the first pair of each pixel&amp;#39;s segment
+    seg_first = torch.ones_like(pix, dtype=torch.bool)
+    seg_first[1:] = pix[1:] != pix[:-1]
+    first_idx = torch.cummax(torch.where(seg_first, torch.arange(pix.numel(), device=dev),
+                                         torch.zeros_like(pix)), 0).values
+base = (cs - l1m)[first_idx]
+trans = torch.exp(cs - l1m - base).float()      # transmittance in front of each pair
+w = alpha * trans
+img = torch.zeros(H * W, 3, device=dev).index_add(0, pix, w[:, None] * col[gid])&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pairs that would add less than 1/255 alpha are dropped before this step, and each Gaussian only touches pixels inside its visible extent. That is what keeps the work proportional to real coverage instead of image size times splat count.&lt;/p&gt;
+&lt;p&gt;Two details made the difference on news footage:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Background plates.&lt;/strong&gt; The hosts are in nearly every frame. Under their masks, the loss sees pixels warped in from frames up to 15 seconds away, where the hosts had moved on. Without that, the space behind them trains to haze.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Visual-hull carving.&lt;/strong&gt; Because the hosts walk with the camera, the space they occupy gets densified into grey columns of splats. Every 250 steps the trainer removes splats that land on a host mask in most of the frames that see them.&lt;/li&gt;&lt;/ul&gt;
+&lt;pre data-lang=&quot;bash&quot;&gt;&lt;code&gt;for z in racking market kitchen sorting; do
+  python scripts/photoreal_twin.py frames --zone $z --video tour.mp4
+  python scripts/photoreal_twin.py masks  --zone $z
+  python scripts/photoreal_twin.py pose   --zone $z   # COLMAP
+  python scripts/photoreal_twin.py train  --zone $z --iters 6000
+  python scripts/photoreal_twin.py export --zone $z
+done&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On a free cloud notebook GPU, the same stages run at full resolution with up to 1.5 million splats.&lt;/p&gt;
+&lt;h2 id=&quot;the-output-contract&quot;&gt;The output contract&lt;/h2&gt;
+&lt;p&gt;Both routes write the same thing: a splat file for the browser and an OpenUSD file in metres, Y up, with the floor at zero. Nothing downstream needs to know which route made a zone, which is the point.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/blender-facility-model/&quot;&gt;Part 3&lt;/a&gt;: the video never shows the whole building, so how do you model the rest of it? The answer is one Blender script.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Fitting 181,568 researchers into a static website (Academic Matchmaker, part 2)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/academic-matchmaker/storage-and-data-pipeline/"/>
+    <id>https://someshmohapatra.in/writing/academic-matchmaker/storage-and-data-pipeline/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>The data pipeline and storage behind the Academic Matchmaker. Ingesting 200 universities under a free API budget, compact search rows, 1-bit vectors that cut the index from 280 MB to under 9 MB, and a clustered index the browser loads piece by piece.</summary>
+    <category term="Academic Matchmaker"/>
+    <category term="data engineering"/>
+    <category term="vector quantization"/>
+    <category term="ivf index"/>
+    <category term="openalex"/>
+    <category term="github actions"/>
+    <category term="hugging face"/>
+    <content type="html">&lt;p&gt;A matchmaker is only as good as its index. This part is about building that index for 200 universities with no database and no server, and then making it small enough for a browser to search.&lt;/p&gt;
+&lt;h2 id=&quot;ingesting-under-a-request-budget&quot;&gt;Ingesting under a request budget&lt;/h2&gt;
+&lt;p&gt;The source is OpenAlex, which is free and open but meters requests. Without a key the daily budget is about 1,000 list calls. With a free key it is about 10,000. A naive pipeline asks for each researcher&amp;#39;s recent papers one person at a time, which is hundreds of thousands of calls.&lt;/p&gt;
+&lt;p&gt;The first fix was to batch. OpenAlex filters accept up to 100 values joined with &lt;code&gt;|&lt;/code&gt;, so one request can ask for the recent papers of 25 authors at once, newest first, and stop paging once everyone has enough:&lt;/p&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;for batch in chunks(todo, batch_size):          # 25 authors per request
+    params = {
+        &amp;quot;filter&amp;quot;: f&amp;quot;author.id:{&amp;#39;|&amp;#39;.join(batch)},from_publication_date:{since},to_publication_date:{today_iso()}&amp;quot;,
+        &amp;quot;sort&amp;quot;: &amp;quot;publication_date:desc&amp;quot;,
+        &amp;quot;select&amp;quot;: WORK_SELECT,                    # only the fields we store
+    }
+    for work in client.iterate(&amp;quot;works&amp;quot;, params, max_results=200 * max_pages):
+        for authorship in work.get(&amp;quot;authorships&amp;quot;) or []:
+            aid = short_id((authorship.get(&amp;quot;author&amp;quot;) or {}).get(&amp;quot;id&amp;quot;))
+            if aid in wanted and len(found[aid]) &amp;lt; MAX_RECENT_PUBLICATIONS:
+                found[aid].append(publication_entry(work, aid))
+        if all(len(v) &amp;gt;= MAX_RECENT_PUBLICATIONS for v in found.values()):
+            break                                 # everyone in the batch is full&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A full build now takes roughly 3,000 to 4,000 calls, and a monthly update roughly 1,000 to 1,500.&lt;/p&gt;
+&lt;p&gt;The second fix was structural. A full build runs &lt;strong&gt;one job per university&lt;/strong&gt;, at most 20 in parallel, each with its own cache keyed by the university&amp;#39;s name. Each job takes a share of the daily request budget, and together they stay at about 10 requests a second. When a job hits its time limit or the daily cap, it stops as &amp;quot;paused&amp;quot; with its progress cached, nothing is published, and the next daily run picks up where it left off. An assemble step merges the results, and only then does a quality gate decide whether the build is published.&lt;/p&gt;
+&lt;p&gt;Keying the cache by name, not by position, sounds minor. It is what let the list grow from 100 to 200 universities without throwing away anyone&amp;#39;s progress.&lt;/p&gt;
+&lt;h2 id=&quot;who-counts-as-a-researcher&quot;&gt;Who counts as a researcher&lt;/h2&gt;
+&lt;p&gt;For each university, the pipeline takes OpenAlex authors whose last known institution is that university, with at least 20 works, 500 citations, an h-index of 10 and a paper in the last three years, most cited first, up to 1,000 per university. Research areas come from OpenAlex topics. Titles and roles come from faculty pages, then from ORCID employment history. Emails come from faculty pages, then ORCID-linked pages, then the affiliation strings on the person&amp;#39;s own papers. An email is kept only when it matches both the person&amp;#39;s name and the university&amp;#39;s domain.&lt;/p&gt;
+&lt;h2 id=&quot;storage-from-500-bytes-a-row-to-100&quot;&gt;Storage: from 500 bytes a row to 100&lt;/h2&gt;
+&lt;p&gt;The first version published one JSON object per person. At 181,568 people that is far too much to download up front, so search rows went to a compact format: field names once, values as arrays, repeated strings as indexes into shared tables, and common URL prefixes stored once.&lt;/p&gt;
+&lt;pre data-lang=&quot;json&quot;&gt;&lt;code&gt;{
+  &amp;quot;format&amp;quot;: &amp;quot;compact-v1&amp;quot;,
+  &amp;quot;fields&amp;quot;: [&amp;quot;id&amp;quot;, &amp;quot;name&amp;quot;, &amp;quot;title&amp;quot;, &amp;quot;institution_id&amp;quot;, &amp;quot;primary_domain&amp;quot;, &amp;quot;domains&amp;quot;, &amp;quot;citation_count&amp;quot;, &amp;quot;email&amp;quot;, &amp;quot;profile_url&amp;quot;],
+  &amp;quot;institutions&amp;quot;: [&amp;quot;I63966007&amp;quot;, &amp;quot;I40120149&amp;quot;],
+  &amp;quot;domains&amp;quot;: [&amp;quot;Artificial Intelligence&amp;quot;, &amp;quot;Materials Chemistry&amp;quot;],
+  &amp;quot;url_prefixes&amp;quot;: [&amp;quot;https://orcid.org/&amp;quot;],
+  &amp;quot;rows&amp;quot;: [[&amp;quot;A5012345678&amp;quot;, &amp;quot;A. Researcher&amp;quot;, &amp;quot;Professor&amp;quot;, 0, 1, [1, 0], 5120, null, &amp;quot;0|0000-0002-1825-0097&amp;quot;]]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Trailing nulls are dropped, and the decoder in the browser rebuilds full objects. The result is about 100 bytes a person instead of about 500. Full records, with publications and contact details, stay in per-university files that load only when someone opens a profile.&lt;/p&gt;
+&lt;h2 id=&quot;vectors-from-1-536-bytes-to-48&quot;&gt;Vectors: from 1,536 bytes to 48&lt;/h2&gt;
+&lt;p&gt;Each researcher has a 384-dimension embedding. Here is what that costs at 181,568 people:&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Storage&lt;/th&gt;&lt;th&gt;Bytes per person&lt;/th&gt;&lt;th&gt;Whole index&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;float32&lt;/td&gt;&lt;td&gt;1,536&lt;/td&gt;&lt;td&gt;about 279 MB&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;int8&lt;/td&gt;&lt;td&gt;384&lt;/td&gt;&lt;td&gt;about 70 MB&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;1 bit per dimension&lt;/td&gt;&lt;td&gt;48&lt;/td&gt;&lt;td&gt;about 8.7 MB&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;The int8 version was the first step: scale, round, and keep a per-row norm. The bigger step was to keep only the &lt;strong&gt;sign&lt;/strong&gt; of each dimension. A positive value becomes a 1 and a negative one a 0, packed eight to a byte:&lt;/p&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;def pack_bits(q):
+    &amp;quot;&amp;quot;&amp;quot;Sign bits of int8 vectors, packed 8 per byte: dimension i is byte i // 8, mask 0x80 &amp;gt;&amp;gt; (i % 8).&amp;quot;&amp;quot;&amp;quot;
+    return np.packbits(q &amp;gt; 0, axis=1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Throwing away 31 of every 32 bits sounds reckless. It works because the query is not quantized. The browser keeps the full-precision query vector and scores it against each sign vector, and for a unit query that dot product is, on average, a fixed fraction (the square root of 2/π) of the true cosine. Dividing by that constant puts bit scores back on the same 0 to 1 scale as the full vectors. Part 3 shows how the browser scores 48 bytes with 48 lookups.&lt;/p&gt;
+&lt;h2 id=&quot;clustering-download-a-few-percent-of-the-index&quot;&gt;Clustering: download a few percent of the index&lt;/h2&gt;
+&lt;p&gt;8.7 MB is small for a database and large for a first page load. So the build also clusters the vectors, an inverted-file (IVF) index. It runs plain k-means on the unit vectors, with k set to the square root of the number of people, which gives &lt;strong&gt;426 clusters&lt;/strong&gt;. Then it writes one centroid file and one file per cluster:&lt;/p&gt;
+&lt;pre data-lang=&quot;python&quot;&gt;&lt;code&gt;k = k or max(1, min(n, round(math.sqrt(n))))
+unit = q.astype(np.float32) / SCALE
+unit /= np.maximum(np.linalg.norm(unit, axis=1, keepdims=True), 1e-9)
+centroids = kmeans(unit, k)
+for start in range(0, n, 20000):                  # assign in blocks to bound memory
+    assignment[start:start + 20000] = np.argmax(unit[start:start + 20000] @ centroids.T, axis=1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Centroids stay int8. Cluster members are stored as bits, along with the university of each member, so filters work without loading anything else. A search ranks the 426 centroids first and then loads the 24 closest clusters, which is about 5% of the people and a few hundred kilobytes.&lt;/p&gt;
+&lt;h2 id=&quot;hosting-the-data&quot;&gt;Hosting the data&lt;/h2&gt;
+&lt;p&gt;GitHub Pages is fine for the app and wrong for a dataset that is rewritten every month, because every rebuild would add hundreds of megabytes to the repository&amp;#39;s history. The data lives in a Hugging Face dataset instead. The pipeline uploads &lt;code&gt;public/data&lt;/code&gt; as one commit, deletes files the build no longer writes, then squashes the dataset&amp;#39;s history so old copies do not pile up. The site reads the files from the dataset&amp;#39;s CDN URL, and falls back to a small bundled sample when no hosted data is configured.&lt;/p&gt;
+&lt;p&gt;The result is a pipeline that rebuilds itself on a schedule and an index a phone can search, with no server anywhere. &lt;a href=&quot;https://someshmohapatra.in/writing/academic-matchmaker/semantic-matching-and-tags/&quot;&gt;Part 3&lt;/a&gt; is about what happens when the search runs.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Covers as the build plan, recipes as bills of materials (Michelin Kitchen Twin, part 2)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/michelin-kitchen-twin/recipes-as-bills-of-materials/"/>
+    <id>https://someshmohapatra.in/writing/michelin-kitchen-twin/recipes-as-bills-of-materials/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>The data model behind the kitchen twin. 53 recipes as bills of materials and routings, 88 sourced raw materials, and a classic MRP explosion that turns covers into plates, prep batches, grams of ingredients and minutes of work per cook.</summary>
+    <category term="Michelin Kitchen Twin"/>
+    <category term="mrp"/>
+    <category term="bill of materials"/>
+    <category term="routing"/>
+    <category term="data model"/>
+    <category term="manufacturing"/>
+    <content type="html">&lt;p&gt;A twin is only as good as its master data. For this one, every file in &lt;code&gt;/data&lt;/code&gt; maps to a standard manufacturing object, so the simulation and the 3D scene can read the kitchen the way an ERP or MES reads a plant.&lt;/p&gt;
+&lt;h2 id=&quot;the-master-data&quot;&gt;The master data&lt;/h2&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;File&lt;/th&gt;&lt;th&gt;What it holds&lt;/th&gt;&lt;th&gt;Manufacturing object&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;restaurant.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;The kitchen, annex and dining room&lt;/td&gt;&lt;td&gt;Plant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;menu.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;Courses, choices, supplements, eating times&lt;/td&gt;&lt;td&gt;Product catalog&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;service.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;Covers, seatings, variability, what-ifs&lt;/td&gt;&lt;td&gt;Build plan and scenarios&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;items.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;88 ingredients with yield, storage and shelf life&lt;/td&gt;&lt;td&gt;Item master&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;products.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;38 sub-assemblies and 15 plated dishes, each with &lt;code&gt;bom&lt;/code&gt; and &lt;code&gt;routing&lt;/code&gt;&lt;/td&gt;&lt;td&gt;BOMs and routings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;resources.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;10 work centers, 32 machines, 10 storage locations, 14 roles, 19 staff&lt;/td&gt;&lt;td&gt;Resources and skills matrix&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;layout.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;Positions of every station and machine&lt;/td&gt;&lt;td&gt;Plant layout&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;code&gt;sources.json&lt;/code&gt;&lt;/td&gt;&lt;td&gt;14 publications&lt;/td&gt;&lt;td&gt;Traceability&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;Every record has a &lt;code&gt;src&lt;/code&gt; list pointing at the sources, or &lt;code&gt;est: true&lt;/code&gt; when it is a modeling estimate. A validator checks every reference: items, work centers, equipment, roles, storage locations, sources and positions. It also checks that option shares sum to 1.&lt;/p&gt;
+&lt;h2 id=&quot;from-covers-to-a-production-plan&quot;&gt;From covers to a production plan&lt;/h2&gt;
+&lt;p&gt;The planning step is a classic MRP explosion. It runs in four steps, and the same code runs in the browser and in Node.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Demand.&lt;/strong&gt; Covers become plates. Option shares (70% beef, 30% veal tongue) and supplement uptake (20% caviar, 25% foie gras) apply as expected values, rounded up.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Explosion.&lt;/strong&gt; The bills of materials are walked in low-level-code order, so every parent is processed before its children. Sub-assemblies are made in whole batches, which is why 31 lobsters&amp;#39; worth of demand blanches two batches of 20. Raw materials are grossed up for trim and yield: 900 g of shelled corn needs 2 kg on the cob.&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// Trimmed from src/model/mrp.js
+export function explode(index, demand, { stockFactor = 1 } = {}) {
+  const required = new Map();
+  for (const [id, qty] of Object.entries(demand)) required.set(id, (required.get(id) ?? 0) + qty * stockFactor);
+
+  // Parents before children: low-level code order.
+  const order = [...index.products.keys()].sort((a, b) =&amp;gt; index.lowLevelCode.get(a) - index.lowLevelCode.get(b));
+  const make = {};
+  for (const id of order) {
+    const need = required.get(id) ?? 0;
+    if (need &amp;lt;= 0) continue;
+    const p = index.products.get(id);
+    const isFinished = p.type === &amp;#39;finished&amp;#39;;
+    const qty = isFinished ? Math.ceil(need) : need;
+    // Plates are made one by one; prep is made in whole batches.
+    const batches = isFinished ? qty / p.batchYield : Math.ceil(qty / p.batchYield - 1e-9);
+    const produced = isFinished ? qty : batches * p.batchYield;
+    make[id] = { id, name: p.name, type: p.type, required: need, batches, produced, phase: p.phase };
+    for (const c of p.bom) required.set(c.item, (required.get(c.item) ?? 0) + c.qty * batches);
+  }
+
+  // Net to gross: trim, shelling and peeling losses.
+  const raw = {};
+  for (const [id, net] of required) {
+    const item = index.items.get(id);
+    if (item) raw[id] = { id, name: item.name, net, gross: net / (item.yieldPct || 1) };
+  }
+  // ...then every routing operation becomes labor and machine minutes.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The small &lt;code&gt;- 1e-9&lt;/code&gt; matters. Floating-point demand like 2.0000000001 batches would otherwise round up to a whole extra batch of veal stock.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Load.&lt;/strong&gt; Every routing operation becomes labor minutes for a role and machine minutes for a piece of equipment. Labor is scaled by a hands-on fraction, because a cook is not standing at the combi while it runs. Operations are split into &lt;code&gt;prep&lt;/code&gt;, which is mise en place before service, and &lt;code&gt;service&lt;/code&gt;, which is cooked to order when a ticket fires.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Capacity.&lt;/strong&gt; Labor minutes are compared with rostered minutes per role and shift.&lt;/p&gt;
+&lt;pre data-lang=&quot;sh&quot;&gt;&lt;code&gt;npm run plan -- 62    # one full turn of the dining room
+npm run plan -- 120   # a double turn&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At 62 covers every station has headroom. At 120 the fish commis needs 105% of the prep time the shift allows, and the fish and meat chefs de partie run at 90 to 93% during service. Those are the bottlenecks the simulation later shows live. The stock-pot ranges carry about 20 hours of simmering, which is why a real kitchen makes veal stock and corned tongue days ahead. The planner reports those lead times too: corned tongue is about 76 hours and the foie gras torchon about 49.&lt;/p&gt;
+&lt;h2 id=&quot;testing-the-data-against-published-recipes&quot;&gt;Testing the data against published recipes&lt;/h2&gt;
+&lt;p&gt;A planning model is easy to get subtly wrong, so it is tested against something real. For dishes with a published recipe, the test checks that the explosion reproduces the published quantities. The signature oysters-and-caviar course is one of them. If someone edits a yield or a batch size and breaks it, the test fails.&lt;/p&gt;
+&lt;h2 id=&quot;being-honest-about-what-is-estimated&quot;&gt;Being honest about what is estimated&lt;/h2&gt;
+&lt;p&gt;The menu is a composite, because the real one changes daily. Quantities for courses with no published recipe are typical fine-dining portions. Operation times not stated in a recipe come from professional practice, and brigade size, shifts and machine positions are informed estimates. Ingredient prices are typical US wholesale prices. All of it is flagged in the data, so anyone using the model knows which numbers to challenge first.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/simulating-dinner-service/&quot;&gt;Part 3&lt;/a&gt; turns this plan into a simulated night.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Why I built a food bank digital twin from a news video (Food Bank Spatial Twin, part 1)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/foodbank-spatial-twin/why-a-food-bank-twin/"/>
+    <id>https://someshmohapatra.in/writing/foodbank-spatial-twin/why-a-food-bank-twin/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>Digital twins usually start from CAD drawings and laser scans, which most non-profits cannot pay for. I wanted to know whether a public video tour is enough to start one, and what that would cost.</summary>
+    <category term="Food Bank Spatial Twin"/>
+    <category term="digital twin"/>
+    <category term="world models"/>
+    <category term="gaussian splatting"/>
+    <category term="openusd"/>
+    <category term="food security"/>
+    <content type="html">&lt;p&gt;A digital twin is a virtual copy of a site that stays in sync with it through data. In factories and warehouses, twins are used to plan layouts, watch equipment, and rehearse a change before anyone moves a rack. When they work, they pay for themselves.&lt;/p&gt;
+&lt;p&gt;The expensive part is almost never the dashboard. It is the geometry. A facility twin usually starts with CAD drawings, a laser-scanning crew, or a photogrammetry campaign, and then a specialist spends weeks importing all of it into a simulation tool. For an automotive plant that cost is a rounding error. For a regional food bank it is the whole reason a twin never happens.&lt;/p&gt;
+&lt;h2 id=&quot;why-a-food-bank&quot;&gt;Why a food bank&lt;/h2&gt;
+&lt;p&gt;A large food bank is a serious operation. It receives trucks at a dock, stores thousands of pallets in racking, runs freezers and coolers that cannot be allowed to drift, sorts donations with volunteer crews, and ships to hundreds of partner pantries. Many also run a client market and a community kitchen in the same building. That is a warehouse, a cold chain and a small food plant under one roof.&lt;/p&gt;
+&lt;p&gt;Those are exactly the problems twins are good at. Where is the inventory? Is the freezer holding temperature? Which dock is congested at 10 a.m. on a Monday? Where do the forklifts and the volunteers cross paths? The difference is the budget. Food banks run on donations and volunteer hours, so a six-figure scanning and modeling project is out of the question.&lt;/p&gt;
+&lt;p&gt;So the question I set myself was narrow and practical: &lt;strong&gt;is a publicly available video tour enough to start a useful twin, with no CAD drawings, no laser scans and no site visit?&lt;/strong&gt; And if it is, how fast and how cheap can it be?&lt;/p&gt;
+&lt;h2 id=&quot;what-changed-that-made-this-worth-trying&quot;&gt;What changed that made this worth trying&lt;/h2&gt;
+&lt;p&gt;Three things moved in the last two years.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;World models and Gaussian splatting.&lt;/strong&gt; A world model is an AI system that infers 3D structure from images. Given a few video frames, it can estimate where the camera was and how far away everything is in real metres. 3D Gaussian splatting turns posed images into a photorealistic 3D scene that renders in real time, even in a browser.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;OpenUSD can now hold splats.&lt;/strong&gt; Universal Scene Description, the open 3D standard that came out of Pixar, added a native Gaussian-splat schema in its 26.03 release. A splat capture is no longer a viewer-specific file. It can sit in the same scene as racking, sensors and a forklift.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Serverless cloud costs nothing at this scale.&lt;/strong&gt; A backend that serves a twin&amp;#39;s live data can be a few functions behind an API, and it bills only when someone calls it.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Put together, those three suggest a different order of work. Start from footage that already exists, get a first twin in days, and only spend real money on the parts that turn out to matter.&lt;/p&gt;
+&lt;h2 id=&quot;the-rules-i-set-before-writing-any-code&quot;&gt;The rules I set before writing any code&lt;/h2&gt;
+&lt;p&gt;I gave myself seven days and three rules.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;&lt;strong&gt;One contract between the steps.&lt;/strong&gt; Everything upstream writes OpenUSD in metres, Y up, with the floor at zero. Everything downstream reads it. The browser, Blender and Omniverse are interchangeable renderers, not separate projects.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Label everything.&lt;/strong&gt; Every part of the twin is tagged as captured from the video, designed for this project, taken from published figures, estimated, or simulated. A twin that hides which parts are real is worse than no twin.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Never pay twice.&lt;/strong&gt; Every paid call has a budget cap, records its job id before waiting, and resumes instead of re-paying when it is run again.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;The subject is a &lt;strong&gt;representative&lt;/strong&gt; Texas food bank, inspired by a local news tour of one. It is not a replica of that building, and neither the food bank nor the station had any part in it.&lt;/p&gt;
+&lt;h2 id=&quot;what-came-out-of-it&quot;&gt;What came out of it&lt;/h2&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/pipeline.svg&quot; alt=&quot;The pipeline from video to world model to Blender to AWS to Omniverse&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;The whole pipeline. OpenUSD in metres, Y up, floor at zero, is the only contract between the steps.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;The pipeline runs in three steps, and each one gets its own part in this series.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Video to 3D captures.&lt;/strong&gt; Twenty frames went to a world model for camera poses and metric depth, and came back as about 747,000 splats across three areas, for 200 credits, which is 20 US cents. A Gaussian-splat trainer I wrote to run on a plain CPU then trained four areas from 49 to 72 frames each, at no credit cost, which made them hold up as the camera moves.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;The rest of the building in Blender.&lt;/strong&gt; The video never shows the whole building, and asking the world model to imagine the unfilmed areas failed on the provider&amp;#39;s side twice. So one headless Blender script models the full facility from the footprints in the operations data and publishes it in the same OpenUSD frame.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Data on AWS, viewed anywhere.&lt;/strong&gt; A serverless API on AWS serves cold-room telemetry, forklift positions and the operations layer in the same coordinates. The twin runs in a browser on GitHub Pages and renders in NVIDIA Omniverse on a rented GPU.&lt;/li&gt;&lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/foodbank-spatial-twin/photoreal-zones.jpg&quot; alt=&quot;The live twin in the browser, showing four captured areas with the cold-chain panel&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;The browser twin: four areas captured as Gaussian splats from the video, with the simulated cold-chain feed from AWS beside them.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;It went from first commit to a deployed backend in seven days. The build cost about $1.54 of compute: 20 cents of world-model credits and about $1.34 of GPU time for the Omniverse trials. The AWS backend has billed $0.00 so far. Putting real sensors on a facility floor is estimated at about $2,700 of hardware once and about $12 a month on AWS.&lt;/p&gt;
+&lt;p&gt;Not everything worked, and I will be specific about what did not. Generating views of unfilmed space failed. Omniverse rendered the Blender building beautifully but drew the splats as a blank grey frame. Those failures are as useful as the successes, because they show exactly where the tooling is today.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-next-in-the-series&quot;&gt;What is next in the series&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/video-to-world-model/&quot;&gt;Part 2&lt;/a&gt; goes into the first step in detail: how to get from a news video to a 3D world model, the frame selection and masking that make or break it, and the CPU splat trainer, with the code. After that come &lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/blender-facility-model/&quot;&gt;the Blender building&lt;/a&gt;, &lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/aws-architecture/&quot;&gt;the AWS architecture&lt;/a&gt;, and &lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/pipeline-and-paper/&quot;&gt;the full pipeline with the paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code, the docs and the live twin are all public. If you run a warehouse, a cold chain or a food bank and want to try this on your own footage, the repository is the place to start.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>A private research matchmaker that runs entirely in the browser (Academic Matchmaker, part 1)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/academic-matchmaker/private-research-matchmaker/"/>
+    <id>https://someshmohapatra.in/writing/academic-matchmaker/private-research-matchmaker/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>Why I built an advisor search that matches a CV against 181,568 researchers without uploading anything, and the architecture that makes it possible on a static site with no servers.</summary>
+    <category term="Academic Matchmaker"/>
+    <category term="semantic search"/>
+    <category term="in-browser AI"/>
+    <category term="webgpu"/>
+    <category term="transformers.js"/>
+    <category term="openalex"/>
+    <category term="retrieval"/>
+    <content type="html">&lt;p&gt;Finding a PhD or postdoc advisor works roughly the way it did twenty years ago. You open a university&amp;#39;s faculty page, read through a few hundred names, open the ones that sound close, skim their recent papers, and repeat for the next university. Twenty universities in, you have a spreadsheet, a headache, and no idea whether the best fit for your work was at the twenty-first.&lt;/p&gt;
+&lt;p&gt;The information to do better is public. OpenAlex indexes hundreds of millions of papers with author and institution links. ORCID records list people&amp;#39;s current roles. University directories list emails. What is missing is a tool that puts it together and answers one question: &lt;strong&gt;whose recent research is closest to mine?&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;two-constraints-that-shaped-everything&quot;&gt;Two constraints that shaped everything&lt;/h2&gt;
+&lt;p&gt;I set two rules before writing code.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Your CV never leaves your device.&lt;/strong&gt; A CV is personal. People upload drafts, unpublished work and contact details. A matching service that collects them is a liability for the person running it, and asking students to trust it is a big ask. So text extraction, the language model and the ranking all run in the visitor&amp;#39;s browser.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;No servers.&lt;/strong&gt; The site is static files on GitHub Pages. The data is rebuilt by GitHub Actions on a schedule and published to a Hugging Face dataset, which serves it over a CDN. Nothing runs between those builds, so there is nothing to keep up and nothing to pay for.&lt;/p&gt;
+&lt;p&gt;Those two rules turn a standard retrieval problem into a constrained one. A typical setup would put the vectors in a database and run a query on a server. Here, the browser has to download whatever it searches, so every byte counts and the index has to be organized for partial loading.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/academic-matchmaker/architecture.svg&quot; alt=&quot;Architecture of the Academic Matchmaker&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;Build in CI on the left, match in the browser on the right. The only link between them is a set of static files.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;how-a-match-happens&quot;&gt;How a match happens&lt;/h2&gt;
+&lt;ol&gt;&lt;li&gt;&lt;strong&gt;Read the upload.&lt;/strong&gt; PDFs go through pdf.js. Screenshots of a Google Scholar or LinkedIn page go through Tesseract OCR. Saved HTML and text are read directly. You can also paste an ORCID iD or OpenAlex link, and the profile is built from public records instead.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Understand it.&lt;/strong&gt; A small language model, Qwen2.5-0.5B quantized to 4 bits, runs on WebGPU (with a WebAssembly fallback) and extracts research interests as JSON. Chat messages go through the same model and refine the profile.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Embed it.&lt;/strong&gt; The same sentence-embedding model that indexed the researchers, all-MiniLM-L6-v2, turns the profile into one 384-dimension vector.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Rank, coarse to fine.&lt;/strong&gt; The browser scores 426 cluster centroids, downloads only the nearest clusters, and ranks the people in them.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Explain it.&lt;/strong&gt; Each match shows the shared topics and the closest recent papers, so you can see why someone came up.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;Two loading decisions matter for the first visit. The language model is a few hundred megabytes, so it loads only when someone types in the chat box. An uploaded CV skips it entirely and is matched with the embedding model alone. And the vectors load cluster by cluster, so a search touches a few percent of the index, not all of it.&lt;/p&gt;
+&lt;h2 id=&quot;what-it-covers-today&quot;&gt;What it covers today&lt;/h2&gt;
+&lt;p&gt;The build pipeline now indexes &lt;strong&gt;181,568 researchers&lt;/strong&gt; across the &lt;strong&gt;top 200 universities&lt;/strong&gt; in the QS 2026 rankings, and &lt;strong&gt;51,430&lt;/strong&gt; of them have an email that matches their name and their university&amp;#39;s domain. The data refreshes monthly, with new papers and citations pulled from OpenAlex.&lt;/p&gt;
+&lt;p&gt;A fixed test set keeps the matching honest. It holds the 2026 Fields Medal and Nobel Prize winners. After every data refresh, the pipeline builds a profile for each of them from their public record (and from a saved CV where one exists), runs it through the same matcher the site uses, and checks the results. The last run passed 11 of 11. The site shows a &amp;quot;Prize test passing&amp;quot; badge only when that holds.&lt;/p&gt;
+&lt;h2 id=&quot;why-this-is-worth-writing-up&quot;&gt;Why this is worth writing up&lt;/h2&gt;
+&lt;p&gt;The interesting part is not the interface. It is the series of decisions that made a 181,568-person index searchable on a phone without a server:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;splitting the pipeline into one job per university so it fits a free API budget and resumes when it hits the limit,&lt;/li&gt;&lt;li&gt;storing search rows at about 100 bytes a person instead of 500,&lt;/li&gt;&lt;li&gt;storing each vector in 48 bytes instead of 1,536, and scoring it with 48 table lookups,&lt;/li&gt;&lt;li&gt;clustering the index so a search downloads a few hundred kilobytes, not hundreds of megabytes,&lt;/li&gt;&lt;li&gt;and adding concept tags when pure semantic similarity started matching people on generic words.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/academic-matchmaker/storage-and-data-pipeline/&quot;&gt;Part 2&lt;/a&gt; covers the data pipeline and storage. &lt;a href=&quot;https://someshmohapatra.in/writing/academic-matchmaker/semantic-matching-and-tags/&quot;&gt;Part 3&lt;/a&gt; covers matching, the tags and the test set.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Why I modeled a three-star kitchen like a factory (Michelin Kitchen Twin, part 1)</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/michelin-kitchen-twin/kitchen-as-a-factory/"/>
+    <id>https://someshmohapatra.in/writing/michelin-kitchen-twin/kitchen-as-a-factory/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>A tasting-menu kitchen is high-mix, low-volume, just-in-time production with shared machines and perishable stock. That makes it a better test of a digital twin than a toy conveyor belt. Here is the mapping and the bar I set.</summary>
+    <category term="Michelin Kitchen Twin"/>
+    <category term="digital twin"/>
+    <category term="manufacturing"/>
+    <category term="operations"/>
+    <category term="simulation"/>
+    <category term="lean"/>
+    <content type="html">&lt;p&gt;Most digital twin demos show one of two things: an abstract dashboard, or a conveyor belt moving identical boxes. Neither looks like a real operation. Real plants have dozens of product variants, machines shared between lines, operators with different skills, inventory that spoils, and customers with due dates. A demo that skips all of that does not tell a plant manager whether a twin can handle their problem.&lt;/p&gt;
+&lt;p&gt;A fine-dining kitchen has every one of those problems, in a space you can see end to end in one camera shot.&lt;/p&gt;
+&lt;h2 id=&quot;the-kitchen-is-already-a-factory&quot;&gt;The kitchen is already a factory&lt;/h2&gt;
+&lt;p&gt;Here is how the concepts line up, and how the twin&amp;#39;s data is organized:&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Kitchen&lt;/th&gt;&lt;th&gt;Factory&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;The restaurant and its kitchen&lt;/td&gt;&lt;td&gt;Plant&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Tasting menu, course choices, supplements&lt;/td&gt;&lt;td&gt;Product catalog, configure-to-order options&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Covers booked tonight&lt;/td&gt;&lt;td&gt;Master production schedule (the build plan)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Ingredients&lt;/td&gt;&lt;td&gt;Purchased raw materials&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Mise en place: stocks, sauces, doughs, portioned fish&lt;/td&gt;&lt;td&gt;Sub-assemblies and work in process&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Plated courses&lt;/td&gt;&lt;td&gt;Finished goods&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Recipe quantities&lt;/td&gt;&lt;td&gt;Bill of materials&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Method, station, appliance, timings&lt;/td&gt;&lt;td&gt;Routing: operations with setup and run times&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Stations: fish, meat, garde manger, pastry&lt;/td&gt;&lt;td&gt;Work centers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Ranges, combi ovens, hearth&lt;/td&gt;&lt;td&gt;Machines with parallel capacity&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;The brigade&lt;/td&gt;&lt;td&gt;Labor pool by skill, with shifts&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;The pass&lt;/td&gt;&lt;td&gt;Final inspection&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;None of this is a metaphor stretched to fit. Expo firing a course early so every plate on a table finishes together is offset scheduling. A cook who can cover fish and garnish is a skills matrix. A dish that runs out and gets swapped is an engineering change under pressure. Once you see it, a dinner service reads like a production line with an unusually demanding customer.&lt;/p&gt;
+&lt;h2 id=&quot;why-it-makes-a-better-test&quot;&gt;Why it makes a better test&lt;/h2&gt;
+&lt;p&gt;A twin earns trust by getting the hard cases right. A kitchen at full service is hard in exactly the ways that matter:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;High mix.&lt;/strong&gt; Eleven courses with choices and supplements, 15 plated dishes, 38 sub-assemblies.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Shared, constrained machines.&lt;/strong&gt; A few combi ovens and one hearth serve every station.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Skilled labor.&lt;/strong&gt; Who can cook what is as much a constraint as the equipment.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Perishable inventory.&lt;/strong&gt; Prep made too early is waste. Prep made too late is a stockout at 8:30.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Hard due dates.&lt;/strong&gt; Guests notice a slow course within minutes.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;If the model can show why the fish station backs up at 120 covers, the same model can show why a weld cell backs up on Tuesdays.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/michelin-kitchen-twin/dashboard-rush.jpg&quot; alt=&quot;The operations dashboard during a rush seating of 120 covers&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;A rush seating of 120 covers at 19:53. Ticket times are climbing, and the dashboard names the constraint: the fish chef de partie is 96% busy with 10 tasks queued.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;the-bar-i-set&quot;&gt;The bar I set&lt;/h2&gt;
+&lt;p&gt;I wrote the product brief before any code, as a press release and FAQ, so every decision could be checked against it. Four rules came out of it:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;&lt;strong&gt;The data is sourced.&lt;/strong&gt; Every record cites a publication or is marked &lt;code&gt;est&lt;/code&gt;. The kitchen&amp;#39;s size, its equipment schedule, the courses and several full recipes come from published sources. Brigade size, timings and layout positions are estimates, and the data says so.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;The plan is computed, not scripted.&lt;/strong&gt; Covers go through the bills of materials into plates, sub-assemblies and grams of each ingredient. Routings turn into minutes of work for each cook and machine.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;The service is simulated, not animated.&lt;/strong&gt; What you see in 3D is the simulation&amp;#39;s state, frame by frame.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;It is deterministic.&lt;/strong&gt; The same covers, seating and seed replay the same night to the second. That is what lets a share link open the exact moment you were watching.&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;The other bar was practical. It had to open from a link, on a laptop or a phone, with no install and no login. So it runs entirely in the browser on GitHub Pages, and the 3D scene is generated from the data at load time, with no downloaded models or textures.&lt;/p&gt;
+&lt;h2 id=&quot;what-you-can-do-with-it&quot;&gt;What you can do with it&lt;/h2&gt;
+&lt;p&gt;Pick the covers and a seating pattern, then run the night. Double the covers. Take a cook off the line. Fail a combi oven at 8:15. Run the lobster 40% short. Then watch the bottleneck move, the ticket times climb and the dashboard explain why. Change something and run the same night again from the same seed, so the comparison is fair.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/recipes-as-bills-of-materials/&quot;&gt;Part 2&lt;/a&gt; goes into the data model and the MRP explosion that turns covers into a production plan.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>An open, cited history of digital twins, from andon lights to Physical AI</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/digital-twin-history/"/>
+    <id>https://someshmohapatra.in/writing/digital-twin-history/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>Why I built an open dataset and interactive site tracing digital twins from 1880s time clocks and Apollo&#39;s simulators to live factory twins and AI world models, with 53 cited milestones, a walkable 3D factory in six eras, and research trends from OpenAlex.</summary>
+    <category term="digital twin"/>
+    <category term="history"/>
+    <category term="physical ai"/>
+    <category term="open data"/>
+    <category term="three.js"/>
+    <category term="openalex"/>
+    <content type="html">&lt;p&gt;&amp;quot;Digital twin&amp;quot; sounds like a 2010s idea. The name is, and the idea is not. People have been building live stand-ins for physical things for well over a century: a time clock that records who is on the floor, a loom that stops itself when a thread breaks, a flight simulator that behaves like an aircraft, and the ground simulators that helped bring Apollo 13 home. Each of them answers the same question a twin answers today: what is happening out there, and what happens if we change something?&lt;/p&gt;
+&lt;p&gt;I wanted that history in one place, with a public source for every claim, so it could be reused in courses, talks and reports. So I built &lt;strong&gt;&lt;a href=&quot;https://pikulsomesh.github.io/digital-twin-history/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Digital Twin History&lt;/a&gt;&lt;/strong&gt;, an open dataset and an interactive site built from it. Everything is MIT licensed.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://someshmohapatra.in/assets/img/writing/essays/digital-twin-history.jpg&quot; alt=&quot;The Digital Twin History home page&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;The growth spiral: every milestone placed by year, with the spiral widening as more domains take up the idea.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;seven-eras&quot;&gt;Seven eras&lt;/h2&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Era&lt;/th&gt;&lt;th&gt;Years&lt;/th&gt;&lt;th&gt;In one line&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Mirrors before the name&lt;/td&gt;&lt;td&gt;1880–1970&lt;/td&gt;&lt;td&gt;Time clocks, andon lights, simulators, the Kalman filter, Apollo 13&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;The digital model&lt;/td&gt;&lt;td&gt;1971–1989&lt;/td&gt;&lt;td&gt;CAD, finite elements, PLCs, SCADA, computer-integrated manufacturing&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Connected models&lt;/td&gt;&lt;td&gt;1990–2001&lt;/td&gt;&lt;td&gt;&lt;em&gt;Mirror Worlds&lt;/em&gt;, MES, OPC, ISA-95, virtual cities&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;The idea gets a name&lt;/td&gt;&lt;td&gt;2002–2013&lt;/td&gt;&lt;td&gt;The 2002 product-lifecycle model, NASA&amp;#39;s &amp;quot;digital twin&amp;quot; in 2010, Industrie 4.0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Industrial scale-up&lt;/td&gt;&lt;td&gt;2014–2019&lt;/td&gt;&lt;td&gt;Fleet twins, city twins, organ twins, sim-to-real robotics&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;Definitions and standards&lt;/td&gt;&lt;td&gt;2020–2023&lt;/td&gt;&lt;td&gt;ISO 23247, ISO/IEC 30173, the National Academies report, Destination Earth&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;AI-native twins and Physical AI&lt;/td&gt;&lt;td&gt;2024–now&lt;/td&gt;&lt;td&gt;Learned forecasting in operations, fast reality capture, twins as training grounds, world models, agents&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;The pattern across the eras is that the 3D view was never the point. Each era added a new answer to &amp;quot;what can we know about the machine?&amp;quot;: from &amp;quot;someone has to walk over and look&amp;quot;, to &amp;quot;which alarm fired&amp;quot;, to &amp;quot;which machine is drifting toward failure&amp;quot;, to &amp;quot;what happens if we change the layout&amp;quot;. The current era adds &amp;quot;which policy is most robust before we try it&amp;quot;. That is where Physical AI comes in: twins have become the place where machines learn.&lt;/p&gt;
+&lt;h2 id=&quot;built-as-data-first&quot;&gt;Built as data first&lt;/h2&gt;
+&lt;p&gt;The site is the second thing in the repository. The first is a structured dataset: milestones, eras, domains, definitions and the narrative for the 3D factory, all as JSON and Markdown. Every milestone has a year, an era, one or more domains, a kind of change (precursor, enabling technology, concept, standard, deployment or research), a significance level and at least one source.&lt;/p&gt;
+&lt;p&gt;A validator runs before every build and fails it if any milestone is malformed or uncited:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// Excerpt from scripts/validate-content.mjs
+if (!Array.isArray(m.sources) || !m.sources.length) errors.push(`${where}: needs at least one source`);
+else m.sources.forEach((s) =&amp;gt; {
+  if (!s.title) errors.push(`${where}: source missing title`);
+  try { if (new URL(s.url).protocol !== &amp;#39;https:&amp;#39;) throw 0; } catch { errors.push(`${where}: source url must be https: ${s.url}`); }
+});
+if (era &amp;amp;&amp;amp; (m.year &amp;lt; era.range[0] || m.year &amp;gt; era.range[1])) errors.push(`${where}: year ${m.year} is outside era ${m.era}`);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That one rule, no source and no merge, is what makes the dataset safe to reuse. It also makes contributing simple: edit &lt;code&gt;content/timeline.json&lt;/code&gt;, cite a public source, and run the validator.&lt;/p&gt;
+&lt;h2 id=&quot;three-ways-in&quot;&gt;Three ways in&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;The growth spiral.&lt;/strong&gt; Every milestone is a sphere placed by year. The spiral widens as more domains take up the idea, so you can see the field spread from manufacturing and aerospace to energy, cities, health and Earth systems. Time is compressed before 1960 and stretched after 2000, where most of the activity is:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// Time is compressed before 1960 and stretched after 2000, where most activity is.
+export function yearToY(year) {
+  if (year &amp;lt; 1960) return (year - 1880) * 0.06;
+  if (year &amp;lt; 2000) return 4.8 + (year - 1960) * 0.2;
+  return 12.8 + (year - 2000) * 0.7;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;The factory through time.&lt;/strong&gt; A walkable 3D production line shown in six eras: lights on the floor, the control room, the connected plant, sensors and dashboards, the live digital twin, and Physical AI. Click any machine to see what people could know about it in that era. The machine values are simulated and labeled as illustrative.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Growth in research.&lt;/strong&gt; Yearly counts of papers with &amp;quot;digital twin&amp;quot; in the title come from OpenAlex at build time. The fetch never fails the build. If the API is unreachable, the page says so instead:&lt;/p&gt;
+&lt;pre data-lang=&quot;js&quot;&gt;&lt;code&gt;// Simplified from scripts/fetch-publication-counts.mjs
+const url = &amp;#39;https://api.openalex.org/works?filter=title.search:%22digital%20twin%22&amp;amp;group_by=publication_year&amp;amp;per_page=200&amp;#39;;
+try {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const counts = (await res.json()).group_by.map((g) =&amp;gt; ({ year: Number(g.key), count: g.count }));
+  // ...written to public/data/publications.json
+} catch (err) {
+  console.warn(`Skipping publication counts: ${err.message}`);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A weekly run refreshes those counts, so the chart stays current without anyone touching it.&lt;/p&gt;
+&lt;h2 id=&quot;principles&quot;&gt;Principles&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Traceable.&lt;/strong&gt; Every claim links to a public source.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Vendor-neutral.&lt;/strong&gt; The history is told through ideas, practices, standards and public programs. Organizations are named only where history requires it, never as recommendations.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Honest about data.&lt;/strong&gt; Charts built on the curated milestones say so, and simulated values in the 3D factory are labeled.&lt;/li&gt;&lt;/ul&gt;
+&lt;h2 id=&quot;where-this-connects-to-what-i-build&quot;&gt;Where this connects to what I build&lt;/h2&gt;
+&lt;p&gt;The frontier section of the site argues that the next steps for twins are not better 3D. They are faster reality capture, hybrid physics and AI, world models, agentic interfaces, and trust: verification, validation and uncertainty built in from the start. My recent builds are experiments on exactly those lines. The &lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/&quot;&gt;Food Bank Spatial Twin&lt;/a&gt; tests fast reality capture with world models. The &lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/&quot;&gt;Michelin Kitchen Twin&lt;/a&gt; tests whether a twin can explain a bottleneck rather than just show one.&lt;/p&gt;
+&lt;p&gt;Corrections and new milestones are welcome on &lt;a href=&quot;https://github.com/pikulsomesh/digital-twin-history&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Label what is real, the most underrated feature of a digital twin</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/label-what-is-real/"/>
+    <id>https://someshmohapatra.in/writing/label-what-is-real/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>A digital twin mixes measured, designed, published, estimated and simulated data. Saying which is which, on every record, is what makes the real parts trustworthy. A practical pattern from three builds.</summary>
+    <category term="digital twin"/>
+    <category term="data provenance"/>
+    <category term="trust"/>
+    <category term="data quality"/>
+    <category term="simulation"/>
+    <content type="html">&lt;p&gt;Every digital twin I have seen is a blend. Some of it was measured. Some was drawn by an engineer. Some came from a spec sheet, some was estimated by someone who knows the process, and some is simulated because the sensor does not exist yet. That blend is normal and fine. The problem is when the twin does not say which part is which.&lt;/p&gt;
+&lt;p&gt;A twin that hides its provenance fails in a predictable way. Someone notices one number is made up, and from then on nobody trusts any of the numbers, including the ones that were measured carefully. The twin goes from decision tool to demo in a single meeting.&lt;/p&gt;
+&lt;h2 id=&quot;five-labels-are-enough&quot;&gt;Five labels are enough&lt;/h2&gt;
+&lt;p&gt;Across my recent builds I have used the same five labels:&lt;/p&gt;
+&lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Label&lt;/th&gt;&lt;th&gt;Meaning&lt;/th&gt;&lt;th&gt;Example&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;strong&gt;Captured&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Measured from the real thing&lt;/td&gt;&lt;td&gt;Gaussian splats trained from video of a racking aisle&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;strong&gt;Designed&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Drawn or modeled for the twin&lt;/td&gt;&lt;td&gt;A Blender model of the parts of the building no camera saw&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;strong&gt;Published&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Taken from a public, citable source&lt;/td&gt;&lt;td&gt;A kitchen&amp;#39;s floor area and equipment schedule, from published sources&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;strong&gt;Estimated&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;A judgment call by someone who knows the process&lt;/td&gt;&lt;td&gt;Operation times not stated in any recipe&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;first&quot;&gt;&lt;strong&gt;Simulated&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Generated by a model, because no sensor exists yet&lt;/td&gt;&lt;td&gt;Freezer temperatures and forklift positions&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;Five is a small enough set that people remember it, and it covers every case I have met.&lt;/p&gt;
+&lt;h2 id=&quot;put-the-label-on-the-record-not-in-a-footnote&quot;&gt;Put the label on the record, not in a footnote&lt;/h2&gt;
+&lt;p&gt;A provenance note on a slide gets lost the first time someone screenshots a chart. The label has to travel with the data.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/&quot;&gt;Michelin Kitchen Twin&lt;/a&gt;, every record in the master data has a &lt;code&gt;src&lt;/code&gt; list pointing at a bibliography, or &lt;code&gt;est: true&lt;/code&gt;. A validator fails the build if a reference is broken. In the &lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/&quot;&gt;Food Bank Spatial Twin&lt;/a&gt;, every API payload carries &lt;code&gt;simulated: true&lt;/code&gt;, so no dashboard, script or person downstream can mistake the feed for a real sensor. In the &lt;a href=&quot;https://someshmohapatra.in/writing/academic-matchmaker/&quot;&gt;Academic Matchmaker&lt;/a&gt;, records missing a verified email or an institutional page carry flags like &lt;code&gt;missing_email&lt;/code&gt; and are sorted after fully verified ones.&lt;/p&gt;
+&lt;p&gt;The same idea shows up in the UI. In the food bank twin&amp;#39;s architecture diagrams, solid boxes are deployed and dashed boxes are designed and priced but not built. The browser badge says &amp;quot;Simulated feed&amp;quot; until the live API answers, then &amp;quot;Live from AWS&amp;quot;. The labels cost almost nothing to add, and they answer the first question every serious reviewer asks.&lt;/p&gt;
+&lt;h2 id=&quot;labels-make-the-real-parts-more-valuable&quot;&gt;Labels make the real parts more valuable&lt;/h2&gt;
+&lt;p&gt;The counterintuitive effect is that labeling the estimated parts makes the measured parts more credible. When a reader can see that the freezer temperatures are simulated, they can trust that the splat capture of the aisle really came from the video. When the kitchen&amp;#39;s recipe quantities for one dish are marked as published and tested against the source, the estimated timings next to them read as honest estimates rather than hidden guesses.&lt;/p&gt;
+&lt;p&gt;Labels also tell you where to spend money next. In the food bank twin, the labels made the next step obvious. The geometry is good enough to start. The simulated telemetry is the gap, and real sensors are priced at about $2,700 once and $12 a month. Without labels that conversation turns into a debate about whether the whole twin is real. With them, it is a line item.&lt;/p&gt;
+&lt;h2 id=&quot;a-checklist-i-now-use-on-day-one&quot;&gt;A checklist I now use on day one&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;Pick the labels before collecting any data, and put them in the schema.&lt;/li&gt;&lt;li&gt;Make the build fail on a record with no source and no estimate flag.&lt;/li&gt;&lt;li&gt;Carry a &lt;code&gt;simulated&lt;/code&gt; flag through every API and into every chart legend.&lt;/li&gt;&lt;li&gt;Draw built and designed parts differently in every diagram.&lt;/li&gt;&lt;li&gt;Write one page that lists what is real, what is not, and what would make it real.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;None of this is sophisticated. It is the discipline a good plant already applies to its own data, applied to the twin. And it is the difference between a twin people use and one they politely admire.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Write the contract first, what AI agents taught me about building fast</title>
+    <link rel="alternate" type="text/html" href="https://someshmohapatra.in/writing/write-the-contract-first/"/>
+    <id>https://someshmohapatra.in/writing/write-the-contract-first/</id>
+    <published>2026-10-28T00:00:00Z</published>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <summary>When several AI coding agents build one system in parallel, the speed comes from clear ownership and a written contract between the parts, not from the agents. The same lesson that makes human teams fast, learned again across three builds.</summary>
+    <category term="ai agents"/>
+    <category term="claude code"/>
+    <category term="software architecture"/>
+    <category term="interfaces"/>
+    <category term="parallel development"/>
+    <content type="html">&lt;p&gt;Over the last few weeks I have built several systems with AI coding agents working in parallel: a &lt;a href=&quot;https://someshmohapatra.in/writing/michelin-kitchen-twin/&quot;&gt;kitchen digital twin&lt;/a&gt;, a &lt;a href=&quot;https://someshmohapatra.in/writing/foodbank-spatial-twin/&quot;&gt;food bank twin built from a news video&lt;/a&gt;, and a &lt;a href=&quot;https://someshmohapatra.in/writing/academic-matchmaker/&quot;&gt;research matchmaker&lt;/a&gt; that indexes 181,568 researchers. Each one was built by several agent threads at once, each owning one part of the repository.&lt;/p&gt;
+&lt;p&gt;The thing that decided how fast each build went was not the model, the prompt or the tooling. It was whether the parts had a written contract between them before anyone wrote code.&lt;/p&gt;
+&lt;h2 id=&quot;what-goes-wrong-without-one&quot;&gt;What goes wrong without one&lt;/h2&gt;
+&lt;p&gt;Give several capable agents one goal and one repository, and they behave like several capable engineers in the same situation. Each makes reasonable local decisions. The 3D thread invents ids for the machines. The data thread invents different ones. The simulation thread reads a file shape that the data thread changes an hour later. Every part works on its own, and the system does not. The integration work at the end eats the time the parallelism saved.&lt;/p&gt;
+&lt;h2 id=&quot;what-a-contract-looks-like-in-practice&quot;&gt;What a contract looks like in practice&lt;/h2&gt;
+&lt;p&gt;The contract does not need to be elaborate. In each build it was one or two things that every part agreed to read and write:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Kitchen twin:&lt;/strong&gt; a set of ids (&lt;code&gt;EQ-*&lt;/code&gt; for equipment, &lt;code&gt;WC-*&lt;/code&gt; for work centers, &lt;code&gt;RM-*&lt;/code&gt; for raw materials, &lt;code&gt;FG-*&lt;/code&gt; for finished goods) and an ordered event log between the simulation and every view of it. The 3D scene places a model at each &lt;code&gt;EQ-*&lt;/code&gt; id and exports a USD prim with the same name. The dashboard reports utilization by the same ids.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Food bank twin:&lt;/strong&gt; OpenUSD in metres, Y up, with the floor at zero, plus a small JSON API in the same frame. The capture pipeline, the Blender model, the AWS backend and three different renderers never needed to know about each other.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Matchmaker:&lt;/strong&gt; a published data format between the pipeline and the site, with versioned file formats (&lt;code&gt;compact-v1&lt;/code&gt;, &lt;code&gt;tags-v1&lt;/code&gt;) so the site can read old and new builds while the pipeline changes underneath it.&lt;/li&gt;&lt;/ul&gt;
+&lt;h2 id=&quot;ownership-is-the-other-half&quot;&gt;Ownership is the other half&lt;/h2&gt;
+&lt;p&gt;Each thread owned a directory, and nobody edited anyone else&amp;#39;s. When the simulation thread needed ingredient prices, it asked the data thread in a message, and the data thread added them. That sounds bureaucratic for software written in an afternoon. In practice it removed most merge conflicts and kept every change reviewable by the one thread that understood that part.&lt;/p&gt;
+&lt;p&gt;The kitchen twin&amp;#39;s first version, fifteen pull requests across five threads, came together in a day because of that structure. Each pull request was built and tested by CI before merge, so the system was integrated continuously instead of at the end.&lt;/p&gt;
+&lt;h2 id=&quot;what-still-needs-a-person&quot;&gt;What still needs a person&lt;/h2&gt;
+&lt;p&gt;Agents are very good at volume: sourcing and structuring data, writing an engine with tests, generating a 3D scene, keeping docs in step with code. The work that stayed with me was the work that does not parallelize:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Setting the bar.&lt;/strong&gt; &amp;quot;Realistic&amp;quot;, &amp;quot;private&amp;quot; and &amp;quot;no servers&amp;quot; had to be defined up front, in writing, before any thread started.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Choosing what is honest.&lt;/strong&gt; Which numbers are labeled as estimates, what the demo is allowed to claim, and what the paper says about what failed.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Approving merges.&lt;/strong&gt; CI catches breakage. Judgment about whether a change moves toward the goal is still a human call.&lt;/li&gt;&lt;/ul&gt;
+&lt;h2 id=&quot;the-takeaway&quot;&gt;The takeaway&lt;/h2&gt;
+&lt;p&gt;None of this is new. Interfaces before implementation, clear ownership and continuous integration are how good engineering teams have always moved fast. What is new is how much faster the cycle runs when the implementers are agents. A missing contract used to cost a week of integration. Now it can cost most of a one-day build. So write the contract first.&lt;/p&gt;</content>
+  </entry>
+</feed>
