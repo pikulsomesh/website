@@ -69,4 +69,4 @@ The build is written up as a paper: *From Video to Digital Twin: Accelerating Sp
 - Label provenance from day one. It is what lets people trust the parts that are real.
 - Make every paid step resumable and capped, and make cloud GPUs unable to outlive their job.
 
-If you want the same approach applied to a very different operation, the [Michelin Kitchen Twin](/writing/michelin-kitchen-twin/) series models a three-star kitchen the way a plant is modeled.
+If you want the same approach applied to a very different operation, the [Michelin Kitchen Twin](/writing/michelin-kitchen-twin/) series models The French Laundry's three-star kitchen the way a plant is modeled.

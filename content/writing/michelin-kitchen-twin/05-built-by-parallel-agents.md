@@ -17,7 +17,7 @@ This part is about what made that work, because the lesson carries well beyond k
 | Thread | Owned | Pull requests |
 |---|---|---|
 | Product | The press-release FAQ and the product requirements: who the twin is for, the two-minute demo, what "realistic" means | 2 |
-| Research and data | `data/`: the restaurant chosen for having the most published detail, 14 cited sources, menu, recipes as BOMs and routings, equipment, brigade, layout, the MRP explosion, the site shell and final integration | 6 |
+| Research and data | `data/`: The French Laundry, chosen for having the most published detail, 14 cited sources, menu, recipes as BOMs and routings, equipment, brigade, layout, the MRP explosion, the site shell and final integration | 6 |
 | Simulation | `src/sim` and `src/dashboard`: the seeded event engine, guest line, what-ifs, capacity sweep and the operations dashboard | 4 |
 | 3D kitchen | `src/scene`: procedural materials, the vaulted kitchen and garden, cooks on a navigation grid, quality tiers, OpenUSD export | 1 |
 | Studio | `src/studio`: dining room, menus, seasons, and light and mood, each re-running the whole service | 1 |
