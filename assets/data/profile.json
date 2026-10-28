@@ -501,7 +501,7 @@
       "state": "live",
       "updated": "2026-10-22",
       "problem": "Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone.",
-      "text": "A 3D twin of a three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers.",
+      "text": "A 3D twin of The French Laundry's three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers.",
       "stack": [
         "three.js",
         "Discrete-event simulation",

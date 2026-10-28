@@ -1,6 +1,6 @@
 ---
 title: Why I modeled a three-star kitchen like a factory
-description: A tasting-menu kitchen is high-mix, low-volume, just-in-time production with shared machines and perishable stock. That makes it a better test of a digital twin than a toy conveyor belt. Here is the mapping and the bar I set.
+description: Why I built a digital twin of The French Laundry. A tasting-menu kitchen is high-mix, low-volume, just-in-time production with shared machines and perishable stock. That makes it a better test of a digital twin than a toy conveyor belt. Here is the mapping and the bar I set.
 status: published
 date: 2026-10-28
 tags: [digital twin, manufacturing, operations, simulation, lean]
@@ -11,7 +11,7 @@ image_alt: The 3D kitchen twin mid-service
 
 Most digital twin demos show one of two things: an abstract dashboard, or a conveyor belt moving identical boxes. Neither looks like a real operation. Real plants have dozens of product variants, machines shared between lines, operators with different skills, inventory that spoils, and customers with due dates. A demo that skips all of that does not tell a plant manager whether a twin can handle their problem.
 
-A fine-dining kitchen has every one of those problems, in a space you can see end to end in one camera shot.
+A fine-dining kitchen has every one of those problems, in a space you can see end to end in one camera shot. The twin models The French Laundry, the three-star kitchen in Yountville, California.
 
 ## The kitchen is already a factory
 
@@ -19,7 +19,7 @@ Here is how the concepts line up, and how the twin's data is organized:
 
 | Kitchen | Factory |
 |---|---|
-| The restaurant and its kitchen | Plant |
+| The French Laundry and its kitchen | Plant |
 | Tasting menu, course choices, supplements | Product catalog, configure-to-order options |
 | Covers booked tonight | Master production schedule (the build plan) |
 | Ingredients | Purchased raw materials |

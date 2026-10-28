@@ -232,7 +232,7 @@ Google Scholar (Oct 2026): 710 citations, h-index 12.
 ## Recent builds
 
 - Food Bank Spatial Twin (Spatial AI; Live): Digital twins usually start from CAD drawings and laser scans, which puts them out of reach for most non-profits. Is a public video tour enough to start one? Frames of a public news tour of a food bank become Gaussian-splat captures through a world model, a scripted Blender model fills in the parts the video never showed, and OpenUSD ties both to operations data served from a serverless AWS backend. The twin runs in the browser and in NVIDIA Omniverse on EC2 GPUs. Built in seven days for about $1.54 of compute, with a reference architecture mapped to AWS, Azure and Google Cloud and real sensors priced at about $12 a month to run. Stack: World model API, 3D Gaussian splatting, Blender, OpenUSD, AWS SAM + Lambda, Omniverse on EC2, three.js. https://pikulsomesh.github.io/foodbank-spatial-twin/
-- Michelin Kitchen Twin (Digital twin; Live): Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone. A 3D twin of a three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers. Stack: three.js, Discrete-event simulation, MRP and BOMs, OpenUSD export, Coding agents. https://pikulsomesh.github.io/michelin-kitchen-twin/
+- Michelin Kitchen Twin (Digital twin; Live): Factory planning ideas like MRP, routings and OEE are hard to show with plant data nobody can share. A famous kitchen makes them visible to anyone. A 3D twin of The French Laundry's three-star kitchen running a full tasting-menu service. Covers are the build plan, 53 recipes are bills of materials and routings, and a discrete-event simulation plays out tickets, stations and bottlenecks minute by minute. Parallel coding agents built the product, data, simulation and 3D layers. Stack: three.js, Discrete-event simulation, MRP and BOMs, OpenUSD export, Coding agents. https://pikulsomesh.github.io/michelin-kitchen-twin/
 - Baby Senses Lab (World models; Live · paper on arXiv): AI world models train on adult-quality data from day one. Infants start with blurry, muffled input and still learn fast. What does that staging buy a model? One world model per sense (vision, hearing, touch, body position), each fed through an age-tuned filter and grown as it trains, then fused. The public site lets parents see and hear like a baby of any age; researchers get the findings, papers and code. Stack: PyTorch, World models, Network growth, Multisensory fusion. https://pikulsomesh.github.io/developmental-world-models/
 - LabTrends (On-device AI; v1.1 released): A family's lab results sit in PDFs and paper scans from different clinics, and seeing a trend usually means handing health data to someone's cloud. An Android app that reads reports with on-device OCR, parses biomarkers with rules backed by a small local language model, and has a person confirm every value before it is saved. The release build has no internet permission at all. Stack: React Native + Expo, Local LLM (llama.rn), On-device OCR, Encrypted SQLite backups. https://github.com/pikulsomesh/LabTrends
 - Academic Matchmaker (In-browser AI; In progress): Prospective PhD students choose advisors from rankings and cold emails rather than research fit. Drop in a CV or paper and a small language model running in the browser on WebGPU extracts research interests; embeddings then rank faculty across the top 100 universities. Nothing leaves the device. A scheduled pipeline is rebuilding the faculty index from open scholarly data. Stack: Transformers.js, WebGPU, Small LLM (ONNX), Embeddings search, React + Vite. https://github.com/pikulsomesh/academic-matchmaker
@@ -696,15 +696,17 @@ Part 1 covers the problem and the architecture. Part 2 is the data pipeline and 
 
 https://someshmohapatra.in/writing/michelin-kitchen-twin/ · 2026-10-28
 
-A browser-based digital twin of a three-Michelin-star kitchen running a full dinner service, modeled the way a factory is. Recipes are bills of materials, covers are the build plan, and a deterministic simulation drives a photoreal 3D kitchen and an operations dashboard.
+A browser-based digital twin of The French Laundry, a three-Michelin-star kitchen, running a full dinner service, modeled the way a factory is. Recipes are bills of materials, covers are the build plan, and a deterministic simulation drives a photoreal 3D kitchen and an operations dashboard.
 
 I have always been fascinated by how great kitchens work. On a busy night, a tasting-menu restaurant makes hundreds of plates, each one to order, timed to the minute, and inspected before it leaves. That is high-mix, low-volume, just-in-time production with shared machines, skilled labor, perishable inventory and a customer who will not wait. It is the hardest case most factories face, and kitchens solve it every night without software.
 
-So I built a twin of one, using the same vocabulary a plant would. The restaurant is the one with the most published detail about its kitchen, menu and recipes. Every record in the data cites a source or is marked as an estimate. Pick the number of covers, press play, and a deterministic simulation runs the night. Tickets fire, cooks move, ovens fill, stock drains and the bottleneck moves. The 3D kitchen, the dashboard and the Studio are all views of that one simulation.
+So I built a twin of one, using the same vocabulary a plant would. The restaurant is The French Laundry in Yountville, California, chosen because it has the most published detail about its kitchen, menu and recipes of any three-star restaurant. Every record in the data cites a source or is marked as an estimate. Pick the number of covers, press play, and a deterministic simulation runs the night. Tickets fire, cooks move, ovens fill, stock drains and the bottleneck moves. The 3D kitchen, the dashboard and the Studio are all views of that one simulation.
 
  The five parts
 
 Part 1 is why a kitchen is a good test of a digital twin. Part 2 is the data model: recipes as bills of materials and routings, and the MRP explosion. Part 3 is the discrete-event simulation, KPIs and the optimizer. Part 4 is the photoreal 3D kitchen and the Studio, in about half a megabyte. Part 5 is how five parallel AI agent threads built the first version in a day.
+
+This is an independent, non-commercial project built from publicly available information. It is not affiliated with or endorsed by The French Laundry, Thomas Keller Restaurant Group or the Michelin Guide.
 
 ### Food Bank Spatial Twin, part 1: Why I built a food bank digital twin from a news video
 
@@ -970,7 +972,7 @@ The build is written up as a paper: From Video to Digital Twin: Accelerating Spa
 - Label provenance from day one. It is what lets people trust the parts that are real.
 - Make every paid step resumable and capped, and make cloud GPUs unable to outlive their job.
 
-If you want the same approach applied to a very different operation, the Michelin Kitchen Twin series models a three-star kitchen the way a plant is modeled.
+If you want the same approach applied to a very different operation, the Michelin Kitchen Twin series models The French Laundry's three-star kitchen the way a plant is modeled.
 
 ### Academic Matchmaker, part 1: A private research matchmaker that runs entirely in the browser
 
@@ -1151,11 +1153,11 @@ The code is open, and the live site is the fastest way to see whether it finds t
 
 https://someshmohapatra.in/writing/michelin-kitchen-twin/kitchen-as-a-factory/ · 2026-10-28
 
-A tasting-menu kitchen is high-mix, low-volume, just-in-time production with shared machines and perishable stock. That makes it a better test of a digital twin than a toy conveyor belt. Here is the mapping and the bar I set.
+Why I built a digital twin of The French Laundry. A tasting-menu kitchen is high-mix, low-volume, just-in-time production with shared machines and perishable stock. That makes it a better test of a digital twin than a toy conveyor belt. Here is the mapping and the bar I set.
 
 Most digital twin demos show one of two things: an abstract dashboard, or a conveyor belt moving identical boxes. Neither looks like a real operation. Real plants have dozens of product variants, machines shared between lines, operators with different skills, inventory that spoils, and customers with due dates. A demo that skips all of that does not tell a plant manager whether a twin can handle their problem.
 
-A fine-dining kitchen has every one of those problems, in a space you can see end to end in one camera shot.
+A fine-dining kitchen has every one of those problems, in a space you can see end to end in one camera shot. The twin models The French Laundry, the three-star kitchen in Yountville, California.
 
  The kitchen is already a factory
 
@@ -1163,7 +1165,7 @@ Here is how the concepts line up, and how the twin's data is organized:
 
  Kitchen  Factory 
 ------
- The restaurant and its kitchen  Plant 
+ The French Laundry and its kitchen  Plant 
  Tasting menu, course choices, supplements  Product catalog, configure-to-order options 
  Covers booked tonight  Master production schedule (the build plan) 
  Ingredients  Purchased raw materials 
@@ -1389,7 +1391,7 @@ This part is about what made that work, because the lesson carries well beyond k
  Thread  Owned  Pull requests 
 ---------
  Product  The press-release FAQ and the product requirements: who the twin is for, the two-minute demo, what "realistic" means  2 
- Research and data  data/: the restaurant chosen for having the most published detail, 14 cited sources, menu, recipes as BOMs and routings, equipment, brigade, layout, the MRP explosion, the site shell and final integration  6 
+ Research and data  data/: The French Laundry, chosen for having the most published detail, 14 cited sources, menu, recipes as BOMs and routings, equipment, brigade, layout, the MRP explosion, the site shell and final integration  6 
  Simulation  src/sim and src/dashboard: the seeded event engine, guest line, what-ifs, capacity sweep and the operations dashboard  4 
  3D kitchen  src/scene: procedural materials, the vaulted kitchen and garden, cooks on a navigation grid, quality tiers, OpenUSD export  1 
  Studio  src/studio: dining room, menus, seasons, and light and mood, each re-running the whole service  1 
