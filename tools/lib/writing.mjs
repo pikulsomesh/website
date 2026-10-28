@@ -99,6 +99,7 @@ function shell({ site, page, title, description, image, imageAlt, type, publishe
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${r}assets/css/main.css">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for language models">
+  <link rel="alternate" type="application/atom+xml" href="/writing/feed.xml" title="Build notes by Somesh Mohapatra">
   <script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>
 </head>
 <body data-page="article" data-root="${r}">

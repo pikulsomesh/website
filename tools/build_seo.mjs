@@ -1,6 +1,7 @@
 // Regenerates the search and answer-engine files from assets/data/*.json:
 //   - JSON-LD and crawler-readable HTML between <!-- build:NAME --> markers in the pages
 //   - sitemap.xml, llms.txt and llms-full.txt
+//   - writing/feed.xml, the Atom feed of long-form writing
 // No dependencies. Run `node tools/build_seo.mjs` after editing the data files;
 // `--check` exits non-zero when the committed files are out of date.
 import fs from 'node:fs';
@@ -8,6 +9,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { loadWriting, writingPages, seriesCardsHTML, essaysHTML, writingText, GENERATED, SERIES_NAME } from './lib/writing.mjs';
+import { atomFeed, FEED_PATH } from './lib/feed.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://someshmohapatra.in/';
@@ -235,7 +237,7 @@ This is his personal site. Every page is static HTML; the content also lives in 
 - [Research](${SITE}research/): ${pubs.papers.length} peer-reviewed papers, preprints, talks and a patent application
 ${longform.series.filter((s) => s.published).map((s) => `- [${s.title}](${SITE}${s.path}): ${SERIES_NAME}, a build series in ${s.planned} parts. ${s.description}`).join('\n')}${longform.pages.some((p) => p.kind === 'series') ? '\n' : ''}- [Writing](${SITE}writing/): long-form build notes and essays, plus ${posts.length} essays published on LinkedIn on models and inference, agents and software, physical AI and AI at work, most in the Lab Series, The Human Loop and Digital Iron series
 - [Resume](${SITE}resume/): experience, education and certifications
-
+${buildNotesTxt()}
 ## Data
 
 - [Profile](${SITE}assets/data/profile.json): roles, outcomes, recognition, certifications
@@ -251,6 +253,14 @@ ${longform.series.filter((s) => s.published).map((s) => `- [${s.title}](${SITE}$
 - [GitHub](${profile.links.github})
 - [TEDxBoston talk](${profile.links.tedx})
 `;
+}
+
+// Every published part and essay, so an answer engine can cite the exact article rather than the hub.
+function buildNotesTxt() {
+  const items = longform.pages.filter((p) => p.kind !== 'series');
+  if (!items.length) return '';
+  const line = (p) => `- [${p.title}](${SITE}${p.path}): ${p.series ? `${p.series.title}, part ${p.n} of ${p.series.planned}. ` : ''}${p.description}`;
+  return `\n## ${SERIES_NAME}\n\nLong-form write-ups of his own builds, with code and architecture. Feed: ${SITE}${FEED_PATH}\n\n${items.map(line).join('\n')}\n`;
 }
 
 function playbookText() {
@@ -363,6 +373,7 @@ for (const page of PAGES) {
 }
 Object.assign(outputs, writingPages(SITE, longform));
 outputs['sitemap.xml'] = sitemap(dates);
+outputs[FEED_PATH] = atomFeed(SITE, longform);
 outputs['llms.txt'] = llmsTxt();
 outputs['llms-full.txt'] = llmsFullTxt();
 
