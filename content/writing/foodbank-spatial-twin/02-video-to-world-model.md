@@ -1,8 +1,8 @@
 ---
 title: From a news video to a 3D world model
 description: How twenty frames of a public video tour became metric 3D captures through a world model, and how a Gaussian-splat trainer running on a plain CPU made them photoreal, with the code for each step.
-status: draft
-date: 2026-10-29
+status: published
+date: 2026-10-28
 tags: [world models, gaussian splatting, colmap, pytorch, openusd]
 image: /assets/img/writing/foodbank-spatial-twin/photoreal-zones.jpg
 image_alt: Four areas of the food bank captured as Gaussian splats, shown in the browser twin
@@ -49,7 +49,24 @@ The fusion step is local and free. It unprojects every depth map, keeps the most
 .venv/bin/python scripts/atlas_twin.py site   # place the zones on one plan
 ```
 
-Every paid stage writes its operation id to a state file before it waits, and sends an idempotency key, so a re-run resumes instead of paying again.
+Every paid stage writes its operation id to a state file before it waits, and sends an idempotency key derived from the request body, so a re-run resumes instead of paying again. The client also backs off on rate limits and gateway errors, honoring `Retry-After`:
+
+```python
+def req(self, method, path, body=None, *, idem=None, params=None, timeout=120):
+    headers = {"Idempotency-Key": idem} if idem else {}
+    for attempt in range(6):
+        r = self.s.request(method, self.base + path, json=body, params=params,
+                           headers=headers, timeout=timeout)
+        if r.status_code in (429, 502, 503, 504) and attempt < 5:
+            delay = float(r.headers.get("Retry-After") or 2 ** (attempt + 1))
+            time.sleep(delay)
+            continue
+        if r.status_code >= 400:
+            raise PipelineError(f"{method} {path}: HTTP {r.status_code}: {r.text[:800]}")
+        return r.json() if r.content else {}
+```
+
+A budget guard sits in front of every paid stage. If the estimate for a request is above `--max-credits`, the script refuses to submit it.
 
 The step I most wanted, generating views of the space the camera never saw, failed twice on the provider's side with no detail. I stopped retrying until I knew whether failed jobs were billed. That is the open problem, and it is why Part 3 exists.
 
@@ -58,6 +75,25 @@ The step I most wanted, generating views of the space the camera never saw, fail
 The fused captures look right from their source cameras and fall apart when you move. So the second route trains a real 3D Gaussian Splatting model per zone from 49 to 72 frames.
 
 The standard trainers rasterize with CUDA kernels, and the machine that builds this repo has no GPU. So `scripts/splat_train.py` implements the same method in plain PyTorch tensor code: project each Gaussian to the image, composite front to back, and optimize color, shape and opacity against the frames. With sparse rasterization it runs at about one second per step at 480 pixels on four CPU cores.
+
+The heart of it is compositing. Each pixel's color is a sum over the Gaussians that cover it, front to back, each weighted by its own opacity times the transmittance left by everything in front of it. On a GPU that is a loop per pixel. In tensor code it becomes one sorted list of (pixel, Gaussian) pairs and a **segmented cumulative sum of log(1 − alpha)**, so transmittance for every pair comes out of one `cumsum`:
+
+```python
+alpha = (opac[gid] * torch.exp(power.clamp(max=0.0))).clamp(max=0.99)
+l1m = torch.log1p(-alpha).double()              # log(1 - alpha), stable for small alpha
+cs = torch.cumsum(l1m, 0)                       # running sum across all pairs, sorted by pixel then depth
+with torch.no_grad():                           # index of the first pair of each pixel's segment
+    seg_first = torch.ones_like(pix, dtype=torch.bool)
+    seg_first[1:] = pix[1:] != pix[:-1]
+    first_idx = torch.cummax(torch.where(seg_first, torch.arange(pix.numel(), device=dev),
+                                         torch.zeros_like(pix)), 0).values
+base = (cs - l1m)[first_idx]
+trans = torch.exp(cs - l1m - base).float()      # transmittance in front of each pair
+w = alpha * trans
+img = torch.zeros(H * W, 3, device=dev).index_add(0, pix, w[:, None] * col[gid])
+```
+
+Pairs that would add less than 1/255 alpha are dropped before this step, and each Gaussian only touches pixels inside its visible extent. That is what keeps the work proportional to real coverage instead of image size times splat count.
 
 Two details made the difference on news footage:
 
@@ -80,4 +116,4 @@ On a free cloud notebook GPU, the same stages run at full resolution with up to 
 
 Both routes write the same thing: a splat file for the browser and an OpenUSD file in metres, Y up, with the floor at zero. Nothing downstream needs to know which route made a zone, which is the point.
 
-Tomorrow: the video never shows the whole building, so how do you model the rest of it? The answer is one Blender script.
+[Part 3](/writing/foodbank-spatial-twin/blender-facility-model/): the video never shows the whole building, so how do you model the rest of it? The answer is one Blender script.

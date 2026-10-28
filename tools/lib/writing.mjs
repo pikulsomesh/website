@@ -25,7 +25,7 @@ function readPost(file, extra) {
   if (!['draft', 'published'].includes(meta.status)) throw new Error(`${file}: status must be draft or published`);
   if (meta.status === 'published' && !meta.date) throw new Error(`${file}: a published post needs a date`);
   const md = renderMarkdown(body);
-  return { ...meta, ...extra, date: isoDate(meta.date), updated: isoDate(meta.updated || meta.date), tags: meta.tags || [], html: md.html, text: md.text, words: md.text.split(/\s+/).length, minutes: minutes(md.text), published: meta.status === 'published', file };
+  return { ...meta, ...extra, date: isoDate(meta.date), updated: isoDate(meta.updated || meta.date), tags: meta.tags || [], html: md.html, text: md.text, images: md.images, words: md.text.split(/\s+/).length, minutes: minutes(md.text), published: meta.status === 'published', file };
 }
 
 export function loadWriting(root) {
@@ -53,6 +53,8 @@ export function loadWriting(root) {
     series.push(s);
   }
   essays.sort((a, b) => b.date.localeCompare(a.date));
+  // `order` in a hub's front matter sets its place on /writing/ (lowest first); then newest first.
+  series.sort((a, b) => (a.order ?? 99) - (b.order ?? 99) || b.date.localeCompare(a.date));
   const live = [...series.filter((s) => s.published), ...series.flatMap((s) => (s.published ? s.parts.filter((p) => p.published) : [])), ...essays.filter((e) => e.published)];
   return { series, essays, pages: live };
 }
@@ -62,7 +64,9 @@ function shell({ site, page, title, description, image, imageAlt, type, publishe
   const depth = page.path.split('/').filter(Boolean).length;
   const r = '../'.repeat(depth);
   const url = site + page.path;
-  const img = image ? (image.startsWith('http') ? image : site + image.replace(/^\//, '')) : `${site}assets/img/og.jpg`;
+  // Social previews cannot show SVG, so an SVG hero falls back to the series image, then the site card.
+  const raster = [image, page.series?.image].find((u) => u && !u.endsWith('.svg'));
+  const img = raster ? abs(site, raster) : `${site}assets/img/og.jpg`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -139,7 +143,10 @@ const crumbList = (site, items) => ({
   '@type': 'BreadcrumbList',
   itemListElement: [{ name: 'Home', path: '' }, { name: 'Writing', path: 'writing/' }, ...items].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: site + c.path })),
 });
-const imageUrl = (site, p) => (p.image ? site + p.image.replace(/^\//, '') : `${site}assets/img/og.jpg`);
+const abs = (site, u) => (u.startsWith('http') ? u : site + u.replace(/^\//, ''));
+const imageUrl = (site, p) => { const u = [p.image, p.series?.image].find((x) => x && !x.endsWith('.svg')); return u ? abs(site, u) : `${site}assets/img/og.jpg`; };
+// The hero first, then every figure in the text, so image search can find the diagrams.
+const imageList = (site, p) => [...new Set([imageUrl(site, p), ...(p.images || []).map((u) => abs(site, u))])];
 const code = (site, s) => (s.repo ? { '@type': 'SoftwareSourceCode', name: s.title, codeRepository: s.repo, ...(s.live ? { url: s.live } : {}), author: { '@id': `${site}#person` } } : null);
 
 function articleLD(site, p) {
@@ -155,7 +162,7 @@ function articleLD(site, p) {
         '@id': `${site + p.path}#article`,
         headline: p.title,
         description: p.description,
-        image: imageUrl(site, p),
+        image: imageList(site, p),
         datePublished: p.date,
         dateModified: p.updated,
         author: author(site),
@@ -239,6 +246,7 @@ ${p.html}
           <span class="eyebrow">${SERIES_NAME}</span>
           <h2><a href="/${esc(s.path)}">${esc(s.title)}</a></h2>
           ${partsList(s, p)}
+          <p class="series-all mono"><a href="/writing/#build-notes">All ${SERIES_NAME.toLowerCase()} →</a></p>
         </aside>
         <nav class="pager" aria-label="More in this series">${prev ? `<a class="prev" href="/${esc(prev.path)}"><span class="mono">← Part ${prev.n}</span>${esc(prev.title)}</a>` : `<a class="prev" href="/${esc(s.path)}"><span class="mono">← Series</span>${esc(s.title)}</a>`}${next ? `<a class="next" href="/${esc(next.path)}"><span class="mono">Part ${next.n} →</span>${esc(next.title)}</a>` : nextDraft ? `<span class="next is-coming"><span class="mono">Part ${nextDraft.n} · coming</span>${esc(nextDraft.title)}</span>` : ''}</nav>
         <p class="article-foot mono">${p.linkedin ? `${extLink(p.linkedin, 'Discuss on LinkedIn')}` : ''}${s.repo ? extLink(s.repo, 'Read the code') : ''}</p>
@@ -246,7 +254,8 @@ ${p.html}
     </article>`;
 }
 
-function seriesBody(s) {
+function seriesBody(s, w) {
+  const others = w.series.filter((x) => x.published && x !== s);
   return `    <article class="article">
       <header class="article-head wrap">
         <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/writing/">Writing</a><span aria-hidden="true">/</span><a href="/writing/#build-notes">${SERIES_NAME}</a></nav>
@@ -262,28 +271,30 @@ ${s.html}
         </div>
         <section class="series-box is-hub" aria-labelledby="parts-h">
           <span class="eyebrow">The series</span>
-          <h2 id="parts-h">${s.planned} parts, one a day</h2>
+          <h2 id="parts-h">${s.planned} parts</h2>
           ${partsList(s)}
         </section>${(s.stack || []).length ? `
         <div class="article-stack"><span class="eyebrow">Stack</span><ul class="tags">${s.stack.map((x) => `<li class="tag">${esc(x)}</li>`).join('')}</ul></div>` : ''}
+        <nav class="more-notes" aria-label="More writing"><span class="eyebrow">More ${SERIES_NAME.toLowerCase()}</span><ul>${others.map((x) => `<li><a href="/${esc(x.path)}"><b>${esc(x.title)}</b></a><span>${esc(x.description)}</span></li>`).join('')}<li><a href="/writing/"><b>All writing</b></a><span>Every series, essay and LinkedIn post, by topic.</span></li></ul></nav>
       </div>
     </article>`;
 }
 
-function essayBody(p) {
+function essayBody(p, w) {
   return `    <article class="article">
       <header class="article-head wrap">
         <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/writing/">Writing</a><span aria-hidden="true">/</span><a href="/writing/#essays">Essays</a></nav>
         <span class="eyebrow">${esc(p.topic || 'Essay')}</span>
         <h1>${esc(p.title)}</h1>
         <p class="dek">${esc(p.description)}</p>
-        <div class="article-meta mono"><span>${esc(fmtDate(p.date))}</span><span>${p.minutes} min read</span></div>
+        <div class="article-meta mono"><span>${esc(fmtDate(p.date))}</span><span>${p.minutes} min read</span>${projectLinks(p)}</div>
       </header>
       <div class="wrap">${hero(p)}
         <div class="prose">
 ${p.html}
         </div>
-        <p class="article-foot mono">${p.linkedin ? extLink(p.linkedin, 'Discuss on LinkedIn') : ''}</p>
+        <p class="article-foot mono">${p.linkedin ? extLink(p.linkedin, 'Discuss on LinkedIn') : ''}${p.repo ? extLink(p.repo, 'Read the code') : ''}</p>
+        <nav class="more-notes" aria-label="More writing"><span class="eyebrow">More writing</span><ul>${w.pages.filter((x) => x.kind === 'series').map((x) => `<li><a href="/${esc(x.path)}"><b>${esc(x.title)}</b></a><span>${esc(x.description)}</span></li>`).join('')}${w.pages.filter((x) => x.kind === 'essay' && x !== p).map((x) => `<li><a href="/${esc(x.path)}"><b>${esc(x.title)}</b></a><span>${esc(x.description)}</span></li>`).join('')}</ul></nav>
       </div>
     </article>`;
 }
@@ -302,7 +313,7 @@ export function writingPages(site, w) {
       type: isSeries ? 'website' : 'article',
       published: p.date, modified,
       jsonld: isSeries ? seriesLD(site, p) : articleLD(site, p),
-      body: isSeries ? seriesBody(p) : p.kind === 'part' ? partBody(p) : essayBody(p),
+      body: isSeries ? seriesBody(p, w) : p.kind === 'part' ? partBody(p) : essayBody(p, w),
     });
   }
   return out;

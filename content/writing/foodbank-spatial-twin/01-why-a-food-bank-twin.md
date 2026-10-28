@@ -42,6 +42,8 @@ The subject is a **representative** Texas food bank, inspired by a local news to
 
 ## What came out of it
 
+![The pipeline from video to world model to Blender to AWS to Omniverse](/assets/img/writing/foodbank-spatial-twin/pipeline.svg "The whole pipeline. OpenUSD in metres, Y up, floor at zero, is the only contract between the steps.")
+
 The pipeline runs in three steps, and each one gets its own part in this series.
 
 - **Video to 3D captures.** Twenty frames went to a world model for camera poses and metric depth, and came back as about 747,000 splats across three areas, for 200 credits, which is 20 US cents. A Gaussian-splat trainer I wrote to run on a plain CPU then trained four areas from 49 to 72 frames each, at no credit cost, which made them hold up as the camera moves.
@@ -56,6 +58,6 @@ Not everything worked, and I will be specific about what did not. Generating vie
 
 ## What is next in the series
 
-Tomorrow's part goes into the first step in detail: how to get from a news video to a 3D world model, the frame selection and masking that make or break it, and the CPU splat trainer, with the code. After that come the Blender building, the AWS architecture, and the full pipeline with the paper.
+[Part 2](/writing/foodbank-spatial-twin/video-to-world-model/) goes into the first step in detail: how to get from a news video to a 3D world model, the frame selection and masking that make or break it, and the CPU splat trainer, with the code. After that come [the Blender building](/writing/foodbank-spatial-twin/blender-facility-model/), [the AWS architecture](/writing/foodbank-spatial-twin/aws-architecture/), and [the full pipeline with the paper](/writing/foodbank-spatial-twin/pipeline-and-paper/).
 
 The code, the docs and the live twin are all public. If you run a warehouse, a cold chain or a food bank and want to try this on your own footage, the repository is the place to start.

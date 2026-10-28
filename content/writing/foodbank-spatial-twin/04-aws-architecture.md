@@ -1,8 +1,8 @@
 ---
 title: The cloud layer, a digital twin backend on AWS for $0.00
 description: A serverless AWS backend serves telemetry and operations data in the twin's own coordinates, a real-sensor path is designed and priced, and Omniverse runs on EC2 GPUs that terminate themselves. What worked and every pitfall.
-status: draft
-date: 2026-10-31
+status: published
+date: 2026-10-28
 tags: [aws, serverless, lambda, omniverse, iot, architecture]
 image: /assets/img/writing/foodbank-spatial-twin/aws-architecture.jpg
 image_alt: Reference architecture of the food bank twin on AWS
@@ -24,6 +24,29 @@ The whole backend is one AWS SAM template:
 
 `/telemetry` returns freezer, cooler and dry-storage temperature, humidity, door state and alarms, plus a forklift looping through the building. `/operations` returns inventory, flows, docks and the kitchen. Every position is in metres in the same frame as the OpenUSD scene, so a viewer can pin a badge to a cold room without a lookup table. Every payload says `simulated: true`.
 
+Each cost decision is written into the template, next to the setting it controls:
+
+```yaml
+Parameters:
+  ThrottleRate:
+    Type: Number
+    Default: 5
+    Description: Steady-state requests per second allowed across the API (cost ceiling).
+  LogRetentionDays:
+    Type: Number
+    Default: 7
+    Description: CloudWatch Logs retention. Logs are the only storage that grows on its own.
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Architectures: [arm64]      # Graviton: about 20% cheaper per GB-second than x86
+    MemorySize: 128             # minimum; the handler does a few microseconds of arithmetic
+    Timeout: 3                  # fail fast, never bill a runaway invocation
+```
+
+No NAT gateway, no VPC, no provisioned capacity and no database means nothing bills while nobody is looking.
+
 ```bash
 scripts/deploy.sh   # sam build + deploy, syncs the site to S3, prints the URLs
 ```
@@ -36,9 +59,27 @@ The simulator is deliberately thin. What matters is the JSON contract, because a
 
 The same design maps onto Azure and Google Cloud, with two honest caveats. Azure IoT Hub has no LoRaWAN network server, so it needs a partner. Google Cloud IoT Core was retired in 2023. Both are designs only and have never been deployed.
 
+![The same twin designed on Azure](/assets/img/writing/foodbank-spatial-twin/azure-design.jpg "Azure, design only: the same contract on Azure Functions and IoT Hub, with a partner LoRaWAN network server.")
+
+![The same twin designed on Google Cloud](/assets/img/writing/foodbank-spatial-twin/gcp-design.jpg "Google Cloud, design only: the same contract on Cloud Run, with a partner IoT path since IoT Core was retired.")
+
+All three diagrams are generated from one script into editable draw.io files, so they stay in step with each other.
+
+## Security on the floor: read-only by design
+
+A twin that connects to a facility is also a path into it, so the real-floor design treats the plant network the way industrial sites do. It follows the Purdue model's zones and conduits. Sensors and gateways sit on the floor. A small OT DMZ passes only outbound TLS, with no inbound ports. Every device has its own key or certificate. The cloud side ingests readings and sends no commands, so the twin is read-only. Existing refrigeration and dock controls stay in charge of their own alarms, and the only designed path back toward the floor is a signed, human-approved firmware update. The diagrams draw these trust boundaries as red dashed lines.
+
 ## Omniverse on a GPU that cannot outlive the job
 
-Omniverse needs a GPU, and a GPU left running is the classic cloud bill surprise. So the render runs on a single EC2 instance launched for one job: no SSH key, no IAM role, inputs and outputs through presigned S3 URLs, a hard shutdown timer, and shutdown set to terminate. Seven runs took about 94 instance-minutes and about $1.34.
+Omniverse needs a GPU, and a GPU left running is the classic cloud bill surprise. So the render runs on a single EC2 instance launched for one job: no SSH key, no IAM role, inputs and outputs through presigned S3 URLs, a hard shutdown timer, and shutdown set to terminate. Two lines do most of the work. The user-data script starts with a hard cap, and the launch request says that a shutdown means termination, not a stopped instance that keeps its disk:
+
+```bash
+shutdown -h +{max_minutes}            # first line of user data: the instance cannot outlive the job
+```
+
+```python
+InstanceInitiatedShutdownBehavior="terminate",
+``` Seven runs took about 94 instance-minutes and about $1.34.
 
 It took seven runs because of these, in the order I hit them:
 
@@ -51,4 +92,4 @@ It took seven runs because of these, in the order I hit them:
 
 ![The modeled facility rendered in Omniverse RTX on an AWS GPU](/assets/img/writing/foodbank-spatial-twin/omniverse-forklift.jpg "The Blender facility rendered in Omniverse RTX on an EC2 GPU, with the forklift on its route.")
 
-Tomorrow: the whole pipeline end to end, the full cost picture, and the paper.
+[Part 5](/writing/foodbank-spatial-twin/pipeline-and-paper/): the whole pipeline end to end, the full cost picture, and the paper.

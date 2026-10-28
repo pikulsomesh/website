@@ -4,6 +4,7 @@ description: A working digital twin of a representative Texas food bank, built f
 status: published
 date: 2026-10-28
 topic: Physical AI
+order: 1
 parts_planned: 5
 repo: https://github.com/pikulsomesh/foodbank-spatial-twin
 live: https://pikulsomesh.github.io/foodbank-spatial-twin/

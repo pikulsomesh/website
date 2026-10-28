@@ -50,12 +50,13 @@ function inline(text, opts) {
 }
 
 /* ---------- Blocks ---------- */
-// opts.url(path) rewrites relative links and images; returns { html, text, headings }.
+// opts.url(path) rewrites relative links and images; returns { html, text, headings, images }.
 export function renderMarkdown(src, opts = {}) {
   opts = { url: (u) => u, ...opts };
   const lines = src.replace(/\r\n/g, '\n').split('\n');
   const out = [];
   const headings = [];
+  const images = [];
   let i = 0;
   const isBlockStart = (l) => /^(#{1,4}\s|```|>|\s*[-*]\s|\s*\d+\.\s|\|.*\|\s*$|---+\s*$|!\[)/.test(l);
 
@@ -81,6 +82,7 @@ export function renderMarkdown(src, opts = {}) {
     }
     if (/^---+\s*$/.test(line)) { out.push('<hr>'); i++; continue; }
     if ((m = line.match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)\s*$/))) {
+      images.push(m[2]);
       out.push(`<figure><img src="${esc(opts.url(m[2]))}" alt="${esc(m[1])}" loading="lazy">${m[3] ? `<figcaption>${inline(m[3], opts)}</figcaption>` : ''}</figure>`);
       i++;
       continue;
@@ -123,5 +125,5 @@ export function renderMarkdown(src, opts = {}) {
     .replace(/[*_`>#|]/g, '')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
-  return { html: out.join('\n'), text, headings };
+  return { html: out.join('\n'), text, headings, images };
 }

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 940" width="1600" height="940" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="1600" height="940" fill="#f6f5f2"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a8089"/></marker></defs>
+<text x="48" y="64" font-size="30" fill="#131518" font-weight="600">Academic Matchmaker: built in CI, matched in the browser</text>
+<rect x="40" y="100" width="740" height="800" rx="18" fill="none" stroke="#d9d7d2" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="60" y="134" font-size="15" letter-spacing="2" fill="#c2410c" font-family="JetBrains Mono, ui-monospace, monospace">BUILD · GITHUB ACTIONS, DAILY AND MONTHLY</text>
+<rect x="820" y="100" width="740" height="800" rx="18" fill="none" stroke="#d9d7d2" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="840" y="134" font-size="15" letter-spacing="2" fill="#c2410c" font-family="JetBrains Mono, ui-monospace, monospace">MATCH · THE VISITOR&#x27;S BROWSER, GITHUB PAGES</text>
+<rect x="80" y="150" width="660" height="96" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="98" y="182" font-size="19" font-weight="600" fill="#131518">Sources</text>
+<text x="98" y="208" font-size="15" fill="#464b53">QS 2026 top 200 universities · OpenAlex authors and works</text>
+<text x="98" y="230" font-size="15" fill="#464b53">ORCID records · faculty pages · Europe PMC (emails, titles)</text>
+<path d="M410 246L410 286" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="80" y="290" width="660" height="96" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="98" y="322" font-size="19" font-weight="600" fill="#131518">Ingest, one job per university</text>
+<text x="98" y="348" font-size="15" fill="#464b53">200 jobs, 20 at a time, each with its own cache</text>
+<text x="98" y="370" font-size="15" fill="#464b53">~10 req/s across jobs · pauses and resumes on budget</text>
+<path d="M410 386L410 426" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="80" y="430" width="660" height="96" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="98" y="462" font-size="19" font-weight="600" fill="#131518">Assemble + quality gate</text>
+<text x="98" y="488" font-size="15" fill="#464b53">181,568 researchers · 51,430 with an email</text>
+<text x="98" y="510" font-size="15" fill="#464b53">tags: OpenAlex topics + paper keywords</text>
+<path d="M410 526L410 566" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="80" y="570" width="660" height="118" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2.5"/>
+<text x="98" y="602" font-size="19" font-weight="600" fill="#131518">Search index</text>
+<text x="98" y="628" font-size="15" fill="#464b53">MiniLM-L6 embeddings, 384-d, int8</text>
+<text x="98" y="650" font-size="15" fill="#464b53">k-means into 426 clusters (√n), members stored as 1 bit/dim</text>
+<text x="98" y="672" font-size="15" fill="#464b53">compact rows: ~100 bytes per person</text>
+<path d="M410 688L410 728" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="80" y="732" width="660" height="120" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="98" y="764" font-size="19" font-weight="600" fill="#131518">Hugging Face dataset</text>
+<text x="98" y="790" font-size="15" fill="#464b53">centroids.json · vectors/&lt;n&gt;.json · search rows</text>
+<text x="98" y="812" font-size="15" fill="#464b53">tags.json · per-university records</text>
+<text x="98" y="834" font-size="15" fill="#464b53">squashed on every push, served over CDN</text>
+<path d="M740 792L860 792" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<text x="746" y="822" font-size="14" fill="#464b53" font-family="JetBrains Mono, ui-monospace, monospace">on demand</text>
+<rect x="860" y="150" width="660" height="96" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="878" y="182" font-size="19" font-weight="600" fill="#131518">Upload or describe</text>
+<text x="878" y="208" font-size="15" fill="#464b53">PDF via pdf.js · screenshot via Tesseract OCR</text>
+<text x="878" y="230" font-size="15" fill="#464b53">or an ORCID iD / OpenAlex link · nothing leaves the device</text>
+<path d="M1190 246L1190 286" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="860" y="290" width="660" height="96" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="878" y="322" font-size="19" font-weight="600" fill="#131518">Profile</text>
+<text x="878" y="348" font-size="15" fill="#464b53">Qwen2.5-0.5B, 4-bit, WebGPU (WASM fallback) → interests JSON</text>
+<text x="878" y="370" font-size="15" fill="#464b53">uploads skip the chat model: embeddings only</text>
+<path d="M1190 386L1190 426" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="860" y="430" width="660" height="96" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="878" y="462" font-size="19" font-weight="600" fill="#131518">Embed the query</text>
+<text x="878" y="488" font-size="15" fill="#464b53">same MiniLM model, q8 ONNX in a Web Worker</text>
+<text x="878" y="510" font-size="15" fill="#464b53">one 384-d unit vector</text>
+<path d="M1190 526L1190 566" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="860" y="570" width="660" height="118" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2.5"/>
+<text x="878" y="602" font-size="19" font-weight="600" fill="#131518">Rank, coarse to fine</text>
+<text x="878" y="628" font-size="15" fill="#464b53">score 426 centroids → load the nearest 24 clusters</text>
+<text x="878" y="650" font-size="15" fill="#464b53">48 table lookups per person (per-byte partial sums)</text>
+<text x="878" y="672" font-size="15" fill="#464b53">widen to 192 clusters when a filter leaves too few</text>
+<path d="M1190 688L1190 728" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="860" y="732" width="660" height="120" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="878" y="764" font-size="19" font-weight="600" fill="#131518">Results</text>
+<text x="878" y="790" font-size="15" fill="#464b53">concept tags ANDed (gastrointestinal + peptide)</text>
+<text x="878" y="812" font-size="15" fill="#464b53">why-this-match: shared topics and papers</text>
+<text x="878" y="834" font-size="15" fill="#464b53">tested on 2026 Nobel and Fields laureates: 11 of 11 pass</text>
+</svg>

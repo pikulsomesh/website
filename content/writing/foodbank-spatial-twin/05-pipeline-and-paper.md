@@ -1,8 +1,8 @@
 ---
 title: The whole pipeline, what it cost, and the paper
 description: The food bank twin end to end, from video to world model to Blender to AWS to Omniverse, with the full cost picture, what is real versus simulated, what failed, and the paper that documents it.
-status: draft
-date: 2026-11-01
+status: published
+date: 2026-10-28
 tags: [digital twin, world models, openusd, research paper]
 image: /assets/img/writing/foodbank-spatial-twin/omniverse-forklift.jpg
 image_alt: The modeled facility rendered in Omniverse
@@ -11,6 +11,8 @@ image_alt: The modeled facility rendered in Omniverse
 Four parts, four layers. This one puts them together, adds up the cost, and points to the paper that writes it all down properly.
 
 ## The pipeline on one page
+
+![The pipeline from video to world model to Blender to AWS to Omniverse](/assets/img/writing/foodbank-spatial-twin/pipeline.svg "Step 1 captures, step 1b the building, step 2 data on AWS, step 3 any renderer. OpenUSD is the only interface between them.")
 
 ```
 video (MP4)
@@ -58,7 +60,7 @@ Generating views of unfilmed space failed twice on the provider's side. Omnivers
 
 ## The paper
 
-The build is written up as a paper: *From Video to Digital Twin: Accelerating Spatial Twins with World Models and NVIDIA Omniverse*. It covers the method, the provenance labels, the measurements, and the limits, with three supplementary movies.
+The build is written up as a paper: *From Video to Digital Twin: Accelerating Spatial Twins with World Models and NVIDIA Omniverse*. It covers the method, the provenance labels, the measurements, and the limits, with three supplementary movies. [Read the PDF](https://pikulsomesh.github.io/foodbank-spatial-twin/paper/from-video-to-digital-twin.pdf), or browse the LaTeX source and figures in the repository's `paper/` folder.
 
 ## What I would tell someone starting one
 
@@ -67,4 +69,4 @@ The build is written up as a paper: *From Video to Digital Twin: Accelerating Sp
 - Label provenance from day one. It is what lets people trust the parts that are real.
 - Make every paid step resumable and capped, and make cloud GPUs unable to outlive their job.
 
-Next in Build notes: the Michelin kitchen twin, a three-star kitchen modeled the way a plant is.
+If you want the same approach applied to a very different operation, the [Michelin Kitchen Twin](/writing/michelin-kitchen-twin/) series models a three-star kitchen the way a plant is modeled.

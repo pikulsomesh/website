@@ -699,3 +699,10 @@ section { padding: clamp(64px, 10vw, 128px) 0; }
   .pager .next { grid-column: auto; }
   .series-box { padding: 20px; }
 }
+.series-all { margin: 14px 0 0; font-size: 12px; }
+.series-all a { color: var(--accent); text-decoration: none; }
+.more-notes { max-width: var(--measure); margin: 40px auto 0; }
+.more-notes ul { list-style: none; margin: 10px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.more-notes li { padding: 12px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 2px; }
+.more-notes a { text-decoration: none; }
+.more-notes span { color: var(--ink-2); font-size: 15px; }

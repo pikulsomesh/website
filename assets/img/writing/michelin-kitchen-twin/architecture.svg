@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="1600" height="900" fill="#f6f5f2"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a8089"/></marker></defs>
+<text x="48" y="64" font-size="30" fill="#131518" font-weight="600">Michelin Kitchen Twin: one data model, one simulation, many views</text>
+<rect x="60" y="120" width="440" height="150" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2.5"/>
+<text x="78" y="152" font-size="19" font-weight="600" fill="#131518">Sourced data (/data)</text>
+<text x="78" y="178" font-size="15" fill="#464b53">14 publications, cited on every record</text>
+<text x="78" y="200" font-size="15" fill="#464b53">88 raw materials · 53 products</text>
+<text x="78" y="222" font-size="15" fill="#464b53">10 work centers · 32 machines · 19 staff</text>
+<text x="78" y="244" font-size="15" fill="#464b53">est: true on every estimate</text>
+<path d="M500 195L580 195" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="580" y="120" width="440" height="150" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="598" y="152" font-size="19" font-weight="600" fill="#131518">MRP explosion</text>
+<text x="598" y="178" font-size="15" fill="#464b53">covers → plates → sub-assemblies</text>
+<text x="598" y="200" font-size="15" fill="#464b53">BOMs in low-level-code order</text>
+<text x="598" y="222" font-size="15" fill="#464b53">yield gross-up, batch rounding</text>
+<text x="598" y="244" font-size="15" fill="#464b53">labor + machine minutes per role</text>
+<path d="M1020 195L1100 195" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1100" y="120" width="440" height="150" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="1118" y="152" font-size="19" font-weight="600" fill="#131518">Adapter</text>
+<text x="1118" y="178" font-size="15" fill="#464b53">routings → task chains (DAGs)</text>
+<text x="1118" y="200" font-size="15" fill="#464b53">role: null = unattended machine time</text>
+<text x="1118" y="222" font-size="15" fill="#464b53">long-lead prep → carry-over stock</text>
+<text x="1118" y="244" font-size="15" fill="#464b53">seatings and what-ifs from the data</text>
+<path d="M1320 270L1320 330" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="560" y="330" width="980" height="170" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2.5"/>
+<text x="578" y="362" font-size="19" font-weight="600" fill="#131518">Discrete-event simulation (src/sim)</text>
+<text x="578" y="388" font-size="15" fill="#464b53">binary min-heap ordered by (time, seq) · mulberry32 seeded RNG → identical night every run</text>
+<text x="578" y="410" font-size="15" fill="#464b53">tickets as work orders, JIT fire offsets, shared appliance slots with MTBF/MTTR</text>
+<text x="578" y="432" font-size="15" fill="#464b53">guest line: arrivals, waitlist, balking, eating pace · quality gate and re-fires · 86s and swaps</text>
+<text x="578" y="454" font-size="15" fill="#464b53">one ordered event log: ticket.fired · op.start · staff.move · plate.passed · inventory.change</text>
+<rect x="60" y="330" width="440" height="170" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="78" y="362" font-size="19" font-weight="600" fill="#131518">Optimizer</text>
+<text x="78" y="388" font-size="15" fill="#464b53">candidates: +1 cook per line role,</text>
+<text x="78" y="410" font-size="15" fill="#464b53">a grid of fire re-sequences</text>
+<text x="78" y="432" font-size="15" fill="#464b53">each re-runs the whole night × 5 seeds</text>
+<text x="78" y="454" font-size="15" fill="#464b53">guards: FPY, ticket p90, table wait</text>
+<path d="M500 415L560 415" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="60" y="600" width="345" height="140" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="78" y="632" font-size="19" font-weight="600" fill="#131518">3D kitchen (three.js)</text>
+<text x="78" y="658" font-size="15" fill="#464b53">cooks walk a nav grid</text>
+<text x="78" y="680" font-size="15" fill="#464b53">machines and plates from events</text>
+<text x="78" y="702" font-size="15" fill="#464b53">Low → Pro Max quality tiers</text>
+<path d="M1050 500L232 598" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="435" y="600" width="345" height="140" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="453" y="632" font-size="19" font-weight="600" fill="#131518">Operations dashboard</text>
+<text x="453" y="658" font-size="15" fill="#464b53">ticket p90, OEE = A × P × Q</text>
+<text x="453" y="680" font-size="15" fill="#464b53">bottleneck named and explained</text>
+<text x="453" y="702" font-size="15" fill="#464b53">kitchen ⇄ factory vocabulary</text>
+<path d="M1050 500L607 598" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="810" y="600" width="345" height="140" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="828" y="632" font-size="19" font-weight="600" fill="#131518">Studio</text>
+<text x="828" y="658" font-size="15" fill="#464b53">room, menu, season, light</text>
+<text x="828" y="680" font-size="15" fill="#464b53">recompile + re-run in ~0.1 s</text>
+<text x="828" y="702" font-size="15" fill="#464b53">state in the URL (share links)</text>
+<path d="M1050 500L982 598" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<rect x="1185" y="600" width="345" height="140" rx="12" fill="#ffffff" stroke="#d9d7d2" stroke-width="1.5"/>
+<text x="1203" y="632" font-size="19" font-weight="600" fill="#131518">OpenUSD export</text>
+<text x="1203" y="658" font-size="15" fill="#464b53">one Xform per machine (EQ_*)</text>
+<text x="1203" y="680" font-size="15" fill="#464b53">twin:* metadata, colliders</text>
+<text x="1203" y="702" font-size="15" fill="#464b53">opens in Omniverse / Isaac Sim</text>
+<path d="M1050 500L1357 598" stroke="#7a8089" stroke-width="2" marker-end="url(#a)"/>
+<text x="60" y="800" font-size="14" fill="#464b53" font-family="JetBrains Mono, ui-monospace, monospace">Everything runs in the browser on GitHub Pages: ~0.5 MB gzipped, no downloaded models or textures; geometry and materials are generated from /data at load.</text>
+<text x="60" y="830" font-size="14" fill="#464b53" font-family="JetBrains Mono, ui-monospace, monospace">Built in parallel by five agent threads (product, data, simulation, 3D, Studio) that shared one contract: the ids in /data (EQ-*, WC-*, RM-*, FG-*).</text>
+</svg>
