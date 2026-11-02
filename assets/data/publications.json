@@ -1,10 +1,10 @@
 {
   "_comment": "Complete record reconciled against the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list. 'latest' feeds the featured item at the top of the research page; keep it to the newest one or two.",
   "stats": {
-    "citations": "710",
+    "citations": "715",
     "hIndex": 12,
     "i10": 12,
-    "asOf": "Oct 2026"
+    "asOf": "Nov 2026"
   },
   "papers": [
     {
@@ -35,7 +35,7 @@
       "venue": "Advanced Science",
       "title": "Machine Learning Guides Peptide Nucleic Acid Flow Synthesis and Sequence Design",
       "url": "https://doi.org/10.1002/advs.202201988",
-      "cites": 22
+      "cites": 23
     },
     {
       "year": 2022,
@@ -49,7 +49,7 @@
       "venue": "Nature Chemistry",
       "title": "Bottlebrush Polymers with Flexible Enantiomeric Side Chains Display Differential Biological Properties",
       "url": "https://doi.org/10.1038/s41557-021-00826-8",
-      "cites": 98
+      "cites": 100
     },
     {
       "year": 2021,
@@ -78,7 +78,7 @@
       "venue": "ACS Central Science",
       "title": "Deep Learning for Prediction and Optimization of Fast-Flow Peptide Synthesis",
       "url": "https://doi.org/10.1021/acscentsci.0c00979",
-      "cites": 69,
+      "cites": 71,
       "coFirst": true
     },
     {
