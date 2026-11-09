@@ -1,7 +1,7 @@
 {
   "_comment": "Complete record reconciled against the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list. 'latest' feeds the featured item at the top of the research page; keep it to the newest one or two.",
   "stats": {
-    "citations": "715",
+    "citations": "718",
     "hIndex": 12,
     "i10": 12,
     "asOf": "Nov 2026"
@@ -28,14 +28,14 @@
       "venue": "Machine Learning: Science and Technology",
       "title": "Chemistry-Informed Macromolecule Graph Representation for Similarity Computation, Unsupervised and Supervised Learning (GLAMOUR)",
       "url": "https://doi.org/10.1088/2632-2153/ac545e",
-      "cites": 82
+      "cites": 83
     },
     {
       "year": 2022,
       "venue": "Advanced Science",
       "title": "Machine Learning Guides Peptide Nucleic Acid Flow Synthesis and Sequence Design",
       "url": "https://doi.org/10.1002/advs.202201988",
-      "cites": 23
+      "cites": 24
     },
     {
       "year": 2022,
@@ -78,7 +78,7 @@
       "venue": "ACS Central Science",
       "title": "Deep Learning for Prediction and Optimization of Fast-Flow Peptide Synthesis",
       "url": "https://doi.org/10.1021/acscentsci.0c00979",
-      "cites": 71,
+      "cites": 72,
       "coFirst": true
     },
     {
