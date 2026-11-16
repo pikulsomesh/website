@@ -6,3 +6,15 @@ Passenger demand forecasting of Indian aviation industry
 Designing Macromolecules using Machine Learning and Simulations
 Book Review: Biochemistry for Materials Science: Catalysts, Complexes and Proteins
 Cartilage Regeneration for treatment of Osteoarthritis using
+A Fault-Tolerant Inverter Using a New Fuzzy-Based Detection Algorithm
+Abstract 3106: Integrated in vitro and machine learning approaches for targeted drug screening in gliomas with concurrent NF1 and ATRX loss
+Observation of interfacial magnetic interaction in Eu-doped BiFeO3 and YMnO3 nanocomposites
+DISPEL: database for ascertaining the best medicinal plants to cure human diseases
+Bottlebrush Polymers with Discrete Sidechains Display Stereochemistry- and Conformation-Dependent Biological Properties
+Chemistry-informed Macromolecule Graph Representation for Similarity Computation and Supervised Learning
+learningmatter-mit/peptimizer: Initial Release
+Macromolecules Similarity Matrix UMAP C 1 U M AP C 2 Dim . Red . / Clustering Graph Neural Network Classification Immunogenicity Taxonomy Labels Regression Biological Activity A B C
+Interpretable Deep Learning for De Novo Design of Cell-Penetrating Abiotic Polymers
+GLAMOUR: Graph learning over macromolecule representations
+Graph attribution methods applied to understanding immunogenicity in glycans
+Biochemistry for Materials Science: Catalysts, Complexes and Proteins

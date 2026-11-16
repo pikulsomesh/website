@@ -192,6 +192,7 @@ Google Scholar (Nov 2026): 718 citations, h-index 12.
 
 ### Preprints
 
+- From Video to Digital Twin: An Exploratory Study of World Models and Gaussian Splatting on In-the-Wild Video. arXiv · cs.CV, 2026. https://arxiv.org/abs/2611.10013
 - Simulating Infant Senses with Age-Tuned Networks. arXiv · cs.LG, 2026. https://arxiv.org/abs/2610.25377
 - Unsupervised Machine Learning Leads to an Abiotic Picomolar Peptide Ligand. ChemRxiv, 2023.
 - AI-Assisted Reaction Impurity Prediction and Inverse Structure Elucidation. ChemRxiv, 2022.

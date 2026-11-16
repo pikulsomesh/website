@@ -120,6 +120,12 @@
   "preprints": [
     {
       "year": 2026,
+      "venue": "arXiv · cs.CV",
+      "title": "From Video to Digital Twin: An Exploratory Study of World Models and Gaussian Splatting on In-the-Wild Video",
+      "url": "https://arxiv.org/abs/2611.10013"
+    },
+    {
+      "year": 2026,
       "venue": "arXiv · cs.LG",
       "title": "Simulating Infant Senses with Age-Tuned Networks",
       "url": "https://arxiv.org/abs/2610.25377"
