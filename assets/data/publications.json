@@ -1,7 +1,7 @@
 {
   "_comment": "Complete record reconciled against the CV (Aug 2025) and Google Scholar (Oct 2026). 'cites' = Google Scholar count; coFirst marks co-first authorship. Add new entries at the top of each list. 'latest' feeds the featured item at the top of the research page; keep it to the newest one or two.",
   "stats": {
-    "citations": "718",
+    "citations": "725",
     "hIndex": 12,
     "i10": 12,
     "asOf": "Nov 2026"
@@ -28,7 +28,7 @@
       "venue": "Machine Learning: Science and Technology",
       "title": "Chemistry-Informed Macromolecule Graph Representation for Similarity Computation, Unsupervised and Supervised Learning (GLAMOUR)",
       "url": "https://doi.org/10.1088/2632-2153/ac545e",
-      "cites": 83
+      "cites": 86
     },
     {
       "year": 2022,
@@ -42,14 +42,14 @@
       "venue": "Accounts of Materials Research",
       "title": "Learning Matter: Materials Design with Machine Learning and Atomistic Simulations",
       "url": "https://doi.org/10.1021/accountsmr.1c00238",
-      "cites": 133
+      "cites": 135
     },
     {
       "year": 2022,
       "venue": "Nature Chemistry",
       "title": "Bottlebrush Polymers with Flexible Enantiomeric Side Chains Display Differential Biological Properties",
       "url": "https://doi.org/10.1038/s41557-021-00826-8",
-      "cites": 100
+      "cites": 101
     },
     {
       "year": 2021,
@@ -78,7 +78,7 @@
       "venue": "ACS Central Science",
       "title": "Deep Learning for Prediction and Optimization of Fast-Flow Peptide Synthesis",
       "url": "https://doi.org/10.1021/acscentsci.0c00979",
-      "cites": 72,
+      "cites": 73,
       "coFirst": true
     },
     {
